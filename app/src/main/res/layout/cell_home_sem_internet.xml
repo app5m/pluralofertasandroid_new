@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    >
+
+        <TextView
+            android:id="@+id/btnSwitchCityHomeSemInternet"
+            style="@style/mudarCidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/retangulo1477"
+            android:clickable="true"
+            android:drawableEnd="@drawable/arrow_down_white"
+            android:drawablePadding="9dp"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:paddingStart="24dp"
+            android:paddingTop="8dp"
+            android:layout_marginTop="70dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="8dp"
+            android:text="PORTO ALEGRE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/filtroTvHomeSemInternet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grupo4802"
+            android:clickable="true"
+            android:drawablePadding="9dp"
+            android:gravity="center_horizontal"
+            android:paddingStart="11dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="11dp"
+            android:paddingBottom="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnSwitchCityHomeSemInternet" />
+
+        <ImageView
+            android:id="@+id/icon_sem_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/Ops"
+            android:src="@drawable/icon_sem_internet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/Ops"
+            style="@style/SemConexaoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ops!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline78"
+            app:layout_constraintBottom_toBottomOf="@id/guideline78"/>
+
+        <TextView
+            android:id="@+id/verifiqueConexao"
+            style="@style/SemConexaoMensagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:text="Verifique sua conexão com a internet e tente novamente."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ops" />
+
+        <Button
+            android:id="@+id/tenteNovamenteHomeSemInternet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_tente_novamente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verifiqueConexao"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline78"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.55"
+
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="110dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

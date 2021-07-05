@@ -142,6 +142,7 @@
                         android:background="@drawable/background_cadastro_ll"
                         android:drawableStart="@drawable/ic_local"
                         android:drawablePadding="14dp"
+                        android:editable="false"
                         android:ems="10"
                         android:hint="endereço"
                         android:inputType="phone" />
@@ -175,6 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/btn_cadastrar_login"
+                        android:paddingBottom="5dp"
                         android:text="criar conta"
                         android:textColor="@android:color/white" />
 
