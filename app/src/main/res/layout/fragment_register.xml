@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/FundoCorPadraoRoxo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <!-- <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="25dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="3sp"
+                        android:text="CRIAR USANDO A REDE SOCIAL"
+                        android:textColor="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="32dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/btnFacebookLogin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/facebook_button"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_facebook_logo"
+                                android:drawablePadding="10dp"
+                                android:text="facebook"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="32dp"
+                        android:background="#e1e2e3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="3sp"
+                        android:text="OU PELO NOSSO APP"
+                        android:textColor="@android:color/black" />
+
+                    <EditText
+                        android:id="@+id/fullname_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_profile_register"
+                        android:drawablePadding="14dp"
+                        android:ems="10"
+                        android:hint="nome completo"
+                        android:inputType="textPersonName" />
+
+
+                    <EditText
+                        android:id="@+id/email_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_email_edittext"
+                        android:drawablePadding="14dp"
+                        android:ems="10"
+                        android:hint="email"
+                        android:inputType="textEmailAddress" />
+
+                    <EditText
+                        android:id="@+id/cpf_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_password_edittext"
+                        android:drawablePadding="14dp"
+                        android:ems="10"
+                        android:hint="CPF"
+                        android:inputType="phone" />
+
+                    <EditText
+                        android:id="@+id/phone_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:drawablePadding="14dp"
+                        android:ems="10"
+                        android:hint="celular com DDD"
+                        android:inputType="phone" />
+
+                    <EditText
+                        android:id="@+id/adressRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_local"
+                        android:drawablePadding="14dp"
+                        android:editable="false"
+                        android:ems="10"
+                        android:hint="endereço"
+                        android:inputType="phone" />
+
+                    <EditText
+                        android:id="@+id/login_password_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_password_edittext"
+                        android:drawablePadding="14dp"
+                        android:ems="10"
+                        android:hint="senha"
+                        android:inputType="textPassword" />
+
+                    <EditText
+                        android:id="@+id/login_password2_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_cadastro_ll"
+                        android:drawableStart="@drawable/ic_password_edittext"
+                        android:drawablePadding="14dp"
+                        android:ems="10"
+                        android:hint="confirma a senha"
+                        android:inputType="textPassword" />
+
+                    <Button
+                        android:id="@+id/btnCriarConta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/btn_cadastrar_login"
+                        android:paddingBottom="5dp"
+                        android:text="criar conta"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:gravity="center"
+                        android:text="ao clicar em criar conta, você declara que está de acordo com os termos de uso."
+                        android:textColor="@android:color/black" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

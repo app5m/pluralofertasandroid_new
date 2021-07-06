@@ -50,4 +50,33 @@
     <!-- login com facebook -->
     <string name="facebook_app_id">3561607463858983</string> <string name="fb_login_protocol_scheme">fb3561607463858983</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="encontre">Encontre a peça</string>
+    <string name="perfeita"><b>perfeita</b></string>
+    <string name="city">Cidade</string>
+    <string name="neighborhood">Bairro</string>
+    <string name="address">Endereço</string>
+    <string name="number">Numero</string>
+    <string name="complemento">Complemento</string>
+    <string name="termos_de_uso"><u><b>Termos de Uso</b></u></string>
+    <string name="politica_de_privacidade"><u><b>Política de Privacidade</b></u></string>
+    <string name="cpf">CPF</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="intro1">Um Marketplace somente de produtos HD.\nAnuncie sem custos, seus acessórios, peças ou motoclicleta.</string>
+
+
+    <string-array name="kilometers">
+        <item>1 quilômetro</item>
+        <item>2 quilômetro</item>
+        <item>5 quilômetro</item>
+        <item>10 quilômetro</item>
+        <item>20 quilômetro</item>
+        <item>40 quilômetro</item>
+        <item>60 quilômetro</item>
+        <item>80 quilômetro</item>
+        <item>100 quilômetro</item>
+        <item>250 quilômetro</item>
+        <item>500 quilômetro</item>
+    </string-array>
+
 </resources>
