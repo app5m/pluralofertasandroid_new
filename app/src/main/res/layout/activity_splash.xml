@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.SplashActivity"
-    style="@style/fundoLogo">
+    style="@style/fundoLogo"
+    >
 
     <ImageView android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -33,6 +33,25 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "https://jitpack.io"
+            mavenCentral()
+            jcenter()
+        }
+
+        google()
+
+        // If you're using a version of Gradle lower than 4.1, you must
+        // instead use:
+        //
+        // maven {
+        //     url 'https://maven.google.com'
+        // }
+    }
+}
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -50,6 +69,9 @@ dependencies {
     //load circle
     implementation 'me.relex:circleindicator:2.1.4'
     implementation 'me.relex:circleindicator:2.1.4@aar'
+    //maven
 
+//range - usando
+    implementation 'com.github.Jay-Goo:RangeSeekBar:3.0.0'
 
 }
