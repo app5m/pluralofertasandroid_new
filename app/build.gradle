@@ -47,5 +47,9 @@ dependencies {
 
     implementation 'me.relex:circleindicator:2.1.4'
     implementation 'me.relex:circleindicator:2.1.4@aar'
+    //load circle
+    implementation 'me.relex:circleindicator:2.1.4'
+    implementation 'me.relex:circleindicator:2.1.4@aar'
+
 
 }
