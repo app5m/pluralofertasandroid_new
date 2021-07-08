@@ -9,7 +9,7 @@
         tools:context=".fragment.offer.HomeFragment"
         >
 
-    <!--<FrameLayout
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -17,9 +17,9 @@
         <include layout="@layout/home_body"/>
 
         <include
-                android:id="@+id/layoutHomeSemInternet"
-                layout="@layout/cell_home_sem_internet"
-                android:visibility="gone" />
+            android:id="@+id/layoutHomeSemInternet"
+            layout="@layout/cell_home_sem_internet"
+            android:visibility="gone" />
 
     </FrameLayout>
 
@@ -39,6 +39,6 @@
     <include
             android:visibility="gone"
             android:id="@+id/loadHome"
-            layout="@layout/load" />-->
+            layout="@layout/loading" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,41 +1,63 @@
 package com.example.pluralofertasandroid2.activity
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
+
 import android.graphics.Color
-import android.graphics.Rect
-import android.net.Uri
-import android.os.Build
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import android.view.MenuItem
 import android.view.View
-import android.view.ViewTreeObserver
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ShareCompat
+
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.replace
-import androidx.navigation.*
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
+
 import com.example.pluralofertasandroid2.CustomTitleFragment
 
-import com.google.android.material.bottomnavigation.BottomNavigationView
-
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.fragment.offer.HomeFragment
+import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.app_bar_home.*
+import kotlinx.android.synthetic.main.app_bar_home.toolbar
 
-class MainActivity : AppCompatActivity()
+class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        //toolbar
+        setSupportActionBar(toolbar)
+        MyUsefulKotlin().startFragment(HomeFragment(), supportFragmentManager)
+        MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
+
+        toolbar.visibility = View.GONE
+
+    }
+    private var toolbarTint: CustomTitleFragment.ToolbarTint = CustomTitleFragment.ToolbarTint.WHITE
+
+    override fun setToolbarTitle(title: String) {
+        toolbarTitle.text = title
+    }
+
+    override fun setToolbarTint(style: CustomTitleFragment.ToolbarTint) {
+
+        toolbarTint = style
+        toolbar.isVisible = style != CustomTitleFragment.ToolbarTint.NONE
+
+        val purple = ContextCompat.getColor(this, R.color.darkish_purple)
+
+        when (style) {
+            CustomTitleFragment.ToolbarTint.PURPLE -> {
+                toolbar.setBackgroundColor(purple)
+                toolbarTitle.setTextColor(Color.WHITE)
+            }
+            CustomTitleFragment.ToolbarTint.WHITE -> {
+                toolbar.setBackgroundColor(Color.WHITE)
+                toolbarTitle.setTextColor(purple)
+            }
+        }
+    }
+
+}
 
 
 

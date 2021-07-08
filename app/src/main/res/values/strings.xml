@@ -79,4 +79,7 @@
         <item>500 quilômetro</item>
     </string-array>
 
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+
+
 </resources>

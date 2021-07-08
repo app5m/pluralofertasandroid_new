@@ -74,4 +74,8 @@ dependencies {
 //range - usando
     implementation 'com.github.Jay-Goo:RangeSeekBar:3.0.0'
 
+
+    //anim
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
 }

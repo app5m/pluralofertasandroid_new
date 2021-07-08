@@ -12,7 +12,7 @@
 
     android:paddingBottom="10dp">
 
-    <!--<TextView
+    <TextView
         android:id="@+id/btnSwitchCity"
         style="@style/mudarCidade"
         android:layout_width="wrap_content"
@@ -83,6 +83,6 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/btnSwitchCity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnSwitchCity" />-->
+        app:layout_constraintTop_toTopOf="@id/btnSwitchCity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

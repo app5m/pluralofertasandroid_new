@@ -14,12 +14,15 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.example.pluralofertasandroid2.R
 import java.io.File
 import java.io.FileOutputStream
@@ -27,7 +30,9 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MyUseFulKotlin {
+
+class MyUsefulKotlin {
+
 
     private var currentPhotoPath: String? = null
 
@@ -55,7 +60,7 @@ class MyUseFulKotlin {
 
     fun openLoading(context: Context, alertDialog: AlertDialog) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = inflater.inflate(R.layout.load, null)
+        val view = inflater.inflate(R.layout.loading, null)
         alertDialog.setView(view)
         alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         alertDialog.setCanceledOnTouchOutside(false)
@@ -71,12 +76,11 @@ class MyUseFulKotlin {
     fun setActionBar(activity: Activity, bar: ActionBar, title: String, type: Int){
 
         val view = activity.layoutInflater.inflate(R.layout.toolbar, null)
-        val params = ActionBar.LayoutParams(
-            ActionBar.LayoutParams.WRAP_CONTENT,
+        val params = ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,
             ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER)
 
-//        val textTitle = view.findViewById<TextView>(R.id.textTitle)
-//        textTitle.text = title
+        val textTitle = view.findViewById<TextView>(R.id.textTitle)
+        textTitle.text = title
         bar.setCustomView(view, params)
 
 //        if (type == 0) {
@@ -89,11 +93,12 @@ class MyUseFulKotlin {
 
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+   @SuppressLint("UseCompatLoadingForDrawables")
     fun setActionBar(activity: Activity, bar: ActionBar, toolbarTitle: String){
 
-        /*bar.setHomeAsUpIndicator(activity.resources.getDrawable(R.drawable.ic_arrow_back,
-            null))*/
+        bar.setHomeAsUpIndicator(activity.resources.getDrawable(
+            R.drawable.ic_arrow_back,
+            null))
 
         bar.title = toolbarTitle
         bar.setDisplayShowTitleEnabled(true)
@@ -226,7 +231,8 @@ class MyUseFulKotlin {
                 "jpg"
     }
 
-    /*fun shake(view: View) {
+
+    fun shake(view: View) {
         YoYo.with(Techniques.Shake).duration(400).repeat(1).playOn(view);
         view.requestFocus();
     }
@@ -234,5 +240,6 @@ class MyUseFulKotlin {
     fun pulse(view: View) {
         YoYo.with(Techniques.Pulse).duration(450).playOn(view);
     }
-*/
+
+
 }

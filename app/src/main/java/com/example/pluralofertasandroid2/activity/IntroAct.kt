@@ -50,10 +50,10 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
     private fun finishIntro() {
         //PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("finishedIntro", true).apply()
-        //val intent = Intent(this, MainActivity::class.java)
-        //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         //SharedPreferencesManager.putBoolean(PREFS_ONBOARDING,true)
-        //startActivity(intent)
+        startActivity(intent)
     }
 
     override fun onPageScrollStateChanged(state: Int) {
