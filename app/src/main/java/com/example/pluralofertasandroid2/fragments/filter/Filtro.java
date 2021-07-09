@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragment.filter;
+package com.example.pluralofertasandroid2.fragments.filter;
 
 import android.app.Activity;
 

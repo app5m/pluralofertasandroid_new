@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.filter.Filtro"
+        tools:context=".fragments.filter.Filtro"
         style="@style/corSolidaDaTelaHome"
 >
 
@@ -126,29 +126,32 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btnFiltrarGrandeFragmentFiltro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/codeSpinner"
         tools:ignore="UnknownId">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemPesquisaFiltroRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline77"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rangeBarFiltro"
+            app:layout_constraintVertical_bias="0.5"
+            tools:listitem="@layout/fragment_cell_item_pesquisa"
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/itemPesquisaFiltroRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            >
 
-                tools:listitem="@layout/fragment_cell_item_pesquisa">
-
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
     </ScrollView>
 
     <Button

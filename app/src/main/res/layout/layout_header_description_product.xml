@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.appbar.CollapsingToolbarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="56dp"
+    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imageScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/app_bar"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerImagemDetalheProduto"
+            android:layout_width="0dp"
+            android:layout_height="255dp"
+            android:layout_marginTop="56dp"
+            app:layout_collapseMode="parallax"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/offTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="205dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/caminho3612"
+            android:fontFamily="@font/uni_neue_heavy"
+            android:lineSpacingExtra="-5dp"
+            android:paddingTop="3dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/viewPagerImagemDetalheProduto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPagerImagemDetalheProduto" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/circleIndicatorDetalhesProduto"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:paddingTop="10dp"
+            app:ci_drawable="@drawable/elipse8"
+            app:ci_drawable_unselected="@drawable/elipse10"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPagerImagemDetalheProduto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewPagerImagemDetalheProduto"
+            app:layout_constraintVertical_bias="0.95">
+
+        </me.relex.circleindicator.CircleIndicator>
+
+
+        <TextView
+            android:id="@+id/localTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:drawableStart="@drawable/placeholder"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/uni_neue_regular"
+            android:lineSpacingExtra="10dp"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewPagerImagemDetalheProduto"
+            app:layout_goneMarginTop="10dp" />
+
+        <TextView
+            android:id="@+id/descricaoProdutoDetalhesTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/uni_neue_heavy"
+            android:letterSpacing="-0.01"
+            android:lineHeight="20dp"
+            android:lineSpacingExtra="0dp"
+            android:maxLines="3"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/localTv" />
+
+        <TextView
+            android:id="@+id/nomeEstabelecimentoProdutoDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/uni_neue_regular"
+            android:lineSpacingExtra="10dp"
+            android:maxLines="1"
+            android:paddingTop="5dp"
+            android:textAlignment="textStart"
+            android:textColor="#660066"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descricaoProdutoDetalhesTv" />
+
+        <TextView
+            android:id="@+id/disponiveisProdutoDetalhes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/uni_neue_bold"
+            android:lineSpacingExtra="10dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="true"
+            android:textColor="#009933"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nomeEstabelecimentoProdutoDetalhes" />
+
+        <TextView
+            android:id="@+id/vendidosProdutoDetalhes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/uni_neue_bold"
+            android:lineSpacingExtra="10dp"
+            android:paddingStart="6dp"
+            android:textAllCaps="true"
+            android:textColor="#ff5b5c"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/disponiveisProdutoDetalhes"
+            app:layout_constraintTop_toBottomOf="@id/nomeEstabelecimentoProdutoDetalhes"
+
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.67" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.43" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.appbar.CollapsingToolbarLayout>
+        
+        

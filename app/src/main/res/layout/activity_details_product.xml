@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#efefef"
+    android:layout_height="match_parent"
+    tools:context=".activity.offer_details.DetailsProductAct"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="#efefef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/layout_header_description_product"/>
+
+        <com.google.android.material.tabs.TabLayout
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="#999999"
+            app:tabSelectedTextColor="#000000"
+            app:tabGravity="fill"
+            android:textSize="12dp"
+            app:tabMode="fixed"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabLayoutDetalhesProduto"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:paddingBottom="50dp"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/viewPagerDetalhesProduto"
+            android:layout_marginBottom="16dp">
+
+
+        </androidx.viewpager.widget.ViewPager>
+
+    </FrameLayout>
+
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:id="@+id/btnComprarDetalhesProduto"
+        android:text="COMPRAR"
+        android:textSize="15.8dp"
+        android:fontFamily="@font/uni_neue_bold"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="-3.8sp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/retangulo132"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/load"
+        layout="@layout/loading" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

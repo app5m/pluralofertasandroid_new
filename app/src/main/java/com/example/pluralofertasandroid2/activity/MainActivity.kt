@@ -2,27 +2,22 @@ package com.example.pluralofertasandroid2.activity
 
 
 import android.graphics.Color
-
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-
 import com.example.pluralofertasandroid2.CustomTitleFragment
-
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragment.offer.HomeFragment
+import com.example.pluralofertasandroid2.fragments.HomeFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
-
-import kotlinx.android.synthetic.main.app_bar_home.*
-import kotlinx.android.synthetic.main.app_bar_home.toolbar
+import kotlinx.android.synthetic.main.app_bar.*
 
 class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         //toolbar
         setSupportActionBar(toolbar)

@@ -78,4 +78,13 @@ dependencies {
     //anim
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
+    //Dependencias para integracao com o banco
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    //ve se essas duas de baixo da problema depois
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+
 }

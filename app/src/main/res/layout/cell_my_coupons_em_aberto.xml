@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EFEFEF"
+    android:paddingStart="24dp"
+    android:paddingTop="23dp"
+    android:paddingEnd="35dp"
+
+    >
+
+    <ImageView
+        android:id="@+id/imagemCellMyCouponsEmAbertoImageView"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cupom_comprado_img"
+        app:layout_constraintBottom_toTopOf="@+id/linhaCinzaCellMyCouponsEmAbertoLinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tituloCellMyCouponsEmAbertoTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="103dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/uni_neue_heavy"
+        android:lineHeight="12dp"
+        android:lineSpacingExtra="10dp"
+        android:maxLines="3"
+        android:minLines="3"
+        android:text="Nome do Produto em duas linhas e também e três linhas"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/validadeCellMyCouponsEmAbertoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/uni_neue_regular"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="14sp"
+        android:text="Válido até 31/03/2019."
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@id/precoCellMyCouponsEmAbertoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintTop_toBottomOf="@+id/tituloCellMyCouponsEmAbertoTextView" />
+
+    <TextView
+        android:id="@+id/precoCellMyCouponsEmAbertoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/uni_neue_bold"
+        android:gravity="end"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="12dp"
+        android:text="100,00"
+        android:textAlignment="textEnd"
+        android:textColor="#009933"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/rsCellMyCouponsEmAbertoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/rsCellMyCouponsEmAbertoTextView"
+        app:layout_constraintTop_toTopOf="@id/rsCellMyCouponsEmAbertoTextView"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/rsCellMyCouponsEmAbertoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:fontFamily="@font/uni_neue_regular"
+        android:gravity="end"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="12dp"
+        android:text="R$"
+        android:textAlignment="textEnd"
+        android:textColor="#009933"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toEndOf="@id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintTop_toTopOf="@id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintVertical_bias="0.90" />
+
+    <TextView
+        android:id="@+id/btnVisualizarCellMyCouponsEmAbertoTextView"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/visualizar_btn"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imagemCellMyCouponsEmAbertoImageView" />
+
+    <TextView
+        android:id="@+id/waitPayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/uni_neue_regular"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/waitPayment"
+        android:textAlignment="center"
+        android:textColor="#ff5b5c"
+        android:textSize="10sp"
+        android:visibility="visible"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="@id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintTop_toTopOf="@id/imagemCellMyCouponsEmAbertoImageView" />
+
+    <LinearLayout
+        android:id="@+id/linhaCinzaCellMyCouponsEmAbertoLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="23dp"
+        android:background="#999999"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagemCellMyCouponsEmAbertoImageView"
+        app:layout_constraintVertical_bias="0.037">
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

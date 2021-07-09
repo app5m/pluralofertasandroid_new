@@ -105,7 +105,8 @@ class MyUsefulKotlin {
         bar.setDisplayShowCustomEnabled(true)
         bar.setDisplayHomeAsUpEnabled(true)
 
-    }
+
+   }
 
     fun createLink(targetTextView: TextView, completeString: String,
                    partToClick: String, clickableAction: ClickableSpan?): TextView? {
