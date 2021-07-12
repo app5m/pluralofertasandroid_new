@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.HomeFragment
+import com.example.pluralofertasandroid2.fragments.offer.HomeFragmentOffer
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.tool_bar.*
 
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
 
         //toolbar
         setSupportActionBar(toolbar)
-        MyUsefulKotlin().startFragment(HomeFragment(), supportFragmentManager)
+        MyUsefulKotlin().startFragment(HomeFragmentOffer(), supportFragmentManager)
         MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
 
         toolbar.visibility = View.GONE

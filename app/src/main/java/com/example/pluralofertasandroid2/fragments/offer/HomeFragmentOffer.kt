@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments
+package com.example.pluralofertasandroid2.fragments.offer
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.adapter.PhotoAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsAdapter
-import com.example.pluralofertasandroid2.activity.offer_details.ProductDetails_Act
+import com.example.pluralofertasandroid2.activity.offerDetails.ProductDetails_Act
 import com.example.pluralofertasandroid2.helper.CircleRecyclerViewDecoration
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Photo
@@ -18,7 +18,7 @@ import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
 
-class HomeFragment : Fragment(), RecyclerItemClickListener {
+class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
     var recyclerProduct: RecyclerView? = null
     private var products  = ArrayList<Product>()
     private lateinit var viewPhotoManager: RecyclerView.LayoutManager

@@ -26,15 +26,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.78" />
+            app:layout_constraintGuide_percent="0.87" />
 
         <RadioButton
             android:id="@+id/radioButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Fritas pequenas"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Mega Burguer 16cm"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline30"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,17 +43,21 @@
             android:id="@+id/textView6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingStart="4dp"
             android:text="5"
+            android:textColor="#4CAF50"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline27"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="R$"
+            android:textColor="#4CAF50"
             app:layout_constraintBottom_toBottomOf="@+id/textView6"
             app:layout_constraintEnd_toStartOf="@+id/guideline27" />
 
@@ -60,10 +65,12 @@
             android:id="@+id/textView8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="- Frete grátis; - Garantia de satisfação de 90 dias; -Garantia contra defeitos de fabricação de 12 meses; - Parcelamento em até 12x sem juros; - 5% do valor revertido para a APAE da sua cidade;"
+            android:lineSpacingExtra="4sp"
+            android:text="-16cm de pão; Tomate; Queijo; 2-Carnes; Alface; Molho"
+            android:textAlignment="viewStart"
             app:layout_constraintEnd_toStartOf="@+id/guideline30"
             app:layout_constraintStart_toStartOf="@+id/guideline29"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline29"
@@ -78,6 +85,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.7319885" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/applyCupon"
+            android:focusableInTouchMode="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline27"
+            app:layout_constraintStart_toStartOf="@+id/guideline29"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/miguito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="false"
+                android:gravity="center_horizontal"
+                android:hint="Aplicar Cupom"
+                android:textAlignment="center" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:background="#efefef"
     android:layout_height="match_parent"
-    tools:context=".activity.offer_details.ProductDetails_Act"
+    tools:context=".activity.offerDetails.ProductDetails_Act"
     >
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,33 +18,85 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:paddingBottom="50dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include
 
-            android:id="@+id/fragButtom_Details"
-            layout="@layout/fragment_details_product_bottom" />
+        <Button
+            android:id="@+id/btnComprarDetalhesProduto"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/retangulo132"
+            android:fontFamily="@font/uni_neue_bold"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="-3.8sp"
+            android:text="COMPRAR"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="15.8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline32"
+            app:layout_constraintStart_toStartOf="@+id/guideline31"
+            app:layout_constraintTop_toTopOf="@+id/button3" />
 
-    </FrameLayout>
 
+        <LinearLayout
+            android:id="@+id/button3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="650dp"
+            android:background="@drawable/seletor_item_pesquisa_pressionado"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:text="Button"
+            app:layout_constraintEnd_toStartOf="@+id/btnComprarDetalhesProduto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:id="@+id/btnComprarDetalhesProduto"
-        android:text="COMPRAR"
-        android:textSize="15.8dp"
-        android:fontFamily="@font/uni_neue_bold"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:letterSpacing="0.02"
-        android:lineSpacingExtra="-3.8sp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:background="@drawable/retangulo132"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/buttonAddCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shopping_cart"
+                android:src="@drawable/shopping_cart"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.28" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include
         android:visibility="gone"

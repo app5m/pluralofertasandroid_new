@@ -31,7 +31,11 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.offer_details.ProductDetails_Act"
+            android:name=".activity.offerDetails.ProductDetails_Act"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.payment.CartCheckoutActivity"
             android:screenOrientation="portrait">
         </activity>
 
