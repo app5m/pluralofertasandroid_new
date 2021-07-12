@@ -75,11 +75,11 @@ class MyUsefulKotlin {
     @SuppressLint("UseCompatLoadingForDrawables")
     fun setActionBar(activity: Activity, bar: ActionBar, title: String, type: Int){
 
-        val view = activity.layoutInflater.inflate(R.layout.toolbar, null)
+        val view = activity.layoutInflater.inflate(R.layout.tool_bar, null)
         val params = ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,
             ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER)
 
-        val textTitle = view.findViewById<TextView>(R.id.textTitle)
+        val textTitle = view.findViewById<TextView>(R.id.toolbarTitle)
         textTitle.text = title
         bar.setCustomView(view, params)
 

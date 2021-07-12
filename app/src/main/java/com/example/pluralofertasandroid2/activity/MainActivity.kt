@@ -11,7 +11,7 @@ import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.fragments.HomeFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
-import kotlinx.android.synthetic.main.app_bar.*
+import kotlinx.android.synthetic.main.tool_bar.*
 
 class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
     override fun onCreate(savedInstanceState: Bundle?) {

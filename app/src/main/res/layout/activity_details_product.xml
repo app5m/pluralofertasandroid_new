@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:background="#efefef"
     android:layout_height="match_parent"
-    tools:context=".activity.offer_details.DetailsProductAct"
+    tools:context=".activity.offer_details.ProductDetails_Act"
     >
 
     <com.google.android.material.appbar.AppBarLayout
@@ -16,18 +16,6 @@
 
         <include layout="@layout/layout_header_description_product"/>
 
-        <com.google.android.material.tabs.TabLayout
-            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabTextColor="#999999"
-            app:tabSelectedTextColor="#000000"
-            app:tabGravity="fill"
-            android:textSize="12dp"
-            app:tabMode="fixed"
-            android:textAllCaps="false"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabLayoutDetalhesProduto"/>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
@@ -35,16 +23,10 @@
         android:layout_width="match_parent"
         android:paddingBottom="50dp"
         android:layout_height="match_parent">
+        <include
 
-        <androidx.viewpager.widget.ViewPager
-            android:background="@android:color/white"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/viewPagerDetalhesProduto"
-            android:layout_marginBottom="16dp">
-
-
-        </androidx.viewpager.widget.ViewPager>
+            android:id="@+id/fragButtom_Details"
+            layout="@layout/fragment_details_product_bottom" />
 
     </FrameLayout>
 

@@ -14,17 +14,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include layout="@layout/app_bar"/>
+        <include
+            android:id="@+id/include2"
+            layout="@layout/tool_bar" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerImagemDetalheProduto"
-            android:layout_width="0dp"
+        <LinearLayout
+
+            android:id="@+id/ll_imageProductdetails_area"
+            android:layout_width="match_parent"
             android:layout_height="255dp"
-            android:layout_marginTop="56dp"
-            app:layout_collapseMode="parallax"
+            android:layout_marginBottom="5dp"
+            android:adjustViewBounds="true"
+            android:background="@color/black"
+
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/localTv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/include2">
+
+            <ImageView
+
+                android:id="@+id/iV_imageProductDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="255dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/close_up_burger_with_black_background"
+                android:scaleType="fitXY" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/offTv"
@@ -35,15 +53,18 @@
             android:background="@drawable/caminho3612"
             android:fontFamily="@font/uni_neue_heavy"
             android:lineSpacingExtra="-5dp"
+            android:maxWidth="16dp"
+            android:maxLines="2"
             android:paddingTop="3dp"
+            android:text="50 OFF"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="@id/viewPagerImagemDetalheProduto"
+            app:layout_constraintBottom_toBottomOf="@id/ll_imageProductdetails_area"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.90"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/viewPagerImagemDetalheProduto" />
+            app:layout_constraintTop_toBottomOf="@id/ll_imageProductdetails_area" />
 
         <me.relex.circleindicator.CircleIndicator
             android:id="@+id/circleIndicatorDetalhesProduto"
@@ -52,11 +73,11 @@
             android:paddingTop="10dp"
             app:ci_drawable="@drawable/elipse8"
             app:ci_drawable_unselected="@drawable/elipse10"
-            app:layout_constraintBottom_toBottomOf="@+id/viewPagerImagemDetalheProduto"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_imageProductdetails_area"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/viewPagerImagemDetalheProduto"
+            app:layout_constraintTop_toTopOf="@+id/ll_imageProductdetails_area"
             app:layout_constraintVertical_bias="0.95">
 
         </me.relex.circleindicator.CircleIndicator>
@@ -73,13 +94,14 @@
             android:drawablePadding="6dp"
             android:fontFamily="@font/uni_neue_regular"
             android:lineSpacingExtra="10dp"
+            android:text="Porto Alegre"
             android:textAlignment="textStart"
             android:textColor="#000000"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/viewPagerImagemDetalheProduto"
+            app:layout_constraintTop_toBottomOf="@+id/ll_imageProductdetails_area"
             app:layout_goneMarginTop="10dp" />
 
         <TextView
@@ -95,6 +117,7 @@
             android:lineHeight="20dp"
             android:lineSpacingExtra="0dp"
             android:maxLines="3"
+            android:text="Mega Burger"
             android:textAlignment="textStart"
             android:textColor="#000000"
             android:textSize="20dp"
@@ -114,6 +137,7 @@
             android:lineSpacingExtra="10dp"
             android:maxLines="1"
             android:paddingTop="5dp"
+            android:text="Plural Ofertas"
             android:textAlignment="textStart"
             android:textColor="#660066"
             android:textSize="14dp"
@@ -129,6 +153,7 @@
             android:layout_marginStart="24dp"
             android:fontFamily="@font/uni_neue_bold"
             android:lineSpacingExtra="10dp"
+            android:text="6 Disponivies"
             android:textAlignment="textStart"
             android:textAllCaps="true"
             android:textColor="#009933"
@@ -145,15 +170,15 @@
             android:fontFamily="@font/uni_neue_bold"
             android:lineSpacingExtra="10dp"
             android:paddingStart="6dp"
+            android:text="5 Vendidos"
             android:textAllCaps="true"
             android:textColor="#ff5b5c"
             android:textSize="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@id/disponiveisProdutoDetalhes"
-            app:layout_constraintTop_toBottomOf="@id/nomeEstabelecimentoProdutoDetalhes"
 
-            />
+            app:layout_constraintTop_toBottomOf="@id/nomeEstabelecimentoProdutoDetalhes" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline20"
