@@ -7,7 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.activity.payment.CartCheckoutActivity
+import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
 import com.example.pluralofertasandroid2.fragments.productDetailsBottom.ProductDetailsBottomFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener

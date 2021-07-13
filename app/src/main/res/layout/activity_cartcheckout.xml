@@ -5,51 +5,21 @@
     style="@style/corSolidaDaTelaHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.payment.CartCheckoutActivity">
+   >
 
 
-    <Button
-        android:id="@+id/btnPagarCarrinhoFinalizarCompraButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/btn_verde"
-        android:fontFamily="@font/uni_neue_bold"
-        android:text="PAGAR R$ 00,00"
-        android:textColor="#ffff"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintStart_toEndOf="@id/guideline63" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline60"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline63"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline70"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.06" />
-
-    <View
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

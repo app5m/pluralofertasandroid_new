@@ -10,11 +10,10 @@
     />
     <!-- favoritesFragment -->
     <item
-            android:id="@+id/favoritesFragment"
-            android:icon="@drawable/heart"
-            android:title="Favoritos"
-            app:showAsAction="always"
-    />
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/ic_cart"
+        android:title="Favoritos"
+        app:showAsAction="always" />
     <item
         android:id="@+id/myCouponsFragment"
         android:icon="@drawable/price_tag"

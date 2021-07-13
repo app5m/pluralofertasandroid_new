@@ -35,7 +35,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.payment.CartCheckoutActivity"
+            android:name=".activity.cartCheckout.CartCheckoutActivity"
             android:screenOrientation="portrait">
         </activity>
 
