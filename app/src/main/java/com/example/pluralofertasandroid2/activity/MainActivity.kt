@@ -1,6 +1,7 @@
 package com.example.pluralofertasandroid2.activity
 
 
+import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -13,7 +14,9 @@ import androidx.core.view.isVisible
 import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.fragments.cart.CartFragment
+import com.example.pluralofertasandroid2.fragments.login.LoginContentFragment
 import com.example.pluralofertasandroid2.fragments.offer.HomeFragmentOffer
+import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
@@ -31,20 +34,22 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
         setContentView(R.layout.activity_main)
 
         preferences = Preferences(this)
-        /* if (!Preferences(this).getLogin()) {
-                startActivity(Intent(this, AuthAct::class.java))
+         if (!Preferences(this).getLogin()) {
+             MyUsefulKotlin().startFragment(LoginContentFragment(), this.supportFragmentManager)
+
 
             } else {
-                startActivity(Intent(this, AdvertiseAct::class.java))
+             MyUsefulKotlin().startFragment(HomeFragmentOffer(), this.supportFragmentManager)
 
-        }*/
+             //toolbar
+             MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
+             setSupportActionBar(toolbar)
+             toolbar.visibility = View.GONE
 
-        //toolbar
-        setSupportActionBar(toolbar)
-        MyUsefulKotlin().startFragment(HomeFragmentOffer(), supportFragmentManager)
-        MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
+         }
 
-        toolbar.visibility = View.GONE
+
+
 
         //Configura o nabBottom para receber o badge
         val bottomNavigationMenuView = bottom_navigation.getChildAt(0) as BottomNavigationMenuView

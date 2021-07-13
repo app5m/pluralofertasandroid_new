@@ -8,7 +8,7 @@
     >
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayoutDetalhesProduto"
+        android:id="@+id/tabLayoutDetalhesDoProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
@@ -53,6 +53,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayoutDetalhesProduto"/>
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutDetalhesDoProduto"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

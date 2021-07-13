@@ -35,7 +35,7 @@ class ProductDetailsBottomFragment : Fragment(),RecyclerItemClickListener{
 
         mPager.setPageTransformer(ZoomOutPageTransformer())
 
-        TabLayoutMediator(tabLayoutDetalhesProduto, mPager) { tab: TabLayout.Tab, position: Int ->
+        TabLayoutMediator(tabLayoutDetalhesDoProduto, mPager) { tab: TabLayout.Tab, position: Int ->
             when (position) {
                 0 -> tab.text = "Opções"
                 1 -> tab.text = "Destaques"
