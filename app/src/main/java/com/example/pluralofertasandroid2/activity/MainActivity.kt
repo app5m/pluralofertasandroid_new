@@ -1,22 +1,19 @@
 package com.example.pluralofertasandroid2.activity
 
 
-import android.app.Activity
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.activity.login.SigininContentActivity
 import com.example.pluralofertasandroid2.fragments.cart.CartFragment
-import com.example.pluralofertasandroid2.fragments.login.LoginContentFragment
 import com.example.pluralofertasandroid2.fragments.offer.HomeFragmentOffer
-import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
@@ -33,22 +30,25 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        preferences = Preferences(this)
+       preferences = Preferences(this)
          if (!Preferences(this).getLogin()) {
-             MyUsefulKotlin().startFragment(LoginContentFragment(), this.supportFragmentManager)
+             val intent = Intent(this, SigininContentActivity::class.java)
+             startActivity(intent)
 
 
             } else {
-             MyUsefulKotlin().startFragment(HomeFragmentOffer(), this.supportFragmentManager)
 
-             //toolbar
-             MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
-             setSupportActionBar(toolbar)
-             toolbar.visibility = View.GONE
+             Toast.makeText(this, "Logado", Toast.LENGTH_SHORT).show()
+
 
          }
 
+        //toolbar
+        setSupportActionBar(toolbar)
+        MyUsefulKotlin().startFragment(HomeFragmentOffer(), this.supportFragmentManager)
+        MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
 
+        toolbar.visibility = View.GONE
 
 
         //Configura o nabBottom para receber o badge

@@ -39,9 +39,9 @@
         app:layout_constraintTop_toTopOf="@+id/guideline23"
         app:tabGravity="fill"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="#000000"
-        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-        app:tabTextColor="#999999">
+        app:tabIndicatorColor="#009932"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabTextColor="#C1C1C1">
 
 
         <com.google.android.material.tabs.TabItem
@@ -63,7 +63,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutLogin" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline23"
         android:layout_width="wrap_content"

@@ -38,6 +38,10 @@
             android:name=".activity.cartCheckout.CartCheckoutActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".activity.login.SigininContentActivity"
+            android:screenOrientation="portrait">
+        </activity>
 
     </application>
 </manifest>

@@ -7,19 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.*
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.productDetailsBottom.*
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.fragment_details_product_bottom.*
 import kotlinx.android.synthetic.main.fragment_login_content.*
 import kotlinx.android.synthetic.main.fragment_login_content.view.*
 
-class LoginContentFragment : CustomTitleFragment(), RecyclerItemClickListener {
-    override var title: String = ""
-    override var toolbarTint: ToolbarTint = ToolbarTint.NONE
+class SiginContentFragment : Fragment(),RecyclerItemClickListener {
+
     private lateinit var viewFragment: View
 
     override fun onCreateView(
@@ -62,7 +58,7 @@ class LoginContentFragment : CustomTitleFragment(), RecyclerItemClickListener {
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 ->  LoginFragment()
-                1 ->  RegisterFragment()
+                1 ->  SiginUpFragment()
                 else -> LoginFragment()
             }
         }

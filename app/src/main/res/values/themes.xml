@@ -154,5 +154,10 @@
                 <item name="android:textSize">15.8sp</item>
                 <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
             </style>
+    <style name="LoginTabs">
+        <item name="android:textSize">104sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
-        </resources>
+</resources>
