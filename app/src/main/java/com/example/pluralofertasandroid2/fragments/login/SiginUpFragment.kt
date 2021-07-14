@@ -1,17 +1,19 @@
 package com.example.pluralofertasandroid2.fragments.login
 
-import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.fragments.dialog.DialogRegisterAdress
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.fragment_siginup.*
 
 class SiginUpFragment : Fragment(), RecyclerItemClickListener {
+    private  val TAG = "SiginUpFragment"
 
 
     override fun onCreateView(
@@ -28,6 +30,13 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener {
 
         btnCriarConta.setOnClickListener {
             registerCheck()
+        }
+        adressRegister.setOnClickListener {
+            Log.d(TAG, "onClick: opening dialog")
+            val dialog = DialogRegisterAdress()
+            dialog.setTargetFragment(this, 1)
+            fragmentManager?.let { it1 -> dialog.show(it1,"DialogRegisterAdress") }
+
         }
     }
 

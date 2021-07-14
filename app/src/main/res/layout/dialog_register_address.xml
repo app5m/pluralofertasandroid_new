@@ -1,86 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="0dp"
-    app:cardCornerRadius="12dp"
-    android:layout_margin="8dp"
-    android:background="@android:color/transparent"
-    android:padding="12dp">
-<!--
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_margin="24dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/btnBackLoginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_back_button_purple"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/backwardarrowbranca"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Seu Endereço"
+                android:textAlignment="center"
+                android:textColor="@color/gray800"
+                android:textSize="@dimen/text_size6"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_weight="1">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="16dp">
-
-                <LinearLayout
-                    android:id="@+id/btnVoltarLoginButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_back_button_purple"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <Button
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:background="@drawable/backwardarrowbranca"
-                        android:clickable="false" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/title_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:paddingEnd="8dp"
-                    android:text="Seu Endereço"
-                    android:textAlignment="center"
-                    android:textColor="@color/gray800"
-                    android:textSize="@dimen/text_size6"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="1">
-
-                <com.santalu.maskedittext.MaskEditText
+            <!-- <com.santalu.maskedittext.MaskEditText
                     android:id="@+id/cep_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -89,140 +77,137 @@
                     android:inputType="number"
                     android:textColor="@color/gray800"
                     android:textSize="@dimen/text_size5"
-                    app:met_mask="#####-###" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    app:met_mask="#####-###" />-->
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="12dp"
-                    android:layout_weight="1">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/city_edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/background_cadastro_ll"
-                        android:hint="@string/city"
-                        android:textSize="@dimen/text_size5" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/uf_edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/background_cadastro_ll"
-                        android:hint="UF"
-                        android:textSize="@dimen/text_size5" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nbh_edit"
+                    android:id="@+id/city_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_cadastro_ll"
-                    android:hint="@string/neighborhood"
-                    android:inputType="textPersonName"
+                    android:hint="@string/city"
                     android:textSize="@dimen/text_size5" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/address_edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_size2"
-                        android:background="@drawable/background_cadastro_ll"
-                        android:hint="@string/address"
-                        android:inputType="textPersonName"
-                        android:textSize="@dimen/text_size5" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:visibility="visible">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/num_edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/background_cadastro_ll"
-                        android:hint="@string/number"
-                        android:inputType="number" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="8dp">
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/comp_edit"
+                    android:id="@+id/uf_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_cadastro_ll"
-                    android:hint="@string/complemento"
-                    android:inputType="textPersonName"
+                    android:hint="UF"
                     android:textSize="@dimen/text_size5" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/salvar_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/btn_cadastrar_login"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:gravity="center_horizontal|center_vertical"
-                android:paddingBottom="5dp"
-                android:text="Salvar"
-                android:textAlignment="gravity"
-                android:textColor="@color/white"
-                android:textIsSelectable="false"
-                android:textSize="@dimen/text_size5"
-                android:textStyle="bold" />
 
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
--->
 
-</androidx.cardview.widget.CardView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nbh_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_cadastro_ll"
+                android:hint="@string/neighborhood"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/text_size5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_size2"
+                    android:background="@drawable/background_cadastro_ll"
+                    android:hint="@string/address"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/text_size5" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/num_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_cadastro_ll"
+                    android:hint="@string/number"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/comp_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_cadastro_ll"
+                android:hint="@string/complemento"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/text_size5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/main_button_green"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="Salvar"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/guideline24"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

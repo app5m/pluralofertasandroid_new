@@ -22,19 +22,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="24dp"
+                android:layout_margin="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:background="@drawable/background_login_cadastro_ll"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="25dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
                         android:gravity="center_horizontal"
                         android:lineSpacingExtra="3sp"
                         android:text="CRIAR USANDO A REDE SOCIAL"
@@ -45,7 +48,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="32dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
 
                         <LinearLayout
                             android:id="@+id/btnFacebookLogin"
@@ -73,13 +78,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="12dp"
-                        android:layout_marginBottom="32dp"
+                        android:layout_marginBottom="24dp"
                         android:background="#e1e2e3" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
+                        android:layout_marginBottom="24dp"
                         android:gravity="center_horizontal"
                         android:lineSpacingExtra="3sp"
                         android:text="OU PELO NOSSO APP"
@@ -142,8 +147,8 @@
                         android:background="@drawable/background_cadastro_ll"
                         android:drawableStart="@drawable/ic_local"
                         android:drawablePadding="14dp"
-                        android:editable="false"
                         android:ems="10"
+                        android:focusableInTouchMode="false"
                         android:hint="endereço"
                         android:inputType="phone" />
 
@@ -170,15 +175,32 @@
                         android:hint="confirma a senha"
                         android:inputType="textPassword" />
 
-                    <Button
-                        android:id="@+id/btnCriarConta"
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/btn_cadastrar_login"
-                        android:paddingBottom="5dp"
-                        android:text="criar conta"
-                        android:textColor="@android:color/white" />
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <Button
+                            android:id="@+id/btnCriarConta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/main_button_green"
+                            android:fontFamily="@font/uni_neue_bold"
+                            android:text="criar conta"
+                            android:textColor="#ffffff"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline24"
+                            app:layout_constraintHorizontal_bias="0.492"
+                            app:layout_constraintStart_toStartOf="@+id/guideline25"
+                            app:layout_constraintTop_toBottomOf="@+id/senhaEditTextLogin"
+                            app:layout_constraintVertical_bias="0.10" />
+                    </LinearLayout>
+
 
                     <TextView
                         android:layout_width="match_parent"

@@ -9,19 +9,22 @@
     android:orientation="vertical"
 
     >
+
     <ImageView
 
-        android:gravity="center"
-        android:src="@drawable/label"
+        android:id="@+id/onboardingImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/onboardingImg"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:src="@drawable/label"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.744"/>
+        app:layout_constraintVertical_bias="0.744" />
 
     <TextView
         android:gravity="center"
@@ -50,14 +53,19 @@
         app:layout_constraintVertical_bias="0"
         />
 
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.44"/>
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65"/>
+        app:layout_constraintGuide_percent="0.57" />
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:id="@+id/guideline9"
         android:orientation="horizontal"

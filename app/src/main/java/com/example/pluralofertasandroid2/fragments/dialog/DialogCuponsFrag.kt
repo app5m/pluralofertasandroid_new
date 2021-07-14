@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.productDetailsBottom
+package com.example.pluralofertasandroid2.fragments.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.dialog_cupon.*
 import kotlinx.android.synthetic.main.fragment_options_tab.*
 
 class DialogCuponsFrag: DialogFragment() {
-    private val TAG = "MyCustomDialog"
+    private val TAG = "DialogCuponsFrag"
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

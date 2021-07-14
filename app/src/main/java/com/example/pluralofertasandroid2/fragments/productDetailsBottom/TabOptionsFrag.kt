@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.fragments.dialog.DialogCuponsFrag
 import kotlinx.android.synthetic.main.fragment_options_tab.*
 
 
@@ -29,7 +30,7 @@ class TabOptionsFrag: Fragment() {
             Log.d(TAG, "onClick: opening dialog")
             val dialog = DialogCuponsFrag()
             dialog.setTargetFragment(this, 1)
-            fragmentManager?.let { it1 -> dialog.show(it1,"MyCustomDialog") }
+            fragmentManager?.let { it1 -> dialog.show(it1,"DialogCuponsFrag") }
         }
     }
 }
