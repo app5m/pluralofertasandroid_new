@@ -9,22 +9,22 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.activity.offerDetails.ProductDetailsActivity
-import com.example.pluralofertasandroid2.adapter.PhotoAdapter
+import com.example.pluralofertasandroid2.adapter.HighlightsAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.helper.CircleRecyclerViewDecoration
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Photo
+import com.example.pluralofertasandroid2.model.Highlights
 import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
 
 class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
     var recyclerProduct: RecyclerView? = null
-    private var products  = ArrayList<Product>()
+    private var productsList  = ArrayList<Product>()
     private lateinit var viewPhotoManager: RecyclerView.LayoutManager
     private lateinit var viewPhotoAdapter: RecyclerView.Adapter<*>
-    private val photoList = ArrayList<Photo>()
-    private var photo = Photo()
+    private val photoList = ArrayList<Highlights>()
+    private var photo = Highlights()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,24 +41,24 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
         configureInitialViews()
 
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
-        products.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
+        productsList.add(Product())
 
 
 
@@ -71,8 +71,8 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 */
 
             if (/*photo.rows.equals("0")*/true){
-                photoList.add(Photo())
-                photoList.add(Photo())
+                photoList.add(Highlights())
+                photoList.add(Highlights())
 
                 //container_rv.visibility = View.GONE
             }else{
@@ -90,18 +90,21 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
     }
 
     private fun configureInitialViews(){
-        viewPhotoManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        viewPhotoAdapter = context?.let { PhotoAdapter(it, photoList, this) }!!
 
-        photoRecycler.apply {
+        viewPhotoManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        viewPhotoAdapter = context?.let {
+            HighlightsAdapter(it, photoList, this)
+        }!!
+
+        highlightsRecycler.apply {
             setHasFixedSize(true)
             layoutManager = viewPhotoManager
             adapter = viewPhotoAdapter
         }
 
-        photoRecycler.addItemDecoration(CircleRecyclerViewDecoration())
+        highlightsRecycler.addItemDecoration(CircleRecyclerViewDecoration())
 
-        val productsAdapter = ProductsAdapter(requireContext(),products,this)
+        val productsAdapter = ProductsAdapter(requireContext(),productsList,this)
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 //        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 2)

@@ -20,7 +20,7 @@ class ProductsAdapter(private val context: Context, private val list: List<Produ
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_adapter_lista_produtos, parent, false) // vai conectar com os ids abaixo
+            .inflate(R.layout.adapter_products, parent, false) // vai conectar com os ids abaixo
         return MyViewHolder(listItem)
 
 
@@ -54,7 +54,7 @@ class ProductsAdapter(private val context: Context, private val list: List<Produ
             productDescriptionTv = itemView.findViewById(R.id.productDescriptionTv)
             asOfTv = itemView.findViewById(R.id.asOfTv)
             productValueTv = itemView.findViewById(R.id.productValueTv)
-            productImageIv = itemView.findViewById(R.id.imageCupontIv)
+            productImageIv = itemView.findViewById(R.id.imageHighLightsIv)
 
 
         }

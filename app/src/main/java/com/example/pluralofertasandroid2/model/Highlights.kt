@@ -3,7 +3,7 @@ package com.example.pluralofertasandroid2.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class Photo:Serializable {
+class Highlights:Serializable {
     constructor()
 
     @field:SerializedName("id")

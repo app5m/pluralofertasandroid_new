@@ -19,7 +19,7 @@ class CuponsAdapter (private val context: Context, private val listCupons: List<
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CuponsViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(
-                R.layout.fragment_adapter_lista_cupons,
+                R.layout.adapter_cupons,
                 parent,
                 false
             ) // vai conectar com os ids abaixo
@@ -59,7 +59,7 @@ class CuponsAdapter (private val context: Context, private val listCupons: List<
             cuponCodeValueTv = itemView.findViewById(R.id.cuponCodeValueTv)
             priceOpenCuponTv = itemView.findViewById(R.id.priceOpenCuponTv)
             expirationDateCuponTv = itemView.findViewById(R.id.expirationDateCuponTv)
-            imageCupontIv = itemView.findViewById(R.id.imageCupontIv)
+            imageCupontIv = itemView.findViewById(R.id.imageHighLightsIv)
 
 
         }
