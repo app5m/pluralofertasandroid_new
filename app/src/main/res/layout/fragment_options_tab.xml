@@ -86,27 +86,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.7319885" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/applyCupon"
-            android:focusableInTouchMode="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:clickable="true"
-            app:layout_constraintEnd_toStartOf="@+id/guideline27"
-            app:layout_constraintStart_toStartOf="@+id/guideline29"
-            app:layout_constraintTop_toBottomOf="@+id/textView8">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/miguito"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusableInTouchMode="false"
-                android:gravity="center_horizontal"
-                android:hint="Aplicar Cupom"
-                android:textAlignment="center" />
-        </com.google.android.material.textfield.TextInputLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

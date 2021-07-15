@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <ImageButton
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:background="@drawable/backwardarrowbranca"
@@ -38,6 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline23"
         app:tabGravity="fill"
+        app:tabBackground="@color/colorPrimaryDark"
         app:tabMode="fixed"
         app:tabIndicatorColor="#009932"
         app:tabSelectedTextColor="#FFFFFF"
@@ -52,7 +53,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destaques" />
+            android:text="Cadastrar" />
 
     </com.google.android.material.tabs.TabLayout>
 

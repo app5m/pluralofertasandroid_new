@@ -25,5 +25,8 @@ class CartFragment : Fragment() {
         btnPagarCarrinhoFinalizarCompraButton2.setOnClickListener {
             MyUsefulKotlin().startFragment(PaymentFormFragment(), requireActivity().supportFragmentManager)
         }
+        bntBack.setOnClickListener {
+
+        }
     }
 }

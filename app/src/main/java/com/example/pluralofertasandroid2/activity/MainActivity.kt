@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //cair na tela de login deslogado
-       /*preferences = Preferences(this)
-         if (!Preferences(this).getLogin()) {
+       preferences = Preferences(this)
+     /*    if (!Preferences(this).getLogin()) {
              val intent = Intent(this, SigininContentActivity::class.java)
              startActivity(intent)
 

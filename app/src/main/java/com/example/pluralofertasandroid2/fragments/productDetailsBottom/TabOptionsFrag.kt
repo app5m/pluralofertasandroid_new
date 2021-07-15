@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.fragment_options_tab.*
 
 
 class TabOptionsFrag: Fragment() {
-    private  val TAG = "TabOptionsFrag"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +25,6 @@ class TabOptionsFrag: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        this.miguito.setOnClickListener() {
-            Log.d(TAG, "onClick: opening dialog")
-            val dialog = DialogCuponsFrag()
-            dialog.setTargetFragment(this, 1)
-            fragmentManager?.let { it1 -> dialog.show(it1,"DialogCuponsFrag") }
-        }
+
     }
 }

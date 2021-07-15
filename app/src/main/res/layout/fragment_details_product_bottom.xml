@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.offerDetails.ProductDetails_Act"
+    tools:context=".activity.offerDetails.ProductDetailsActivity"
     >
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutDetalhesDoProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#efefef"
         android:textAllCaps="false"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tabGravity="fill"
         app:tabMode="fixed"
+        app:tabIndicatorColor="@color/colorAccent"
         app:tabSelectedTextColor="#000000"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabTextColor="#999999">

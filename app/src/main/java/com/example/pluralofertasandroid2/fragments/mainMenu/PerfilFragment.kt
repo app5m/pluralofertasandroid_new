@@ -33,13 +33,16 @@ class PerfilFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferences = Preferences(context)
 
-        if (preferences?.getLogin() == true) {
-            layoutLoggedOut.visibility = View.GONE
-            layoutLogged.visibility = View.VISIBLE
-        }else{
+        if (!Preferences(context).getLogin()) {
             layoutLoggedOut.visibility = View.VISIBLE
             layoutLogged.visibility = View.GONE
+        }else{
+
+
+            layoutLoggedOut.visibility = View.GONE
+            layoutLogged.visibility = View.VISIBLE
         }
 
         btnLogout.setOnClickListener {

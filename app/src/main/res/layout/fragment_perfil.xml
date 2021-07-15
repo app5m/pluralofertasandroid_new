@@ -53,7 +53,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/colorPrimaryDark"
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
@@ -182,18 +182,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/windowBackground"
                         android:orientation="vertical"
-                        android:paddingTop="30dp">
-
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/categoriasMenu_rv_perfil"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:nestedScrollingEnabled="true"
-                            android:overScrollMode="never"
-                            android:visibility="gone" />
-
-                    </LinearLayout>
+                        android:paddingTop="30dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

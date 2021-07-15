@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.activity.offerDetails.ProductDetails_Act
+import com.example.pluralofertasandroid2.activity.offerDetails.ProductDetailsActivity
 import com.example.pluralofertasandroid2.adapter.PhotoAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.helper.CircleRecyclerViewDecoration
@@ -111,7 +111,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
     override fun onClickListenerNews(product: Product) {
 
-        val intent = Intent(activity, ProductDetails_Act::class.java)
+        val intent = Intent(activity, ProductDetailsActivity::class.java)
         intent.putExtra("product", product)
         startActivity(intent)
 
