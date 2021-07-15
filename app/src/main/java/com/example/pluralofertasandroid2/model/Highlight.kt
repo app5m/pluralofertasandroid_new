@@ -3,7 +3,7 @@ package com.example.pluralofertasandroid2.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class Highlights:Serializable {
+class Highlight:Serializable {
     constructor()
 
     @field:SerializedName("id")
@@ -14,4 +14,6 @@ class Highlights:Serializable {
 
     @field:SerializedName("rows")
     var rows: String? = null
+
+
 }

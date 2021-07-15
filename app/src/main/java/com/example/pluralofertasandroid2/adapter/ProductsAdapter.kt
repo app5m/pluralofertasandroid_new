@@ -11,23 +11,23 @@ import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Product
 
-class ProductsAdapter(private val context: Context, private val list: List<Product>,
+class ProductsAdapter(private val context: Context, private val listProduct: List<Product>,
                       private val clickOnListener: RecyclerItemClickListener)
-    : RecyclerView.Adapter<ProductsAdapter.MyViewHolder>() {
+    : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>() {
 
 
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.adapter_products, parent, false) // vai conectar com os ids abaixo
-        return MyViewHolder(listItem)
+        return ProductsViewHolder(listItem)
 
 
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val product = list[position]
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
+        val product = listProduct[position]
 
         holder.productNameTv.text = "Mega Burguer"
         holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
@@ -39,10 +39,10 @@ class ProductsAdapter(private val context: Context, private val list: List<Produ
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return listProduct.size
     }
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val productNameTv: TextView
         val productDescriptionTv: TextView
         val asOfTv: TextView
@@ -54,8 +54,7 @@ class ProductsAdapter(private val context: Context, private val list: List<Produ
             productDescriptionTv = itemView.findViewById(R.id.productDescriptionTv)
             asOfTv = itemView.findViewById(R.id.asOfTv)
             productValueTv = itemView.findViewById(R.id.productValueTv)
-            productImageIv = itemView.findViewById(R.id.imageHighLightsIv)
-
+            productImageIv = itemView.findViewById(R.id.imageProductsIv)
 
         }
     }

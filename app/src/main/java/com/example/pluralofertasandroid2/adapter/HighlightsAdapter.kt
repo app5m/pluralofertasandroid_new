@@ -5,37 +5,56 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Highlights
+import com.example.pluralofertasandroid2.model.Highlight
 
-class HighlightsAdapter (val context: Context, val highlightsList: List<Highlights>, clickListener: RecyclerItemClickListener)
+class HighlightsAdapter (val context: Context, private val highlightList: List<Highlight>, private val clickOnListener: RecyclerItemClickListener)
     : RecyclerView.Adapter<HighlightsAdapter.HighlightsHolder>(){
 
-    class HighlightsHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+   /* class HighlightsHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val image: ImageView = itemView.findViewById(R.id.imageHighLightsIv)
-    }
+    }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HighlightsHolder {
         return HighlightsHolder(LayoutInflater.from(parent.context).inflate(R.layout.adapter_highlights, parent, false))
     }
 
     override fun onBindViewHolder(holder: HighlightsHolder, position: Int) {
+        val highlight = highlightList[position]
 
+        holder.namehighLightTv.text = "Nome do produto em duas linhas e também em três linhas"
+        holder.highligtiValueTv.text = "10,00 "
+        holder.highLightasOfTv.text = "A partir de "
+        holder.highLightOffTv.text = "50% OFF"
 
-        holder.image.setOnClickListener {
-
-/*
-            MyMessages(context).insertZoom(WSConstants().imagesSchedule + photoList[position].url)
-*/
-        }
+        holder.itemView.setOnClickListener { clickOnListener.onClickListenerHighlights(highlight)}
 
     }
 
     override fun getItemCount(): Int {
-        return highlightsList.size
+        return highlightList.size
+    }
+
+    class HighlightsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val namehighLightTv: TextView
+        val highligtiValueTv: TextView
+        val highLightasOfTv: TextView
+        val highLightOffTv: TextView
+        val highLightsMainIv: ImageView
+
+        init {
+            namehighLightTv = itemView.findViewById(R.id.namehighLightTv)
+            highLightasOfTv = itemView.findViewById(R.id.highLightasOfTv)
+            highligtiValueTv = itemView.findViewById(R.id.highligtiValueTv)
+            highLightOffTv = itemView.findViewById(R.id.highLightOffTv)
+            highLightsMainIv = itemView.findViewById(R.id.highLightsMainIv)
+
+
+        }
     }
 
 }

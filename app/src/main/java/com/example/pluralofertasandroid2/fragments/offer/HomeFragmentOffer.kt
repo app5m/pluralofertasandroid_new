@@ -13,7 +13,7 @@ import com.example.pluralofertasandroid2.adapter.HighlightsAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.helper.CircleRecyclerViewDecoration
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Highlights
+import com.example.pluralofertasandroid2.model.Highlight
 import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
@@ -23,8 +23,8 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
     private var productsList  = ArrayList<Product>()
     private lateinit var viewPhotoManager: RecyclerView.LayoutManager
     private lateinit var viewPhotoAdapter: RecyclerView.Adapter<*>
-    private val photoList = ArrayList<Highlights>()
-    private var photo = Highlights()
+    private val highlightsList = ArrayList<Highlight>()
+    private var highlight = Highlight()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,12 +71,12 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 */
 
             if (/*photo.rows.equals("0")*/true){
-                photoList.add(Highlights())
-                photoList.add(Highlights())
+                highlightsList.add(Highlight())
+                highlightsList.add(Highlight())
 
                 //container_rv.visibility = View.GONE
             }else{
-                photo.let {
+                highlight.let {
                     //adiciona os valores do modelo (usado com request)
                     /*photoList.addAll(it)*/
 
@@ -93,7 +93,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
         viewPhotoManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         viewPhotoAdapter = context?.let {
-            HighlightsAdapter(it, photoList, this)
+            HighlightsAdapter(it, highlightsList, this)
         }!!
 
         highlightsRecycler.apply {
@@ -116,6 +116,13 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
         val intent = Intent(activity, ProductDetailsActivity::class.java)
         intent.putExtra("product", product)
+        startActivity(intent)
+
+    }
+
+    override fun onClickListenerHighlights(highlight: Highlight) {
+        val intent = Intent(activity, ProductDetailsActivity::class.java)
+        intent.putExtra("highlight", highlight)
         startActivity(intent)
 
     }
