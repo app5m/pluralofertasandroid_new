@@ -38,17 +38,17 @@
          </FrameLayout>
 
          <me.relex.circleindicator.CircleIndicator3
+             android:id="@+id/circleIndicatorHomeFragment"
              android:layout_width="60dp"
              android:layout_height="20dp"
              android:layout_gravity="center_horizontal|bottom"
              app:ci_drawable="@drawable/elipse8"
              app:ci_drawable_unselected="@drawable/elipse10"
-             android:id="@+id/circleIndicatorHomeFragment"
-             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintBottom_toTopOf="@+id/guideline19"
              app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintTop_toTopOf="@id/guideline19"
-             app:layout_constraintBottom_toBottomOf="@id/guideline19"
-             />
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/framerLayHomeFragment"
+             app:layout_constraintVertical_bias="1.0" />
 
          <androidx.constraintlayout.widget.Guideline
              android:layout_width="wrap_content"
