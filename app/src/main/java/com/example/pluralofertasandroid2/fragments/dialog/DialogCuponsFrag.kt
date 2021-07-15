@@ -6,12 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.model.Cupon
+import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.dialog_cupon.*
 import kotlinx.android.synthetic.main.fragment_options_tab.*
+import java.util.ArrayList
 
 class DialogCuponsFrag: DialogFragment() {
     private val TAG = "DialogCuponsFrag"
+
+    var recyclerProduct: RecyclerView? = null
+    private var cupons  = ArrayList<Cupon>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,20 +32,9 @@ class DialogCuponsFrag: DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         ApllyBnt.setOnClickListener {
             dialog?.dismiss();
-           /* val fragment:TabOptionsFrag = TabOptionsFrag().getFragmentManager()?.findFragmentByTag("TabOptionsFrag") as TabOptionsFrag
-            val valueShare:String*/
-            if(radioButton2.isChecked) {
-              /*  Toast.makeText(context, textView3.text.toString(), Toast.LENGTH_SHORT).show()
-                valueShare = radioButton2.text.toString()
-                fragment.miguito.setText(valueShare)*/
-
-            }
-            if(radioButton3.isChecked) {
-/*
-                Toast.makeText(context, textView4.text.toString(), Toast.LENGTH_SHORT).show()
-*/
-            }
 
         }
+
+
     }
 }

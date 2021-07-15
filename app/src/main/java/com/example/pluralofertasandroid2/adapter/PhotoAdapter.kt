@@ -15,7 +15,7 @@ class PhotoAdapter (val context: Context, val photoList: List<Photo>, clickListe
     : RecyclerView.Adapter<PhotoAdapter.PhotoHolder>(){
 
     class PhotoHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val image: ImageView = itemView.findViewById(R.id.imageProductIv)
+        val image: ImageView = itemView.findViewById(R.id.imageCupontIv)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoHolder {
