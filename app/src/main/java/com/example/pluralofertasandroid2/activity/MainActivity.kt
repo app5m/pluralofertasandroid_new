@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
         setContentView(R.layout.activity_main)
 //cair na tela de login deslogado
        preferences = Preferences(this)
-       if (!Preferences(this).getLogin()) {
+      /* if (!Preferences(this).getLogin()) {
              val intent = Intent(this, SigininContentActivity::class.java)
              startActivity(intent)
 
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
              Toast.makeText(this, "Logado", Toast.LENGTH_SHORT).show()
 
 
-         }
+         }*/
 
         //toolbar
         setSupportActionBar(toolbar)

@@ -62,6 +62,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/colorAccent"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -80,7 +82,7 @@
                     android:inputType="number"
                     android:textColor="@color/gray800"
                     android:textSize="@dimen/text_size5"
-                    app:met_mask="#####-###" />
+                     />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -92,6 +94,9 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
+
+                app:hintTextColor="@color/colorAccent"
+                app:colorControlActivated="@color/colorAccent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="12dp"
@@ -110,6 +115,9 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
+                app:hintTextColor="@color/colorAccent"
+
+
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -129,6 +137,9 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+
+            app:hintTextColor="@color/colorAccent"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -154,6 +165,9 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
+
+                app:hintTextColor="@color/colorAccent"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -172,6 +186,8 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                app:hintTextColor="@color/colorAccent"
+
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -190,6 +206,8 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/colorAccent"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
