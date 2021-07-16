@@ -45,8 +45,8 @@ class MyCuponsContentFragment : Fragment(),RecyclerItemClickListener {
         mPagerLogin.adapter = adapter
         TabLayoutMediator(tabLayoutLogin, mPagerLogin) { tab: TabLayout.Tab, position: Int ->
             when (position) {
-                0 -> tab.text = "Em Aberto"
-                1 -> tab.text = "Usados"
+                0 -> tab.text = "Usados"
+
 
             }
         }.attach()
@@ -57,16 +57,15 @@ class MyCuponsContentFragment : Fragment(),RecyclerItemClickListener {
 
         override fun createFragment(position: Int): Fragment {
             return when (position) {
-                0 ->  OpenedMyCuponsFragment()
-                1 ->  UsedMyCuponsFragment()
-                else -> OpenedMyCuponsFragment()
+                0 ->  UsedMyCuponsFragment()
+                else -> UsedMyCuponsFragment()
             }
         }
 
 
 
         override fun getItemCount(): Int {
-            return 2
+            return 1
         }
 
     }

@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     >
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/btnPagarCarrinhoFinalizarCompraButton2"
         android:layout_width="0dp"
@@ -18,24 +29,25 @@
         android:textColor="#ffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintStart_toEndOf="@id/guideline63" />
+        app:layout_constraintStart_toStartOf="@+id/guideline42" />
 
     <LinearLayout
         android:id="@+id/bntBack"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_margin="24dp"
         android:clickable="true"
         android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/cartAdapterRv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@id/guideline63"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline70"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backwardarrow" />
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@drawable/backwardarrowbranca" />
 
     </LinearLayout>
 
@@ -44,16 +56,13 @@
         android:id="@+id/tituloCarrinhoFinalizarCompraTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/uni_neue_bold"
-        android:text="CARRINHO"
-        android:textColor="#000000"
-        android:textSize="14dp"
+        android:text="Carrinho"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/bntBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bntBack" />
 
     <TextView
         android:id="@+id/subtotalCarrinhoFinalizarCompraTextView"
@@ -63,7 +72,7 @@
         android:text="Subtotal:"
         android:textColor="#000000"
         android:textSize="16dp"
-        app:layout_constraintStart_toEndOf="@id/guideline63"
+        app:layout_constraintStart_toStartOf="@+id/guideline42"
         app:layout_constraintTop_toBottomOf="@id/guideline68" />
 
     <TextView
@@ -97,10 +106,9 @@
         android:text="Taxa Operacional:"
         android:textColor="#000000"
         android:textSize="16dp"
-        app:layout_constraintStart_toEndOf="@id/guideline63"
-        app:layout_constraintTop_toBottomOf="@id/subtotalCarrinhoFinalizarCompraTextView"
+        app:layout_constraintStart_toStartOf="@+id/guideline42"
 
-        />
+        app:layout_constraintTop_toBottomOf="@id/subtotalCarrinhoFinalizarCompraTextView" />
 
     <TextView
         android:id="@+id/taxaOperacionalValorCarrinhoFinalizarCompraTextView"
@@ -132,12 +140,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_marginTop="10dp"
         android:background="#D9D9D9"
         app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintStart_toEndOf="@id/guideline63"
         app:layout_constraintTop_toBottomOf="@id/taxaOperacionalCarrinhoFinalizarCompraTextView">
 
         <TextView
@@ -149,11 +156,11 @@
             android:textColor="#000000"
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rsTotal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
 
 
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/totalValorCarrinhoFinalizarCompraTextView"
@@ -229,13 +236,6 @@
         app:layout_constraintGuide_percent="0.90" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline63"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline68"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -264,6 +264,20 @@
         app:layout_constraintBottom_toTopOf="@+id/subtotalCarrinhoFinalizarCompraTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bntBack" />
+        app:layout_constraintTop_toTopOf="@+id/guideline31" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="41dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

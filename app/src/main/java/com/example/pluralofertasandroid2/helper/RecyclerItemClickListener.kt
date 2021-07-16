@@ -1,9 +1,6 @@
 package com.example.pluralofertasandroid2.helper
 
-import com.example.pluralofertasandroid2.model.Cart
-import com.example.pluralofertasandroid2.model.Cupon
-import com.example.pluralofertasandroid2.model.Highlight
-import com.example.pluralofertasandroid2.model.Product
+import com.example.pluralofertasandroid2.model.*
 
 
 interface RecyclerItemClickListener {
@@ -16,6 +13,8 @@ interface RecyclerItemClickListener {
         //optional body
     }
     fun onClickListenerCart(cart: Cart){
+        //optional body
+    }fun onClickListenerUAddress(uaddress: UAddress){
         //optional body
     }
 

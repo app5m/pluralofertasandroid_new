@@ -1,23 +1,27 @@
 package com.example.pluralofertasandroid2.fragments.mainMenu
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.activity.login.SigininContentActivity
+import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
+import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
 import kotlinx.android.synthetic.main.fragment_login_content.view.*
-import kotlinx.android.synthetic.main.fragment_perfil.*
+import kotlinx.android.synthetic.main.fragment_mainmenu.*
+
 
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PerfilFragment.newInstance] factory method to
+ * Use the [MainMenuFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PerfilFragment : Fragment() {
+class MainMenuFragment : Fragment() {
     private lateinit var viewFragment: View
     private var preferences: Preferences? = null
 
@@ -25,7 +29,7 @@ class PerfilFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        val viewFragment = inflater.inflate(R.layout.fragment_perfil, container, false)
+        val viewFragment = inflater.inflate(R.layout.fragment_mainmenu, container, false)
 
 
         return viewFragment
@@ -44,11 +48,30 @@ class PerfilFragment : Fragment() {
             layoutLoggedOut.visibility = View.GONE
             layoutLogged.visibility = View.VISIBLE
         }
-
+        btnEntreOuCadastreseSettingsVisitanteImageView.setOnClickListener {
+            val intent = Intent(context, SigininContentActivity::class.java)
+            startActivity(intent)
+        }
         btnLogout.setOnClickListener {
             Preferences(context).setLogin(false)
             layoutLogged.visibility = View.GONE
             layoutLoggedOut.visibility = View.VISIBLE
+        }
+        btnEditProfile.setOnClickListener {
+            MyUsefulKotlin().startFragment(ProfileEditFragment(), requireActivity().supportFragmentManager)
+
+        }
+        myAddresses.setOnClickListener {
+            MyUsefulKotlin().startFragment(MyAdressesFragment(), requireActivity().supportFragmentManager)
+
+        }
+        myPeyments.setOnClickListener {
+            MyUsefulKotlin().startFragment(MyPaymentsFragment(), requireActivity().supportFragmentManager)
+
+        }
+        myshoopings.setOnClickListener {
+            MyUsefulKotlin().startFragment(MyShoopingsFragment(), requireActivity().supportFragmentManager)
+
         }
     }
 }

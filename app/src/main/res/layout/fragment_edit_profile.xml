@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/FundoCorPadraoRoxo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/btnVoltarMeuPerfilTextView"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:clickable="true"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/guideline56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backwardarrowbranca"
+            android:clickable="false"
+
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tituloMeuPerfilTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/uni_neue_bold"
+        android:gravity="center_horizontal"
+        android:text="PERFIL"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/btnEditarPerfilMeuPerfilImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:src="@drawable/btn_editar_perfil"
+        app:layout_constraintBottom_toTopOf="@id/guideline56"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/editarPerfilMeuPerfilImageView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:clickable="false"
+            android:src="@drawable/btn_editar_perfil" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iconEditPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/btn_editar_perfil"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/fotoPerfilMeuPerfilImageView"
+        app:layout_constraintTop_toTopOf="@id/fotoPerfilMeuPerfilImageView" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/fotoPerfilMeuPerfilImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/foto_perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline56"
+
+        />
+
+    <TextView
+        android:id="@+id/nomeMeuPerfilTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/uni_neue_bold"
+        android:lineSpacingExtra="4dp"
+        android:text="John Doe"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@id/fotoPerfilMeuPerfilImageView" />
+
+
+    <EditText
+        android:id="@+id/nomeCompletoMeuPerfilEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/background_cadastro_ll"
+        android:drawableEnd="@drawable/nome_completo"
+        android:enabled="false"
+        android:fontFamily="@font/uni_neue_regular"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:text="John Doe"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@id/nomeMeuPerfilTextView" />
+
+    <EditText
+        android:id="@+id/emailMeuPerfilEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/background_cadastro_ll"
+        android:drawableEnd="@drawable/email"
+        android:enabled="false"
+        android:fontFamily="@font/uni_neue_regular"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:text="johndoe@mail.com"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@+id/nomeCompletoMeuPerfilEditText" />
+
+
+    <TextView
+        android:id="@+id/btnAlterarSenhaMeuPerfilTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/background_cadastro_ll"
+        android:clickable="true"
+        android:drawableEnd="@drawable/alterar_senha"
+        android:fontFamily="@font/uni_neue_regular"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:text="●●●●●●●"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@+id/emailMeuPerfilEditText" />
+
+    <include
+        android:id="@+id/meuPerfilLoader"
+        layout="@layout/loading"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline58"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

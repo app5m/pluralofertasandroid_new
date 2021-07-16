@@ -1,5 +1,6 @@
 package com.example.pluralofertasandroid2.fragments.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.activity.MainActivity
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -26,7 +28,12 @@ class LoginFragment: Fragment(), RecyclerItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         entrarButtonLogin.setOnClickListener {
             Preferences(context).setLogin(true)
-            activity?.finish()
+            activity?.finishAffinity()
+            //PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("finishedIntro", true).apply()
+            val intent = Intent(context, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            //SharedPreferencesManager.putBoolean(PREFS_ONBOARDING,true)
+            startActivity(intent)
         }
 
     }
