@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Instrucoes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/Instrucoes"
-    android:orientation="vertical"
+    android:background="@drawable/gradient"
 
-    >
+    android:orientation="vertical">
 
     <ImageView
 
@@ -27,31 +26,34 @@
         app:layout_constraintVertical_bias="0.744" />
 
     <TextView
-        android:gravity="center"
-        android:text="@string/TituloOnboarding"
+        android:id="@+id/onboardingTitle"
         style="@style/InstrucaoTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/onboardingTitle"
+        android:background="@drawable/transparent_background"
+        android:gravity="center"
+        android:text="@string/TituloOnboarding"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"/>
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <TextView
-        android:text="@string/DescricaoOnboarding"
+        android:id="@+id/onboardingSubtitle"
         style="@style/InstrucaoDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/onboardingSubtitle"
+        android:background="@drawable/transparent_background"
         android:gravity="center"
+        android:text="@string/DescricaoOnboarding"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -66,9 +68,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.57" />
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

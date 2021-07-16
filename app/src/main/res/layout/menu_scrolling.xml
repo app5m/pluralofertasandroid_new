@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="24dp"
@@ -21,6 +22,7 @@
         android:clickable="true"
         android:drawableEnd="@drawable/arrow_down_white"
         android:drawablePadding="9dp"
+        android:ellipsize="end"
         android:focusable="true"
         android:justificationMode="inter_word"
         android:maxWidth="10dp"
@@ -29,7 +31,6 @@
         android:paddingTop="8dp"
         android:paddingEnd="11dp"
         android:paddingBottom="8dp"
-        android:ellipsize="end"
         android:text="Av. Juscelino Kubitschek de Oliveira, 440 - Alto Petrópolis, Porto Alegre - RS, 91240-090"
         android:textAllCaps="true"
         android:textSize="12sp"
@@ -49,7 +50,7 @@
         android:paddingEnd="11dp"
         android:paddingBottom="8dp"
         android:textSize="14sp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnSwitchCity" />
 
@@ -70,8 +71,8 @@
 
     <TextView
         android:id="@+id/filtroAtivoQuantidadeTv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/btn_verde_filtro_home"
         android:clickable="true"
         android:drawablePadding="9dp"
@@ -84,5 +85,20 @@
         app:layout_constraintBottom_toBottomOf="@id/btnSwitchCity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/btnSwitchCity" />
+
+
+    <ImageButton
+        android:id="@+id/filterTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grupo4802"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSwitchCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnSwitchCity"
+        app:layout_constraintTop_toTopOf="@+id/btnSwitchCity" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

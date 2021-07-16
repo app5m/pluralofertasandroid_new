@@ -1,5 +1,6 @@
 package com.example.pluralofertasandroid2.helper
 
+import com.example.pluralofertasandroid2.model.Cart
 import com.example.pluralofertasandroid2.model.Cupon
 import com.example.pluralofertasandroid2.model.Highlight
 import com.example.pluralofertasandroid2.model.Product
@@ -14,6 +15,10 @@ interface RecyclerItemClickListener {
     fun onClickListenerCupons(cupon: Cupon){
         //optional body
     }
+    fun onClickListenerCart(cart: Cart){
+        //optional body
+    }
+
 
     fun onClickListenerHighlights(highlight: Highlight){
         //optional body

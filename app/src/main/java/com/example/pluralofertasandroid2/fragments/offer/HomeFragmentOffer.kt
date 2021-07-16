@@ -3,6 +3,7 @@ package com.example.pluralofertasandroid2.fragments.offer
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,10 +17,10 @@ import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Highlight
 import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.home_body.*
+import kotlinx.android.synthetic.main.menu_scrolling.*
 import java.util.*
 
 class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
-    var recyclerProduct: RecyclerView? = null
     private var productsList  = ArrayList<Product>()
     private lateinit var viewPhotoManager: RecyclerView.LayoutManager
     private lateinit var viewPhotoAdapter: RecyclerView.Adapter<*>
@@ -85,8 +86,24 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
 
         }
+        //esse menu filtro nao ta funcionando nao sei o porquê
+        registerForContextMenu(filterTv)
 
+    }
 
+    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        getActivity()?.getMenuInflater()?.inflate(R.menu.overflow_menu_filter, menu);
+        Toast.makeText(context, "fefefefe", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.option_1 -> Toast.makeText(context, "balalaica", Toast.LENGTH_SHORT).show()
+            R.id.option_2 -> Toast.makeText(context, "item 2", Toast.LENGTH_SHORT).show()
+            R.id.option_3 -> Toast.makeText(context, "item 3", Toast.LENGTH_SHORT).show()
+        }
+        return super.onContextItemSelected(item)
     }
 
     private fun configureInitialViews(){

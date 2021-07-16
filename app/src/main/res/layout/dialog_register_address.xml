@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialog_bg">
+    android:background="@color/gray200">
 
 
     <LinearLayout
@@ -64,20 +64,23 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp"
             android:layout_weight="1">
 
-            <!-- <com.santalu.maskedittext.MaskEditText
+            <com.santalu.maskedittext.MaskEditText
                     android:id="@+id/cep_edit"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+
+                android:layout_height="wrap_content"
                     android:background="@drawable/background_cadastro_ll"
                     android:hint="CEP"
                     android:inputType="number"
                     android:textColor="@color/gray800"
                     android:textSize="@dimen/text_size5"
-                    app:met_mask="#####-###" />-->
+                    app:met_mask="#####-###" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -92,13 +95,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="12dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_weight="1">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/city_edit"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:background="@drawable/background_cadastro_ll"
+                    android:layout_height="wrap_content"
                     android:hint="@string/city"
                     android:textSize="@dimen/text_size5" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,6 +112,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                 android:layout_weight="0">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -124,6 +131,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp">
 
@@ -147,6 +156,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                 android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -163,6 +174,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                 android:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -179,6 +192,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             android:layout_marginTop="5dp"
             android:layout_marginBottom="8dp">
 

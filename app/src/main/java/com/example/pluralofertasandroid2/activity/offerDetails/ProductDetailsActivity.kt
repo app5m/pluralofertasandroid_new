@@ -3,8 +3,9 @@ package com.example.pluralofertasandroid2.activity.offerDetails
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
+import android.view.*
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
@@ -13,6 +14,7 @@ import com.example.pluralofertasandroid2.fragments.productDetailsBottom.TabsDeta
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.activity_details_product.*
+import kotlinx.android.synthetic.main.menu_scrolling.*
 import kotlinx.android.synthetic.main.tool_bar.*
 
 
@@ -41,8 +43,8 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener{
             startActivity(intent)
 
         }
-    }
 
+    }
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
