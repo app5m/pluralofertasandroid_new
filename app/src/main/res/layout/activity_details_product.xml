@@ -35,23 +35,27 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/applyCupon"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:boxBackgroundColor="@color/amber400"
-            app:hintTextColor="@color/pink700"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
+
+            android:textColorHint="@color/colorAccent"
+            app:hintTextColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnComprarDetalhesProduto"
-            app:layout_constraintStart_toEndOf="@+id/button3">
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.97">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/miguito"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:minWidth="131dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounded_yellow"
                 android:focusable="false"
                 android:gravity="center_horizontal"
                 android:hint="APLICAR CUPOM"
+                android:minWidth="131dp"
                 android:text="50_Off"
                 android:textAlignment="center"
                 android:textColor="#000000"
@@ -63,20 +67,22 @@
         <Button
             android:id="@+id/btnComprarDetalhesProduto"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:background="@drawable/main_button_green"
             android:fontFamily="@font/uni_neue_bold"
             android:letterSpacing="0.02"
             android:lineSpacingExtra="-3.8sp"
+            android:minHeight="59dp"
             android:text="COMPRAR"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="15.8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintBottom_toBottomOf="@+id/applyCupon"
             app:layout_constraintEnd_toStartOf="@+id/guideline32"
-            app:layout_constraintTop_toTopOf="@+id/button3" />
+            app:layout_constraintTop_toTopOf="@+id/applyCupon"
+            app:layout_constraintVertical_bias="1.0" />
 
 
         <LinearLayout
@@ -87,12 +93,11 @@
             android:orientation="vertical"
             android:padding="4dp"
             android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/applyCupon"
             app:layout_constraintEnd_toStartOf="@+id/btnComprarDetalhesProduto"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline33"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.97">
+            app:layout_constraintTop_toTopOf="@+id/applyCupon">
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/buttonAddCart"
