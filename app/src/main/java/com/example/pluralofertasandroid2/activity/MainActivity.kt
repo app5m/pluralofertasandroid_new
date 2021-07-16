@@ -15,6 +15,7 @@ import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.activity.login.SigininContentActivity
 import com.example.pluralofertasandroid2.fragments.cart.CartFragment
 import com.example.pluralofertasandroid2.fragments.mainMenu.PerfilFragment
+import com.example.pluralofertasandroid2.fragments.myCupons.MyCuponsContentFragment
 import com.example.pluralofertasandroid2.fragments.offer.HomeFragmentOffer
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
         setContentView(R.layout.activity_main)
 //cair na tela de login deslogado
        preferences = Preferences(this)
-       if (!Preferences(this).getLogin()) {
+      /* if (!Preferences(this).getLogin()) {
              val intent = Intent(this, SigininContentActivity::class.java)
              startActivity(intent)
 
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
              Toast.makeText(this, "Logado", Toast.LENGTH_SHORT).show()
 
 
-         }
+         }*/
 
         //toolbar
         setSupportActionBar(toolbar)
@@ -117,7 +118,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
                     supportFragmentManager
                 )
                 R.id.myCouponsFragment -> MyUsefulKotlin().startFragment(
-                    HomeFragmentOffer(),
+                    MyCuponsContentFragment(),
                     supportFragmentManager
                 )
                 R.id.settings_visitante -> MyUsefulKotlin().startFragment(

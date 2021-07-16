@@ -116,17 +116,16 @@
         android:id="@+id/waitPayment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
         android:fontFamily="@font/uni_neue_regular"
         android:lineSpacingExtra="4sp"
         android:text="@string/waitPayment"
         android:textAlignment="center"
         android:textColor="#ff5b5c"
         android:textSize="10sp"
-        android:visibility="visible"
-        android:ellipsize="end"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/imagemCellMyCouponsEmAbertoImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintTop_toTopOf="@id/imagemCellMyCouponsEmAbertoImageView" />
 
     <LinearLayout
