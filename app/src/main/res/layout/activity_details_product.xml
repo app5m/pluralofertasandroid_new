@@ -150,14 +150,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_anchor="@+id/constraintLayout"
-        app:layout_anchorGravity="center">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <include
         android:visibility="gone"
         android:id="@+id/load"
