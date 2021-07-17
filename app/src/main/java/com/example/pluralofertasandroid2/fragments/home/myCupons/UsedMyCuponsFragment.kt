@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.myCupons
+package com.example.pluralofertasandroid2.fragments.home.myCupons
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.adapter.CartAdapter
 import com.example.pluralofertasandroid2.adapter.UsedCuponsAdapter
-import com.example.pluralofertasandroid2.helper.Preferences
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Cart
 import com.example.pluralofertasandroid2.model.Cupon
-import kotlinx.android.synthetic.main.fragment_cart.*
-import kotlinx.android.synthetic.main.fragment_cart.cartAdapterRv
-import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_used_mycupons.*
 import java.util.ArrayList
 

@@ -1,18 +1,16 @@
-package com.example.pluralofertasandroid2.fragments.myCupons
+package com.example.pluralofertasandroid2.fragments.home.myCupons
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.*
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_login_content.*
-import kotlinx.android.synthetic.main.fragment_login_content.view.*
 
 class MyCuponsContentFragment : Fragment(),RecyclerItemClickListener {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".fragments.myCupons.OpenedMyCuponsFragment">
+    tools:context=".fragments.home.myCupons.OpenedMyCuponsFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/mPagerLogin"

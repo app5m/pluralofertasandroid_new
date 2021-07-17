@@ -1,6 +1,5 @@
 package com.example.pluralofertasandroid2.fragments.dialog
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,18 +9,13 @@ import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.activity.offerDetails.ProductDetailsActivity
 import com.example.pluralofertasandroid2.adapter.CuponsAdapter
-import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Cupon
-import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.dialog_cupon.*
-import kotlinx.android.synthetic.main.fragment_options_tab.*
-import kotlinx.android.synthetic.main.home_body.*
 import java.util.ArrayList
 
-class DialogCuponsFrag: DialogFragment(), RecyclerItemClickListener {
+class CuponsFragDialog: DialogFragment(), RecyclerItemClickListener {
     private val TAG = "DialogCuponsFrag"
 
     var recyclerProduct: RecyclerView? = null

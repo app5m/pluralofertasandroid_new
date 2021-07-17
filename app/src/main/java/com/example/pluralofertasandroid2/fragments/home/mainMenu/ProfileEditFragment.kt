@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.mainMenu
+package com.example.pluralofertasandroid2.fragments.home.mainMenu
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,17 +9,13 @@ import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
-import kotlinx.android.synthetic.main.fragment_edit_profile.btnVoltarMeuPerfilTextView
-import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_login_content.view.*
-import kotlinx.android.synthetic.main.fragment_mypayments.*
 
-class MyShoopingsFragment: Fragment(), RecyclerItemClickListener {
+class ProfileEditFragment: Fragment(), RecyclerItemClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        val viewFragment = inflater.inflate(R.layout.fragment_myshoopings, container, false)
+        val viewFragment = inflater.inflate(R.layout.fragment_edit_profile, container, false)
 
         return viewFragment
     }
@@ -27,7 +23,7 @@ class MyShoopingsFragment: Fragment(), RecyclerItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnVoltarMeuPerfilTv.setOnClickListener{
+        btnVoltarMeuPerfilTextView.setOnClickListener{
             onBackPressed()
         }
     }

@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.offer
+package com.example.pluralofertasandroid2.fragments.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.activity.offerDetails.ProductDetailsActivity
+import com.example.pluralofertasandroid2.activity.productDetails.ProductDetailsActivity
 import com.example.pluralofertasandroid2.adapter.HighlightsAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.helper.CircleRecyclerViewDecoration

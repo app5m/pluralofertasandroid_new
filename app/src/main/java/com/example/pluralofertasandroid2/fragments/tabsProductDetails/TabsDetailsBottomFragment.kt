@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.productDetailsBottom
+package com.example.pluralofertasandroid2.fragments.tabsProductDetails
 
 import android.os.Bundle
 import android.view.LayoutInflater

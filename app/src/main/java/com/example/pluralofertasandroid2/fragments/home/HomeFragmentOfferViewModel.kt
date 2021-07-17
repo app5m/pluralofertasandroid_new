@@ -1,9 +1,8 @@
-package com.example.pluralofertasandroid2.fragments.offer
+package com.example.pluralofertasandroid2.fragments.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import okhttp3.ResponseBody
 
 class HomeFragmentOfferViewModel(
 /*

@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.mainMenu
+package com.example.pluralofertasandroid2.fragments.home.mainMenu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.adapter.CartAdapter
 import com.example.pluralofertasandroid2.adapter.UAddressAdapter
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
-import com.example.pluralofertasandroid2.helper.Preferences
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Cart
 import com.example.pluralofertasandroid2.model.UAddress
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_login_content.view.*

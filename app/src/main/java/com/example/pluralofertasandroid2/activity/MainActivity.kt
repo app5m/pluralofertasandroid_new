@@ -9,10 +9,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.cart.CartFragment
-import com.example.pluralofertasandroid2.fragments.mainMenu.MainMenuFragment
-import com.example.pluralofertasandroid2.fragments.myCupons.MyCuponsContentFragment
-import com.example.pluralofertasandroid2.fragments.offer.HomeFragmentOffer
+import com.example.pluralofertasandroid2.fragments.home.cart.CartFragment
+import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
+import com.example.pluralofertasandroid2.fragments.home.myCupons.MyCuponsContentFragment
+import com.example.pluralofertasandroid2.fragments.home.HomeFragmentOffer
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.google.android.material.bottomnavigation.BottomNavigationItemView

@@ -31,7 +31,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.offerDetails.ProductDetailsActivity"
+            android:name=".activity.productDetails.ProductDetailsActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity

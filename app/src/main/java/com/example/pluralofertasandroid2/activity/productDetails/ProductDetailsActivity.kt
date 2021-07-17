@@ -1,20 +1,17 @@
-package com.example.pluralofertasandroid2.activity.offerDetails
+package com.example.pluralofertasandroid2.activity.productDetails
 
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
-import com.example.pluralofertasandroid2.fragments.dialog.DialogCuponsFrag
-import com.example.pluralofertasandroid2.fragments.productDetailsBottom.TabsDetailsBottomFragment
+import com.example.pluralofertasandroid2.fragments.dialog.CuponsFragDialog
+import com.example.pluralofertasandroid2.fragments.tabsProductDetails.TabsDetailsBottomFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.activity_details_product.*
-import kotlinx.android.synthetic.main.menu_scrolling.*
 import kotlinx.android.synthetic.main.tool_bar.*
 
 
@@ -36,7 +33,7 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener{
         MyUsefulKotlin().startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
         applyCupon.setOnClickListener() {
 
-            DialogCuponsFrag().show(supportFragmentManager, "DialogCuponsFrag")
+            CuponsFragDialog().show(supportFragmentManager, "DialogCuponsFrag")
         }
         btnComprarDetalhesProduto.setOnClickListener {
             val intent = Intent(this, CartCheckoutActivity::class.java)

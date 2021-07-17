@@ -4,7 +4,7 @@ import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.cart.CartFragment
+import com.example.pluralofertasandroid2.fragments.home.cart.CartFragment
 
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 

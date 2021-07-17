@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.myCupons
+package com.example.pluralofertasandroid2.fragments.home.myCupons
 
 import android.os.Bundle
 import android.view.LayoutInflater

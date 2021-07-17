@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.dialog_register_address.*
 import java.time.format.DecimalStyle
 
 
-class DialogRegisterAdress: DialogFragment() {
+class RegisterAdressDialog: DialogFragment() {
     private val TAG = "DialogRegisterAdress"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

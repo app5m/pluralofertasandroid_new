@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.fragments.cart
+package com.example.pluralofertasandroid2.fragments.home.cart
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,14 +9,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.adapter.CartAdapter
-import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Cart
-import com.example.pluralofertasandroid2.model.Product
 import kotlinx.android.synthetic.main.fragment_cart.*
-import kotlinx.android.synthetic.main.home_body.*
 import java.util.ArrayList
 
 class CartFragment : Fragment(), RecyclerItemClickListener {
