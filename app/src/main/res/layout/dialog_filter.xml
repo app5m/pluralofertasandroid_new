@@ -131,7 +131,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnFiltrarGrandeFragmentFiltro"
+        app:layout_constraintBottom_toTopOf="@+id/filterBnt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/codeSpinner"
@@ -155,7 +155,7 @@
     </ScrollView>
 
     <Button
-            android:id="@+id/btnFiltrarGrandeFragmentFiltro"
+            android:id="@+id/filterBnt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/retangulo132"

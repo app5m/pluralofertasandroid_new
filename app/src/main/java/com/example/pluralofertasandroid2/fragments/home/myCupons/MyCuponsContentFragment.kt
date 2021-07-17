@@ -20,7 +20,7 @@ class MyCuponsContentFragment : Fragment(),RecyclerItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-       val viewFragment = inflater.inflate(R.layout.fragment_my_cupons_content, container, false)
+       val viewFragment = inflater.inflate(R.layout.fragment_mycupons_content, container, false)
 
 /*
         MyUsefulKotlin().startFragment(LoginFragment(), requireActivity().supportFragmentManager)
