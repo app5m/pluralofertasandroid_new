@@ -34,7 +34,7 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener{
         toolbar.visibility = View.VISIBLE
 
         MyUsefulKotlin().startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
-        miguito.setOnClickListener() {
+        applyCupon.setOnClickListener() {
 
             DialogCuponsFrag().show(supportFragmentManager, "DialogCuponsFrag")
         }
