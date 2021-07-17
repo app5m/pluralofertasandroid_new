@@ -7,7 +7,16 @@
     android:layout_height="match_parent"
     >
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorPrimaryDark"
@@ -16,268 +25,267 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/btnPagarCarrinhoFinalizarCompraButton2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/btn_verde"
-        android:fontFamily="@font/uni_neue_bold"
-        android:text="PAGAR R$ 00,00"
-        android:textColor="#ffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintStart_toStartOf="@+id/guideline42" />
-
-    <LinearLayout
-        android:id="@+id/bntBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_margin="24dp"
-        android:clickable="true"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/cartAdapterRv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline70"
-        app:layout_constraintTop_toTopOf="parent">
-
         <TextView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:background="@drawable/backwardarrowbranca" />
-
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/tituloCarrinhoFinalizarCompraTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carrinho"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/bntBack"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bntBack" />
-
-    <TextView
-        android:id="@+id/subtotalCarrinhoFinalizarCompraTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/uni_neue_regular"
-        android:text="Subtotal:"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline42"
-        app:layout_constraintTop_toBottomOf="@id/guideline68" />
-
-    <TextView
-        android:id="@+id/subtotalValorCarrinhoFinalizarCompraTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/uni_neue_regular"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintTop_toBottomOf="@id/guideline68" />
-
-    <TextView
-        android:id="@+id/rsSubtotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:fontFamily="@font/uni_neue_regular"
-        android:text="R$"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@id/subtotalValorCarrinhoFinalizarCompraTextView"
-        app:layout_constraintTop_toBottomOf="@id/guideline68" />
-
-    <TextView
-        android:id="@+id/taxaOperacionalCarrinhoFinalizarCompraTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/uni_neue_regular"
-        android:text="Taxa Operacional:"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline42"
-
-        app:layout_constraintTop_toBottomOf="@id/subtotalCarrinhoFinalizarCompraTextView" />
-
-    <TextView
-        android:id="@+id/taxaOperacionalValorCarrinhoFinalizarCompraTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/uni_neue_regular"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintTop_toBottomOf="@id/subtotalValorCarrinhoFinalizarCompraTextView"
-
-        />
-
-    <TextView
-        android:id="@+id/rsTaxa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:fontFamily="@font/uni_neue_regular"
-        android:text="R$"
-        android:textColor="#000000"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@id/taxaOperacionalValorCarrinhoFinalizarCompraTextView"
-        app:layout_constraintTop_toBottomOf="@id/subtotalValorCarrinhoFinalizarCompraTextView"
-
-        />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_marginTop="10dp"
-        android:background="#D9D9D9"
-        app:layout_constraintEnd_toStartOf="@id/guideline60"
-        app:layout_constraintTop_toBottomOf="@id/taxaOperacionalCarrinhoFinalizarCompraTextView">
-
-        <TextView
-            android:id="@+id/totalCarrinhoFinalizarCompraTextView"
+            android:id="@+id/tituloCarrinhoFinalizarCompraTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/uni_neue_regular"
-            android:text="Total:"
-            android:textColor="#000000"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/rsTotal"
-            app:layout_constraintStart_toStartOf="parent"
 
-
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/totalValorCarrinhoFinalizarCompraTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/uni_neue_bold"
-            android:textColor="#000000"
-            android:textSize="16dp"
+            android:text="Carrinho"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/rsTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:fontFamily="@font/uni_neue_bold"
-            android:text="R$"
-            android:textColor="#000000"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/totalValorCarrinhoFinalizarCompraTextView"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#D9D9D9"
-        app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
-        app:layout_constraintEnd_toStartOf="@id/constraintLayout2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/constraintLayout2"
-
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="46dp"
-            android:fontFamily="@font/uni_neue_bold"
-            android:text=" "
-            android:textSize="16dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#D9D9D9"
-        app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/constraintLayout2"
-        app:layout_constraintTop_toTopOf="@id/constraintLayout2">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="46dp"
-            android:fontFamily="@font/uni_neue_bold"
-            android:text=" "
-            android:textSize="16dp" />
-
-    </LinearLayout>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline60"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline68"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline70"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline71"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.94" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cartAdapterRv"
-        android:layout_width="0dp"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/subtotalCarrinhoFinalizarCompraTextView"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline31" />
+        app:layout_constraintTop_toTopOf="@+id/guideline31">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="41dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/corSolidaDaTelaHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <Button
+                    android:id="@+id/btnPagarCarrinhoFinalizarCompraButton2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/btn_verde"
+                    android:fontFamily="@font/uni_neue_bold"
+                    android:text="PAGAR R$ 00,00"
+                    android:textColor="#ffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline60"
+                    app:layout_constraintStart_toStartOf="@+id/guideline42" />
+
+
+                <TextView
+                    android:id="@+id/subtotalCarrinhoFinalizarCompraTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:text="Subtotal:"
+                    android:textColor="#000000"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline42"
+                    app:layout_constraintTop_toBottomOf="@id/guideline68" />
+
+                <TextView
+                    android:id="@+id/subtotalValorCarrinhoFinalizarCompraTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:textColor="#000000"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline60"
+                    app:layout_constraintTop_toBottomOf="@id/guideline68" />
+
+                <TextView
+                    android:id="@+id/rsSubtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:text="R$"
+                    android:textColor="#000000"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@id/subtotalValorCarrinhoFinalizarCompraTextView"
+                    app:layout_constraintTop_toBottomOf="@id/guideline68" />
+
+                <TextView
+                    android:id="@+id/taxaOperacionalCarrinhoFinalizarCompraTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:text="Taxa Operacional:"
+                    android:textColor="#000000"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+
+                    app:layout_constraintStart_toStartOf="@+id/guideline42"
+                    app:layout_constraintTop_toBottomOf="@id/subtotalCarrinhoFinalizarCompraTextView" />
+
+                <TextView
+                    android:id="@+id/taxaOperacionalValorCarrinhoFinalizarCompraTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:textColor="#000000"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toStartOf="@id/guideline60"
+                    app:layout_constraintTop_toBottomOf="@id/subtotalValorCarrinhoFinalizarCompraTextView"
+
+                    />
+
+                <TextView
+                    android:id="@+id/rsTaxa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:text="R$"
+                    android:textColor="#000000"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+                    app:layout_constraintEnd_toStartOf="@id/taxaOperacionalValorCarrinhoFinalizarCompraTextView"
+
+                    app:layout_constraintTop_toBottomOf="@id/subtotalValorCarrinhoFinalizarCompraTextView" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="46dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="#D9D9D9"
+                    app:layout_constraintBottom_toTopOf="@+id/btnPagarCarrinhoFinalizarCompraButton2"
+                    app:layout_constraintEnd_toStartOf="@id/guideline60"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout3">
+
+                    <TextView
+                        android:id="@+id/totalCarrinhoFinalizarCompraTextView"
+                        android:layout_width="38dp"
+                        android:layout_height="25dp"
+                        android:fontFamily="@font/uni_neue_regular"
+                        android:text="Total:"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/rsTotal"
+                        app:layout_constraintStart_toStartOf="parent"
+
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/totalValorCarrinhoFinalizarCompraTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/uni_neue_bold"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rsTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/uni_neue_bold"
+                        android:text="R$"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/totalValorCarrinhoFinalizarCompraTextView"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="#D9D9D9"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/constraintLayout2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="46dp"
+                        android:fontFamily="@font/uni_neue_bold"
+                        android:text=" "
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="#D9D9D9"
+                    app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/constraintLayout2"
+                    app:layout_constraintTop_toTopOf="@id/constraintLayout2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="46dp"
+                        android:fontFamily="@font/uni_neue_bold"
+                        android:text=" "
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.90" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline68"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.7" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline71"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.94" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cartAdapterRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline68"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="41dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

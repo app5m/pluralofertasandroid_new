@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_login_content.*
 import kotlinx.android.synthetic.main.fragment_login_content.view.*
 
-class SiginContentFragment : Fragment(),RecyclerItemClickListener {
+class SigninContentFragment : Fragment(),RecyclerItemClickListener {
 
     private lateinit var viewFragment: View
 
@@ -58,8 +58,7 @@ class SiginContentFragment : Fragment(),RecyclerItemClickListener {
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 ->  LoginFragment()
-                1 ->  SiginUpFragment()
-                else -> LoginFragment()
+                else -> SiginUpFragment()
             }
         }
 

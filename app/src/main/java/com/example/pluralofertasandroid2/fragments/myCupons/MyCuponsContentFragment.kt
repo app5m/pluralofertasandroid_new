@@ -28,9 +28,7 @@ class MyCuponsContentFragment : Fragment(),RecyclerItemClickListener {
         MyUsefulKotlin().startFragment(LoginFragment(), requireActivity().supportFragmentManager)
 */
 
-        viewFragment.btnVoltarLoginButton.setOnClickListener {
-            findNavController().popBackStack()
-        }
+
         return viewFragment
     }
 

@@ -37,6 +37,11 @@ class UsedMyCuponsFragment : Fragment(), RecyclerItemClickListener {
         configureInitialViews()
         usedCuponList.add(Cupon())
         usedCuponList.add(Cupon())
+        usedCuponList.add(Cupon())
+        usedCuponList.add(Cupon())
+        usedCuponList.add(Cupon())
+        usedCuponList.add(Cupon())
+
 
     }
     private fun configureInitialViews(){

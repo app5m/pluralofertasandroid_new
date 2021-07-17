@@ -36,10 +36,10 @@ class CartFragment : Fragment(), RecyclerItemClickListener {
         btnPagarCarrinhoFinalizarCompraButton2.setOnClickListener {
             MyUsefulKotlin().startFragment(PaymentFormFragment(), requireActivity().supportFragmentManager)
         }
-        bntBack.setOnClickListener {
 
-        }
         configureInitialViews()
+        cartList.add(Cart())
+        cartList.add(Cart())
         cartList.add(Cart())
         cartList.add(Cart())
 

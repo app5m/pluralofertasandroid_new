@@ -53,8 +53,7 @@ class TabsDetailsBottomFragment : Fragment(),RecyclerItemClickListener{
                 0 ->  TabOptionsFrag()
                 1 ->  TabHighlightsFrag()
                 2 ->  TabLocateFrag()
-                3 ->  TabRulesFrag()
-                else -> TabOptionsFrag()
+                else -> TabRulesFrag()
             }
         }
 

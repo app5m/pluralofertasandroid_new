@@ -84,10 +84,11 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
                 }
             }
 
-
+            filterTv.setOnClickListener {
+                registerForContextMenu(it)
+            }
         }
         //esse menu filtro nao ta funcionando nao sei o porquê
-        registerForContextMenu(filterTv)
 
     }
 
