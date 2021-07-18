@@ -1,58 +1,63 @@
-package com.example.pluralofertasandroid2.fragments.home
+package com.example.pluralofertasandroid2.fragments.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.adapter.CuponsAdapter
 import com.example.pluralofertasandroid2.adapter.UAddressAdapter
 import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
+import com.example.pluralofertasandroid2.model.Cupon
 import com.example.pluralofertasandroid2.model.UAddress
-import kotlinx.android.synthetic.main.fragment_cart.*
-import kotlinx.android.synthetic.main.fragment_login_content.view.*
-import kotlinx.android.synthetic.main.fragment_mainmenu.*
+import kotlinx.android.synthetic.main.dialog_cupon.*
+import kotlinx.android.synthetic.main.dialog_myadresses_home.*
 import kotlinx.android.synthetic.main.fragment_myadresses.*
+import kotlinx.android.synthetic.main.fragment_myadresses.addAdressMainMenuFab
 import kotlinx.android.synthetic.main.fragment_myadresses.myAdressesRv
-import kotlinx.android.synthetic.main.fragment_myadresses_home.*
-import kotlinx.android.synthetic.main.tool_bar.*
-import java.util.*
+import java.util.ArrayList
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MyAdressesHomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MyAdressesHomeFragment : Fragment(), RecyclerItemClickListener {
+class MyadressesHomeDialog: DialogFragment(), RecyclerItemClickListener {
+    private val TAG = "MyadressesHomeDialog"
     private lateinit var viewFragment: View
     private var uaddressList  = ArrayList<UAddress>()
-    var me: Fragment = this
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL,R.style.AppTheme)
+
+    }
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? { //start view
-
-
-
-        val viewFragment = inflater.inflate(R.layout.fragment_myadresses_home, container, false)
-
-
-        return viewFragment
+    ): View? {
+        return inflater.inflate(R.layout.dialog_myadresses_home, container)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         backButtonHome.setOnClickListener {
+
             onbackpressed()
         }
         saveBnt.setOnClickListener {
             onbackpressed()
         }
+        addAdressHomeFab.setOnClickListener {
+            val dialog = RegisterAdressDialog()
+            dialog.setTargetFragment(this, 1)
+            fragmentManager?.let { it1 -> dialog.show(it1,"DialogRegisterAdress") }
+        }
+
 
 
         configureInitialViews()
@@ -63,8 +68,8 @@ class MyAdressesHomeFragment : Fragment(), RecyclerItemClickListener {
         uaddressList.add(UAddress())
         uaddressList.add(UAddress())
 
-
     }
+
     private fun configureInitialViews(){
 
         val productsAdapter = UAddressAdapter(requireContext(),uaddressList,this)
@@ -74,13 +79,10 @@ class MyAdressesHomeFragment : Fragment(), RecyclerItemClickListener {
         myAdressesRv.adapter = productsAdapter
     }
     fun onbackpressed(){
-        activity?.let {
-            MyUsefulKotlin().startFragmentOnBack(
-                HomeFragmentOffer(),
-                it.supportFragmentManager
-            )
-        }
+
+        dialog?.dismiss()
 
     }
+
 
 }

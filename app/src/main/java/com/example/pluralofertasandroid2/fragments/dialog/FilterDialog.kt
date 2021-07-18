@@ -67,10 +67,10 @@ class FilterDialog : DialogFragment(), RecyclerItemClickListener,AdapterView.OnI
         spinner!!.setAdapter(aa)
 
         filterBnt.setOnClickListener {
-            dialog?.dismiss();
+            dialog?.dismiss()
         }
         backBnt.setOnClickListener {
-            dialog?.dismiss();
+            dialog?.dismiss()
 
 
         }

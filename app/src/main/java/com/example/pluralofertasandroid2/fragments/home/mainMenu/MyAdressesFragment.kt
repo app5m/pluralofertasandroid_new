@@ -15,10 +15,13 @@ import com.example.pluralofertasandroid2.fragments.home.HomeFragmentOffer
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.UAddress
+import kotlinx.android.synthetic.main.dialog_myadresses_home.*
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_login_content.view.*
 import kotlinx.android.synthetic.main.fragment_mainmenu.*
 import kotlinx.android.synthetic.main.fragment_myadresses.*
+import kotlinx.android.synthetic.main.fragment_myadresses.myAdressesRv
+import kotlinx.android.synthetic.main.fragment_myadresses.saveBnt2
 import kotlinx.android.synthetic.main.tool_bar.*
 import java.util.*
 
@@ -31,7 +34,7 @@ import java.util.*
 class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
     private lateinit var viewFragment: View
     private var uaddressList  = ArrayList<UAddress>()
-    var me: Fragment = this
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,7 +53,7 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
         backButton.setOnClickListener {
             onbackpressed()
         }
-        saveBnt2.setOnClickListener {
+        backButton.setOnClickListener {
             onbackpressed()
         }
         addAdressMainMenuFab.setOnClickListener {
