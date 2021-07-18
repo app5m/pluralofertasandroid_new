@@ -49,13 +49,13 @@
             android:layout_height="wrap_content"
             android:text="Meus Endereços"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@+id/backButton"
+            app:layout_constraintBottom_toBottomOf="@+id/backButtonHome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/backButton" />
+            app:layout_constraintTop_toTopOf="@+id/backButtonHome" />
 
         <LinearLayout
-            android:id="@+id/backButton"
+            android:id="@+id/backButtonHome"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="24dp"
@@ -94,7 +94,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/saveBnt2"
+                    android:id="@+id/saveBnt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -130,7 +130,7 @@
                     android:id="@+id/myAdressesRv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/saveBnt2"
+                    app:layout_constraintBottom_toTopOf="@+id/saveBnt"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -141,7 +141,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addAdressMainMenuFab"
+        android:id="@+id/addAdressHomeFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="34dp"

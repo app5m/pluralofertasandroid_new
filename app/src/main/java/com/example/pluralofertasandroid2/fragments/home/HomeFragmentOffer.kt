@@ -99,7 +99,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
 
             btnSwitchCity.setOnClickListener {
-                MyUsefulKotlin().startFragment(MyAdressesFragment(), requireActivity().supportFragmentManager)
+                MyUsefulKotlin().startFragment(MyAdressesHomeFragment(), requireActivity().supportFragmentManager)
 
             }
 
