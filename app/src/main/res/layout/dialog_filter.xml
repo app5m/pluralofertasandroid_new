@@ -10,7 +10,7 @@
 >
 
     <LinearLayout
-        android:id="@+id/btnVoltarFiltroButton"
+        android:id="@+id/backBnt"
         app:layout_constraintTop_toTopOf="@id/guideline37"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline37"
@@ -26,7 +26,7 @@
         android:padding="6dp"
         >
 
-            <Button
+            <ImageButton
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:background="@drawable/backwardarrowbranca"
@@ -80,6 +80,7 @@
             android:id="@+id/textView18"
             android:layout_marginEnd="32dp"
         tools:ignore="UnknownId" />
+
     <com.jaygoo.widget.RangeSeekBar
         android:id="@+id/rangeBarFiltro"
         android:layout_width="match_parent"
@@ -96,6 +97,7 @@
         app:rsb_indicator_text_color="#009933"
         app:rsb_indicator_text_size="18dp"
         app:rsb_indicator_width="50dp"
+        app:rsb_min="0"
         app:rsb_mode="range"
         app:rsb_progress_color="#FF5B5C"
         app:rsb_progress_default_color="#660066"
@@ -104,11 +106,10 @@
         app:rsb_thumb_height="20dp"
         app:rsb_thumb_width="20dp"
         app:rsb_tick_mark_layout_gravity="bottom"
+
+
         app:rsb_tick_mark_mode="number"
-        app:rsb_tick_mark_text_margin="15dp"
-
-
-        />
+        app:rsb_tick_mark_text_margin="15dp" />
 
     <Spinner
         android:id="@+id/codeSpinner"
@@ -124,35 +125,20 @@
         app:layout_constraintTop_toBottomOf="@+id/rangeBarFiltro"
         tools:ignore="UnknownId" />
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/filterBnt"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/guideline77"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/codeSpinner"
-        tools:ignore="UnknownId">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/itemPesquisaFiltroRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline77"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rangeBarFiltro"
-            app:layout_constraintVertical_bias="0.5"
-            tools:listitem="@layout/fragment_cell_item_pesquisa"
+        app:layout_constraintVertical_bias="0.5">
 
-            >
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </ScrollView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <Button
             android:id="@+id/filterBnt"

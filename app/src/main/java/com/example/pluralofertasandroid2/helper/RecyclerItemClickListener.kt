@@ -14,12 +14,16 @@ interface RecyclerItemClickListener {
     }
     fun onClickListenerCart(cart: Cart){
         //optional body
-    }fun onClickListenerUAddress(uaddress: UAddress){
+    }
+
+    fun onClickListenerUAddress(uaddress: UAddress){
         //optional body
     }
 
-
     fun onClickListenerHighlights(highlight: Highlight){
+        //optional body
+    }
+    fun onClickListenerCategoriesSearch(category: Category){
         //optional body
     }
 }

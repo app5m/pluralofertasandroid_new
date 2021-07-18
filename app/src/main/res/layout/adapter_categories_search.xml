@@ -12,7 +12,7 @@
                 android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/itemPesquisaButton"
+                android:id="@+id/nameCategoriTv"
                 android:text="Produto"
                 android:fontFamily="@font/uni_neue_regular"
                 android:paddingStart="10dp"

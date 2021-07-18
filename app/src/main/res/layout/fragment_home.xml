@@ -14,12 +14,12 @@
             android:layout_height="match_parent">
 
 
-        <include layout="@layout/home_body"/>
-
         <include
-            android:id="@+id/layoutHomeSemInternet"
-            layout="@layout/cell_home_sem_internet"
+            android:id="@+id/loadHome"
+            layout="@layout/loading"
             android:visibility="gone" />
+
+        <include layout="@layout/home_body"/>
 
     </FrameLayout>
 
@@ -30,15 +30,49 @@
             android:elevation="0dp"
             app:elevation="0dp">
 
+        <include
+            android:id="@+id/layoutHomeSemInternet"
+            layout="@layout/cell_home_sem_internet"
+            android:visibility="gone" />
+
         <include layout="@layout/fragment_layout_home_itens_na_rolagem"
 
                 />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include
-            android:visibility="gone"
-            android:id="@+id/loadHome"
-            layout="@layout/loading" />
+    <TextView
+        android:id="@+id/filterTv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/grupo4802"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btnSwitchCity"
+        style="@style/mudarCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/retangulo1477"
+        android:clickable="true"
+        android:drawableEnd="@drawable/arrow_down_white"
+        android:drawablePadding="9dp"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:justificationMode="inter_word"
+        android:maxWidth="10dp"
+        android:maxLines="1"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="11dp"
+        android:paddingBottom="8dp"
+        android:text="Av. Juscelino Kubitschek de Oliveira, 440 - Alto Petrópolis, Porto Alegre - RS, 91240-090"
+        android:textAllCaps="true"
+        android:textSize="12sp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
