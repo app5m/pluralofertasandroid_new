@@ -46,6 +46,14 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
         configureInitialViews()
         uaddressList.add(UAddress())
         uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
+        uaddressList.add(UAddress())
 
     }
     private fun configureInitialViews(){
@@ -57,9 +65,9 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
         myAdressesRv.adapter = productsAdapter
     }
     fun onBackPressed() {
-        activity?.let {
+    /*    activity?.let {
             MyUsefulKotlin().startFragmentOnBack(MainMenuFragment(),
-                it.supportFragmentManager)
+                it.supportFragmentManager)*/
         }
     }
 }

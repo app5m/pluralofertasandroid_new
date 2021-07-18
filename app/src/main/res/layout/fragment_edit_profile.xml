@@ -159,6 +159,68 @@
         app:layout_constraintTop_toBottomOf="@+id/nomeCompletoMeuPerfilEditText" />
 
 
+    <EditText
+        android:id="@+id/emailMeuPerfilEditText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/background_cadastro_ll"
+        android:drawableEnd="@drawable/email"
+        android:enabled="false"
+        android:fontFamily="@font/uni_neue_regular"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:text="johndoe@mail.com"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@+id/nomeCompletoMeuPerfilEditText" />
+
+    <EditText
+        android:id="@+id/emailMeuPerfilEditText3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/background_cadastro_ll"
+        android:enabled="false"
+        android:fontFamily="@font/uni_neue_regular"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:text="johndoe@mail.com"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlterarSenhaMeuPerfilTextView"
+        tools:text="CPF" />
+
+    <EditText
+        android:id="@+id/emailMeuPerfilEditText4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="@drawable/background_cadastro_ll"
+        android:enabled="false"
+        android:fontFamily="@font/uni_neue_regular"
+        android:imeOptions="actionDone"
+        android:inputType="date"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp"
+        android:text="johndoe@mail.com"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline58"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline57"
+        app:layout_constraintTop_toBottomOf="@+id/emailMeuPerfilEditText3"
+        tools:text="00/00/0000" />
+
     <TextView
         android:id="@+id/btnAlterarSenhaMeuPerfilTextView"
         android:layout_width="0dp"
@@ -173,6 +235,7 @@
         android:paddingEnd="20dp"
         android:paddingBottom="16dp"
         android:text="●●●●●●●"
+        android:textColor="#B8B8B8"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="@id/guideline58"
         app:layout_constraintStart_toStartOf="@id/guideline57"
