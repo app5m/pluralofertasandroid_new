@@ -46,7 +46,6 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
 
         viewHome?.filterTv4.setOnClickListener {
-          Toast.makeText(context, "FilterDialog", Toast.LENGTH_SHORT).show()
 
             Log.d(TAG, "onClick: opening dialog")
 

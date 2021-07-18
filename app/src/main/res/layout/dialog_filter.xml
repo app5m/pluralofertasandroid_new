@@ -1,84 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.dialog.FilterDialog"
-        style="@style/corSolidaDaTelaHome"
->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/corSolidaDaTelaHome"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragments.dialog.FilterDialog">
 
     <LinearLayout
         android:id="@+id/backBnt"
-        app:layout_constraintTop_toTopOf="@id/guideline37"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guideline37"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.5"
-        android:layout_marginStart="32dp"
-        android:gravity="center"
-        android:clickable="true"
-        app:layout_constraintHorizontal_bias="0.0"
         android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/bg_back_button_purple"
+        android:clickable="true"
+        android:gravity="center"
         android:padding="6dp"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/backwardarrowbranca"
-                android:clickable="false" />
+        <ImageButton
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/backwardarrowbranca"
+            android:clickable="false" />
 
     </LinearLayout>
 
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/uni_neue_bold"
+        android:gravity="center_horizontal"
+        android:text="FILTRO"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline37"
+        app:layout_constraintVertical_bias="0.5"
+
+        />
+
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FILTRO"
-            android:id="@+id/textView2"
-            android:textSize="14dp"
-            android:textColor="#000000"
-            android:gravity="center_horizontal"
-            android:fontFamily="@font/uni_neue_bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/guideline37"
-            app:layout_constraintBottom_toBottomOf="@id/guideline37"
-            app:layout_constraintVertical_bias="0.5"
-
-    />
-
+        android:id="@+id/textView17"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/elipse54"
+        app:layout_constraintBottom_toBottomOf="@id/rangeBarFiltro"
+        app:layout_constraintEnd_toEndOf="@id/rangeBarFiltro"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toEndOf="@id/guideline38"
+        app:layout_constraintTop_toTopOf="@id/rangeBarFiltro"
+        app:layout_constraintVertical_bias="0.90" />
 
     <TextView
-            android:layout_width="10dp"
-            android:background="@drawable/elipse54"
-            android:layout_height="10dp"
-            app:layout_constraintTop_toTopOf="@id/rangeBarFiltro"
-            app:layout_constraintBottom_toBottomOf="@id/rangeBarFiltro"
-            app:layout_constraintEnd_toEndOf="@id/rangeBarFiltro"
-            app:layout_constraintStart_toEndOf="@id/guideline38"
-            app:layout_constraintHorizontal_bias="0.02"
-            app:layout_constraintVertical_bias="0.90"
-            android:layout_marginStart="32dp"
-            android:id="@+id/textView17"/>
-
-    <TextView
-            android:layout_width="10dp"
-            android:background="@drawable/elipse54"
-            android:layout_height="10dp"
-            app:layout_constraintTop_toTopOf="@id/rangeBarFiltro"
-            app:layout_constraintBottom_toBottomOf="@id/rangeBarFiltro"
-            app:layout_constraintEnd_toStartOf="@id/guideline39"
-            app:layout_constraintStart_toStartOf="@id/rangeBarFiltro"
-            app:layout_constraintHorizontal_bias="0.98"
-            app:layout_constraintVertical_bias="0.90"
-            android:id="@+id/textView18"
-            android:layout_marginEnd="32dp"
+        android:id="@+id/textView18"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/elipse54"
+        app:layout_constraintBottom_toBottomOf="@id/rangeBarFiltro"
+        app:layout_constraintEnd_toStartOf="@id/guideline39"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="@id/rangeBarFiltro"
+        app:layout_constraintTop_toTopOf="@id/rangeBarFiltro"
+        app:layout_constraintVertical_bias="0.90"
         tools:ignore="UnknownId" />
 
     <com.jaygoo.widget.RangeSeekBar
@@ -111,19 +104,6 @@
         app:rsb_tick_mark_mode="number"
         app:rsb_tick_mark_text_margin="15dp" />
 
-    <Spinner
-        android:id="@+id/codeSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="32dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rangeBarFiltro"
-        tools:ignore="UnknownId" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoriesRv"
@@ -134,57 +114,55 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/mySpinner"
 
         app:layout_constraintVertical_bias="0.5">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <Button
-            android:id="@+id/filterBnt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/retangulo132"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="FILTRAR"
-            android:textSize="15.8dp"
-            android:textColor="#ffffff"
-            android:lineSpacingExtra="-3.8dp"
-            android:gravity="center"
-            android:paddingBottom="3dp"
-            app:layout_goneMarginBottom="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintTop_toBottomOf="@id/guideline77"
-            android:layout_marginBottom="30dp"
-            android:visibility="visible"
-    />
+        android:id="@+id/filterBnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/retangulo132"
+        android:gravity="center"
+        android:lineSpacingExtra="-3.8dp"
+        android:paddingBottom="3dp"
+        android:text="FILTRAR"
+        android:textColor="#ffffff"
+        android:textSize="15.8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline77"
+        app:layout_goneMarginBottom="28dp" />
 
     <Button
-            android:id="@+id/btnFiltrarPequenoFragmentFiltro"
-            android:background="@drawable/btn_filtro_menor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/guideline76"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline77"
-            android:visibility="gone"
+        android:id="@+id/btnFiltrarPequenoFragmentFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_filtro_menor"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline76"
+        app:layout_constraintTop_toBottomOf="@id/guideline77"
 
-    />
+        />
 
     <Button
-            android:id="@+id/btnLimparFragmentFiltro"
-            android:background="@drawable/btn_limpar_filtro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/btnFiltrarPequenoFragmentFiltro"
-            app:layout_constraintBottom_toBottomOf="@id/btnFiltrarPequenoFragmentFiltro"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/guideline76"
-            android:visibility="gone"
-    />
+        android:id="@+id/btnLimparFragmentFiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_limpar_filtro"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btnFiltrarPequenoFragmentFiltro"
+        app:layout_constraintEnd_toStartOf="@id/guideline76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnFiltrarPequenoFragmentFiltro" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline36"
@@ -198,7 +176,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="73dp" />
+        app:layout_constraintGuide_percent="0.10123119" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37893298" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline38"
@@ -206,26 +191,150 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.01" />
-    <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/guideline39"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="1"/>
 
     <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/guideline76"
-            app:layout_constraintGuide_percent="0.5"
-            android:orientation="vertical"/>
+        android:id="@+id/guideline39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1" />
 
     <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
+        android:id="@+id/guideline76"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline77"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <Spinner
+        android:id="@+id/mySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/rangeBarFiltro" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raio em Km"
+        app:layout_constraintBottom_toBottomOf="@+id/mySpinner"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/mySpinner" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/filterBnt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline49">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/guideline77"
-            app:layout_constraintGuide_percent="0.85"
-            android:orientation="horizontal"
-    />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:text="Alimentação"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:text="Eletro Eletrônico"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:text="Saúde"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:text="Hotelaria"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="62dp"
+                android:layout_marginEnd="62dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:text="Serviços Automotivos"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_login_cadastro_ll"
+                android:text="Viagem"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
