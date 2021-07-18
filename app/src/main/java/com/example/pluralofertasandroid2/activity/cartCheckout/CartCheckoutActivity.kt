@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.fragments.home.cart.CartFragment
+import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
 
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 
@@ -17,7 +18,7 @@ class CartCheckoutActivity : AppCompatActivity(){
         setContentView(R.layout.activity_cartcheckout)
 
 
-        MyUsefulKotlin().startFragment(CartFragment(), supportFragmentManager)
+        MyUsefulKotlin().startFragment(PaymentFormFragment(), supportFragmentManager)
 
 
     }

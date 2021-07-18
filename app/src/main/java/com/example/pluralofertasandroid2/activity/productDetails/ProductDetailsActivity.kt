@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.activity.MainActivity
 import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
 import com.example.pluralofertasandroid2.fragments.dialog.CuponsFragDialog
 import com.example.pluralofertasandroid2.fragments.tabsProductDetails.TabsDetailsBottomFragment
@@ -36,9 +37,10 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener{
             CuponsFragDialog().show(supportFragmentManager, "DialogCuponsFrag")
         }
         btnComprarDetalhesProduto.setOnClickListener {
-            val intent = Intent(this, CartCheckoutActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("CHANGE_NAV_CART", "true")
             startActivity(intent)
-
+            finishAffinity()
         }
 
     }

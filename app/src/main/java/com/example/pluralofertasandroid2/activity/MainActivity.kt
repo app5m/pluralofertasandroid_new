@@ -3,22 +3,24 @@ package com.example.pluralofertasandroid2.activity
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.*
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.pluralofertasandroid2.CustomTitleFragment
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.fragments.home.HomeFragmentOffer
 import com.example.pluralofertasandroid2.fragments.home.cart.CartFragment
 import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
 import com.example.pluralofertasandroid2.fragments.home.myCupons.MyCuponsContentFragment
-import com.example.pluralofertasandroid2.fragments.home.HomeFragmentOffer
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.tool_bar.*
+
 
 class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
     private var itemView: BottomNavigationItemView? = null
@@ -28,6 +30,9 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
 //cair na tela de login deslogado
        preferences = Preferences(this)
       /* if (!Preferences(this).getLogin()) {
@@ -108,7 +113,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
                     HomeFragmentOffer(),
                     supportFragmentManager
                 )
-                R.id.favoritesFragment -> MyUsefulKotlin().startFragment(
+                R.id.cartFragment -> MyUsefulKotlin().startFragment(
                     CartFragment(),
                     supportFragmentManager
                 )
@@ -124,6 +129,13 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
             }
             true
         }
+        val intent = intent
+        if (intent.hasExtra("CHANGE_NAV_CART")) {
+            bottom_navigation.setSelectedItemId(R.id.cartFragment)
+        }
+
+/*
+*/
     }
 
 }

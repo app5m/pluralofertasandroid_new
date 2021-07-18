@@ -10,7 +10,7 @@
     />
     <!-- favoritesFragment -->
     <item
-        android:id="@+id/favoritesFragment"
+        android:id="@+id/cartFragment"
         android:icon="@drawable/ic_cart"
         android:title="Favoritos"
         app:showAsAction="always" />

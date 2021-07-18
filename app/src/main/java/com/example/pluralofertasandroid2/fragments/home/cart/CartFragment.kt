@@ -1,5 +1,6 @@
 package com.example.pluralofertasandroid2.fragments.home.cart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
+import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
 import com.example.pluralofertasandroid2.adapter.CartAdapter
 import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
@@ -31,7 +33,12 @@ class CartFragment : Fragment(), RecyclerItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnPagarCarrinhoFinalizarCompraButton2.setOnClickListener {
-            MyUsefulKotlin().startFragment(PaymentFormFragment(), requireActivity().supportFragmentManager)
+/*
+            MyUsefulKotlin().startFragment(PaymentFormFragment(), requireActivity().supportFragmentManager)*/
+
+           val intent = Intent(activity, CartCheckoutActivity::class.java)
+            startActivity(intent)
+
         }
 
         configureInitialViews()

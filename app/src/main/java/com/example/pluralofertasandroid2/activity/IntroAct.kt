@@ -36,6 +36,7 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
         btnPular.setOnClickListener {
             finishIntro()
+
         }
 
         btnComecar.setOnClickListener {
@@ -53,6 +54,7 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         //SharedPreferencesManager.putBoolean(PREFS_ONBOARDING,true)
+        finishAffinity()
         startActivity(intent)
     }
 
