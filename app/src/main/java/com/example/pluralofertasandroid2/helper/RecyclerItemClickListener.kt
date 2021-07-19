@@ -6,7 +6,7 @@ import com.example.pluralofertasandroid2.model.*
 interface RecyclerItemClickListener {
 
 
-    fun onClickListenerNews(product: Product){
+    fun onClickListenerProducts(product: Product){
         //optional body
     }
     fun onClickListenerCupons(cupon: Cupon){
@@ -24,6 +24,9 @@ interface RecyclerItemClickListener {
         //optional body
     }
     fun onClickListenerCategoriesSearch(category: Category){
+        //optional body
+    }
+    fun onClickListenerShoopings(shooping: Shooping){
         //optional body
     }
 }

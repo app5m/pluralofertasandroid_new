@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.home.mainMenu.ProfileEditFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_form_of_payment.*
@@ -39,9 +38,12 @@ class PaymentFormFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        credCardChoicebnt.setOnClickListener {
-            Toast.makeText(context, "dfdsfdsfdsfdsf", Toast.LENGTH_SHORT).show()
+        credCardChoiceBnt.setOnClickListener {
             MyUsefulKotlin().startFragment(PaymentFormCreditCardFragment(), requireActivity().supportFragmentManager)
+
+        }
+        ticketChoiceBnt.setOnClickListener {
+            MyUsefulKotlin().startFragment(PaymentFormTicketFragment(), requireActivity().supportFragmentManager)
 
         }
         backBnt4.setOnClickListener {

@@ -120,16 +120,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="14dp"
         android:fontFamily="@font/uni_neue_bold"
         android:gravity="center_horizontal"
         android:text="TPR2FR"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="40dp"
-
-
-        app:layout_constraintBottom_toBottomOf="@+id/expirationDateCuponTv"
+        app:layout_constraintBottom_toTopOf="@+id/expirationDateCuponTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cuponCodeTitleTv" />

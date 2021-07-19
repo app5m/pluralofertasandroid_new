@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_fundo_carrinho"
+    android:paddingStart="24dp"
+    android:paddingTop="23dp"
+    android:paddingEnd="35dp"
+
+    android:paddingBottom="23dp">
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID:01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloCellMyCouponsEmAbertoTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/uni_neue_heavy"
+        android:lineHeight="12dp"
+        android:lineSpacingExtra="10dp"
+        android:maxLines="3"
+        android:minLines="3"
+        android:text="Descrição da compra"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/validadeCellMyCouponsEmAbertoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/uni_neue_regular"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="14sp"
+        android:text="Pedido feito em:"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/textView39"
+        app:layout_constraintTop_toTopOf="@+id/textView39" />
+
+    <TextView
+        android:id="@+id/precoCellMyCouponsEmAbertoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/uni_neue_bold"
+        android:gravity="end"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="12dp"
+        android:text="100,00"
+        android:textAlignment="textEnd"
+        android:textColor="#009933"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView39"
+        app:layout_constraintStart_toStartOf="@+id/textView39"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <TextView
+        android:id="@+id/rsCellMyCouponsEmAbertoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/uni_neue_regular"
+        android:gravity="end"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="12dp"
+        android:text="R$"
+        android:textAlignment="textEnd"
+        android:textColor="#009933"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/precoCellMyCouponsEmAbertoTextView"
+        app:layout_constraintEnd_toStartOf="@+id/precoCellMyCouponsEmAbertoTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/precoCellMyCouponsEmAbertoTextView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/main_button_green"
+        android:text="Aprovada"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloCellMyCouponsEmAbertoTextView" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:text="12/06/2021"
+        app:layout_constraintBottom_toBottomOf="@+id/validadeCellMyCouponsEmAbertoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/validadeCellMyCouponsEmAbertoTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="às"
+        app:layout_constraintEnd_toEndOf="@+id/validadeCellMyCouponsEmAbertoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/validadeCellMyCouponsEmAbertoTextView" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14:00"
+        app:layout_constraintBottom_toBottomOf="@+id/textView36"
+        app:layout_constraintStart_toStartOf="@+id/textView35"
+        app:layout_constraintTop_toTopOf="@+id/textView36" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline82"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

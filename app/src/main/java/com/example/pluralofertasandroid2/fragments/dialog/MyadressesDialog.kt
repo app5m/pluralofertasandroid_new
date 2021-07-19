@@ -24,8 +24,8 @@ import kotlinx.android.synthetic.main.fragment_myadresses.addAdressMainMenuFab
 import kotlinx.android.synthetic.main.fragment_myadresses.myAdressesRv
 import java.util.ArrayList
 
-class MyadressesHomeDialog: DialogFragment(), RecyclerItemClickListener {
-    private val TAG = "MyadressesHomeDialog"
+class MyadressesDialog: DialogFragment(), RecyclerItemClickListener {
+    private val TAG = "MyadressesDialog"
     private lateinit var viewFragment: View
     private var uaddressList  = ArrayList<UAddress>()
 

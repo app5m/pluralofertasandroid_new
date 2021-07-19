@@ -13,9 +13,8 @@ import com.example.pluralofertasandroid2.activity.productDetails.ProductDetailsA
 import com.example.pluralofertasandroid2.adapter.HighlightsAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.fragments.dialog.FilterDialog
-import com.example.pluralofertasandroid2.fragments.dialog.MyadressesHomeDialog
+import com.example.pluralofertasandroid2.fragments.dialog.MyadressesDialog
 import com.example.pluralofertasandroid2.helper.CircleRecyclerViewDecoration
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Highlight
 import com.example.pluralofertasandroid2.model.Product
@@ -95,9 +94,9 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
             btnSwitchCity.setOnClickListener {
                 Log.d(TAG, "onClick: opening dialog")
 
-                val dialog = MyadressesHomeDialog()
+                val dialog = MyadressesDialog()
                 dialog.setTargetFragment(this, 1)
-                fragmentManager?.let { it1 -> dialog.show(it1,"MyadressesHomeDialog") }
+                fragmentManager?.let { it1 -> dialog.show(it1,"MyadressesDialog") }
             }
 
 
@@ -130,7 +129,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
         homeContentRV.adapter = productsAdapter
     }
 
-    override fun onClickListenerNews(product: Product) {
+    override fun onClickListenerProducts(product: Product) {
 
         val intent = Intent(activity, ProductDetailsActivity::class.java)
         intent.putExtra("product", product)
