@@ -9,23 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.activity.productDetails.ProductDetailsActivity
-import com.example.pluralofertasandroid2.adapter.ProductsAdapter
 import com.example.pluralofertasandroid2.adapter.ProductsDemandAdapter
-import com.example.pluralofertasandroid2.adapter.ShoopingsAdapter
-import com.example.pluralofertasandroid2.adapter.UsedCuponsAdapter
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Cupon
 import com.example.pluralofertasandroid2.model.Product
-import com.example.pluralofertasandroid2.model.Shooping
-import kotlinx.android.synthetic.main.fragment_mypayments.*
-import kotlinx.android.synthetic.main.fragment_mypayments.btnVoltarMeuPerfilTv
-import kotlinx.android.synthetic.main.fragment_myshoopings.*
-import kotlinx.android.synthetic.main.fragment_myshoopings.shoopingsRv
 import kotlinx.android.synthetic.main.fragment_shoopingdetails.*
-import kotlinx.android.synthetic.main.fragment_used_mycupons.*
-import kotlinx.android.synthetic.main.fragment_used_mycupons.usedMyCuponsRv
 import java.util.ArrayList
 
 class ShoopingsDetailsFragment: Fragment(), RecyclerItemClickListener {

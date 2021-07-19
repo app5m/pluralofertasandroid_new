@@ -29,11 +29,12 @@ class ProductsDemandAdapter(private val context: Context, private val listProduc
     override fun onBindViewHolder(holder: ProductsDemandViewHolder, position: Int) {
         val product = listProductDemand[position]
 
-        holder.demandNameTv.text = "Nome do produto em duas linhas e também em três linhas........................................................................................."
-        holder.demandDescriptionTv.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. "
-        holder.demandValueTitleTv.text = "Valor "
+        holder.demandNameTv.text = "Descrição do Pedido"
+        holder.dateDemandTv.text = "Data  06/07/2021"
+        holder.timeDemandTv.text = "Às 14:30"
         holder.demandValueTv.text = "00,00 "
         holder.demandRsTv.text = "R$"
+        holder.statusDemandTv.text = "aprovado"
 
         holder.itemView.setOnClickListener { clickOnListener.onClickListenerProducts(product)}
 
@@ -45,17 +46,19 @@ class ProductsDemandAdapter(private val context: Context, private val listProduc
 
     class ProductsDemandViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val demandNameTv: TextView
-        val demandDescriptionTv: TextView
-        val demandValueTitleTv: TextView
+        val dateDemandTv: TextView
+        val timeDemandTv: TextView
         val demandValueTv: TextView
         val demandRsTv: TextView
+        val statusDemandTv: TextView
 
         init {
             demandNameTv = itemView.findViewById(R.id.demandNameTv)
-            demandDescriptionTv = itemView.findViewById(R.id.demandDescriptionTv)
-            demandValueTitleTv = itemView.findViewById(R.id.demandValueTitleTv)
+            dateDemandTv = itemView.findViewById(R.id.dateDemandTv)
+            timeDemandTv = itemView.findViewById(R.id.timeDemandTv)
             demandValueTv = itemView.findViewById(R.id.demandValueTv)
             demandRsTv = itemView.findViewById(R.id.demandRsTv)
+            statusDemandTv = itemView.findViewById(R.id.statusDemandTv)
 
         }
     }

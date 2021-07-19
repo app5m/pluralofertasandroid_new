@@ -29,4 +29,7 @@ interface RecyclerItemClickListener {
     fun onClickListenerShoopings(shooping: Shooping){
         //optional body
     }
+    fun onClickListenerPayments(payment: Payment){
+        //optional body
+    }
 }

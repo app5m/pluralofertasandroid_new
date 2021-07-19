@@ -18,7 +18,6 @@ import com.example.pluralofertasandroid2.model.Cupon
 import com.example.pluralofertasandroid2.model.Product
 import com.example.pluralofertasandroid2.model.Shooping
 import kotlinx.android.synthetic.main.fragment_mypayments.*
-import kotlinx.android.synthetic.main.fragment_mypayments.btnVoltarMeuPerfilTv
 import kotlinx.android.synthetic.main.fragment_myshoopings.*
 import kotlinx.android.synthetic.main.fragment_used_mycupons.*
 import kotlinx.android.synthetic.main.fragment_used_mycupons.usedMyCuponsRv
