@@ -4,7 +4,6 @@ package com.example.pluralofertasandroid2.activity
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
@@ -14,7 +13,7 @@ import com.example.pluralofertasandroid2.fragments.home.HomeFragmentOffer
 import com.example.pluralofertasandroid2.fragments.home.cart.CartFragment
 import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
 import com.example.pluralofertasandroid2.fragments.home.myCupons.MyCuponsContentFragment
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
+import com.example.pluralofertasandroid2.helper.MyUseFulKotlin
 import com.example.pluralofertasandroid2.helper.Preferences
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
@@ -49,8 +48,8 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
 
         //toolbar
         setSupportActionBar(toolbar)
-        MyUsefulKotlin().startFragment(HomeFragmentOffer(), this.supportFragmentManager)
-        MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
+        MyUseFulKotlin().startFragment(HomeFragmentOffer(), this.supportFragmentManager)
+        MyUseFulKotlin().setActionBar(this, supportActionBar!!, "")
 
         toolbar.visibility = View.GONE
 
@@ -109,19 +108,19 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
     fun configureInitialViews(){
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.homeFragment -> MyUsefulKotlin().startFragment(
+                R.id.homeFragment -> MyUseFulKotlin().startFragment(
                     HomeFragmentOffer(),
                     supportFragmentManager
                 )
-                R.id.cartFragment -> MyUsefulKotlin().startFragment(
+                R.id.cartFragment -> MyUseFulKotlin().startFragment(
                     CartFragment(),
                     supportFragmentManager
                 )
-                R.id.myCouponsFragment -> MyUsefulKotlin().startFragment(
+                R.id.myCouponsFragment -> MyUseFulKotlin().startFragment(
                     MyCuponsContentFragment(),
                     supportFragmentManager
                 )
-                R.id.settings_visitante -> MyUsefulKotlin().startFragment(
+                R.id.settings_visitante -> MyUseFulKotlin().startFragment(
                     MainMenuFragment(),
                     supportFragmentManager
                 )

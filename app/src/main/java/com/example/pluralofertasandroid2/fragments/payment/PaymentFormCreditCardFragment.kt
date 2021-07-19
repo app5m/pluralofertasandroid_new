@@ -11,7 +11,7 @@ import android.widget.Spinner
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.fragments.dialog.MyadressesDialog
 import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
+import com.example.pluralofertasandroid2.helper.MyUseFulKotlin
 import kotlinx.android.synthetic.main.dialog_filter.*
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_form_of_payment_creditcard.*
@@ -71,7 +71,7 @@ class PaymentFormCreditCardFragment : Fragment(), AdapterView.OnItemSelectedList
     }
     fun onbackpressed(){
         activity?.let {
-            MyUsefulKotlin().startFragmentOnBack(
+            MyUseFulKotlin().startFragmentOnBack(
                 PaymentFormFragment(),
                 it.supportFragmentManager
             )

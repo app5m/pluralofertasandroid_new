@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
 import com.example.pluralofertasandroid2.adapter.CartAdapter
-import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Cart
 import kotlinx.android.synthetic.main.fragment_cart.*

@@ -1,7 +1,6 @@
 package com.example.pluralofertasandroid2.fragments.home.mainMenu
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.adapter.UAddressAdapter
 import com.example.pluralofertasandroid2.fragments.dialog.RegisterAdressDialog
-import com.example.pluralofertasandroid2.fragments.home.HomeFragmentOffer
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
+import com.example.pluralofertasandroid2.helper.MyUseFulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.UAddress
 import kotlinx.android.synthetic.main.dialog_myadresses_home.*
@@ -84,7 +82,7 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
     }
     fun onbackpressed(){
         activity?.let {
-            MyUsefulKotlin().startFragmentOnBack(
+            MyUseFulKotlin().startFragmentOnBack(
                 MainMenuFragment(),
                 it.supportFragmentManager
             )

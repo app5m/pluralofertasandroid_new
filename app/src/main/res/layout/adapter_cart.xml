@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/btnVisualizarCellMyCouponsEmAbertoTextView2"
-        android:layout_width="96dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:background="@drawable/btn_verde"
@@ -20,8 +20,8 @@
         android:textColor="#FFFFFF"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/valueProductTv"
-        app:layout_constraintEnd_toStartOf="@+id/btnSubtracaoCarrinhoFinalizarCompraLinearLayout"
-        app:layout_constraintStart_toEndOf="@+id/valueProductTv"
+        app:layout_constraintEnd_toStartOf="@+id/guideline85"
+        app:layout_constraintStart_toStartOf="@+id/guideline89"
         app:layout_constraintTop_toBottomOf="@+id/productNameCartTv" />
 
     <ImageView
@@ -69,10 +69,10 @@
         android:text="R$ "
         android:textColor="#009933"
         android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/productImageIv"
+        app:layout_constraintBottom_toBottomOf="@+id/valueProductTv"
         app:layout_constraintStart_toEndOf="@id/productImageIv"
         app:layout_constraintTop_toTopOf="@id/productImageIv"
-        app:layout_constraintVertical_bias="0.90" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/valueProductTv"
@@ -82,10 +82,11 @@
         android:text="100"
         android:textColor="#009933"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@id/rsCarrinhoFinalizarCompraTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/productImageIv"
+        app:layout_constraintEnd_toStartOf="@+id/guideline84"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/rsCarrinhoFinalizarCompraTextView"
-        app:layout_constraintTop_toTopOf="@id/rsCarrinhoFinalizarCompraTextView"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintTop_toBottomOf="@+id/productNameCartTv" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnAdicaoCarrinhoFinalizarCompraImageView"
@@ -159,6 +160,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline84"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.54" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

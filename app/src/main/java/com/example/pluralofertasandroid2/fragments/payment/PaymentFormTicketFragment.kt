@@ -1,22 +1,17 @@
 package com.example.pluralofertasandroid2.fragments.payment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.fragments.dialog.MyadressesDialog
-import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
+import com.example.pluralofertasandroid2.helper.MyUseFulKotlin
 import kotlinx.android.synthetic.main.dialog_filter.*
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_form_of_payment_creditcard.*
-import kotlinx.android.synthetic.main.fragment_form_of_payment_creditcard.backBnt2
 import kotlinx.android.synthetic.main.fragment_form_of_payment_ticket.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -59,7 +54,7 @@ class PaymentFormTicketFragment : Fragment(), AdapterView.OnItemSelectedListener
     }
     fun onbackpressed(){
         activity?.let {
-            MyUsefulKotlin().startFragmentOnBack(
+            MyUseFulKotlin().startFragmentOnBack(
                 PaymentFormFragment(),
                 it.supportFragmentManager
             )

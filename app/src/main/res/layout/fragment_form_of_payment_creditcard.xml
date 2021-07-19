@@ -76,6 +76,7 @@
                     android:background="@drawable/credcard_fields_bg"
                     android:ems="10"
                     android:focusable="false"
+                    android:hint="Selecionar Endereço"
                     android:inputType="text"
                     app:layout_constraintEnd_toStartOf="@+id/guideline67"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -87,9 +88,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="38dp"
-                    android:text="Selecionar endereço"
+                    android:text="Selecionar Endereço"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
+                    app:layout_constraintTop_toBottomOf="@+id/validate_edit" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
@@ -366,26 +367,26 @@
                     android:layout_marginTop="26dp"
                     android:text="Nome do Títular"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+                    app:layout_constraintTop_toBottomOf="@+id/card_number_edit" />
 
                 <TextView
                     android:id="@+id/textView27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
-                    android:text="Código verificador"
+                    android:text="Código Verificador"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+                    app:layout_constraintTop_toBottomOf="@+id/name_edit" />
 
                 <TextView
                     android:id="@+id/textView29"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
-                    android:text="Parcelar em:"
+                    android:text="Parcelar Em:"
                     app:layout_constraintEnd_toStartOf="@+id/guideline67"
                     app:layout_constraintStart_toStartOf="@+id/guideline81"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
+                    app:layout_constraintTop_toBottomOf="@+id/name_edit" />
 
                 <TextView
                     android:id="@+id/textView30"
@@ -394,10 +395,10 @@
                     android:layout_marginTop="24dp"
                     android:text="Data validade"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
+                    app:layout_constraintTop_toBottomOf="@+id/cvv_edit" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/payCreditBtn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
@@ -411,50 +412,58 @@
                     app:layout_constraintTop_toBottomOf="@+id/adressCreditCardtEt" />
 
                 <EditText
-                    android:id="@+id/editTextNumber2"
+                    android:id="@+id/card_number_edit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/credcard_fields_bg"
                     android:ems="10"
+                    android:hint="Número do cartão"
                     android:inputType="number"
                     app:layout_constraintEnd_toStartOf="@+id/guideline67"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
                     app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
                 <EditText
-                    android:id="@+id/editTextNumber3"
+                    android:id="@+id/name_edit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/credcard_fields_bg"
                     android:ems="10"
+                    android:hint="Número do cartão"
                     android:inputType="text"
                     app:layout_constraintEnd_toStartOf="@+id/guideline67"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
                     app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
-                <EditText
-                    android:id="@+id/editTextNumber4"
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/validate_edit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/credcard_fields_bg"
                     android:ems="10"
+                    android:hint="Validade MM/YYYY"
                     android:inputType="number"
                     app:layout_constraintEnd_toStartOf="@+id/guideline81"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
-                    app:layout_constraintTop_toBottomOf="@+id/textView30" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView30"
 
-                <EditText
-                    android:id="@+id/editTextNumber5"
+
+                    />
+
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/cvv_edit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/credcard_fields_bg"
                     android:ems="10"
+                    android:hint="CVV"
                     android:inputType="number"
                     app:layout_constraintEnd_toStartOf="@+id/guideline81"
                     app:layout_constraintStart_toStartOf="@+id/guideline66"
-                    app:layout_constraintTop_toBottomOf="@+id/textView27" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView27"
+                    />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline81"

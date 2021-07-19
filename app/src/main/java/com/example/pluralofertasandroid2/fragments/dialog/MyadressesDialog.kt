@@ -4,23 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.adapter.CuponsAdapter
 import com.example.pluralofertasandroid2.adapter.UAddressAdapter
-import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
-import com.example.pluralofertasandroid2.model.Cupon
 import com.example.pluralofertasandroid2.model.UAddress
-import kotlinx.android.synthetic.main.dialog_cupon.*
 import kotlinx.android.synthetic.main.dialog_myadresses_home.*
-import kotlinx.android.synthetic.main.fragment_myadresses.*
-import kotlinx.android.synthetic.main.fragment_myadresses.addAdressMainMenuFab
 import kotlinx.android.synthetic.main.fragment_myadresses.myAdressesRv
 import java.util.ArrayList
 

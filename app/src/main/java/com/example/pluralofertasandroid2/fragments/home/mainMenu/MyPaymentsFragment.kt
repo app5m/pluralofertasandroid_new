@@ -11,10 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.adapter.PaymentsAdapter
 
-import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
+import com.example.pluralofertasandroid2.helper.MyUseFulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
 import com.example.pluralofertasandroid2.model.Payment
-import com.example.pluralofertasandroid2.model.Shooping
 
 import kotlinx.android.synthetic.main.fragment_mypayments.*
 import java.util.ArrayList
@@ -56,7 +55,7 @@ class MyPaymentsFragment: Fragment(), RecyclerItemClickListener {
     }
     fun onBackPressed() {
         activity?.let {
-            MyUsefulKotlin().startFragmentOnBack(MainMenuFragment(),
+            MyUseFulKotlin().startFragmentOnBack(MainMenuFragment(),
                 it.supportFragmentManager)
         }
     }
