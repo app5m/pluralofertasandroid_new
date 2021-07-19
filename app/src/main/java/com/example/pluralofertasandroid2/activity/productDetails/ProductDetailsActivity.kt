@@ -7,8 +7,7 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pluralofertasandroid2.R
 import com.example.pluralofertasandroid2.activity.MainActivity
-import com.example.pluralofertasandroid2.activity.cartCheckout.CartCheckoutActivity
-import com.example.pluralofertasandroid2.fragments.dialog.CuponsFragDialog
+import com.example.pluralofertasandroid2.fragments.dialog.CuponsDialog
 import com.example.pluralofertasandroid2.fragments.tabsProductDetails.TabsDetailsBottomFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import com.example.pluralofertasandroid2.helper.RecyclerItemClickListener
@@ -34,7 +33,7 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener{
         MyUsefulKotlin().startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
         applyCupon.setOnClickListener() {
 
-            CuponsFragDialog().show(supportFragmentManager, "DialogCuponsFrag")
+            CuponsDialog().show(supportFragmentManager, "DialogCuponsFrag")
         }
         btnComprarDetalhesProduto.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

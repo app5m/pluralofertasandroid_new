@@ -15,7 +15,7 @@ import com.example.pluralofertasandroid2.model.Cupon
 import kotlinx.android.synthetic.main.dialog_cupon.*
 import java.util.ArrayList
 
-class CuponsFragDialog: DialogFragment(), RecyclerItemClickListener {
+class CuponsDialog: DialogFragment(), RecyclerItemClickListener {
     private val TAG = "DialogCuponsFrag"
 
     var recyclerProduct: RecyclerView? = null

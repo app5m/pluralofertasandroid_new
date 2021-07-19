@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.home.mainMenu.ProfileEditFragment
+import com.example.pluralofertasandroid2.fragments.home.mainMenu.MainMenuFragment
 import com.example.pluralofertasandroid2.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.fragment_cart.*
-import kotlinx.android.synthetic.main.fragment_form_of_payment.*
+import kotlinx.android.synthetic.main.fragment_form_of_payment_creditcard.*
 
 
 /**
@@ -18,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_form_of_payment.*
  * Use the [form_of_payment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PaymentFormFragment : Fragment() {
+class PaymentFormCreditCardFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,21 +31,23 @@ class PaymentFormFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_form_of_payment, container, false)
+        return inflater.inflate(R.layout.fragment_form_of_payment_creditcard, container, false)
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        credCardChoicebnt.setOnClickListener {
-            Toast.makeText(context, "dfdsfdsfdsfdsf", Toast.LENGTH_SHORT).show()
-            MyUsefulKotlin().startFragment(PaymentFormCreditCardFragment(), requireActivity().supportFragmentManager)
-
-        }
-        backBnt4.setOnClickListener {
-            activity?.finish()
+        backBnt2.setOnClickListener {
+            onbackpressed()
         }
     }
-
+    fun onbackpressed(){
+        activity?.let {
+            MyUsefulKotlin().startFragmentOnBack(
+                PaymentFormFragment(),
+                it.supportFragmentManager
+            )
+        }
+    }
 }

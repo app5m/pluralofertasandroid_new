@@ -53,7 +53,7 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
         backButton.setOnClickListener {
             onbackpressed()
         }
-        backButton.setOnClickListener {
+        saveBnt2.setOnClickListener {
             onbackpressed()
         }
         addAdressMainMenuFab.setOnClickListener {
