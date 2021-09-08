@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pluralofertasandroid2">
+    package="br.com.app5m.pluralofertas">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="br.com.app5m.pluralofertas.activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,24 +22,24 @@
 
 
         <activity
-            android:name=".activity.IntroAct"
+            android:name="br.com.app5m.pluralofertas.activity.IntroAct"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name="br.com.app5m.pluralofertas.activity.MainActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.productDetails.ProductDetailsActivity"
+            android:name="br.com.app5m.pluralofertas.activity.productDetails.ProductDetailsActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.cartCheckout.CartCheckoutActivity"
+            android:name="br.com.app5m.pluralofertas.activity.cartCheckout.CartCheckoutActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.login.SigininContentActivity"
+            android:name="br.com.app5m.pluralofertas.activity.login.SigininContentActivity"
             android:screenOrientation="portrait">
         </activity>
 

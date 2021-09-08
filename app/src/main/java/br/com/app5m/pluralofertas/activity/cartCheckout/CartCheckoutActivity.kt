@@ -1,12 +1,11 @@
-package com.example.pluralofertasandroid2.activity.cartCheckout
+package br.com.app5m.pluralofertas.activity.cartCheckout
 
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pluralofertasandroid2.R
-import com.example.pluralofertasandroid2.fragments.payment.PaymentFormFragment
-
-import com.example.pluralofertasandroid2.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.fragments.payment.PaymentFormFragment
+import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
 
 
 class CartCheckoutActivity : AppCompatActivity(){

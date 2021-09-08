@@ -1,4 +1,4 @@
-package com.example.pluralofertasandroid2.helper
+package br.com.app5m.pluralofertas.helper
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -21,9 +21,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import br.com.app5m.pluralofertas.R
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
-import com.example.pluralofertasandroid2.R
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
