@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Shooping
+import br.com.app5m.pluralofertas.model.Shopping
 
-class ShoopingsAdapter(private val context: Context, private val listShooping: List<Shooping>,
+class ShoopingsAdapter(private val context: Context, private val listShopping: List<Shopping>,
                        private val clickOnListener: RecyclerItemClickListener
 )
     : RecyclerView.Adapter<ShoopingsAdapter.ShoopingViewHolder>() {
@@ -27,7 +27,7 @@ class ShoopingsAdapter(private val context: Context, private val listShooping: L
     }
 
     override fun onBindViewHolder(holder: ShoopingViewHolder, position: Int) {
-        val shooping = listShooping[position]
+        val shooping = listShopping[position]
 
       /*  holder.productNameTv.text = "Mega Burguer"
         holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
@@ -39,7 +39,7 @@ class ShoopingsAdapter(private val context: Context, private val listShooping: L
     }
 
     override fun getItemCount(): Int {
-        return listShooping.size
+        return listShopping.size
     }
 
     class ShoopingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

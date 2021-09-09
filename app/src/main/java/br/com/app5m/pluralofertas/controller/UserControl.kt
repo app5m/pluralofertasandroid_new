@@ -37,6 +37,12 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
 
         type = "login"
 
+
+/*        {
+            "token": "plural_ofertas@2021",
+            "email": "teste@user.com",
+            "password": "123"
+        }*/
         user.token = WSConstants().TOKEN
 
         val param: Call<List<User>> = service.login(user)
@@ -46,6 +52,16 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
     fun register(user: User){
 
         type = "register"
+/*
+        {
+            "token": "plural_ofertas@2021",
+            "nome": "Teste User 2",
+            "email": "teste@user2.com",
+            "password": "123456",
+            "celular": "(51)99999999",
+            "latitude":"-30.0036668",
+            "longitude": "-51.0546295"
+        }*/
         user.token = WSConstants().TOKEN
 
         val param: Call<List<User>> = service.register(user)
@@ -56,7 +72,8 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
 
         type = "listId"
 
-        user.id = preferences.getUserData()!!.id
+        // tem q mandar o id na url
+//        user.id = preferences.getUserData()!!.id
         user.token = WSConstants().TOKEN
 
         val param: Call<List<User>> = service.listId(user)
@@ -67,6 +84,12 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
 
         type = "updatePassword"
 
+
+/*        {
+            "id": 3,
+            "password": "123",
+            "token": "plural_ofertas@2021"
+        }*/
         user.id = preferences.getUserData()!!.id
         user.password = password
         user.token = WSConstants().TOKEN
@@ -77,14 +100,15 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
 
     fun updateUserData(user: User){
 
-        /*
-    {
-        "id": 37342,
-        "nome": "Cadastro Teste",
-        "email": "teste@teste.com",
-        "celular": "51995087890",
-        "token": "pluralTv2021@"
-    }*/
+/*        {
+            "id": 3,
+            "nome": "Cadastro teste",
+            "email": "cadastro@cadastro.com",
+            "cpf": "02737594006",
+            "celular":"(51)9888888",
+            "data_nascimento": "12/08/1991",
+            "token": "plural_ofertas@2021"
+        }*/
 
         type = "updateUserData"
 

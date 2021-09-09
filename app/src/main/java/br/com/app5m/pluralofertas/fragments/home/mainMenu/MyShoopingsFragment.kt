@@ -11,12 +11,12 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.ShoopingsAdapter
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Shooping
+import br.com.app5m.pluralofertas.model.Shopping
 import kotlinx.android.synthetic.main.fragment_myshoopings.*
 import java.util.ArrayList
 
 class MyShoopingsFragment: Fragment(), RecyclerItemClickListener {
-    private var shoopingList  = ArrayList<Shooping>()
+    private var shoopingList  = ArrayList<Shopping>()
 
 
     override fun onCreateView(
@@ -36,15 +36,15 @@ class MyShoopingsFragment: Fragment(), RecyclerItemClickListener {
         }
 
         configureInitialViews()
-        shoopingList.add(Shooping())
-        shoopingList.add(Shooping())
-        shoopingList.add(Shooping())
-        shoopingList.add(Shooping())
-        shoopingList.add(Shooping())
-        shoopingList.add(Shooping())
+        shoopingList.add(Shopping())
+        shoopingList.add(Shopping())
+        shoopingList.add(Shopping())
+        shoopingList.add(Shopping())
+        shoopingList.add(Shopping())
+        shoopingList.add(Shopping())
 
     }
-    override fun onClickListenerShoopings(shooping: Shooping) {
+    override fun onClickListenerShoopings(shopping: Shopping) {
 
         MyUsefulKotlin().startFragment(ShoopingsDetailsFragment(), requireActivity().supportFragmentManager)
 

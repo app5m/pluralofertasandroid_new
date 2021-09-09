@@ -1,7 +1,7 @@
 package br.com.app5m.pluralofertas.model
 import java.io.Serializable
 
-class Shooping: Serializable {
+class Shopping: Serializable {
 
     constructor()
     constructor(

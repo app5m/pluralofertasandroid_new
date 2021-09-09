@@ -1,0 +1,23 @@
+plural ofertas
+
+- vai acessar direto a home (sem precisar login)
+
+- se ele tiver deslogado se permitir envia se n n envia(envia zerado), se river logado manda id_endereço
+
+- cadastro é nome, email, celular, senha
+
+- pagamemto via boleto e cartao, request para conf compra(todos os campos menos cartao)
+
+- cadastro de endereços, e no cadastro se permitir lat long e se n é auto complete por cep
+
+- ofertas destaques e ofertas lista normal home
+
+- ofertas vai ter derivados para escolher
+
+- cada produto vai ter cupom disponivel
+
+- vai ter lista de cupons, disponiveis e ja utilizados
+
+- filtro na home por categoria, de data de e até, valor
+
+- vai ter fcm

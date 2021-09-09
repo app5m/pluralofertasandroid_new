@@ -26,7 +26,7 @@ interface RecyclerItemClickListener {
     fun onClickListenerCategoriesSearch(category: Category){
         //optional body
     }
-    fun onClickListenerShoopings(shooping: Shooping){
+    fun onClickListenerShoopings(shopping: Shopping){
         //optional body
     }
     fun onClickListenerPayments(payment: Payment){
