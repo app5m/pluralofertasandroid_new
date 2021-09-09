@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.ProductsDemandAdapter
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Product
 import kotlinx.android.synthetic.main.fragment_shoopingdetails.*
@@ -46,7 +46,7 @@ class ShoopingsDetailsFragment: Fragment(), RecyclerItemClickListener {
     }
     override fun onClickListenerProducts(product: Product) {
 
-        MyUseFulKotlin().startFragment(ShoopingsDetailsFragment(), requireActivity().supportFragmentManager)
+        MyUsefulKotlin().startFragment(ShoopingsDetailsFragment(), requireActivity().supportFragmentManager)
 
 
     }
@@ -62,7 +62,7 @@ class ShoopingsDetailsFragment: Fragment(), RecyclerItemClickListener {
 
     fun onBackPressed() {
         activity?.let {
-            MyUseFulKotlin().startFragmentOnBack(MainMenuFragment(),
+            MyUsefulKotlin().startFragmentOnBack(MainMenuFragment(),
                 it.supportFragmentManager)
         }
     }

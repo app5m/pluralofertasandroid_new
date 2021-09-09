@@ -9,7 +9,7 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.activity.MainActivity
 import br.com.app5m.pluralofertas.fragments.dialog.CuponsDialog
 import br.com.app5m.pluralofertas.fragments.tabsProductDetails.TabsDetailsBottomFragment
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.activity_details_product.*
 import kotlinx.android.synthetic.main.tool_bar.*
@@ -26,11 +26,11 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener {
 
         //toolbar
        setSupportActionBar(toolbar)
-        supportActionBar?.let { MyUseFulKotlin().setActionBar(this, it,"") }
+        supportActionBar?.let { MyUsefulKotlin().setActionBar(this, it,"") }
         toolbarTitle.setText("Detalhes do produto")
         toolbar.visibility = View.VISIBLE
 
-        MyUseFulKotlin().startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
+        MyUsefulKotlin().startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
         applyCupon.setOnClickListener() {
 
             CuponsDialog().show(supportFragmentManager, "DialogCuponsFrag")

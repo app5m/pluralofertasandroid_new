@@ -65,23 +65,23 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //indicator
     implementation 'me.relex:circleindicator:2.1.4'
     implementation 'me.relex:circleindicator:2.1.4@aar'
-    //load circle
-    implementation 'me.relex:circleindicator:2.1.4'
-    implementation 'me.relex:circleindicator:2.1.4@aar'
-    //maven
 
-//range - usando
+    //range - usando
     implementation 'com.github.Jay-Goo:RangeSeekBar:3.0.0'
-
 
     //anim
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
-    //Dependencias para integracao com o banco
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //okhttp
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.0"))
+
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
 
     //ve se essas duas de baixo da problema depois
     implementation 'com.github.bumptech.glide:glide:4.12.0'

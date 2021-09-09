@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.UAddressAdapter
 import br.com.app5m.pluralofertas.fragments.dialog.RegisterAdressDialog
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.UAddress
 import kotlinx.android.synthetic.main.dialog_myadresses_home.*
@@ -82,7 +82,7 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
     }
     fun onbackpressed(){
         activity?.let {
-            MyUseFulKotlin().startFragmentOnBack(
+            MyUsefulKotlin().startFragmentOnBack(
                 MainMenuFragment(),
                 it.supportFragmentManager
             )

@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.activity.login.SigininContentActivity
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.Preferences
 import kotlinx.android.synthetic.main.fragment_login_content.view.*
 import kotlinx.android.synthetic.main.fragment_mainmenu.*
@@ -57,19 +57,19 @@ class MainMenuFragment : Fragment() {
             layoutLoggedOut.visibility = View.VISIBLE
         }
         btnEditProfile.setOnClickListener {
-            MyUseFulKotlin().startFragment(ProfileEditFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(ProfileEditFragment(), requireActivity().supportFragmentManager)
 
         }
         myAddresses.setOnClickListener {
-            MyUseFulKotlin().startFragment(MyAdressesFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(MyAdressesFragment(), requireActivity().supportFragmentManager)
 
         }
         myPeyments.setOnClickListener {
-            MyUseFulKotlin().startFragment(MyPaymentsFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(MyPaymentsFragment(), requireActivity().supportFragmentManager)
 
         }
         myshoopings.setOnClickListener {
-            MyUseFulKotlin().startFragment(MyShoopingsFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(MyShoopingsFragment(), requireActivity().supportFragmentManager)
 
         }
     }

@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.fragments.dialog.MyadressesDialog
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.dialog_filter.*
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_form_of_payment_creditcard.*
@@ -70,7 +70,7 @@ class PaymentFormCreditCardFragment : Fragment(), AdapterView.OnItemSelectedList
     }
     fun onbackpressed(){
         activity?.let {
-            MyUseFulKotlin().startFragmentOnBack(
+            MyUsefulKotlin().startFragmentOnBack(
                 PaymentFormFragment(),
                 it.supportFragmentManager
             )

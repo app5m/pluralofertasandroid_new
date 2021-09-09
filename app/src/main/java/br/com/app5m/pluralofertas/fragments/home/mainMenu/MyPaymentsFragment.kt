@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.PaymentsAdapter
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Payment
 
@@ -54,7 +54,7 @@ class MyPaymentsFragment: Fragment(), RecyclerItemClickListener {
     }
     fun onBackPressed() {
         activity?.let {
-            MyUseFulKotlin().startFragmentOnBack(MainMenuFragment(),
+            MyUsefulKotlin().startFragmentOnBack(MainMenuFragment(),
                 it.supportFragmentManager)
         }
     }

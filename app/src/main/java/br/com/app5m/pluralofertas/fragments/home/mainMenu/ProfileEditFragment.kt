@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
 
@@ -29,7 +29,7 @@ class ProfileEditFragment: Fragment(), RecyclerItemClickListener {
     }
     fun onBackPressed() {
         activity?.let {
-            MyUseFulKotlin().startFragmentOnBack(MainMenuFragment(),
+            MyUsefulKotlin().startFragmentOnBack(MainMenuFragment(),
                 it.supportFragmentManager)
         }
     }

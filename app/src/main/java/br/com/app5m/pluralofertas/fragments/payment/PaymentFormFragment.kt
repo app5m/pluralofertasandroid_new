@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.helper.MyUseFulKotlin
+import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_form_of_payment.*
 
@@ -38,11 +38,11 @@ class PaymentFormFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         credCardChoiceBnt.setOnClickListener {
-            MyUseFulKotlin().startFragment(PaymentFormCreditCardFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(PaymentFormCreditCardFragment(), requireActivity().supportFragmentManager)
 
         }
         ticketChoiceBnt.setOnClickListener {
-            MyUseFulKotlin().startFragment(PaymentFormTicketFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(PaymentFormTicketFragment(), requireActivity().supportFragmentManager)
 
         }
         backBnt4.setOnClickListener {

@@ -31,7 +31,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class MyUseFulKotlin {
+class MyUsefulKotlin {
 
 
     private var currentPhotoPath: String? = null
