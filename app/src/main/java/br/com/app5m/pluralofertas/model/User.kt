@@ -13,6 +13,9 @@ class User {
     @field:SerializedName("password")
     var password: String? = null
 
+    @field:SerializedName("cpf")
+    var cpf: String? = null
+
     @field:SerializedName("rows")
     var rows: String? = null
 

@@ -1,5 +1,6 @@
 package br.com.app5m.pluralofertas.helper
 
+import android.content.Context
 import android.util.Log
 import android.util.Patterns
 import android.widget.EditText
@@ -7,7 +8,9 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Validation {
+class Validation (context: Context) {
+
+    private val animation = Animation(context)
 
     private fun validatorCNPJ(CNPJ: String): Boolean {
         if (CNPJ == "00000000000000" || CNPJ == "11111111111111" || CNPJ == "22222222222222" || CNPJ == "33333333333333" || CNPJ == "44444444444444" || CNPJ == "55555555555555" || CNPJ == "66666666666666" || CNPJ == "77777777777777" || CNPJ == "88888888888888" || CNPJ == "99999999999999" || CNPJ.length != 14) return false
@@ -90,12 +93,12 @@ class Validation {
     fun phone(editText: EditText): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "Telefone deve ser preenchido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         if (editText.text.toString().length < 15) {
             error(editText, "Telefone deve ser preenchido de forma completa.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         return true
@@ -104,12 +107,12 @@ class Validation {
     fun cellphone(editText: EditText): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "Celular deve ser preenchido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         if (editText.text.toString().length < 14) {
             error(editText, "Celular deve ser preenchido de forma completa.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         return true
@@ -120,9 +123,9 @@ class Validation {
             return false
         }
         if (editText.hint == null) {
-            return !editText.text.toString().isEmpty() || editText.text.toString().length != 0
+            return !editText.text.toString().isEmpty() || editText.text.toString().isNotEmpty()
         }
-        if (editText.text.toString().isEmpty() && editText.text.toString().length == 0) {
+        if (editText.text.toString().isEmpty() && editText.text.toString().isEmpty()) {
             error(editText, editText.hint.toString() + " deve ser preenchido(a).")
             return false
         }
@@ -130,32 +133,22 @@ class Validation {
     }
 
 
-    fun password(editText: EditText): Boolean {
+    fun password(editText: EditText, type: Int): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "Senha deve ser preenchida.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
-        if (editText.text.length < 6) {
-            error(editText, "Senha deve ter no mínimo 8 digitos.")
-            MyUsefulKotlin().shake(editText)
-            return false
-        }
-        if (!MyUsefulKotlin().strongPassword(editText.text.toString(), 1)) {
-            error(editText, "Senha deve conter pelo menos um número.")
-            MyUsefulKotlin().shake(editText)
-            return false
-        }
-        /*if (!Useful.strongPassword(editText.getText().toString(), 2)) {
-            error(editText, "Senha deve conter pelo menos uma letra maiúscula");
 
-            return;
+        if (type == 0) {
+            if (editText.text.length < 8) {
+                error(editText, "Senha deve ter no mínimo 8 digitos.")
+                animation.shake(editText)
+                return false
+            }
         }
-        if (!Useful.strongPassword(editText.getText().toString(), 3)) {
-            error(editText, "Senha deve conter pelo menos uma letra minúscula");
 
-            return;
-        }*/return true
+        return true
     }
 
     /**
@@ -164,17 +157,17 @@ class Validation {
     fun cpf(editText: EditText): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "CPF deve ser preenchido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         if (editText.text.length < 14) {
             error(editText, "CPF deve ser preenchido de forma completa.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         if (!validatorCpf(editText.text.toString().replace(".", "").replace("-", ""))) {
             error(editText, "Este CPF não é válido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         return true
@@ -243,36 +236,32 @@ class Validation {
     fun name(editText: EditText): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "Nome deve ser preenchido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
-        if (MyUsefulKotlin().strongPassword(editText.text.toString(), 1)) {
-            error(editText, "Nome não pode conter números")
-            MyUsefulKotlin().shake(editText)
+
+        return true
+    }
+
+    fun lastName(editText: EditText): Boolean {
+        if (editText.text.toString().isEmpty()) {
+            error(editText, "Sobrenome deve ser preenchido.")
+            animation.shake(editText)
             return false
         }
-        if (!editText.text.toString().contains(" ")) {
-            error(editText, "Nome deve ser preenchido de forma completa.")
-            MyUsefulKotlin().shake(editText)
-            return false
-        }
-        if (editText.text.toString().split(" ").toTypedArray().size <= 1) {
-            error(editText, "Nome deve ser preenchido de forma completa.")
-            MyUsefulKotlin().shake(editText)
-            return false
-        }
+
         return true
     }
 
     fun email(editText: EditText): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "E-mail deve ser preenchido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         if (!isValidEmail(editText.text.toString())) {
             error(editText, "E-mail deve ser preenchido em um formato válido.")
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         return true
@@ -294,9 +283,9 @@ class Validation {
         editText.requestFocus()
     }
 
-    fun validateTexField(editText: EditText): Boolean {
+    fun validateTextField(editText: EditText): Boolean {
         if (!isEmpty(editText) || editText.error != null) {
-            MyUsefulKotlin().shake(editText)
+            animation.shake(editText)
             return false
         }
         return true

@@ -9,8 +9,10 @@ import br.com.app5m.pluralofertas.R
 import kotlinx.android.synthetic.main.dialog_register_address.*
 
 
-class RegisterAdressDialog: DialogFragment() {
-    private val TAG = "DialogRegisterAdress"
+class RegisterAddressDialog: DialogFragment() {
+
+    private val TAG = "DialogRegisterAddress"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL, R.style.AppTheme)
@@ -27,9 +29,11 @@ class RegisterAdressDialog: DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         save_btn.setOnClickListener {
             dialog?.dismiss();
         }
+
         btnBackLoginButton.setOnClickListener {
             dialog?.dismiss();
 

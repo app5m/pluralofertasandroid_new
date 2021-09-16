@@ -54,11 +54,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="encontre">Encontre a peça</string>
     <string name="perfeita"><b>perfeita</b></string>
-    <string name="city">Cidade</string>
-    <string name="neighborhood">Bairro</string>
-    <string name="address">Endereço</string>
-    <string name="number">Numero</string>
-    <string name="complemento">Complemento</string>
+    <string name="city">cidade</string>
+    <string name="neighborhood">bairro</string>
+    <string name="address">endereço</string>
+    <string name="number">número</string>
+    <string name="complemento">complemento</string>
     <string name="termos_de_uso"><u><b>Termos de Uso</b></u></string>
     <string name="politica_de_privacidade"><u><b>Política de Privacidade</b></u></string>
     <string name="cpf">CPF</string>

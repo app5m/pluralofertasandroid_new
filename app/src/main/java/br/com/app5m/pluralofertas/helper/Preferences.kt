@@ -12,6 +12,8 @@ class Preferences(context: Context?) {
      *
      */
 
+    val ENTERING_FIRST_TIME = "EnteringFirstTime"
+
     private var preferences = context?.getSharedPreferences("high.preference", 0)
     private var editor = preferences?.edit()
 
@@ -31,26 +33,21 @@ class Preferences(context: Context?) {
         } else null
     }
 
-    fun setMoip(user: User?) {
-        val data = Gson().toJson(user)
-        editor!!.putString("moip", data)
+    fun setUAddressData(uAddress: UAddress?) {
+        val data = Gson().toJson(uAddress)
+        editor!!.putString("getUAddressData", data)
         editor!!.commit()
     }
 
-    fun getMoip(): User? {
-        val user: User
+    fun getUAddressData(): UAddress? {
+        val uAddress: UAddress
         val gson = Gson()
-        val data = preferences!!.getString("moip", "")
+        val data = preferences!!.getString("getUAddressData", "")
         return if (data != null && data.isNotEmpty()) {
-            user = gson.fromJson(data, User::class.java)
-            user
+            uAddress = gson.fromJson(data, UAddress::class.java)
+            uAddress
         } else null
     }
-
-
-
-
-
 
     fun setLogin(enable: Boolean){
         editor!!.putBoolean("login", enable)
@@ -62,19 +59,8 @@ class Preferences(context: Context?) {
     }
 
     fun clearUserData(){
-        editor!!.remove("getEnderecoCobranca")
-        editor!!.remove("getData")
-        editor!!.remove("login")
-        editor!!.remove("moip")
-        editor!!.remove("count")
-        editor!!.remove("active")
-        editor!!.remove("valorSaque")
-        editor!!.remove("ad")
-        editor!!.commit()
-    }
-
-    fun clearUserActiveAddress(){
-        editor!!.remove("active")
+        editor?.remove("getData")
+        editor?.remove("login")
         editor!!.commit()
     }
 
@@ -82,54 +68,13 @@ class Preferences(context: Context?) {
         return preferences!!.getString("user", "0")
     }
 
-    fun setActiveAddress(address: UAddress?) {
-        val data = Gson().toJson(address)
-        editor!!.putString("active", data)
+    fun storeInt(key: String?, value: Int) {
+        editor?.putInt(key, value)
         editor!!.commit()
     }
 
-    fun getActiveAddress(): UAddress? {
-        val user: UAddress
-        val gson = Gson()
-        val data = preferences!!.getString("active", "")
-        return if (data!!.isNotEmpty()) {
-            user = gson.fromJson(data, UAddress::class.java)
-            user
-        } else null
-    }
-
-    fun setEnderecoCobranca(enderecoCobranca: UAddress?) {
-        val dados = Gson().toJson(enderecoCobranca)
-        editor!!.putString("getEnderecoCobranca", dados)
-        editor!!.commit()
-    }
-
-    fun getEnderecoCobranca(): UAddress? {
-        val user: UAddress
-        val gson = Gson()
-        val data = preferences!!.getString("getEnderecoCobranca", "")
-        return if (!data!!.isEmpty()) {
-            user = gson.fromJson(data, UAddress::class.java)
-            user
-        } else null
-    }
-
-    fun setValorSaque(value: String){
-        editor!!.putString("valorSaque", value)
-        editor!!.commit()
-    }
-
-    fun getValorSaque(): String{
-        return preferences?.getString("valorSaque", "")!!
-    }
-
-    fun setCartItemCount(value: Int){
-        editor!!.putInt("count", value)
-        editor!!.commit()
-    }
-
-    fun getCartItemCount(): Int{
-        return preferences?.getInt("count", 0)!!
+    fun getInt(key: String?, defaultValue: Int): Int {
+        return preferences!!.getInt(key, defaultValue)
     }
 
 }

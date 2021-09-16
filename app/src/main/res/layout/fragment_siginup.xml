@@ -65,8 +65,6 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-
-
                                 android:layout_height="wrap_content"
                                 android:drawableStart="@drawable/ic_facebook_logo"
                                 android:drawablePadding="10dp"
@@ -85,7 +83,6 @@
                         android:background="#e1e2e3" />
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="24dp"
@@ -96,8 +93,7 @@
 
                     <EditText
                         android:id="@+id/fullname_edittext"
-
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/background_cadastro_ll"
@@ -110,8 +106,7 @@
 
                     <EditText
                         android:id="@+id/email_edittext"
-
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/background_cadastro_ll"
@@ -121,10 +116,9 @@
                         android:hint="email"
                         android:inputType="textEmailAddress" />
 
-                    <EditText
+                    <com.santalu.maskedittext.MaskEditText
                         android:id="@+id/cpf_edittext"
-
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/background_cadastro_ll"
@@ -132,24 +126,24 @@
                         android:drawablePadding="14dp"
                         android:ems="10"
                         android:hint="CPF"
-                        android:inputType="phone" />
+                        android:inputType="number"
+                        app:mask="###.###.###-##"/>
 
-                    <EditText
+                    <com.santalu.maskedittext.MaskEditText
                         android:id="@+id/phone_edittext"
-
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/background_cadastro_ll"
                         android:drawableStart="@drawable/ic_phone"
-                        android:drawablePadding="14dp"
+                        android:drawablePadding="4dp"
                         android:ems="10"
                         android:hint="celular com DDD"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        app:mask="(##) #####-####"/>
 
                     <EditText
-                        android:id="@+id/adressRegister"
-
+                        android:id="@+id/addressRegister"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
@@ -159,12 +153,12 @@
                         android:ems="10"
                         android:focusableInTouchMode="false"
                         android:hint="endereço"
-                        android:inputType="phone" />
+                        android:inputType="text"
+                        android:visibility="gone"/>
 
                     <EditText
                         android:id="@+id/login_password_edittext"
-
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/background_cadastro_ll"
@@ -176,14 +170,13 @@
 
                     <EditText
                         android:id="@+id/login_password2_edittext"
-
-                        android:layout_width="fill_parent"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/background_cadastro_ll"
                         android:drawableStart="@drawable/ic_password_edittext"
                         android:drawablePadding="14dp"
                         android:ems="10"
-                        android:hint="confirma a senha"
+                        android:hint="confirmar senha"
                         android:inputType="textPassword" />
 
 
@@ -214,7 +207,6 @@
 
 
                     <TextView
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="28dp"

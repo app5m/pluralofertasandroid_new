@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.dialog_myadresses_home.*
 import kotlinx.android.synthetic.main.fragment_myadresses.myAdressesRv
 import java.util.ArrayList
 
-class MyadressesDialog: DialogFragment(), RecyclerItemClickListener {
+class MyaddressesDialog: DialogFragment(), RecyclerItemClickListener {
     private val TAG = "MyadressesDialog"
     private lateinit var viewFragment: View
     private var uaddressList  = ArrayList<UAddress>()
@@ -44,7 +44,7 @@ class MyadressesDialog: DialogFragment(), RecyclerItemClickListener {
             onbackpressed()
         }
         addAdressHomeFab.setOnClickListener {
-            val dialog = RegisterAdressDialog()
+            val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
             fragmentManager?.let { it1 -> dialog.show(it1,"DialogRegisterAdress") }
         }

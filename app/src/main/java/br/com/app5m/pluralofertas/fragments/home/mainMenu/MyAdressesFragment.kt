@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.UAddressAdapter
-import br.com.app5m.pluralofertas.fragments.dialog.RegisterAdressDialog
+import br.com.app5m.pluralofertas.fragments.dialog.RegisterAddressDialog
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.UAddress
@@ -55,7 +55,7 @@ class MyAdressesFragment : Fragment(), RecyclerItemClickListener {
             onbackpressed()
         }
         addAdressMainMenuFab.setOnClickListener {
-            val dialog = RegisterAdressDialog()
+            val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
             fragmentManager?.let { it1 -> dialog.show(it1,"DialogRegisterAdress") }
         }

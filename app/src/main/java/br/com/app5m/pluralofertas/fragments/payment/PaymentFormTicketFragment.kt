@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.fragments.dialog.MyadressesDialog
+import br.com.app5m.pluralofertas.fragments.dialog.MyaddressesDialog
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.dialog_filter.*
 import kotlinx.android.synthetic.main.fragment_cart.*
@@ -43,7 +43,7 @@ class PaymentFormTicketFragment : Fragment(), AdapterView.OnItemSelectedListener
         super.onViewCreated(view, savedInstanceState)
         adressTicketEt.setOnClickListener {
 
-            val dialog = MyadressesDialog()
+            val dialog = MyaddressesDialog()
             dialog.setTargetFragment(this, 1)
             fragmentManager?.let { it1 -> dialog.show(it1,"MyadressesDialog") }
         }
