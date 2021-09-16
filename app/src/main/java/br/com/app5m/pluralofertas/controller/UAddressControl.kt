@@ -48,19 +48,9 @@ class UAddressControl(context: Context, private val result: WSResult): Callback<
 
     fun saveAddress(uAddress: UAddress){
 
-        type = "findAddress"
+        type = "saveAddress"
 
-
-//        {
-//            "token": "plural_ofertas@2021",
-//            "cidade": "Alvorada",
-//            "estado": "RS",
-//            "endereco": "Av. Tiradentes",
-//            "numero": "81",
-//            "bairro": "Bela Vista"
-//        }
-
-//        uAddress.token = WSConstants().TOKEN
+        uAddress.token = WSConstants().TOKEN
 
         val param: Call<List<UAddress>> = service.saveAddress(uAddress)
         param.enqueue(this)

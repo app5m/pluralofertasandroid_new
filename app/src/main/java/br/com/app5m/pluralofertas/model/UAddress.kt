@@ -31,6 +31,9 @@ class UAddress: Serializable {
     var logradouro: String? = null
 
 
+    @field:SerializedName("token")
+    var token: String? = null
+
     @field:SerializedName("status")
     var status: String? = null
 
