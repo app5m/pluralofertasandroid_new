@@ -61,6 +61,7 @@ class Preferences(context: Context?) {
     fun clearUserData(){
         editor?.remove("getData")
         editor?.remove("login")
+        editor?.remove("getUAddressData")
         editor!!.commit()
     }
 

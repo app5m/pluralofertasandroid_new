@@ -1,5 +1,6 @@
 package br.com.app5m.pluralofertas.fragments.login
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -92,14 +93,12 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+    override fun onActivityResult(requestCode: Int, resultCode2: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode2, data)
 
-        if (data!!.extras!!.getString("OK").equals("OK")) {
-
+        if (data!!.extras!!.getBoolean("msg")) {
             useful.openLoading(requireContext(), alertDialog)
             userControl.register(user)
-
         }
 
 
@@ -143,7 +142,7 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private fun registerCheck(){
         preferences.setLogin(true)
 
-        val intent = Intent(context, MainActivity::class.java)
+        val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)
 
         activity?.finishAffinity()

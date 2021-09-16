@@ -110,7 +110,7 @@ class Validation (private val context: Context) {
             animation.shake(editText)
             return false
         }
-        if (editText.text.toString().length < 14) {
+        if (editText.text.toString().length < 15) {
             error(editText, "Celular deve ser preenchido de forma completa.")
             animation.shake(editText)
             return false

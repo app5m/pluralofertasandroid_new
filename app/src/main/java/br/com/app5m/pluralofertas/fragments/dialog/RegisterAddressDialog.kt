@@ -61,9 +61,10 @@ class RegisterAddressDialog: DialogFragment() {
             uAddress.number = num_edit.text.toString()
             uAddress.complement = comp_edit.text.toString()
 
+            preferences.clearUserData()
             preferences.setUAddressData(uAddress)
 
-            onExit("OK")
+            onExit(true)
 
             dialog?.dismiss()
         }
@@ -74,9 +75,9 @@ class RegisterAddressDialog: DialogFragment() {
         }
     }
 
-    private fun onExit(msg: String){
+    private fun onExit(msg: Boolean){
         val intent = Intent()
-        intent.putExtra("OK", msg)
+        intent.putExtra("msg", msg)
         targetFragment?.onActivityResult(targetRequestCode, Activity.RESULT_OK, intent)
     }
 

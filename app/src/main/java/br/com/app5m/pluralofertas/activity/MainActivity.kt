@@ -22,29 +22,13 @@ import kotlinx.android.synthetic.main.tool_bar.*
 
 
 class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
+
     private var itemView: BottomNavigationItemView? = null
     private var preferences: Preferences? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
-//cair na tela de login deslogado
-       preferences = Preferences(this)
-      /* if (!Preferences(this).getLogin()) {
-             val intent = Intent(this, SigininContentActivity::class.java)
-             startActivity(intent)
-
-
-            } else {
-
-             Toast.makeText(this, "Logado", Toast.LENGTH_SHORT).show()
-
-
-         }*/
 
         //toolbar
         setSupportActionBar(toolbar)
@@ -62,24 +46,8 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
         configureInitialViews()
 
 
-         /*   registerForContextMenu(filterTv)*/
-
-
-
-    }
-   /* override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-        menuInflater.inflate(R.menu.overflow_menu_filter,menu)
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.option_1 -> Toast.makeText(this, "balalaica", Toast.LENGTH_SHORT).show()
-            R.id.option_2 -> Toast.makeText(this, "item 2", Toast.LENGTH_SHORT).show()
-            R.id.option_3 -> Toast.makeText(this, "item 3", Toast.LENGTH_SHORT).show()
-        }
-        return super.onContextItemSelected(item)
-    }*/
     private var toolbarTint: CustomTitleFragment.ToolbarTint = CustomTitleFragment.ToolbarTint.WHITE
 
     override fun setToolbarTitle(title: String) {
@@ -133,8 +101,7 @@ class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActi
             bottom_navigation.setSelectedItemId(R.id.cartFragment)
         }
 
-/*
-*/
+
     }
 
 }
