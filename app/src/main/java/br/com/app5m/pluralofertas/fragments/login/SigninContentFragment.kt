@@ -22,22 +22,17 @@ class SigninContentFragment : Fragment(), RecyclerItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-       val viewFragment = inflater.inflate(R.layout.fragment_login_content, container, false)
+       return inflater.inflate(R.layout.fragment_login_content, container, false)
 
-/*
-        MyUsefulKotlin().startFragment(LoginFragment(), requireActivity().supportFragmentManager)
-*/
-
-        viewFragment.btnVoltarLoginButton.setOnClickListener {
-            findNavController().popBackStack()
-        }
-        return viewFragment
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configInitialViews()
 
+        btnVoltarLoginButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
 
     }
     private fun configInitialViews(){

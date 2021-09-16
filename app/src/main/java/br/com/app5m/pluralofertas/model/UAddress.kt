@@ -30,6 +30,10 @@ class UAddress: Serializable {
     var tipoderesidencia: String? = null
     var logradouro: String? = null
 
+
+    @field:SerializedName("status")
+    var status: String? = null
+
     @field:SerializedName("latitude")
     var latitude: String? = null
 

@@ -69,6 +69,7 @@
                 android:inputType="number"
                 android:textColor="@color/gray800"
                 android:textSize="@dimen/text_size5"
+                android:maxLines="1"
                 app:mask="#####-###" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,18 +97,16 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/city"
-                    android:textSize="@dimen/text_size5" />
+                    android:textSize="@dimen/text_size5"
+                    android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-
                 app:hintTextColor="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -116,6 +115,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/background_cadastro_ll"
                     android:hint="UF"
+                    android:maxLines="1"
                     android:textSize="@dimen/text_size5" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,13 +123,10 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-
             android:layout_marginBottom="8dp"
             app:hintTextColor="@color/colorAccent">
 
@@ -139,7 +136,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_cadastro_ll"
                 android:hint="@string/neighborhood"
-                android:inputType="textPersonName"
+                android:inputType="text"
+                android:maxLines="1"
                 android:textSize="@dimen/text_size5" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -164,7 +162,8 @@
                     android:layout_marginEnd="@dimen/margin_size2"
                     android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/address"
-                    android:inputType="textPersonName"
+                    android:inputType="text"
+                    android:maxLines="1"
                     android:textSize="@dimen/text_size5" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -173,14 +172,16 @@
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:visibility="visible"
+                android:layout_weight="0"
                 app:hintTextColor="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/num_edit"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/number"
+                    android:maxLines="1"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -202,7 +203,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_cadastro_ll"
                 android:hint="@string/complemento"
-                android:inputType="textPersonName"
+                android:inputType="text"
+                android:maxLines="1"
                 android:textSize="@dimen/text_size5" />
         </com.google.android.material.textfield.TextInputLayout>
 

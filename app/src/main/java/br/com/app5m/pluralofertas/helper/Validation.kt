@@ -8,7 +8,7 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Validation (context: Context) {
+class Validation (private val context: Context) {
 
     private val animation = Animation(context)
 

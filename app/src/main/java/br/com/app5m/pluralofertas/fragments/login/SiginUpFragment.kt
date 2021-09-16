@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.activity.MainActivity
+import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.fragments.dialog.RegisterAddressDialog
@@ -26,8 +27,9 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private  val TAG = "SiginUpFragment"
 
     private lateinit var useful: MyUsefulKotlin
-    private lateinit var preferences: Preferences
     private lateinit var userControl: UserControl
+    private lateinit var uAddressControl: UAddressControl
+    private lateinit var preferences: Preferences
     private lateinit var validation: Validation
 
     private lateinit var builder: AlertDialog.Builder
@@ -50,6 +52,7 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
         userControl = UserControl(requireContext(), this)
+        uAddressControl = UAddressControl(requireContext(), this)
 
         builder = AlertDialog.Builder(requireContext())
         alertDialog = builder.create()
@@ -60,28 +63,31 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     override fun uResponse(list: List<User>, type: String) {
 
-        useful.closeLoading(alertDialog)
-
         val user = list[0]
 
         if (user.status.equals("01")) {
             preferences.setUserData(user)
 
-            registerCheck()
+            preferences.getUAddressData()?.let { uAddressControl.saveAddress(it) }
+
+        } else {
+
+            Toast.makeText(requireContext(), user.msg, Toast.LENGTH_SHORT).show()
+
         }
 
-        Toast.makeText(context, user.msg, Toast.LENGTH_SHORT).show()
 
     }
 
     override fun uAResponse(list: List<UAddress>, type: String) {
 
+        useful.closeLoading(alertDialog)
 
+        if (list[0].status.equals("01")) {
 
-    }
-
-    override fun onClickListenerUAddress(uaddress: UAddress) {
-
+            Toast.makeText(requireContext(), "Cadastro efetuado com sucesso!", Toast.LENGTH_LONG).show()
+            registerCheck()
+        }
 
 
     }
@@ -89,15 +95,19 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        useful.openLoading(requireContext(), alertDialog)
+        if (data!!.extras!!.getString("OK").equals("OK")) {
 
-        userControl.register(user)
+            useful.openLoading(requireContext(), alertDialog)
+            userControl.register(user)
+
+        }
+
 
     }
 
     override fun error(error: String) {
         useful.closeLoading(alertDialog)
-        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
     }
 
     private fun loadClicks() {
@@ -113,7 +123,8 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
             user.password = login_password_edittext.text.toString()
 
             val dialog = RegisterAddressDialog()
-            dialog.show(this.parentFragmentManager,"DialogRegisterAddress")
+            dialog.setTargetFragment(this, 1)
+            dialog.show(parentFragmentManager,"DialogRegisterAddress")
 
 
         }
