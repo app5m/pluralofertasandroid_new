@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "662301478506",
+    "project_id": "plural-ofertas-689a3",
+    "storage_bucket": "plural-ofertas-689a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662301478506:android:2d88bc543233c3bd3b8413",
+        "android_client_info": {
+          "package_name": "br.com.app5m.pluralofertas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662301478506-05jfm3dpmllsc9rh6nedu6754val5f7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASyIKqwO5728rWVWZJRChsLiFVCOv1wXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662301478506-05jfm3dpmllsc9rh6nedu6754val5f7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

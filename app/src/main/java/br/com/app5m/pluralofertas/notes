@@ -28,8 +28,21 @@ plural ofertas
 feito:
 
 cadastro e cadastro endereço
+login
+listid
+
+findendereco
+save  endereco
+update endereco
+list id
 
 
+falta:
 
+update pass
+update datauser
+
+
+ofertas = find
 
 pegar autocomplete cep e colocar no auth
