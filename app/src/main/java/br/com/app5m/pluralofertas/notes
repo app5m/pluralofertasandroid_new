@@ -30,6 +30,7 @@ feito:
 cadastro e cadastro endereço
 login
 listid
+update pass
 
 findendereco
 save  endereco
@@ -39,7 +40,6 @@ list id
 
 falta:
 
-update pass
 update datauser
 
 
