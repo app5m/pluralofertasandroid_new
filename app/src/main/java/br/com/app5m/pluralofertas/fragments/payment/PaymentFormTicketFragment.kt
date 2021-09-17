@@ -42,9 +42,6 @@ class PaymentFormTicketFragment : Fragment(), AdapterView.OnItemSelectedListener
         super.onViewCreated(view, savedInstanceState)
         adressTicketEt.setOnClickListener {
 
-            val dialog = MyaddressesDialog()
-            dialog.setTargetFragment(this, 1)
-            fragmentManager?.let { it1 -> dialog.show(it1,"MyadressesDialog") }
         }
 
         backTicketBnt.setOnClickListener {
