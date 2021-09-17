@@ -1,6 +1,5 @@
-package br.com.app5m.pluralofertas.fragments.login
+package br.com.app5m.pluralofertas.fragments.home.mainMenu
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.activity.MainActivity
+import br.com.app5m.pluralofertas.adapter.UAddressAdapter
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
@@ -21,14 +22,22 @@ import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
-import kotlinx.android.synthetic.main.fragment_siginup.*
+import kotlinx.android.synthetic.main.dialog_myadresses_home.*
+import kotlinx.android.synthetic.main.dialog_myadresses_home.myAdressesRv
+import kotlinx.android.synthetic.main.fragment_cart.*
+import kotlinx.android.synthetic.main.fragment_login_content.view.*
+import kotlinx.android.synthetic.main.fragment_mainmenu.*
+import kotlinx.android.synthetic.main.fragment_myaddresses.*
+import java.util.*
 
-class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
-    private  val TAG = "SiginUpFragment"
+/**
+ * A simple [Fragment] subclass.
+ */
+class MyAddressesFragment : Fragment(), WSResult {
+
 
     private lateinit var useful: MyUsefulKotlin
-    private lateinit var userControl: UserControl
     private lateinit var uAddressControl: UAddressControl
     private lateinit var preferences: Preferences
     private lateinit var validation: Validation
@@ -36,13 +45,16 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private lateinit var builder: AlertDialog.Builder
     private lateinit var alertDialog: AlertDialog
 
-    private val user = User()
+    private val uAddress = UAddress()
+
+    private var uaddressList  = ArrayList<UAddress>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        return inflater.inflate(R.layout.fragment_siginup, container, false)
+
+        return inflater.inflate(R.layout.fragment_myaddresses, container, false)
 
     }
 
@@ -52,43 +64,20 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
         useful = MyUsefulKotlin()
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
-        userControl = UserControl(requireContext(), this)
         uAddressControl = UAddressControl(requireContext(), this)
 
         builder = AlertDialog.Builder(requireContext())
         alertDialog = builder.create()
 
-        loadClicks()
-
-    }
-
-    override fun uResponse(list: List<User>, type: String) {
-
-        val user = list[0]
-
-        if (user.status.equals("01")) {
-            preferences.setUserData(user)
-
-            preferences.getUAddressData()?.let { uAddressControl.saveAddress(it) }
-
-        } else {
-
-            Toast.makeText(requireContext(), user.msg, Toast.LENGTH_SHORT).show()
-
-        }
+        configureInitialViews()
 
 
     }
+
 
     override fun uAResponse(list: List<UAddress>, type: String) {
 
         useful.closeLoading(alertDialog)
-
-        if (list[0].status.equals("01")) {
-
-            Toast.makeText(requireContext(), "Cadastro efetuado com sucesso!", Toast.LENGTH_LONG).show()
-            registerCheck()
-        }
 
 
     }
@@ -103,48 +92,42 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         if (data!!.extras!!.getBoolean("msg")) {
             useful.openLoading(requireContext(), alertDialog)
-            userControl.register(user)
+            preferences.getUAddressData()?.let { uAddressControl.updateAddress(it) }
         }
 
+
+    }
+
+
+    private fun configureInitialViews(){
+
+        val productsAdapter = UAddressAdapter(requireContext(), uaddressList, alertDialog)
+
+        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 1)
+        myAdressesRv.layoutManager = layoutManager
+        myAdressesRv.adapter = productsAdapter
+
+        loadClicks()
 
     }
 
     private fun loadClicks() {
 
-        btnCriarConta.setOnClickListener {
+        backButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
 
-            if (!validate()) return@setOnClickListener
+        saveBnt2.setOnClickListener {
 
-            user.name = fullname_edittext.text.toString()
-            user.email = email_edittext.text.toString()
-            user.cpf = cpf_edittext.text.toString()
-            user.phone = phone_edittext.text.toString()
-            user.password = login_password_edittext.text.toString()
+        }
 
+        addAdressMainMenuFab.setOnClickListener {
             val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
             dialog.show(parentFragmentManager,"DialogRegisterAddress")
-
-
         }
 
     }
 
-    private fun validate(): Boolean {
-        return if (!validation.name(fullname_edittext)) false
-        else if (!validation.email(email_edittext)) false
-        else if (!validation.cpf(cpf_edittext)) false
-        else if (!validation.cellphone(phone_edittext)) false
-        else if (!validation.password(login_password_edittext, 0)) false
-        else validation.coPassword(login_password_edittext, login_password2_edittext)
-    }
 
-    private fun registerCheck(){
-        preferences.setLogin(true)
-
-        val intent = Intent(requireContext(), MainActivity::class.java)
-        startActivity(intent)
-
-        activity?.finishAffinity()
-    }
 }

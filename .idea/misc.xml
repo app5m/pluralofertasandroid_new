@@ -6,10 +6,12 @@
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/drawable-xhdpi/ic_phone.xml" value="0.19583333333333333" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_sigin_content.xml" value="0.1796875" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_uaddress.xml" value="0.25" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_register_address.xml" value="0.22" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_login.xml" value="0.17916666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_login_content.xml" value="0.1796875" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_myaddresses.xml" value="0.17916666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_siginup.xml" value="0.22" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/tool_bar.xml" value="0.1796875" />
       </map>

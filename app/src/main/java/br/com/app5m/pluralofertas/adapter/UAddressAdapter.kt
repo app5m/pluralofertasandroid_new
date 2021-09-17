@@ -4,38 +4,65 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
+import br.com.app5m.pluralofertas.controller.UAddressControl
+import br.com.app5m.pluralofertas.controller.webservice.WSResult
+import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.model.UAddress
 
 class UAddressAdapter (private val context: Context, private val listUAddress: List<UAddress>,
-                       private val clickOnListener: RecyclerItemClickListener
-)
-    : RecyclerView.Adapter<UAddressAdapter.UAddressViewHolder>() {
+                       private val alertDialog: androidx.appcompat.app.AlertDialog)
+    : RecyclerView.Adapter<UAddressAdapter.ViewHolder>() {
 
+    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+        private val removeIb: ImageButton = v.findViewById(R.id.remove_imageButton)
+        private val cityStateTv: TextView = v.findViewById(R.id.cityState_textView)
+        private val nbhTv: TextView = v.findViewById(R.id.nbh_textView)
+        private val addresstv: TextView = v.findViewById(R.id.address_textView)
+        private val complementTv: TextView = v.findViewById(R.id.complement_textView)
+        private val addressRb: RadioButton = v.findViewById(R.id.address_radioButton)
+        private val currentLocationTv: TextView = v.findViewById(R.id.currentLocation_textView)
+        private val numTv: TextView = v.findViewById(R.id.number_textView)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UAddressViewHolder {
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(
                 R.layout.adapter_uaddress,
                 parent,
                 false
             ) // vai conectar com os ids abaixo
-        return UAddressViewHolder(listItem)
+        return ViewHolder(listItem)
 
 
     }
 
-    override fun onBindViewHolder(holder: UAddressViewHolder, position: Int) {
-        val uaddress = listUAddress[position]
-/*
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.productNameCartTv.text = "Nome do produto"
-        holder.valueProductTv.text = "100,00"
-*/
+        val uaddress = listUAddress[position + 1]
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerUAddress(uaddress) }
+        if (position == 0) {
+
+            Preferences(context).getUserData()!!.id?.let {
+
+                UAddressControl(context, object: WSResult {
+                    override fun uAResponse(list: List<UAddress>, type: String) {
+
+
+                    }
+
+                }).listIdAddress(it)
+            }
+
+        } else {
+
+        }
 
     }
 
@@ -43,17 +70,4 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
         return listUAddress.size
     }
 
-    class UAddressViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-       /* val productNameCartTv: TextView
-        val valueProductTv: TextView
-        val productImageIv: ImageView
-
-        init {
-            productNameCartTv = itemView.findViewById(R.id.productNameCartTv)
-            valueProductTv = itemView.findViewById(R.id.valueProductTv)
-            productImageIv = itemView.findViewById(R.id.productImageIv)
-
-
-        }*/
-    }
 }

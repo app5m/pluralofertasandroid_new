@@ -54,14 +54,13 @@ class UAddressControl(context: Context, private val result: WSResult): Callback<
         param.enqueue(this)
     }
 
-    fun listIdAddress(idAddress: String){
+    fun listIdAddress(idUser: String){
 
         type = "listIdAddress"
 
-
         uAddress.token = WSConstants().TOKEN
 
-        val param: Call<List<UAddress>> = service.listIdAddress(idAddress, uAddress)
+        val param: Call<List<UAddress>> = service.listIdAddress(idUser, uAddress)
         param.enqueue(this)
     }
 
@@ -70,18 +69,7 @@ class UAddressControl(context: Context, private val result: WSResult): Callback<
 
         type = "updateAddress"
 
-/*
-        {
-            "id": 1,
-            "token": "plural_ofertas@2021",
-            "cidade": "Alvorada",
-            "estado": "RS",
-            "endereco": "Av. Tiradentes",
-            "numero": "81",
-            "bairro": "Bela Vista"
-        }*/
-
-//        uAddress.token = WSConstants().TOKEN
+        uAddress.token = WSConstants().TOKEN
 
         val param: Call<List<UAddress>> = service.saveAddress(uAddress)
         param.enqueue(this)

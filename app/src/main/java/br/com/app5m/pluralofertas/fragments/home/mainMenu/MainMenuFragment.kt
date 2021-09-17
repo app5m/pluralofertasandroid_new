@@ -61,7 +61,7 @@ class MainMenuFragment : Fragment() {
 
         }
         myAddresses.setOnClickListener {
-            MyUsefulKotlin().startFragment(MyAdressesFragment(), requireActivity().supportFragmentManager)
+            MyUsefulKotlin().startFragment(MyAddressesFragment(), requireActivity().supportFragmentManager)
 
         }
         myPeyments.setOnClickListener {

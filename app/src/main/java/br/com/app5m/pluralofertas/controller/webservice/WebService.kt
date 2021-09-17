@@ -46,7 +46,7 @@ interface WebService {
 
     @POST("usuarios/findenderecoid/" + "{id}")
     fun listIdAddress(
-        @Path("id") idUAddress: String,
+        @Path("id") idUser: String,
         @Body a: UAddress
     ): Call<List<UAddress>>
 
