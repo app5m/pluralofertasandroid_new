@@ -37,12 +37,6 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
 
         type = "login"
 
-
-/*        {
-            "token": "plural_ofertas@2021",
-            "email": "teste@user.com",
-            "password": "123"
-        }*/
         user.token = WSConstants().TOKEN
 
         val param: Call<List<User>> = service.login(user)
