@@ -44,5 +44,3 @@ update datauser
 
 
 ofertas = find
-
-pegar autocomplete cep e colocar no auth

@@ -3,11 +3,14 @@ package br.com.app5m.pluralofertas.fragments.dialog
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.controller.CompileByCepControl
 import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.UAddress
@@ -41,6 +44,36 @@ class RegisterAddressDialog: DialogFragment() {
 
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
+
+        cep_edit.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable) {
+                if (s.toString().length == 9) {
+
+                    CompileByCepControl.compile(cep_edit.rawText, object :
+                        CompileByCepControl.CepResult {
+                        override fun resultCep(cep: UAddress) {
+
+                            if (cep.cep == null) {
+                                cep_edit.error = "Por favor, digite um CEP valido."
+                                return
+                            }
+                            city_edit.setText(cep.place)
+                            uf_edit.setText(cep.uf)
+                            nbh_edit.setText(cep.neighborhood)
+                            address_edit.setText(cep.logradouro)
+
+
+                        }
+
+
+                    })
+                }
+            }
+        })
 
         save_btn.setOnClickListener {
 

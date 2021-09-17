@@ -69,11 +69,18 @@ interface WebService {
         , @Body s: Sale
     ): Call<List<Sale>>
 
-//    @POST("usuarios/updateendereco")
-//    fun updateAddressData(@Body a: UAddress): Call<List<UAddress>>
 
 //    https://app5m.com.br/iusui1872a5a78512rew/pluralofertas/apiv3/
     // user/ofertas/find?destaque=1&valor_de=R$180,00&valor_ate=R$190,00&categoria=1
 
+    /*
+     *Outros
+     */
+
+    /*
+     *Outros
+     */
+    @GET("{CEP}/json/")
+    fun getAddressByCEP(@Path("CEP") CEP: String?): Call<UAddress>
 
 }
