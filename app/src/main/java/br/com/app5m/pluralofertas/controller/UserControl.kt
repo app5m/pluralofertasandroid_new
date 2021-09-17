@@ -70,7 +70,7 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
 //        user.id = preferences.getUserData()!!.id
         user.token = WSConstants().TOKEN
 
-        val param: Call<List<User>> = service.listId(user)
+        val param: Call<List<User>> = service.listId(preferences.getUserData()!!.id.toString(), user)
         param.enqueue(this)
     }
 
@@ -93,16 +93,6 @@ class UserControl(context: Context, private val result: WSResult): Callback<List
     }
 
     fun updateUserData(user: User){
-
-/*        {
-            "id": 3,
-            "nome": "Cadastro teste",
-            "email": "cadastro@cadastro.com",
-            "cpf": "02737594006",
-            "celular":"(51)9888888",
-            "data_nascimento": "12/08/1991",
-            "token": "plural_ofertas@2021"
-        }*/
 
         type = "updateUserData"
 

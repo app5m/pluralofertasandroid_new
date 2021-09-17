@@ -35,5 +35,14 @@ class SaleControl(context: Context, private val result: WSResult): Callback<List
         Log.d("error", "onFailure: " + t.message)
     }
 
+    fun findSale(sale: Sale){
+
+        type = "findSale"
+
+        sale.token = WSConstants().TOKEN
+
+        val param: Call<List<Sale>> = service.findSale("", "", "", "", sale)
+        param.enqueue(this)
+    }
 
 }

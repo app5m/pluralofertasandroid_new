@@ -34,15 +34,13 @@ class UAddressControl(context: Context, private val result: WSResult): Callback<
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun findAddress(password: String){
+    fun findAddress(idAddress: String){
 
         type = "findAddress"
 
-//direto na url
+        uAddress.token = WSConstants().TOKEN
 
-//        uAddress.token = WSConstants().TOKEN
-
-        val param: Call<List<UAddress>> = service.findAddress(uAddress)
+        val param: Call<List<UAddress>> = service.findAddress(idAddress, uAddress)
         param.enqueue(this)
     }
 
@@ -56,15 +54,14 @@ class UAddressControl(context: Context, private val result: WSResult): Callback<
         param.enqueue(this)
     }
 
-    fun listIdAddress(uAddress: UAddress){
+    fun listIdAddress(idAddress: String){
 
         type = "listIdAddress"
 
-        //direto na url
 
-//        uAddress.token = WSConstants().TOKEN
+        uAddress.token = WSConstants().TOKEN
 
-        val param: Call<List<UAddress>> = service.listIdAddress(uAddress)
+        val param: Call<List<UAddress>> = service.listIdAddress(idAddress, uAddress)
         param.enqueue(this)
     }
 
