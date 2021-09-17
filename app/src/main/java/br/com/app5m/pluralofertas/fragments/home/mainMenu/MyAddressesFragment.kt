@@ -22,9 +22,6 @@ import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
-import kotlinx.android.synthetic.main.dialog_myadresses_home.*
-import kotlinx.android.synthetic.main.dialog_myadresses_home.myAdressesRv
-import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_login_content.view.*
 import kotlinx.android.synthetic.main.fragment_mainmenu.*
 import kotlinx.android.synthetic.main.fragment_myaddresses.*

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.fragments.dialog.MyaddressesDialog
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import kotlinx.android.synthetic.main.dialog_filter.*
 import kotlinx.android.synthetic.main.fragment_cart.*

@@ -13,7 +13,6 @@ import br.com.app5m.pluralofertas.activity.productDetails.ProductDetailsActivity
 import br.com.app5m.pluralofertas.adapter.HighlightsAdapter
 import br.com.app5m.pluralofertas.adapter.ProductsAdapter
 import br.com.app5m.pluralofertas.fragments.dialog.FilterDialog
-import br.com.app5m.pluralofertas.fragments.dialog.MyaddressesDialog
 import br.com.app5m.pluralofertas.helper.CircleRecyclerViewDecoration
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Highlight
@@ -92,11 +91,6 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
 
 
             btnSwitchCity.setOnClickListener {
-                Log.d(TAG, "onClick: opening dialog")
-
-                val dialog = MyaddressesDialog()
-                dialog.setTargetFragment(this, 1)
-                fragmentManager?.let { it1 -> dialog.show(it1,"MyadressesDialog") }
             }
 
 
