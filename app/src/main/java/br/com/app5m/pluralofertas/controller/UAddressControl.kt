@@ -71,7 +71,7 @@ class UAddressControl(context: Context, private val result: WSResult): Callback<
 
         uAddress.token = WSConstants().TOKEN
 
-        val param: Call<List<UAddress>> = service.saveAddress(uAddress)
+        val param: Call<List<UAddress>> = service.updateAddressData(uAddress)
         param.enqueue(this)
     }
 
