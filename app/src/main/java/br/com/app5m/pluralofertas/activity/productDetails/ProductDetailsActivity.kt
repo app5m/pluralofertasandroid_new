@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.activity.MainActivity
+import br.com.app5m.pluralofertas.MainActivity
 import br.com.app5m.pluralofertas.fragments.dialog.CuponsDialog
 import br.com.app5m.pluralofertas.fragments.tabsProductDetails.TabsDetailsBottomFragment
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin

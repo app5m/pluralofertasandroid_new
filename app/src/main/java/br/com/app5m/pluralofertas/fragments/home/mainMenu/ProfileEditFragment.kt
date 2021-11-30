@@ -1,6 +1,5 @@
 package br.com.app5m.pluralofertas.fragments.home.mainMenu
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,19 +8,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.activity.MainActivity
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
-import br.com.app5m.pluralofertas.fragments.dialog.RegisterAddressDialog
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.Preferences
-import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
-import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
-import kotlinx.android.synthetic.main.fragment_siginup.*
 
 class ProfileEditFragment: Fragment(), WSResult {
 

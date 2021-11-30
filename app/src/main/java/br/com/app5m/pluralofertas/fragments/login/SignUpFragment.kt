@@ -1,6 +1,5 @@
 package br.com.app5m.pluralofertas.fragments.login
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.activity.MainActivity
+import br.com.app5m.pluralofertas.MainActivity
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
@@ -21,9 +20,9 @@ import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
-import kotlinx.android.synthetic.main.fragment_siginup.*
+import kotlinx.android.synthetic.main.fragment_signup.*
 
-class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
+class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private  val TAG = "SiginUpFragment"
 
@@ -42,7 +41,7 @@ class SiginUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        return inflater.inflate(R.layout.fragment_siginup, container, false)
+        return inflater.inflate(R.layout.fragment_signup, container, false)
 
     }
 

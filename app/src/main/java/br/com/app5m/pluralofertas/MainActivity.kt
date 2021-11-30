@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas.activity
+package br.com.app5m.pluralofertas
 
 
 import android.graphics.Color

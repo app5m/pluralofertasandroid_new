@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import br.com.app5m.pluralofertas.MainActivity
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.helper.Preferences
 

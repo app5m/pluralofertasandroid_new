@@ -9,18 +9,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.activity.MainActivity
+import br.com.app5m.pluralofertas.MainActivity
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
-import br.com.app5m.pluralofertas.fragments.dialog.RegisterAddressDialog
 import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
-import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
 import kotlinx.android.synthetic.main.fragment_login.*
-import kotlinx.android.synthetic.main.fragment_siginup.*
+import kotlinx.android.synthetic.main.fragment_signup.*
 
 class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
 

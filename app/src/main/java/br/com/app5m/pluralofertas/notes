@@ -1,42 +1,18 @@
-plural ofertas
-
-- vai acessar direto a home (sem precisar login)
-
-- se ele tiver deslogado se permitir envia se n n envia(envia zerado), se river logado manda id_endereço
-
-- cadastro é nome, email, celular, senha
-
-- pagamemto via boleto e cartao, request para conf compra(todos os campos menos cartao)
-
-- cadastro de endereços, e no cadastro se permitir lat long e se n é auto complete por cep
-
-- ofertas destaques e ofertas lista normal home
-
-- ofertas vai ter derivados para escolher
-
-- cada produto vai ter cupom disponivel
-
-- vai ter lista de cupons, disponiveis e ja utilizados
-
-- filtro na home por categoria, de data de e até, valor
-
-- vai ter fcm
-
 PLURAL // ultimas coisas
 
-
-quando entrar vai home, se permitir locslizacao manda lat e longi, se n permitir n manda nd, se tiver cadastrado endereço
-
-derivado nas ofertas
-
+1) pegar lat e longi (quando entrar vai home, se permitir locslizacao manda lat e longi, se n permitir n manda nd, se tiver cadastrado endereço)
+2) entrar na home sem login
+3) se ele tiver deslogado se permitir envia se n n envia(envia zerado), se river logado manda id_endereço
+4) pagamemto via boleto e cartao, request para conf compra(todos os campos menos cartao)
+5) ofertas destaques e ofertas lista normal home
+6) cada produto vai ter cupom disponivel
+7) vai ter lista de cupons, disponiveis e ja utilizados
+8) filtro na home por categoria, de data de e até, valor
+9) derivado nas ofertas
+10) so pode comprar 1 produto por vez, rerirada no local(voucher) ou entrega(frete)
+11) mostrar vouchers meus pedidos
+12)
 cupom desconto na oferta randomico
-
-so pode comprar 1 produto por vez, rerirada no local(voucher) ou entrega(frete)
-
-mostrar vouchers meus pedidos
-
-cartao e boleto metodos
-
 
 
 =========================================================================
@@ -53,10 +29,8 @@ save  endereco
 update endereco
 list id
 
-
 falta:
 
 update datauser
-
 
 ofertas = find

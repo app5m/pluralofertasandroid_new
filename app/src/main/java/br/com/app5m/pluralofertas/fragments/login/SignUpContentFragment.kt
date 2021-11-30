@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.*
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_login_content.*
-import kotlinx.android.synthetic.main.fragment_login_content.view.*
 
-class SigninContentFragment : Fragment(), RecyclerItemClickListener {
+class SignUpContentFragment : Fragment(), RecyclerItemClickListener {
 
     private lateinit var viewFragment: View
 
@@ -53,7 +51,7 @@ class SigninContentFragment : Fragment(), RecyclerItemClickListener {
         override fun createFragment(position: Int): Fragment {
             return when (position) {
                 0 ->  LoginFragment()
-                else -> SiginUpFragment()
+                else -> SignUpFragment()
             }
         }
 
