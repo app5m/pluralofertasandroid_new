@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import br.com.app5m.pluralofertas.MainActivity
 import br.com.app5m.pluralofertas.R
 import kotlinx.android.synthetic.main.activity_intro.*
 import kotlinx.android.synthetic.main.fragment_intro.view.*
@@ -51,7 +50,7 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
     private fun finishIntro() {
         //PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("finishedIntro", true).apply()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomeAct::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         //SharedPreferencesManager.putBoolean(PREFS_ONBOARDING,true)
         finishAffinity()

@@ -1,14 +1,14 @@
-package br.com.app5m.pluralofertas.activity
+package br.com.app5m.pluralofertas
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import br.com.app5m.pluralofertas.MainActivity
-import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.activity.HomeAct
+import br.com.app5m.pluralofertas.activity.IntroAct
 import br.com.app5m.pluralofertas.helper.Preferences
 
-class SplashActivity : AppCompatActivity() {
+class MainAct : AppCompatActivity() {
 
     private lateinit var preferences: Preferences
 
@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
 
             if (preferences.getLogin()) {
 
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, HomeAct::class.java))
             } else {
 
                 if (preferences.getInt(
@@ -43,7 +43,7 @@ class SplashActivity : AppCompatActivity() {
                 } else {
 
 
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, HomeAct::class.java))
 
                 }
             }

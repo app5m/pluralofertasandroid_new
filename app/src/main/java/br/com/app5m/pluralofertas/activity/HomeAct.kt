@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas
+package br.com.app5m.pluralofertas.activity
 
 
 import android.graphics.Color
@@ -21,14 +21,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.tool_bar.*
 
 
-class MainActivity : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
+class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
 
     private var itemView: BottomNavigationItemView? = null
     private var preferences: Preferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
 
         //toolbar
         setSupportActionBar(toolbar)

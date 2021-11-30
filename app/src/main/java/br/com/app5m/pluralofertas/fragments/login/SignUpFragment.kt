@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.MainActivity
+import br.com.app5m.pluralofertas.activity.HomeAct
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
@@ -141,7 +141,7 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private fun registerCheck(){
         preferences.setLogin(true)
 
-        val intent = Intent(requireContext(), MainActivity::class.java)
+        val intent = Intent(requireContext(), HomeAct::class.java)
         startActivity(intent)
 
         activity?.finishAffinity()
