@@ -9,25 +9,23 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
 import br.com.app5m.pluralofertas.helper.Preferences
-import br.com.app5m.pluralofertas.model.Sale
-import br.com.app5m.pluralofertas.model.UAddress
-import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.model.*
 import br.com.app5m.pluralofertas.util.Useful
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SaleControl(private val context: Context, private val result: WSResult, private val useful: Useful): Callback<List<Sale>> {
+class CouponControl(private val context: Context, private val result: WSResult, private val useful: Useful): Callback<List<Coupon>> {
 
     private val service = RetrofitInitializer().retrofit(
         true).create(WebService::class.java)
     private val preferences = Preferences(context)
     private var type = ""
-    private lateinit var sale: Sale
+    private lateinit var coupon: Coupon
 
-    override fun onResponse(call: Call<List<Sale>>, response: Response<List<Sale>>) {
+    override fun onResponse(call: Call<List<Coupon>>, response: Response<List<Coupon>>) {
         if (response.isSuccessful){
-            response.body()?.let { result.sResponse(it, type) }
+            response.body()?.let { result.cpResponse(it, type) }
         }else{
             useful.closeLoading()
             SingleToast.INSTANCE.show(context, "Ocorreu um erro não esperado, tente novamente mais tarde.",
@@ -36,54 +34,23 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
         }
     }
 
-    override fun onFailure(call: Call<List<Sale>>, t: Throwable) {
+    override fun onFailure(call: Call<List<Coupon>>, t: Throwable) {
         useful.closeLoading()
         SingleToast.INSTANCE.show(context, "Não foi possível contatar o servidor.",
             Toast.LENGTH_LONG)
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun findSale(sale: Sale){
-
-        type = "findSale"
-/*
-        {
-            "token": "plural_ofertas@2021",
-            "id_endereco_user": 2
-        }
-        */
-        sale.token = WSConstants().TOKEN
-
-        val param: Call<List<Sale>> = service.findSale(sale)
-        param.enqueue(this)
-    }
-
-    fun listIdSales(sale: Sale){
-
-        type = "listIdSale"
-/*
-        {
-            "token": "plural_ofertas@2021",
-        }
-        */
-        sale.token = WSConstants().TOKEN
-
-        val param: Call<List<Sale>> = service.listIdSale("",sale)
-        param.enqueue(this)
-    }
-
-
-    fun listCoupons(sale: Sale){
+    fun listCoupons(coupon: Coupon){
 
         type = "listCoupons"
 /*
-        {
-            "token": "plural_ofertas@2021",
-        }
+{
+    "token": "plural_ofertas@2021"
+}
         */
-        sale.token = WSConstants().TOKEN
 
-        val param: Call<List<Sale>> = service.listCoupons("",sale)
+        val param: Call<List<Coupon>> = service.listCoupons("", coupon)
         param.enqueue(this)
     }
 

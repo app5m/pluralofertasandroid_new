@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas
+package br.com.app5m.pluralofertas.util
 
 import java.text.NumberFormat
 import java.util.*
@@ -10,7 +10,7 @@ object CashConverter {
 
         var ptBr = Locale("pt", "BR")
         var valueString = NumberFormat.getCurrencyInstance(ptBr).format((value / 100))
-        valueString = br.com.app5m.pluralofertas.CashConverter.unmask(valueString)
+        valueString = unmask(valueString)
 
         return valueString
 

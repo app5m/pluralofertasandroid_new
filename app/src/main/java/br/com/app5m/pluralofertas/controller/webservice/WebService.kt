@@ -1,9 +1,7 @@
 package br.com.app5m.pluralofertas.controller.webservice
 
 import android.location.Address
-import br.com.app5m.pluralofertas.model.Sale
-import br.com.app5m.pluralofertas.model.UAddress
-import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -56,26 +54,81 @@ interface WebService {
 
     //sales
 
-//    esse é direto na url , tem q ver como faz
-    //Sales
+//    @FormUrlEncoded
+//    @POST("user/ofertas/find?")
+//    fun findSale(
+//        @Query("destaque") destaque: String
+//        , @Query("valor_de") valor_de: String
+//        , @Query("valor_ate") valor_ate: String
+//        , @Query("categoria") categoria: String
+//        , @Body s: Sale
+//    ): Call<List<Sale>>
 
-    @FormUrlEncoded
-    @POST("user/ofertas/find?")
-    fun findSale(
-        @Query("destaque") destaque: String
-        , @Query("valor_de") valor_de: String
-        , @Query("valor_ate") valor_ate: String
-        , @Query("categoria") categoria: String
-        , @Body s: Sale
+    @POST("ofertas/find")
+    fun findSale(@Body s: Sale): Call<List<Sale>>
+
+    @POST("ofertas/listid/" + "{id}")
+    fun listIdSale(
+        @Path("id") id: String,
+        @Body s: Sale
     ): Call<List<Sale>>
 
+    @POST("ofertas/cupons/" + "{id}")
+    fun listCoupons(
+        @Path("id") id: String,
+        @Body s: Sale
+    ): Call<List<Sale>>
 
-//    https://app5m.com.br/iusui1872a5a78512rew/pluralofertas/apiv3/
-    // user/ofertas/find?destaque=1&valor_de=R$180,00&valor_ate=R$190,00&categoria=1
+    //cart
 
-    /*
-     *Outros
-     */
+    @POST("carrinho/additem")
+    fun addItem(@Body c: Cart): Call<List<Cart>>
+
+    @POST("carrinho/itenscarrinho/" + "{id}")
+    fun listItems(
+        @Path("id") id: String,
+        @Body c: Cart
+    ): Call<List<Cart>>
+
+    @POST("carrinho/removeitem/" + "{id}")
+    fun removeItem(
+        @Path("id") id: String,
+        @Body c: Cart
+    ): Call<List<Cart>>
+
+    @POST("carrinho/addcupom")
+    fun addCoupon(@Body c: Cart): Call<List<Cart>>
+
+    //freights
+
+    @POST("frete/fretecorreios")
+    fun estimateFreight(@Body f: Freight): Call<List<Freight>>
+
+    //coupons
+
+    @POST("cupons/lista/" + "{id}")
+    fun listCoupons(
+        @Path("id") id: String,
+        @Body cp: Coupon
+    ): Call<List<Coupon>>
+
+
+    //request
+
+    @POST("pedidos/novopedido")
+    fun newRequest(@Body r: Request): Call<List<Request>>
+
+    @POST("pedidos/find/" + "{id}")
+    fun find(
+        @Path("id") id: String,
+        @Body r: Request
+    ): Call<List<Request>>
+
+    @POST("pedidos/findid/" + "{id}")
+    fun findId(
+        @Path("id") id: String,
+        @Body r: Request
+    ): Call<List<Request>>
 
     /*
      *Outros

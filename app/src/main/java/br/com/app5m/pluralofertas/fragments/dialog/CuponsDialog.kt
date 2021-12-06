@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.CuponsAdapter
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Cupon
+import br.com.app5m.pluralofertas.model.Coupon
 import kotlinx.android.synthetic.main.dialog_cupon.*
 import java.util.ArrayList
 
@@ -19,7 +19,7 @@ class CuponsDialog: DialogFragment(), RecyclerItemClickListener {
     private val TAG = "DialogCuponsFrag"
 
     var recyclerProduct: RecyclerView? = null
-    private var cupons  = ArrayList<Cupon>()
+    private var cupons  = ArrayList<Coupon>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +33,7 @@ class CuponsDialog: DialogFragment(), RecyclerItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         configureInitialViews()
-        cupons.add(Cupon())
+        cupons.add(Coupon())
 
         ApllyBnt.setOnClickListener {
             dialog?.dismiss();
@@ -53,7 +53,7 @@ class CuponsDialog: DialogFragment(), RecyclerItemClickListener {
 
     }
 
-    override fun onClickListenerCupons(cupon: Cupon) {
+    override fun onClickListenerCupons(coupon: Coupon) {
     }
 
 }

@@ -11,10 +11,26 @@ PLURAL // ultimas coisas
 9) derivado nas ofertas
 10) so pode comprar 1 produto por vez, rerirada no local(voucher) ou entrega(frete)
 11) mostrar vouchers meus pedidos
-12)
-cupom desconto na oferta randomico
+12)cupom desconto na oferta randomico
 
-
+- Login
+- Cadastro
+- Recuperar Senha
+- Lista de Ofertas na HOME sem cadastro
+- Lista de Ofertas na HOME com cadastro baseado no endereço
+- Filtro de OFERTAS
+- Editar perfil e senha
+- lista add, edit, excluir Meus Endereços
+- Detalhes da Oferta com dados completos e as opções para escolher os derivados
+- Aplicar CUPOM na oferta e dar o devido desconto
+- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX
+- Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
+- Pedido com pagamento via cartão de crédito
+- Pedido com pagamento via boleto
+- Meus Pedidos (lista all com informações)
+- Detalhes do meu Pedido (todas informações)
+- Meus cupons aplicados (list all)
+- Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto)
 =========================================================================
 
 feito:
@@ -33,4 +49,6 @@ falta:
 
 update datauser
 
-ofertas = find
+deixar control que nem da shelter
+
+1 - metodos novos

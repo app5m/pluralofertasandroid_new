@@ -17,12 +17,13 @@ import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_signup.*
 
 class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
 
-    private lateinit var useful: MyUsefulKotlin
+    private lateinit var useful: Useful
     private lateinit var userControl: UserControl
     private lateinit var preferences: Preferences
     private lateinit var validation: Validation
@@ -43,10 +44,10 @@ class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        useful = MyUsefulKotlin()
+        useful = Useful(requireContext())
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
-        userControl = UserControl(requireContext(), this)
+        userControl = UserControl(requireContext(), this, useful)
 
         builder = AlertDialog.Builder(requireContext())
         alertDialog = builder.create()
@@ -57,7 +58,7 @@ class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
 
     override fun uResponse(list: List<User>, type: String) {
 
-        useful.closeLoading(alertDialog)
+        useful.closeLoading()
 
         val user = list[0]
 
@@ -76,10 +77,6 @@ class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
 
     }
 
-    override fun error(error: String) {
-        useful.closeLoading(alertDialog)
-        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
-    }
 
     private fun loadClicks() {
 

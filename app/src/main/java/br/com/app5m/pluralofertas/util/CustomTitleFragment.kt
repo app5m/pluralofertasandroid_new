@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas
+package br.com.app5m.pluralofertas.util
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

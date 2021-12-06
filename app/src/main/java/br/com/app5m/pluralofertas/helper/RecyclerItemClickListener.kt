@@ -9,7 +9,7 @@ interface RecyclerItemClickListener {
     fun onClickListenerProducts(product: Product){
         //optional body
     }
-    fun onClickListenerCupons(cupon: Cupon){
+    fun onClickListenerCupons(coupon: Coupon){
         //optional body
     }
     fun onClickListenerCart(cart: Cart){

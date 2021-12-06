@@ -9,10 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Cupon
+import br.com.app5m.pluralofertas.model.Coupon
 
 
-class CuponsAdapter (private val context: Context, private val listCupons: List<Cupon>,
+class CuponsAdapter (private val context: Context, private val listCoupons: List<Coupon>,
                      private val clickOnListener: RecyclerItemClickListener
 )
     : RecyclerView.Adapter<CuponsAdapter.CuponsViewHolder>() {
@@ -31,7 +31,7 @@ class CuponsAdapter (private val context: Context, private val listCupons: List<
     }
 
     override fun onBindViewHolder(holder: CuponsViewHolder, position: Int) {
-        val cupon = listCupons[position]
+        val cupon = listCoupons[position]
 
         holder.openCuponNameTv.text = "Nome do Cupom"
         holder.descriptionOpenCuponTv.text = "Suspendisse sodales, metus sed aliquet ultricies, arcu diam cursus odio, auctor ultrices libero lacus nec eros. Donec laoreet at dui ut feugiat."
@@ -44,7 +44,7 @@ class CuponsAdapter (private val context: Context, private val listCupons: List<
     }
 
     override fun getItemCount(): Int {
-        return listCupons.size
+        return listCoupons.size
     }
 
     class CuponsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -20,13 +20,14 @@ import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_signup.*
 
 class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private  val TAG = "SiginUpFragment"
 
-    private lateinit var useful: MyUsefulKotlin
+    private lateinit var useful: Useful
     private lateinit var userControl: UserControl
     private lateinit var uAddressControl: UAddressControl
     private lateinit var preferences: Preferences
@@ -48,11 +49,11 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        useful = MyUsefulKotlin()
+        useful = Useful(requireContext())
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
-        userControl = UserControl(requireContext(), this)
-        uAddressControl = UAddressControl(requireContext(), this)
+        userControl = UserControl(requireContext(), this, useful)
+        uAddressControl = UAddressControl(requireContext(), this, useful)
 
         builder = AlertDialog.Builder(requireContext())
         alertDialog = builder.create()
@@ -81,7 +82,7 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     override fun uAResponse(list: List<UAddress>, type: String) {
 
-        useful.closeLoading(alertDialog)
+        useful.closeLoading()
 
         if (list[0].status.equals("01")) {
 
@@ -92,16 +93,11 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     }
 
-    override fun error(error: String) {
-        useful.closeLoading(alertDialog)
-        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode2: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode2, data)
 
         if (data!!.extras!!.getBoolean("msg")) {
-            useful.openLoading(requireContext(), alertDialog)
+            useful.openLoading()
             userControl.register(user)
         }
 

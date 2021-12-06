@@ -9,24 +9,25 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
 import br.com.app5m.pluralofertas.helper.Preferences
-import br.com.app5m.pluralofertas.model.UAddress
+import br.com.app5m.pluralofertas.model.Cart
+import br.com.app5m.pluralofertas.model.Sale
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.util.Useful
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UAddressControl(private val context: Context, private val result: WSResult, private val useful: Useful): Callback<List<UAddress>> {
+class CartControl(private val context: Context, private val result: WSResult, private val useful: Useful): Callback<List<Cart>> {
 
     private val service = RetrofitInitializer().retrofit(
         true).create(WebService::class.java)
     private val preferences = Preferences(context)
     private var type = ""
-    private lateinit var uAddress : UAddress
+    private lateinit var cart: Cart
 
-    override fun onResponse(call: Call<List<UAddress>>, response: Response<List<UAddress>>) {
+    override fun onResponse(call: Call<List<Cart>>, response: Response<List<Cart>>) {
         if (response.isSuccessful){
-            response.body()?.let { result.uAResponse(it, type) }
+            response.body()?.let { result.cResponse(it, type) }
         }else{
             useful.closeLoading()
             SingleToast.INSTANCE.show(context, "Ocorreu um erro não esperado, tente novamente mais tarde.",
@@ -35,51 +36,71 @@ class UAddressControl(private val context: Context, private val result: WSResult
         }
     }
 
-    override fun onFailure(call: Call<List<UAddress>>, t: Throwable) {
+    override fun onFailure(call: Call<List<Cart>>, t: Throwable) {
         useful.closeLoading()
         SingleToast.INSTANCE.show(context, "Não foi possível contatar o servidor.",
             Toast.LENGTH_LONG)
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun findAddress(idAddress: String){
 
-        type = "findAddress"
+    fun addItem(cart: Cart){
 
-        uAddress.token = WSConstants().TOKEN
+        type = "add"
+/*
+{
+    "token": "plural_ofertas@2021",
+    "id_user": 4,
+    "id_oferta": 1,
+    "valor_uni": "R$ 189,00",
+    "taxa_servico": "R$ 5,00",
+    "id_derivado": 3
 
-        val param: Call<List<UAddress>> = service.findAddress(idAddress, uAddress)
+}
+        */
+
+        val param: Call<List<Cart>> = service.addItem(cart)
         param.enqueue(this)
     }
 
-    fun saveAddress(uAddress: UAddress){
+    fun addCoupon(cart: Cart){
 
-        type = "saveAddress"
+        type = "addCoupon"
+/*
+    "token": "plural_ofertas@2021",
+    "cod": "swTWan3p",
+    "valor_desc": "R$ 25,00",
+    "id_item": 10
 
-        uAddress.token = WSConstants().TOKEN
+        */
 
-        val param: Call<List<UAddress>> = service.saveAddress(uAddress)
+        val param: Call<List<Cart>> = service.addCoupon(cart)
         param.enqueue(this)
     }
 
-    fun listIdAddress(idUser: String){
+    fun listItems(cart: Cart){
 
-        type = "listIdAddress"
+        type = "listItems"
+/*
+{
+    "token": "plural_ofertas@2021"
+}
+        */
 
-        uAddress.token = WSConstants().TOKEN
-
-        val param: Call<List<UAddress>> = service.listIdAddress(idUser, uAddress)
+        val param: Call<List<Cart>> = service.listItems("", cart)
         param.enqueue(this)
     }
 
+    fun removeItem(cart: Cart){
 
-    fun updateAddress(uAddress: UAddress){
+        type = "remove"
+/*
+{
+    "token": "plural_ofertas@2021"
+}
+        */
 
-        type = "updateAddress"
-
-        uAddress.token = WSConstants().TOKEN
-
-        val param: Call<List<UAddress>> = service.updateAddressData(uAddress)
+        val param: Call<List<Cart>> = service.removeItem("", cart)
         param.enqueue(this)
     }
 

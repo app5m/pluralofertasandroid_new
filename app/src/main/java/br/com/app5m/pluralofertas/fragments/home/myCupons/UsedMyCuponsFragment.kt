@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.UsedCuponsAdapter
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Cupon
+import br.com.app5m.pluralofertas.model.Coupon
 import kotlinx.android.synthetic.main.fragment_used_mycupons.*
 import java.util.ArrayList
 
 class UsedMyCuponsFragment : Fragment(), RecyclerItemClickListener {
-    private var usedCuponList  = ArrayList<Cupon>()
+    private var usedCuponList  = ArrayList<Coupon>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,12 +29,12 @@ class UsedMyCuponsFragment : Fragment(), RecyclerItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configureInitialViews()
-        usedCuponList.add(Cupon())
-        usedCuponList.add(Cupon())
-        usedCuponList.add(Cupon())
-        usedCuponList.add(Cupon())
-        usedCuponList.add(Cupon())
-        usedCuponList.add(Cupon())
+        usedCuponList.add(Coupon())
+        usedCuponList.add(Coupon())
+        usedCuponList.add(Coupon())
+        usedCuponList.add(Coupon())
+        usedCuponList.add(Coupon())
+        usedCuponList.add(Coupon())
 
 
     }

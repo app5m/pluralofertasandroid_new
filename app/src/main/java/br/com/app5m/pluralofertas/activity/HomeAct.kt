@@ -7,7 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import br.com.app5m.pluralofertas.CustomTitleFragment
+import br.com.app5m.pluralofertas.util.CustomTitleFragment
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.fragments.home.HomeFragmentOffer
 import br.com.app5m.pluralofertas.fragments.home.cart.CartFragment

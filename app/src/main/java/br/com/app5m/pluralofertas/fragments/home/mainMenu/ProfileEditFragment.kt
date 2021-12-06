@@ -15,12 +15,13 @@ import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
 import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.helper.Validation
 import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
 
 class ProfileEditFragment: Fragment(), WSResult {
 
 
-    private lateinit var useful: MyUsefulKotlin
+    private lateinit var useful: Useful
     private lateinit var userControl: UserControl
     private lateinit var uAddressControl: UAddressControl
     private lateinit var preferences: Preferences
@@ -42,10 +43,10 @@ class ProfileEditFragment: Fragment(), WSResult {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        useful = MyUsefulKotlin()
+        useful = Useful(requireContext())
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
-        userControl = UserControl(requireContext(), this)
+        userControl = UserControl(requireContext(), this, useful)
 
         builder = AlertDialog.Builder(requireContext())
         alertDialog = builder.create()
@@ -66,11 +67,6 @@ class ProfileEditFragment: Fragment(), WSResult {
 
     }
 
-
-    override fun error(error: String) {
-        useful.closeLoading(alertDialog)
-        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
-    }
 
     private fun loadClicks() {
 
@@ -98,7 +94,7 @@ class ProfileEditFragment: Fragment(), WSResult {
         }
 
         btnAlterarSenhaMeuPerfilTextView.setOnClickListener {
-            useful.startFragmentOnBack(UpdatePasswordFragment(), requireActivity().supportFragmentManager)
+//            useful.startFragmentOnBack(UpdatePasswordFragment(), requireActivity().supportFragmentManager)
         }
 
     }

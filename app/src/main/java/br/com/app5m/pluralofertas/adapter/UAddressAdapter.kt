@@ -49,17 +49,7 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
 
         if (position == 0) {
 
-            Preferences(context).getUserData()!!.id?.let {
-
-                UAddressControl(context, object: WSResult {
-                    override fun uAResponse(list: List<UAddress>, type: String) {
-
-
-                    }
-
-                }).listIdAddress(it)
-            }
-
+            //primeira
         } else {
 
         }

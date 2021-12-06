@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Cupon
+import br.com.app5m.pluralofertas.model.Coupon
 
-class UsedCuponsAdapter(private val context: Context, private val listUsedCupon: List<Cupon>,
+class UsedCuponsAdapter(private val context: Context, private val listUsedCoupon: List<Coupon>,
                         private val clickOnListener: RecyclerItemClickListener
 )
     : RecyclerView.Adapter<UsedCuponsAdapter.UsedViewHolder>() {
@@ -26,7 +26,7 @@ class UsedCuponsAdapter(private val context: Context, private val listUsedCupon:
     }
 
     override fun onBindViewHolder(holder: UsedViewHolder, position: Int) {
-        val cupon = listUsedCupon[position]
+        val cupon = listUsedCoupon[position]
 
       /*  holder.productNameTv.text = "Mega Burguer"
         holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
@@ -40,7 +40,7 @@ class UsedCuponsAdapter(private val context: Context, private val listUsedCupon:
     }
 
     override fun getItemCount(): Int {
-        return listUsedCupon.size
+        return listUsedCoupon.size
     }
 
     class UsedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
