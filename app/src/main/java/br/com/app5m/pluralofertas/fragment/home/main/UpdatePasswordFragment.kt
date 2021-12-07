@@ -33,7 +33,7 @@ class UpdatePasswordFragment : Fragment(), WSResult {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_update_password, container, false)
 
     }
 
