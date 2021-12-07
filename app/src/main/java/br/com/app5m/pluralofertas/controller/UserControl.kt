@@ -108,29 +108,14 @@ class UserControl(private val context: Context, private val result: WSResult, pr
     }
 
 
-    fun fcm(user: User) {
+    fun saveFcm(user: User) {
 
         type = "fcm"
 
-        user.id = preferences.getUserData()!!.id
+        user.idUser = preferences.getUserData()!!.id
 
         val param: Call<List<User>> = service.fcm(user)
-        param.enqueue(object : Callback<List<User>> {
-            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
-                if (response.isSuccessful) {
-                    if (response.body() != null) {
-                        response.body()?.let { result.uResponse(it, type) }
-                        //testando com list no result
-                    }
-                } else {
-                    Log.i("erro", "Erro não esperado.")
-                }
-            }
-
-            override fun onFailure(call: Call<List<User>>, t: Throwable) {
-                Log.i("erro", "Não foi possível contatar o servidor.")
-            }
-        })
+        param.enqueue(this)
 
 
     }

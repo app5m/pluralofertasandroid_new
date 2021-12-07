@@ -7,6 +7,9 @@ class User {
     @field:SerializedName("id")
     var id: String? = null
 
+    @field:SerializedName("id_user")
+    var idUser: String? = null
+
     @field:SerializedName("email")
     var email: String? = null
 
@@ -24,6 +27,9 @@ class User {
 
     @field:SerializedName("type")
     var type: String? = null
+
+    @field:SerializedName("registration_id")
+    var registrationId: String? = null
 
     @field:SerializedName("msg")
     var msg: String? = null
