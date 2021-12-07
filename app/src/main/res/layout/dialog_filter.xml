@@ -5,7 +5,7 @@
     style="@style/corSolidaDaTelaHome"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".fragment.dialog.FilterDialog">
+    tools:context=".ui.dialog.FilterDialog">
 
     <LinearLayout
         android:id="@+id/backBnt"

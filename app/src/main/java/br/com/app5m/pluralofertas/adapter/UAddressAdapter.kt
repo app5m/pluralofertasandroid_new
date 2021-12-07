@@ -5,14 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.controller.UAddressControl
-import br.com.app5m.pluralofertas.controller.webservice.WSResult
-import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.model.UAddress
 
 class UAddressAdapter (private val context: Context, private val listUAddress: List<UAddress>,

@@ -3,15 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/drawable-v24/style_progress.xml" value="0.1953125" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/drawable-xhdpi/ic_phone.xml" value="0.19583333333333333" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_cartcheckout.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_intro.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_permission_localization.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_sigin_content.xml" value="0.1796875" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_uaddress.xml" value="0.25" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/content_home.xml" value="0.1796875" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog.xml" value="0.1527777777777778" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_gallery_camera.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_myadresses_home.xml" value="0.17916666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_register_address.xml" value="0.22" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_home.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_intro.xml" value="0.264" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_login_content.xml" value="0.1796875" />
@@ -19,6 +27,7 @@
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_myaddresses.xml" value="0.17916666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_siginup.xml" value="0.22" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_update_password.xml" value="0.17916666666666667" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/loading.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/tool_bar.xml" value="0.1796875" />
       </map>
     </option>

@@ -114,29 +114,6 @@
             android:background="@android:color/transparent"
             android:layout_alignParentRight="true"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:layout_toRightOf="@id/address_radioButton"
-            android:layout_below="@id/complement_textView"
-            android:layout_marginEnd="@dimen/margin_size1"
-            android:layout_marginStart="@dimen/margin_size1">
-
-            <include layout="@layout/div" />
-
-            <TextView
-                android:id="@+id/editar_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_size2"
-                android:layout_marginBottom="@dimen/margin_size3"
-                android:text="Editar"
-                android:visibility="visible"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

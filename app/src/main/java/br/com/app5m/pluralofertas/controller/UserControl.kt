@@ -8,9 +8,9 @@ import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
-import br.com.app5m.pluralofertas.helper.Preferences
+import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.model.User
-import br.com.app5m.pluralofertas.helper.Useful
+import br.com.app5m.pluralofertas.util.Useful
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

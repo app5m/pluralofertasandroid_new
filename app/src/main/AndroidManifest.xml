@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.app5m.pluralofertas">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,28 +28,26 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="br.com.app5m.pluralofertas.ui.activity.PermissionLocalizationAct"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name="br.com.app5m.pluralofertas.activity.IntroAct"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name="br.com.app5m.pluralofertas.ui.activity.IntroAct"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name="br.com.app5m.pluralofertas.activity.HomeAct"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name="br.com.app5m.pluralofertas.ui.activity.HomeAct"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="br.com.app5m.pluralofertas.activity.productDetails.ProductDetailsActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name="br.com.app5m.pluralofertas.ui.activity.ProductDetailsActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="br.com.app5m.pluralofertas.activity.cartCheckout.CartCheckoutActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name="br.com.app5m.pluralofertas.ui.activity.CartCheckoutActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="br.com.app5m.pluralofertas.activity.login.SigininContentActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name="br.com.app5m.pluralofertas.ui.activity.SigininContentActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 </manifest>

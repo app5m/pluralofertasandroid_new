@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
+import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Product
 
 class ProductsAdapter(private val context: Context, private val listProduct: List<Product>,

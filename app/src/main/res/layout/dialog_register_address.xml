@@ -159,7 +159,7 @@
                     android:id="@+id/address_edit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/margin_size2"
+                    android:layout_marginEnd="12dp"
                     android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/address"
                     android:inputType="text"

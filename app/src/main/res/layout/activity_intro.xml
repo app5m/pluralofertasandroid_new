@@ -5,7 +5,7 @@
     style="@style/Instrucoes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.IntroAct">
+    tools:context=".ui.activity.IntroAct">
 
 
     <androidx.viewpager.widget.ViewPager
