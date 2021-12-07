@@ -1,10 +1,10 @@
 package br.com.app5m.pluralofertas.controller.webservice
 
-class WSConstants {
+object WSConstants {
 
-    val TOKEN = "plural_ofertas@2021"
-    val MAIN_URL = "https://app5m.com.br/iusui1872a5a78512rew/pluralofertas/apiv3/user/"
-    var VIACEP = "https://viacep.com.br/ws/"
+    const val TOKEN = "plural_ofertas@2021"
+    const val MAIN_URL = "https://pluralofertas.com.br/apiv3/user/"
+    const val VIACEP = "https://viacep.com.br/ws/"
 
 
 }

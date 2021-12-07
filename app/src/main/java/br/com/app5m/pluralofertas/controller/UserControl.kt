@@ -45,7 +45,7 @@ class UserControl(private val context: Context, private val result: WSResult, pr
 
         type = "login"
 
-        user.token = WSConstants().TOKEN
+        user.token = WSConstants.TOKEN
 
         val param: Call<List<User>> = service.login(user)
         param.enqueue(this)
@@ -64,7 +64,7 @@ class UserControl(private val context: Context, private val result: WSResult, pr
             "latitude":"-30.0036668",
             "longitude": "-51.0546295"
         }*/
-        user.token = WSConstants().TOKEN
+        user.token = WSConstants.TOKEN
 
         val param: Call<List<User>> = service.register(user)
         param.enqueue(this)
@@ -76,7 +76,7 @@ class UserControl(private val context: Context, private val result: WSResult, pr
 
         user = User()
 
-        user.token = WSConstants().TOKEN
+        user.token = WSConstants.TOKEN
 
         val param: Call<List<User>> = service.listId(preferences.getUserData()!!.id.toString(), user)
         param.enqueue(this)
@@ -90,7 +90,7 @@ class UserControl(private val context: Context, private val result: WSResult, pr
 
         user.id = preferences.getUserData()!!.id
         user.password = password
-        user.token = WSConstants().TOKEN
+        user.token = WSConstants.TOKEN
 
         val param: Call<List<User>> = service.updatePassword(user)
         param.enqueue(this)
@@ -101,7 +101,7 @@ class UserControl(private val context: Context, private val result: WSResult, pr
         type = "updateUserData"
 
         user.id = preferences.getUserData()!!.id
-        user.token = WSConstants().TOKEN
+        user.token = WSConstants.TOKEN
 
         val param: Call<List<User>> = service.updateUserData(user)
         param.enqueue(this)

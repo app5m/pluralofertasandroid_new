@@ -41,13 +41,15 @@ class UAddressControl(private val context: Context, private val result: WSResult
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun findAddress(idAddress: String){
+    fun findAddress(){
 
         type = "findAddress"
 
-        uAddress.token = WSConstants().TOKEN
+        uAddress = UAddress()
 
-        val param: Call<List<UAddress>> = service.findAddress(idAddress, uAddress)
+        uAddress.token = WSConstants.TOKEN
+
+        val param: Call<List<UAddress>> = service.findAddress(preferences.getUserData()!!.id!!, uAddress)
         param.enqueue(this)
     }
 
@@ -55,7 +57,7 @@ class UAddressControl(private val context: Context, private val result: WSResult
 
         type = "saveAddress"
 
-        uAddress.token = WSConstants().TOKEN
+        uAddress.token = WSConstants.TOKEN
 
         val param: Call<List<UAddress>> = service.saveAddress(uAddress)
         param.enqueue(this)
@@ -65,7 +67,7 @@ class UAddressControl(private val context: Context, private val result: WSResult
 
         type = "listIdAddress"
 
-        uAddress.token = WSConstants().TOKEN
+        uAddress.token = WSConstants.TOKEN
 
         val param: Call<List<UAddress>> = service.listIdAddress(idUser, uAddress)
         param.enqueue(this)
@@ -76,7 +78,7 @@ class UAddressControl(private val context: Context, private val result: WSResult
 
         type = "updateAddress"
 
-        uAddress.token = WSConstants().TOKEN
+        uAddress.token = WSConstants.TOKEN
 
         val param: Call<List<UAddress>> = service.updateAddressData(uAddress)
         param.enqueue(this)

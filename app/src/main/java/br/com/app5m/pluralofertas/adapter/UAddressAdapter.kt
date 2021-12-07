@@ -10,9 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.model.UAddress
+import br.com.app5m.pluralofertas.util.Useful
 
 class UAddressAdapter (private val context: Context, private val listUAddress: List<UAddress>,
-                       private val alertDialog: androidx.appcompat.app.AlertDialog)
+                       private val useful: Useful)
     : RecyclerView.Adapter<UAddressAdapter.ViewHolder>() {
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -41,7 +42,7 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val uaddress = listUAddress[position + 1]
+        val uaddress = listUAddress[position]
 
         if (position == 0) {
 

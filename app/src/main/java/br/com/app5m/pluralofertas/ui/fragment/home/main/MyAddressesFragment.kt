@@ -1,5 +1,6 @@
 package br.com.app5m.pluralofertas.ui.fragment.home.main
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.UAddressAdapter
@@ -33,11 +35,6 @@ class MyAddressesFragment : Fragment(), WSResult {
     private lateinit var preferences: Preferences
     private lateinit var validation: Validation
 
-    private lateinit var builder: AlertDialog.Builder
-    private lateinit var alertDialog: AlertDialog
-
-    private val uAddress = UAddress()
-
     private var uaddressList  = ArrayList<UAddress>()
 
     override fun onCreateView(
@@ -57,8 +54,7 @@ class MyAddressesFragment : Fragment(), WSResult {
         validation = Validation(requireContext())
         uAddressControl = UAddressControl(requireContext(), this, useful)
 
-        builder = AlertDialog.Builder(requireContext())
-        alertDialog = builder.create()
+        uAddressControl.findAddress()
 
         configureInitialViews()
 
@@ -66,10 +62,15 @@ class MyAddressesFragment : Fragment(), WSResult {
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun uAResponse(list: List<UAddress>, type: String) {
 
         useful.closeLoading()
 
+        uaddressList.clear()
+        uaddressList.addAll(list)
+
+        myAdressesRv.adapter!!.notifyDataSetChanged()
 
     }
 
@@ -88,11 +89,13 @@ class MyAddressesFragment : Fragment(), WSResult {
 
     private fun configureInitialViews(){
 
-        val productsAdapter = UAddressAdapter(requireContext(), uaddressList, alertDialog)
+        val uAddressAdapter = UAddressAdapter(requireContext(), uaddressList, useful)
 
-        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 1)
-        myAdressesRv.layoutManager = layoutManager
-        myAdressesRv.adapter = productsAdapter
+        myAdressesRv.apply {
+            setHasFixedSize(false)
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = uAddressAdapter
+        }
 
         loadClicks()
 
@@ -102,10 +105,6 @@ class MyAddressesFragment : Fragment(), WSResult {
 
         backButton.setOnClickListener {
             requireActivity().onBackPressed()
-        }
-
-        saveBnt2.setOnClickListener {
-
         }
 
         addAdressMainMenuFab.setOnClickListener {

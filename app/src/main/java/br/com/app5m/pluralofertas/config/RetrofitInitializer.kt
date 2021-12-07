@@ -14,9 +14,6 @@ import java.util.concurrent.TimeUnit
  */
 class RetrofitInitializer {
 
-//    private val wsUrl = "https://app5m.com.br/iusui1872a5a78512rew/pluraltv/webservice/user/"
-    private val wsUrl = WSConstants().MAIN_URL
-
     fun retrofit(log_enable: Boolean): Retrofit {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
@@ -27,7 +24,7 @@ class RetrofitInitializer {
             OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS)
                     .writeTimeout(10, TimeUnit.SECONDS).readTimeout(10, TimeUnit.SECONDS).build()
 
-        return Retrofit.Builder().baseUrl(wsUrl)
+        return Retrofit.Builder().baseUrl(WSConstants.MAIN_URL)
                 .addConverterFactory(GsonConverterFactory.create()).client(client).build()
     }
 

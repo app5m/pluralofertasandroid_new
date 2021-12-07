@@ -18,7 +18,7 @@ object CompileByCepControl {
     fun compile(cep: String?, resultCep: CepResult) {
 
         val retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl(WSConstants().VIACEP)
+            .baseUrl(WSConstants.VIACEP)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val webService: WebService = retrofit.create(WebService::class.java)

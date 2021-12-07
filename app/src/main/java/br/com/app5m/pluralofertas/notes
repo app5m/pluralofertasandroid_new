@@ -2,12 +2,13 @@ PLURAL // ultimas coisas
 
 
 - pegar lat e longi (quando entrar vai home, se permitir locslizacao manda lat e longi,
-        se n permitir n manda nd, se tiver cadastrado endereço) 1
-- fcm 2
+        se n permitir n manda nd, se tiver cadastrado endereço) 1 v
+- fcm 2 v testar
 - Login v
 - Cadastro v
-- Lista de Ofertas na HOME com cadastro baseado no endereço
 - Lista de Ofertas na HOME sem cadastro v
+
+- Lista de Ofertas na HOME com cadastro baseado no endereço
 - Editar perfil x e senha v 3
 - lista add, edit, excluir Meus Endereços 4
 - list ofertas 5

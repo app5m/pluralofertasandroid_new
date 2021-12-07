@@ -50,7 +50,7 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
             "id_endereco_user": 2
         }
         */
-        sale.token = WSConstants().TOKEN
+        sale.token = WSConstants.TOKEN
 
         val param: Call<List<Sale>> = service.findSale(sale)
         param.enqueue(this)
@@ -64,7 +64,7 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
             "token": "plural_ofertas@2021",
         }
         */
-        sale.token = WSConstants().TOKEN
+        sale.token = WSConstants.TOKEN
 
         val param: Call<List<Sale>> = service.listIdSale("",sale)
         param.enqueue(this)
@@ -79,7 +79,7 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
             "token": "plural_ofertas@2021",
         }
         */
-        sale.token = WSConstants().TOKEN
+        sale.token = WSConstants.TOKEN
 
         val param: Call<List<Sale>> = service.listCoupons("",sale)
         param.enqueue(this)
