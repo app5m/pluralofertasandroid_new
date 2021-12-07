@@ -7,34 +7,38 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.activity.HomeAct
-import br.com.app5m.pluralofertas.fragments.dialog.CuponsDialog
-import br.com.app5m.pluralofertas.fragments.tabsProductDetails.TabsDetailsBottomFragment
-import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
+import br.com.app5m.pluralofertas.fragment.dialog.CuponsDialog
+import br.com.app5m.pluralofertas.fragment.tabsProductDetails.TabsDetailsBottomFragment
 import br.com.app5m.pluralofertas.helper.RecyclerItemClickListener
+import br.com.app5m.pluralofertas.helper.Useful
 import kotlinx.android.synthetic.main.activity_details_product.*
-import kotlinx.android.synthetic.main.tool_bar.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener {
+
     private  val TAG = "ProductDetails_Act"
 
-
+    private lateinit var useful: Useful
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_product)
+        setSupportActionBar(toolbar)
 
-        //toolbar
-       setSupportActionBar(toolbar)
-        supportActionBar?.let { MyUsefulKotlin().setActionBar(this, it,"") }
+        useful = Useful(this)
+
+        supportActionBar?.let { useful.setActionBar(this, it,"", 0) }
         toolbarTitle.setText("Detalhes do produto")
         toolbar.visibility = View.VISIBLE
 
-        MyUsefulKotlin().startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
-        applyCupon.setOnClickListener() {
+        useful.startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
+
+        applyCupon.setOnClickListener {
 
             CuponsDialog().show(supportFragmentManager, "DialogCuponsFrag")
         }
+
         btnComprarDetalhesProduto.setOnClickListener {
             val intent = Intent(this, HomeAct::class.java)
             intent.putExtra("CHANGE_NAV_CART", "true")

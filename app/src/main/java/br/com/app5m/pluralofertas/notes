@@ -13,10 +13,10 @@ PLURAL // ultimas coisas
 11) mostrar vouchers meus pedidos
 12)cupom desconto na oferta randomico
 
-- Login
-- Cadastro
-- Recuperar Senha
-- Lista de Ofertas na HOME sem cadastro
+- Login v
+- Cadastro v
+- Recuperar Senha (não possui request)
+- Lista de Ofertas na HOME sem cadastro v
 - Lista de Ofertas na HOME com cadastro baseado no endereço
 - Filtro de OFERTAS
 - Editar perfil e senha

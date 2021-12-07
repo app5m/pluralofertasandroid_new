@@ -9,16 +9,16 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import br.com.app5m.pluralofertas.util.CustomTitleFragment
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.fragments.home.HomeFragmentOffer
-import br.com.app5m.pluralofertas.fragments.home.cart.CartFragment
-import br.com.app5m.pluralofertas.fragments.home.mainMenu.MainMenuFragment
-import br.com.app5m.pluralofertas.fragments.home.myCupons.MyCuponsContentFragment
-import br.com.app5m.pluralofertas.helper.MyUsefulKotlin
+import br.com.app5m.pluralofertas.fragment.home.HomeFragmentOffer
+import br.com.app5m.pluralofertas.fragment.home.cart.CartFragment
+import br.com.app5m.pluralofertas.fragment.home.main.MainMenuFragment
+import br.com.app5m.pluralofertas.fragment.home.coupon.MyCuponsContentFragment
 import br.com.app5m.pluralofertas.helper.Preferences
+import br.com.app5m.pluralofertas.helper.Useful
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.tool_bar.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
@@ -26,14 +26,17 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
     private var itemView: BottomNavigationItemView? = null
     private var preferences: Preferences? = null
 
+    private lateinit var useful: Useful
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
-        //toolbar
         setSupportActionBar(toolbar)
-        MyUsefulKotlin().startFragment(HomeFragmentOffer(), this.supportFragmentManager)
-        MyUsefulKotlin().setActionBar(this, supportActionBar!!, "")
+
+        useful = Useful(this)
+
+        useful.startFragment(HomeFragmentOffer(), this.supportFragmentManager)
+        useful.setActionBar(this, supportActionBar!!, "", 0)
 
         toolbar.visibility = View.GONE
 
@@ -76,19 +79,19 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
     fun configureInitialViews(){
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.homeFragment -> MyUsefulKotlin().startFragment(
+                R.id.homeFragment -> useful.startFragment(
                     HomeFragmentOffer(),
                     supportFragmentManager
                 )
-                R.id.cartFragment -> MyUsefulKotlin().startFragment(
+                R.id.cartFragment -> useful.startFragment(
                     CartFragment(),
                     supportFragmentManager
                 )
-                R.id.myCouponsFragment -> MyUsefulKotlin().startFragment(
+                R.id.myCouponsFragment -> useful.startFragment(
                     MyCuponsContentFragment(),
                     supportFragmentManager
                 )
-                R.id.settings_visitante -> MyUsefulKotlin().startFragment(
+                R.id.settings_visitante -> useful.startFragment(
                     MainMenuFragment(),
                     supportFragmentManager
                 )

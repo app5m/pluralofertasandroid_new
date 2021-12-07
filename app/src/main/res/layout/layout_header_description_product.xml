@@ -16,7 +16,7 @@
 
         <include
             android:id="@+id/include2"
-            layout="@layout/tool_bar" />
+            layout="@layout/toolbar" />
 
         <LinearLayout
 

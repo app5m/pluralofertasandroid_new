@@ -4,16 +4,12 @@ import android.content.Context
 import android.util.Log
 import android.widget.Toast
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
-import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
 import br.com.app5m.pluralofertas.helper.Preferences
-import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Request
-import br.com.app5m.pluralofertas.model.Sale
-import br.com.app5m.pluralofertas.model.User
-import br.com.app5m.pluralofertas.util.Useful
+import br.com.app5m.pluralofertas.helper.Useful
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

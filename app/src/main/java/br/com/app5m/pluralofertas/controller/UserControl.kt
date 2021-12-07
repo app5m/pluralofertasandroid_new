@@ -10,7 +10,7 @@ import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
 import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.model.User
-import br.com.app5m.pluralofertas.util.Useful
+import br.com.app5m.pluralofertas.helper.Useful
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -74,8 +74,8 @@ class UserControl(private val context: Context, private val result: WSResult, pr
 
         type = "listId"
 
-        // tem q mandar o id na url
-//        user.id = preferences.getUserData()!!.id
+        user = User()
+
         user.token = WSConstants().TOKEN
 
         val param: Call<List<User>> = service.listId(preferences.getUserData()!!.id.toString(), user)
@@ -86,12 +86,8 @@ class UserControl(private val context: Context, private val result: WSResult, pr
 
         type = "updatePassword"
 
+        user = User()
 
-/*        {
-            "id": 3,
-            "password": "123",
-            "token": "plural_ofertas@2021"
-        }*/
         user.id = preferences.getUserData()!!.id
         user.password = password
         user.token = WSConstants().TOKEN

@@ -10,8 +10,7 @@ import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
 import br.com.app5m.pluralofertas.helper.Preferences
 import br.com.app5m.pluralofertas.model.UAddress
-import br.com.app5m.pluralofertas.model.User
-import br.com.app5m.pluralofertas.util.Useful
+import br.com.app5m.pluralofertas.helper.Useful
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

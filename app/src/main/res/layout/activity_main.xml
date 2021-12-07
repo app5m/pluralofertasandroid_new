@@ -17,7 +17,7 @@
         app:defaultNavHost="true"
         />
 
-    <include layout="@layout/tool_bar"/>
+    <include layout="@layout/toolbar"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             app:labelVisibilityMode="unlabeled"
