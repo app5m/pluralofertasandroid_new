@@ -65,6 +65,8 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
 
         type = "listIdSale"
 
+        sale = Sale()
+
         sale.token = WSConstants.TOKEN
 
         val param: Call<List<Sale>> = service.listIdSale(idSale, sale)

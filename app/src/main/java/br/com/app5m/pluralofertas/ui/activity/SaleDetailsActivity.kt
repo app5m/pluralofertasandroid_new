@@ -33,18 +33,6 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
             intent.getStringExtra("idSale")?.let { saleControl.listIdSales(it) }
         }
 
-//        applyCupon.setOnClickListener {
-//
-//            CuponsDialog().show(supportFragmentManager, "DialogCuponsFrag")
-//        }
-//
-//        btnComprarDetalhesProduto.setOnClickListener {
-//            val intent = Intent(this, HomeAct::class.java)
-//            intent.putExtra("CHANGE_NAV_CART", "true")
-//            startActivity(intent)
-//            finishAffinity()
-//        }
-
     }
 
     override fun sResponse(list: List<Sale>, type: String) {

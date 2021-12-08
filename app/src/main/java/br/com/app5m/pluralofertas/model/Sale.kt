@@ -5,6 +5,12 @@ import java.io.Serializable
 
 class Sale: Serializable {
 
+    @field:SerializedName("nome")
+    var name: String? = null
+
+    @field:SerializedName("valor")
+    var value: String? = null
+
     @field:SerializedName("detalhes")
     var datails: Details? = null
 

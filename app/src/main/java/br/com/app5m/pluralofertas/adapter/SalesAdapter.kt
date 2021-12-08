@@ -8,8 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Sale
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_mainmenu.*
 
 class SalesAdapter(private val context: Context, private val list: List<Sale>,
                    private val clickOnListener: RecyclerItemClickListener
@@ -17,20 +20,10 @@ class SalesAdapter(private val context: Context, private val list: List<Sale>,
     : RecyclerView.Adapter<SalesAdapter.ProductsViewHolder>() {
 
     class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productNameTv: TextView
-        val productDescriptionTv: TextView
-        val asOfTv: TextView
-        val productValueTv: TextView
-        val productImageIv: ImageView
+        val saleNameTv: TextView = itemView.findViewById(R.id.nameTv)
+        val saleValueTv: TextView = itemView.findViewById(R.id.valueTv)
+        val saleIv: ImageView = itemView.findViewById(R.id.imageHolderSaleIv)
 
-        init {
-            productNameTv = itemView.findViewById(R.id.productNameTv)
-            productDescriptionTv = itemView.findViewById(R.id.productDescriptionTv)
-            asOfTv = itemView.findViewById(R.id.asOfTv)
-            productValueTv = itemView.findViewById(R.id.productValueTv)
-            productImageIv = itemView.findViewById(R.id.imageProductsIv)
-
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
@@ -44,10 +37,11 @@ class SalesAdapter(private val context: Context, private val list: List<Sale>,
 
         val sale = list[position]
 
-        holder.productNameTv.text = "Mega Burguer"
-        holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
-        holder.asOfTv.text = "A partir de "
-        holder.productValueTv.text = "10,00 "
+        holder.saleNameTv.text = sale.name
+        holder.saleValueTv.text = sale.value
+
+
+//        Glide.with(requireContext()).load(WSConstants.AVATAR_USER_URL + responseInfo.avatar).into(userAvatar_iv)
 
         holder.itemView.setOnClickListener { clickOnListener.onClickListenerSale(sale)}
 
