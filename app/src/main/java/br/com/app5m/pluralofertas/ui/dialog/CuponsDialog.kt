@@ -9,7 +9,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.adapter.CuponsAdapter
+import br.com.app5m.pluralofertas.adapter.CouponAdapter
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Coupon
 import kotlinx.android.synthetic.main.dialog_cupon.*
@@ -42,7 +42,7 @@ class CuponsDialog: DialogFragment(), RecyclerItemClickListener {
         }
     }
     fun configureInitialViews(){
-        val cuponssAdapter = CuponsAdapter(requireContext(),cupons,this)
+        val cuponssAdapter = CouponAdapter(requireContext(),cupons,this)
 
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 1)
 

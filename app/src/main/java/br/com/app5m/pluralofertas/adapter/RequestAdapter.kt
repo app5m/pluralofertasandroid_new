@@ -6,17 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Shopping
 
-class ShoopingsAdapter(private val context: Context, private val listShopping: List<Shopping>,
-                       private val clickOnListener: RecyclerItemClickListener
-)
-    : RecyclerView.Adapter<ShoopingsAdapter.ShoopingViewHolder>() {
-
-
-
-
+class RequestAdapter(private val context: Context, private val list: List<Request>,
+                     private val clickOnListener: RecyclerItemClickListener
+) : RecyclerView.Adapter<RequestAdapter.ShoopingViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoopingViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
@@ -27,19 +22,19 @@ class ShoopingsAdapter(private val context: Context, private val listShopping: L
     }
 
     override fun onBindViewHolder(holder: ShoopingViewHolder, position: Int) {
-        val shooping = listShopping[position]
+        val shooping = list[position]
 
       /*  holder.productNameTv.text = "Mega Burguer"
         holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
         holder.asOfTv.text = "A partir de "
         holder.productValueTv.text = "10,00 "*/
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerShoopings(shooping)}
+        holder.itemView.setOnClickListener { clickOnListener.onClickListenerRequest(shooping)}
 
     }
 
     override fun getItemCount(): Int {
-        return listShopping.size
+        return list.size
     }
 
     class ShoopingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

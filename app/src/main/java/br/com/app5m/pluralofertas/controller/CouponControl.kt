@@ -7,6 +7,7 @@ import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
+import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.model.*
 import br.com.app5m.pluralofertas.util.Useful
@@ -40,16 +41,15 @@ class CouponControl(private val context: Context, private val result: WSResult, 
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun listCoupons(coupon: Coupon){
+    fun listCoupons(){
 
         type = "listCoupons"
-/*
-{
-    "token": "plural_ofertas@2021"
-}
-        */
 
-        val param: Call<List<Coupon>> = service.listCoupons("", coupon)
+        coupon = Coupon()
+
+        coupon.token = WSConstants.TOKEN
+
+        val param: Call<List<Coupon>> = service.listCoupons(preferences.getUserData()!!.id!!, coupon)
         param.enqueue(this)
     }
 

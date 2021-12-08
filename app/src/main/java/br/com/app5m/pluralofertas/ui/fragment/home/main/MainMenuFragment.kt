@@ -71,7 +71,7 @@ class MainMenuFragment : Fragment() {
 
         }
         myshoopings.setOnClickListener {
-            useful.startFragmentOnBack(MyShoopingsFragment(), requireActivity().supportFragmentManager)
+            useful.startFragmentOnBack(RequestsFrag(), requireActivity().supportFragmentManager)
 
         }
     }

@@ -3,11 +3,12 @@ PLURAL // ultimas coisas
 
 - fcm 2 v testar
 
-- Editar perfil x e senha v
+- Editar perfil v(falta documento, ver com diogo pq ta vindo null) e senha v
 - lista add, edit, excluir Meus Endereços
 
 - Lista de Ofertas na HOME sem cadastro v
 - Lista de Ofertas na HOME com cadastro baseado no endereço v
+
 - Detalhes da Oferta com dados completos e as opções para escolher os derivados
 - Aplicar CUPOM na oferta e dar o devido desconto
 - Pedido com pagamento via cartão de crédito/ boleto
@@ -15,7 +16,7 @@ PLURAL // ultimas coisas
 - Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 
-- Meus cupons aplicados (list all)
+- Meus cupons aplicados (list all) xv
 
 - Meus Pedidos (lista all com informações)
 - Detalhes do meu Pedido (todas informações)

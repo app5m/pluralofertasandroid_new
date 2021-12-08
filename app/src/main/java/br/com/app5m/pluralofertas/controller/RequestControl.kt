@@ -7,6 +7,7 @@ import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
+import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.util.Useful
@@ -78,16 +79,15 @@ class RequestControl(private val context: Context, private val result: WSResult,
         param.enqueue(this)
     }
 
-    fun find(request: Request){
+    fun find(){
 
         type = "find"
-/*
-{
-    "token": "plural_ofertas@2021"
-}
-        */
 
-        val param: Call<List<Request>> = service.find("", request)
+        request = Request()
+
+        request.token = WSConstants.TOKEN
+
+        val param: Call<List<Request>> = service.find(preferences.getUserData()!!.id!!, request)
         param.enqueue(this)
     }
 

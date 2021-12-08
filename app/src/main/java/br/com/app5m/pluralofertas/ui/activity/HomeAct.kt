@@ -16,7 +16,7 @@ import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.ui.fragment.home.main.HomeFragmentOffer
 import br.com.app5m.pluralofertas.ui.fragment.home.cart.CartFragment
 import br.com.app5m.pluralofertas.ui.fragment.home.main.MainMenuFragment
-import br.com.app5m.pluralofertas.ui.fragment.home.coupon.MyCuponsContentFragment
+import br.com.app5m.pluralofertas.ui.fragment.home.coupon.UsedCouponsFrag
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
@@ -95,7 +95,7 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
                     supportFragmentManager
                 )
                 R.id.myCouponsFragment -> useful.startFragment(
-                    MyCuponsContentFragment(),
+                    UsedCouponsFrag(),
                     supportFragmentManager
                 )
                 R.id.settings_visitante -> useful.startFragment(
