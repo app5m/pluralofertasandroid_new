@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas.ui.fragment.home
+package br.com.app5m.pluralofertas.ui.fragment.home.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,7 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.ui.activity.ProductDetailsActivity
 import br.com.app5m.pluralofertas.adapter.HighlightsAdapter
 import br.com.app5m.pluralofertas.adapter.ProductsAdapter
+import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.ui.dialog.FilterDialog
 import br.com.app5m.pluralofertas.util.CircleRecyclerViewDecoration
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
@@ -22,32 +23,25 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
 
-class HomeFragmentOffer : Fragment(), RecyclerItemClickListener {
+class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
+
     private var productsList  = ArrayList<Product>()
     private lateinit var viewPhotoManager: RecyclerView.LayoutManager
     private lateinit var viewPhotoAdapter: RecyclerView.Adapter<*>
     private val highlightsList = ArrayList<Highlight>()
     private var highlight = Highlight()
-    private  val TAG = "HomeFragmentOffer"
-    private lateinit var viewHome: View
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        viewHome = inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
 
+//            val dialog = FilterDialog()
+//            dialog.setTargetFragment(this, 1)
+//            fragmentManager?.let { it1 -> dialog.show(it1,"FilterDialog") }
 
-        viewHome?.filterTv4.setOnClickListener {
-
-            Log.d(TAG, "onClick: opening dialog")
-
-            val dialog = FilterDialog()
-            dialog.setTargetFragment(this, 1)
-            fragmentManager?.let { it1 -> dialog.show(it1,"FilterDialog") }
-
-        }
-        return viewHome
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

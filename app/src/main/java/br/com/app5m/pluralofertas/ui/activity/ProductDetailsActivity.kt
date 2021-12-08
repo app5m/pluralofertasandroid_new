@@ -16,8 +16,6 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener {
 
-    private  val TAG = "ProductDetails_Act"
-
     private lateinit var useful: Useful
 
     override fun onCreate(savedInstanceState: Bundle?) {

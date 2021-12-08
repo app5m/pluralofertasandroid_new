@@ -11,10 +11,9 @@ import androidx.core.view.isVisible
 import br.com.app5m.pluralofertas.util.CustomTitleFragment
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UserControl
-import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.User
-import br.com.app5m.pluralofertas.ui.fragment.home.HomeFragmentOffer
+import br.com.app5m.pluralofertas.ui.fragment.home.main.HomeFragmentOffer
 import br.com.app5m.pluralofertas.ui.fragment.home.cart.CartFragment
 import br.com.app5m.pluralofertas.ui.fragment.home.main.MainMenuFragment
 import br.com.app5m.pluralofertas.ui.fragment.home.coupon.MyCuponsContentFragment
@@ -25,7 +24,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.InstanceIdResult
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 

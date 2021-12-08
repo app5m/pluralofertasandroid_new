@@ -1,34 +1,31 @@
 PLURAL // ultimas coisas
 
 
-- pegar lat e longi (quando entrar vai home, se permitir locslizacao manda lat e longi,
-        se n permitir n manda nd, se tiver cadastrado endereço) 1 v
 - fcm 2 v testar
-- Login v
-- Cadastro v
-- Lista de Ofertas na HOME sem cadastro v
 
+- Editar perfil x e senha v
+- lista add, edit, excluir Meus Endereços
+
+- Lista de Ofertas na HOME sem cadastro
 - Lista de Ofertas na HOME com cadastro baseado no endereço
-- Editar perfil x e senha v 3
-- lista add, edit, excluir Meus Endereços 4
-- list ofertas 5
-- Detalhes da Oferta com dados completos e as opções para escolher os derivados 6
+- Detalhes da Oferta com dados completos e as opções para escolher os derivados
 - Aplicar CUPOM na oferta e dar o devido desconto
-- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX 7
-- Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 - Pedido com pagamento via cartão de crédito/ boleto
-- Filtro de OFERTAS
 
-- Meus Pedidos (lista all com informações) 8
-- Detalhes do meu Pedido (todas informações) 9
+- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX
+- Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 
 - Meus cupons aplicados (list all)
+
+- Meus Pedidos (lista all com informações)
+- Detalhes do meu Pedido (todas informações)
+
+- Filtro de OFERTAS
+
+
 
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
 - Recuperar Senha (não possui request)
 
-falta:
 
-update datauser
-testar endereços
