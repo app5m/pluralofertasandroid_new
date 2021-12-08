@@ -32,8 +32,8 @@
             <ImageView
                 android:id="@+id/saleImage_iv"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:scaleType="fitCenter"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/close_up_burger_with_black_background"
                 android:visibility="visible"
                 app:layout_collapseMode="parallax" />
