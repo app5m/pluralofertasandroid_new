@@ -13,6 +13,9 @@ class User {
     @field:SerializedName("email")
     var email: String? = null
 
+    @field:SerializedName("avatar")
+    var avatar: String? = null
+
     @field:SerializedName("password")
     var password: String? = null
 

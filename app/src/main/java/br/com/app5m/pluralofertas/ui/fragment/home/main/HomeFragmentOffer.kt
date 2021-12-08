@@ -47,6 +47,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
         useful = Useful(requireContext())
         saleControl = SaleControl(requireContext(), this, useful)
 
+        useful.openLoading()
         saleControl.findSale("2")
 
         highlightsList.add(Highlight())

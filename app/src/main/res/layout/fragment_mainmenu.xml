@@ -54,6 +54,20 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.84" />
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.17" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.84" />
+
                 <ImageView
                     android:id="@+id/btnEntreOuCadastreseSettingsVisitanteImageView"
                     android:layout_width="wrap_content"
@@ -140,38 +154,26 @@
                             app:cardCornerRadius="40dp">
 
                             <ImageView
-                                android:id="@+id/user_foto"
+                                android:id="@+id/userAvatar_iv"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/foto_perfil" />
+                                android:scaleType="centerCrop" />
 
                         </androidx.cardview.widget.CardView>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
+
+                        <TextView
+                            android:id="@+id/userNameTv"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginBottom="1dp"
-                            android:background="#660066"
-                            android:orientation="vertical">
+                            android:text=""
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:ellipsize="end"
+                            android:maxLines="1"/>
 
-                            <TextView
-                                android:id="@+id/user_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Nome"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="18dp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Editar perfil"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14dp"
-                                android:visibility="gone" />
-                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -266,9 +268,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:background="@color/white"
-                            android:drawableStart="@drawable/ic_whatsapp"
-                            android:drawablePadding="5dp"
-                            android:gravity="fill_vertical"
                             android:lineSpacingExtra="10dp"
                             android:padding="15dp"
                             android:paddingStart="24dp"
