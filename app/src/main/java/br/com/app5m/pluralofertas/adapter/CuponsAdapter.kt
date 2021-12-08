@@ -38,7 +38,7 @@ class CuponsAdapter (private val context: Context, private val listCoupons: List
         holder.priceOpenCuponTv.text = "100,00"
         holder.cuponCodeValueTv.text = "TPR2FR"
         holder.expirationDateCuponTv.text = "Válido até 31/03/2019."
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerCupons(cupon) }
+        holder.itemView.setOnClickListener { clickOnListener.onClickListenerCoupon(cupon) }
         /*holder.itemView.setOnClickListener { clickOnListener.onClickListenerNews(cupon) }*/
 
     }

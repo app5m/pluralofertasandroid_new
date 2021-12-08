@@ -31,7 +31,7 @@ class HighlightsAdapter (val context: Context, private val highlightList: List<H
         holder.highLightasOfTv.text = "A partir de "
         holder.highLightOffTv.text = "50% OFF"
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerHighlights(highlight)}
+        holder.itemView.setOnClickListener { clickOnListener.onClickListenerHighlight(highlight)}
 
     }
 

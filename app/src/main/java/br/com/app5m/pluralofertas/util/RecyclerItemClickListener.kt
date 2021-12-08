@@ -6,10 +6,10 @@ import br.com.app5m.pluralofertas.model.*
 interface RecyclerItemClickListener {
 
 
-    fun onClickListenerProducts(product: Product){
+    fun onClickListenerSale(sale: Sale){
         //optional body
     }
-    fun onClickListenerCupons(coupon: Coupon){
+    fun onClickListenerCoupon(coupon: Coupon){
         //optional body
     }
     fun onClickListenerCart(cart: Cart){
@@ -20,7 +20,7 @@ interface RecyclerItemClickListener {
         //optional body
     }
 
-    fun onClickListenerHighlights(highlight: Highlight){
+    fun onClickListenerHighlight(highlight: Highlight){
         //optional body
     }
     fun onClickListenerCategoriesSearch(category: Category){

@@ -1,36 +1,33 @@
 package br.com.app5m.pluralofertas.ui.fragment.home.main
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.ui.activity.ProductDetailsActivity
+import br.com.app5m.pluralofertas.ui.activity.SaleDetailsActivity
 import br.com.app5m.pluralofertas.adapter.HighlightsAdapter
-import br.com.app5m.pluralofertas.adapter.ProductsAdapter
+import br.com.app5m.pluralofertas.adapter.SalesAdapter
+import br.com.app5m.pluralofertas.controller.SaleControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
-import br.com.app5m.pluralofertas.ui.dialog.FilterDialog
 import br.com.app5m.pluralofertas.util.CircleRecyclerViewDecoration
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Highlight
-import br.com.app5m.pluralofertas.model.Product
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_home.view.*
+import br.com.app5m.pluralofertas.model.Sale
+import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
 
 class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
-    private var productsList  = ArrayList<Product>()
-    private lateinit var viewPhotoManager: RecyclerView.LayoutManager
-    private lateinit var viewPhotoAdapter: RecyclerView.Adapter<*>
+    private var saleList = ArrayList<Sale>()
     private val highlightsList = ArrayList<Highlight>()
-    private var highlight = Highlight()
 
+    private lateinit var useful: Useful
+    private lateinit var saleControl: SaleControl
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,86 +44,61 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        useful = Useful(requireContext())
+        saleControl = SaleControl(requireContext(), this, useful)
+
+        saleControl.findSale("2")
+
+        highlightsList.add(Highlight())
+        highlightsList.add(Highlight())
 
         configureInitialViews()
 
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-        productsList.add(Product())
-
-
-        if (/*intent.extras != null*/true) {
-//            schedule = intent.getSerializableExtra("schedule") as Schedule
-            if (/*photo.rows.equals("0")*/true){
-                highlightsList.add(Highlight())
-                highlightsList.add(Highlight())
-                //container_rv.visibility = View.GONE
-            }else{
-                highlight.let {
-                    //adiciona os valores do modelo (usado com request)
-                    /*photoList.addAll(it)*/
-                }
-            }
-
-
-            btnSwitchCity.setOnClickListener {
-            }
-
-
-
-        }
-
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    override fun sResponse(list: List<Sale>, type: String) {
+
+        useful.closeLoading()
+
+        saleList.clear()
+        saleList.addAll(list)
+
+        salesRv.adapter!!.notifyDataSetChanged()
+
+    }
 
     private fun configureInitialViews(){
 
-        viewPhotoManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        viewPhotoAdapter = context?.let {
-            HighlightsAdapter(it, highlightsList, this)
-        }!!
+        val highlightsAdapter = HighlightsAdapter(requireContext(), highlightsList, this)
 
-        highlightsRecycler.apply {
-            setHasFixedSize(true)
-            layoutManager = viewPhotoManager
-            adapter = viewPhotoAdapter
+        highlightsRv.apply {
+            setHasFixedSize(false)
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = highlightsAdapter
         }
 
-        highlightsRecycler.addItemDecoration(CircleRecyclerViewDecoration())
+        highlightsRv.addItemDecoration(CircleRecyclerViewDecoration())
 
-        val productsAdapter = ProductsAdapter(requireContext(),productsList,this)
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 2)
-        homeContentRV.layoutManager = layoutManager
-        homeContentRV.adapter = productsAdapter
+        val salesAdapter = SalesAdapter(requireContext(), saleList,this)
+
+        salesRv.apply {
+            setHasFixedSize(false)
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            adapter = salesAdapter
+        }
     }
 
-    override fun onClickListenerProducts(product: Product) {
+    override fun onClickListenerSale(sale: Sale) {
 
-        val intent = Intent(activity, ProductDetailsActivity::class.java)
-        intent.putExtra("product", product)
+        val intent = Intent(activity, SaleDetailsActivity::class.java)
+        intent.putExtra("product", sale)
         startActivity(intent)
 
     }
 
-    override fun onClickListenerHighlights(highlight: Highlight) {
-        val intent = Intent(activity, ProductDetailsActivity::class.java)
+    override fun onClickListenerHighlight(highlight: Highlight) {
+        val intent = Intent(activity, SaleDetailsActivity::class.java)
         intent.putExtra("highlight", highlight)
         startActivity(intent)
 

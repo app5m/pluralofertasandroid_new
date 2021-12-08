@@ -53,7 +53,7 @@ class CuponsDialog: DialogFragment(), RecyclerItemClickListener {
 
     }
 
-    override fun onClickListenerCupons(coupon: Coupon) {
+    override fun onClickListenerCoupon(coupon: Coupon) {
     }
 
 }

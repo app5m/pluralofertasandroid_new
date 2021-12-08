@@ -6,17 +6,18 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.ui.dialog.CuponsDialog
-import br.com.app5m.pluralofertas.ui.fragment.tabsProductDetails.TabsDetailsBottomFragment
+import br.com.app5m.pluralofertas.controller.SaleControl
+import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.activity_details_product.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener {
+class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSResult {
 
     private lateinit var useful: Useful
+    private lateinit var saleControl: SaleControl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,24 +25,25 @@ class ProductDetailsActivity : AppCompatActivity(), RecyclerItemClickListener {
         setSupportActionBar(toolbar)
 
         useful = Useful(this)
+        saleControl = SaleControl(this, this, useful)
 
         supportActionBar?.let { useful.setActionBar(this, it,"", 0) }
-        toolbarTitle.setText("Detalhes do produto")
-        toolbar.visibility = View.VISIBLE
 
-        useful.startFragment(TabsDetailsBottomFragment(), supportFragmentManager)
-
-        applyCupon.setOnClickListener {
-
-            CuponsDialog().show(supportFragmentManager, "DialogCuponsFrag")
+        if (intent.extras != null) {
+            intent.getStringExtra("idSale")?.let { saleControl.listIdSales(it) }
         }
 
-        btnComprarDetalhesProduto.setOnClickListener {
-            val intent = Intent(this, HomeAct::class.java)
-            intent.putExtra("CHANGE_NAV_CART", "true")
-            startActivity(intent)
-            finishAffinity()
-        }
+//        applyCupon.setOnClickListener {
+//
+//            CuponsDialog().show(supportFragmentManager, "DialogCuponsFrag")
+//        }
+//
+//        btnComprarDetalhesProduto.setOnClickListener {
+//            val intent = Intent(this, HomeAct::class.java)
+//            intent.putExtra("CHANGE_NAV_CART", "true")
+//            startActivity(intent)
+//            finishAffinity()
+//        }
 
     }
 

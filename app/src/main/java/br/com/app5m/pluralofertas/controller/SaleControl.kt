@@ -41,32 +41,33 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun findSale(sale: Sale){
+    fun findSale(addressIdUser : String?){
 
         type = "findSale"
-/*
-        {
-            "token": "plural_ofertas@2021",
-            "id_endereco_user": 2
+
+        sale = Sale()
+
+        if (addressIdUser != null) {
+
+            sale.addressIdUser = addressIdUser
+        } else {
+            sale.latitude = preferences.getUserLocation()!!.latitude
+            sale.longitude = preferences.getUserLocation()!!.longitude
         }
-        */
+
         sale.token = WSConstants.TOKEN
 
         val param: Call<List<Sale>> = service.findSale(sale)
         param.enqueue(this)
     }
 
-    fun listIdSales(sale: Sale){
+    fun listIdSales(idSale: String){
 
         type = "listIdSale"
-/*
-        {
-            "token": "plural_ofertas@2021",
-        }
-        */
+
         sale.token = WSConstants.TOKEN
 
-        val param: Call<List<Sale>> = service.listIdSale("",sale)
+        val param: Call<List<Sale>> = service.listIdSale(idSale, sale)
         param.enqueue(this)
     }
 

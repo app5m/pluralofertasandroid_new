@@ -12,6 +12,7 @@ import br.com.app5m.pluralofertas.adapter.ProductsDemandAdapter
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import br.com.app5m.pluralofertas.model.Product
+import br.com.app5m.pluralofertas.model.Sale
 import kotlinx.android.synthetic.main.fragment_shoopingdetails.*
 import java.util.ArrayList
 
@@ -46,7 +47,8 @@ class ShoopingsDetailsFragment: Fragment(), RecyclerItemClickListener {
         productsList.add(Product())
 
     }
-    override fun onClickListenerProducts(product: Product) {
+
+    override fun onClickListenerSale(sale: Sale) {
 
         useful.startFragment(ShoopingsDetailsFragment(), requireActivity().supportFragmentManager)
 

@@ -19,16 +19,6 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name="br.com.app5m.pluralofertas.MainAct"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name="br.com.app5m.pluralofertas.ui.activity.PermissionLocalizationAct"
             android:screenOrientation="portrait"/>
 
@@ -40,7 +30,7 @@
             android:name="br.com.app5m.pluralofertas.ui.activity.HomeAct"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="br.com.app5m.pluralofertas.ui.activity.ProductDetailsActivity"
+            android:name="br.com.app5m.pluralofertas.ui.activity.SaleDetailsActivity"
             android:screenOrientation="portrait"/>
         <activity
             android:name="br.com.app5m.pluralofertas.ui.activity.CartCheckoutActivity"
@@ -48,6 +38,16 @@
         <activity
             android:name="br.com.app5m.pluralofertas.ui.activity.SigininContentActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="br.com.app5m.pluralofertas.MainAct"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>

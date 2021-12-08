@@ -22,11 +22,10 @@ class ProductsDemandAdapter(private val context: Context, private val listProduc
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.adapter_productsdemand, parent, false) // vai conectar com os ids abaixo
         return ProductsDemandViewHolder(listItem)
-
-
     }
 
     override fun onBindViewHolder(holder: ProductsDemandViewHolder, position: Int) {
+
         val product = listProductDemand[position]
 
         holder.demandNameTv.text = "Descrição do Pedido"
@@ -36,7 +35,6 @@ class ProductsDemandAdapter(private val context: Context, private val listProduc
         holder.demandRsTv.text = "R$"
         holder.statusDemandTv.text = "aprovado"
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerProducts(product)}
 
     }
 
