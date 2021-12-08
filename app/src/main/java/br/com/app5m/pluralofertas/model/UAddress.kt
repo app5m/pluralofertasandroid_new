@@ -9,6 +9,12 @@ class UAddress: Serializable {
     var uf: String? = null
     var logradouro: String? = null
 
+    @field:SerializedName("id")
+    var id: String? = null
+
+    @field:SerializedName("id_user")
+    var idUser: String? = null
+
     @field:SerializedName("localidade")
     var place: String? = null
 

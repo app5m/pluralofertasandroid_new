@@ -57,6 +57,7 @@ class UAddressControl(private val context: Context, private val result: WSResult
 
         type = "saveAddress"
 
+        uAddress.idUser = preferences.getUserData()!!.id
         uAddress.token = WSConstants.TOKEN
 
         val param: Call<List<UAddress>> = service.saveAddress(uAddress)
@@ -77,6 +78,7 @@ class UAddressControl(private val context: Context, private val result: WSResult
     fun updateAddress(uAddress: UAddress){
 
         type = "updateAddress"
+
 
         uAddress.token = WSConstants.TOKEN
 

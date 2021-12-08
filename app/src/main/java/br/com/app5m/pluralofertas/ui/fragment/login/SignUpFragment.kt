@@ -54,9 +54,6 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
         userControl = UserControl(requireContext(), this, useful)
         uAddressControl = UAddressControl(requireContext(), this, useful)
 
-        builder = AlertDialog.Builder(requireContext())
-        alertDialog = builder.create()
-
         loadClicks()
 
     }

@@ -48,8 +48,6 @@ class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
         validation = Validation(requireContext())
         userControl = UserControl(requireContext(), this, useful)
 
-        builder = AlertDialog.Builder(requireContext())
-        alertDialog = builder.create()
 
         loadClicks()
 

@@ -78,9 +78,18 @@ class MyAddressesFragment : Fragment(), WSResult {
     override fun onActivityResult(requestCode: Int, resultCode2: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode2, data)
 
+        useful.openLoading()
+
         if (data!!.extras!!.getBoolean("msg")) {
-            useful.openLoading()
-            preferences.getUAddressData()?.let { uAddressControl.updateAddress(it) }
+
+            if (requestCode == 1) {
+                preferences.getUAddressData()?.let { uAddressControl.saveAddress(it) }
+            } else {
+
+//                uAddress.id
+                preferences.getUAddressData()?.let { uAddressControl.updateAddress(it) }
+            }
+
         }
 
 
@@ -107,7 +116,7 @@ class MyAddressesFragment : Fragment(), WSResult {
             requireActivity().onBackPressed()
         }
 
-        addAdressMainMenuFab.setOnClickListener {
+        addAddressMainMenuFab.setOnClickListener {
             val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
             dialog.show(parentFragmentManager,"DialogRegisterAddress")
