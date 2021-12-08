@@ -19,6 +19,7 @@ import br.com.app5m.pluralofertas.ui.dialog.RegisterAddressDialog
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Validation
 import br.com.app5m.pluralofertas.model.UAddress
+import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_myaddresses.*
 import java.util.*
@@ -27,7 +28,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class MyAddressesFragment : Fragment(), WSResult {
+class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
 
 
     private lateinit var useful: Useful
@@ -95,10 +96,18 @@ class MyAddressesFragment : Fragment(), WSResult {
 
     }
 
+    override fun onClickListenerUAddress(uaddress: UAddress) {
+
+        val dialog = RegisterAddressDialog()
+        dialog.setTargetFragment(this, 0)
+        dialog.show(parentFragmentManager,"DialogRegisterAddress")
+
+    }
+
 
     private fun configureInitialViews(){
 
-        val uAddressAdapter = UAddressAdapter(requireContext(), uaddressList, useful)
+        val uAddressAdapter = UAddressAdapter(requireContext(), uaddressList, useful, this)
 
         myAdressesRv.apply {
             setHasFixedSize(false)

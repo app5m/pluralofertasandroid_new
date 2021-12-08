@@ -64,13 +64,13 @@ class UAddressControl(private val context: Context, private val result: WSResult
         param.enqueue(this)
     }
 
-    fun listIdAddress(idUser: String){
+    fun listIdAddress(id: String){
 
         type = "listIdAddress"
 
         uAddress.token = WSConstants.TOKEN
 
-        val param: Call<List<UAddress>> = service.listIdAddress(idUser, uAddress)
+        val param: Call<List<UAddress>> = service.listIdAddress(id, uAddress)
         param.enqueue(this)
     }
 
