@@ -5,24 +5,11 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/layoutLoggedOut"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#660066"
-                app:layout_constraintBottom_toTopOf="@+id/guideline48"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/layoutLoggedOut"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline48"
@@ -38,7 +25,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+                app:layout_constraintTop_toTopOf="@+id/guideline48">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline46"
@@ -70,8 +57,8 @@
 
                 <ImageView
                     android:id="@+id/btnEntreOuCadastreseSettingsVisitanteImageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:clickable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/nomeUsuarioSettingsTextView"
@@ -108,224 +95,215 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/layoutLogged"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/gray100"
         android:visibility="visible">
 
-        <androidx.core.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/gray100"
-            android:visibility="visible">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/perfilContainer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/gray50"
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/perfilContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/gray50"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:background="@color/colorPrimaryDark"
-                        android:orientation="horizontal">
+                        android:layout_margin="15dp"
+                        android:clipToPadding="false"
+                        app:cardCornerRadius="40dp">
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
-                            android:clipToPadding="false"
-                            app:cardCornerRadius="40dp">
+                        <ImageView
+                            android:id="@+id/userAvatar_iv"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop" />
 
-                            <ImageView
-                                android:id="@+id/userAvatar_iv"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:scaleType="centerCrop" />
-
-                        </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
-                        <TextView
-                            android:id="@+id/userNameTv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="18sp"
-                            android:layout_gravity="center"
-                            android:ellipsize="end"
-                            android:maxLines="1"/>
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/userNameTv"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/gray100"
-                        android:orientation="vertical"
-                        android:paddingTop="30dp">
+                        android:layout_gravity="center"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/btnEditProfile"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:background="@color/white"
-                            android:drawablePadding="7dp"
-                            android:gravity="fill_vertical"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:paddingStart="17dp"
-                            android:text="Meu Perfil"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:id="@+id/myAddresses"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginTop="4dp"
-                            android:background="@color/white"
-                            android:drawablePadding="5dp"
-                            android:gravity="fill_vertical"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:text="Meus endereços"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:id="@+id/myshoopings"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginTop="4dp"
-                            android:background="@color/white"
-                            android:drawablePadding="5dp"
-                            android:gravity="fill_vertical"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:text="Minhas compras"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:id="@+id/myPeyments"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginTop="4dp"
- android:background="@color/white"
-                            android:drawableStart="@drawable/ic_credit_card"
-                            android:drawablePadding="5dp"
-                            android:gravity="fill_vertical"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:text="Meus pagamentos"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray100"
-                        android:orientation="vertical"
-                        android:paddingTop="30dp">
-
-                        <TextView
-                            android:id="@+id/btnAjuda"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:background="@color/white"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:paddingStart="24dp"
-                            android:text="Suporte whatsapp"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:id="@+id/btnAjuda2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:background="@color/white"
-                            android:drawablePadding="5dp"
-                            android:gravity="fill_vertical"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:paddingStart="24dp"
-                            android:text="Dúvidas e ajuda"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/gray100"
-                        android:orientation="vertical"
-                        android:paddingTop="30dp">
-
-                        <TextView
-                            android:id="@+id/btnLogout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginTop="-0.5dp"
-
-                            android:background="@color/white"
-                            android:drawableStart="@drawable/ic_logout"
-                            android:drawablePadding="5dp"
-                            android:gravity="fill_vertical"
-                            android:lineSpacingExtra="10dp"
-                            android:padding="15dp"
-                            android:text="Sair"
-                            android:textAllCaps="true"
-                            android:textColor="@color/black" />
-                    </LinearLayout>
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/versao"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="45dp"
-                    android:background="@color/white"
-                    android:drawablePadding="5dp"
-                    android:gravity="center_horizontal"
-                    android:lineSpacingExtra="10dp"
-                    android:padding="15dp"
-                    android:text="Versão 0"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black" />
+                    android:background="@color/gray100"
+                    android:orientation="vertical"
+                    android:paddingTop="30dp">
+
+                    <TextView
+                        android:id="@+id/btnEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:drawablePadding="7dp"
+                        android:gravity="fill_vertical"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:paddingStart="17dp"
+                        android:text="Meu Perfil"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/myAddresses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:drawablePadding="5dp"
+                        android:gravity="fill_vertical"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:text="Meus endereços"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/myshoopings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:drawablePadding="5dp"
+                        android:gravity="fill_vertical"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:text="Minhas compras"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/myPeyments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/ic_credit_card"
+                        android:drawablePadding="5dp"
+                        android:gravity="fill_vertical"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:text="Meus pagamentos"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray100"
+                    android:orientation="vertical"
+                    android:paddingTop="30dp">
+
+                    <TextView
+                        android:id="@+id/btnAjuda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:paddingStart="24dp"
+                        android:text="Suporte whatsapp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/btnAjuda2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:drawablePadding="5dp"
+                        android:gravity="fill_vertical"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:paddingStart="24dp"
+                        android:text="Dúvidas e ajuda"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray100"
+                    android:orientation="vertical"
+                    android:paddingTop="30dp">
+
+                    <TextView
+                        android:id="@+id/btnLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="-0.5dp"
+
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/ic_logout"
+                        android:drawablePadding="5dp"
+                        android:gravity="fill_vertical"
+                        android:lineSpacingExtra="10dp"
+                        android:padding="15dp"
+                        android:text="Sair"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black" />
+                </LinearLayout>
 
             </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+            <TextView
+                android:id="@+id/versao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="45dp"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="10dp"
+                android:padding="15dp"
+                android:text="Versão 0"
+                android:textAllCaps="true"
+                android:textColor="@color/black" />
 
+        </LinearLayout>
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

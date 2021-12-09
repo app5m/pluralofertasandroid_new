@@ -69,6 +69,7 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         } else {
 
+            useful.closeLoading()
             Toast.makeText(requireContext(), user.msg, Toast.LENGTH_SHORT).show()
 
         }

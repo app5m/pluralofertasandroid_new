@@ -43,13 +43,6 @@ class FreightControl(private val context: Context, private val result: WSResult,
     fun estimateFreight(freight: Freight){
 
         type = "estimate"
-/*
-{
-    "cep_destino":"94836000",
-    "cod":"40010",
-    "id_carrinho":"6"
-}
-        */
 
         val param: Call<List<Freight>> = service.estimateFreight(freight)
         param.enqueue(this)

@@ -1,59 +1,11 @@
 <resources>
     <string name="app_name">Plural Ofertas</string>
 
-    <!-- Instruções Botões -->
+    <string-array name="freight">
+        <item>SEDEX</item>
+        <item>PAC</item>
+    </string-array>
 
-    <string name="btnPular">PULAR</string>
-    <string name="btnProximo">PRÓXIMO</string>
-
-    <!-- Instruções onboarding-->
-    <string name="TituloOnboarding">Excepteur sint occaecat</string>
-    <string name="DescricaoOnboarding">Ut labore et dolore roipi mana aliqua. Enim adeop minim veeniam nostruklad
-    </string>
-
-    <!-- Tela de seleção de cidade/estado -->
-
-    <string name="SelecioneRegiao">Selecione sua Região</string>
-    <string name="SelecioneEstado">Selecione seu estado</string>
-    <string name="SelecioneCidade">Selecione sua cidade</string>
-    <string name="btnSelecionarEstado">Selecionar Estado</string>
-    <string name="btnSelecionarCidade">Selecionar Cidade</string>
-
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_seleciona_cidade">SelecionaCidade</string>
-
-    <!-- sublinhado -->
-
-    <string name="EsqueciASenha">
-        <u>Esqueci a senha</u>
-    </string>
-
-    <!-- validade em bold -->
-    <string name="dataUSoCupom">Usado em \n
-        <b>21/03/2019</b>
-    </string>
-
-    <!--Pagamento recusado-->
-    <string name="pagamentoRecusadoMensagem">"Não foi possível efetuar seu pagamento. \n Entre em contato conosco."
-    </string>
-
-    <!-- Sobre -->
-    <string name="aboutPluralTitle">O app de descontos do maior portal de comunicação do noroeste do Rio Grande do Sul</string>
-    <string name="aboutPluralDescription">Pioneiro em oferecer descontos e promoções regionais. Com ampla base de anunciantes e consumidores, largamos na frente ao proporcionar vantagens reais e práticas, facilitando a geração de bons negócios e economia para toda a região. Cadastre, procure, economize. Fácil assim!</string>
-
-    <!-- meus cupons -->
-    <string name="waitPayment">Aguardando \n confirmação de \n compra</string>
-
-
-    <!-- login com facebook -->
-    <string name="facebook_app_id">3561607463858983</string>
-    <string name="fb_login_protocol_scheme">fb3561607463858983</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="encontre">Encontre a peça</string>
-    <string name="perfeita"><b>perfeita</b></string>
     <string name="city">cidade</string>
     <string name="neighborhood">bairro</string>
     <string name="address">endereço</string>
@@ -63,7 +15,6 @@
     <string name="politica_de_privacidade"><u><b>Política de Privacidade</b></u></string>
     <string name="cpf">CPF</string>
     <string name="cnpj">CNPJ</string>
-    <string name="intro1">Um Marketplace somente de produtos HD.\nAnuncie sem custos, seus acessórios, peças ou motoclicleta.</string>
 
     <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 

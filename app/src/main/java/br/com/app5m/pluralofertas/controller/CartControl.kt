@@ -64,11 +64,13 @@ class CartControl(private val context: Context, private val result: WSResult, pr
 
         */
 
+        cart.token = WSConstants.TOKEN
+
         val param: Call<List<Cart>> = service.addCoupon(cart)
         param.enqueue(this)
     }
 
-    fun listItems(){
+    fun listItems(idCart: String){
 
         type = "listItems"
 
@@ -76,20 +78,19 @@ class CartControl(private val context: Context, private val result: WSResult, pr
 
         cart.token = WSConstants.TOKEN
 
-        val param: Call<List<Cart>> = service.listItems(preferences.getUserData()!!.id!!, cart)
+        val param: Call<List<Cart>> = service.listItems(idCart, cart)
         param.enqueue(this)
     }
 
-    fun removeItem(cart: Cart){
+    fun removeItem(idItem: String){
 
         type = "remove"
-/*
-{
-    "token": "plural_ofertas@2021"
-}
-        */
 
-        val param: Call<List<Cart>> = service.removeItem("", cart)
+        cart = Cart()
+
+        cart.token = WSConstants.TOKEN
+
+        val param: Call<List<Cart>> = service.removeItem(idItem, cart)
         param.enqueue(this)
     }
 

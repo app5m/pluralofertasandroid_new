@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,9 +13,12 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.ItemsCartAdapter
 import br.com.app5m.pluralofertas.controller.CartControl
+import br.com.app5m.pluralofertas.controller.FreightControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
+import br.com.app5m.pluralofertas.model.Freight
+import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.content_empty_list.*
 import kotlinx.android.synthetic.main.fragment_cart.*
@@ -25,8 +29,11 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private lateinit var useful: Useful
     private lateinit var cartControl: CartControl
+    private lateinit var freightControl: FreightControl
 
     private var cartList  = ArrayList<Cart>()
+
+    private lateinit var globalFreightResponseInfo : Freight
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,11 +47,49 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         useful = Useful(requireContext())
         cartControl = CartControl(requireContext(), this, useful)
+        freightControl = FreightControl(requireContext(), this, useful)
 
-        useful.openLoading()
-        cartControl.listItems()
+        if (Preferences(requireContext()).getLogin()) {
+
+            useful.openLoading()
+            cartControl.listItems("6")
+
+        } else {
+            cartCons.visibility = View.GONE
+            content_empty_list.visibility = View.VISIBLE
+        }
 
         configureInitialViews()
+
+    }
+
+    override fun fResponse(list: List<Freight>, type: String) {
+
+
+        globalFreightResponseInfo = list[0]
+
+        valueFreightTv.text = ""
+        subtotalTv.text = ""
+        totalTv.text = ""
+
+//
+//        "cServico": {
+//            "Codigo": "40010",
+//            "Valor": "33,58",
+//            "PrazoEntrega": "1",
+//            "ValorSemAdicionais": "22,50",
+//            "ValorMaoPropria": "7,50",
+//            "ValorAvisoRecebimento": "0,00",
+//            "ValorValorDeclarado": "3,58",
+//            "EntregaDomiciliar": "S",
+//            "EntregaSabado": "N",
+//            "obsFim": {},
+//            "Erro": "0",
+//            "MsgErro": {},
+//            "status": "01",
+//            "msg": "Ok"
+//        }
+
 
     }
 
@@ -71,8 +116,37 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
             cartRv.adapter!!.notifyDataSetChanged()
         }
 
+        freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
+                val freight = Freight()
+
+                freight.destinyCep = "94836000"
+                freight.cartId = "6"
+
+                if (position != 0) {
+
+                    //pac ver codigo pac dps
+                    freight.cod = "40010"
+
+                } else {
+                    //sedex
+                    freight.cod = "40010"
+                }
+
+                freightControl.estimateFreight(freight)
+
+
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
 
     }
+
+
 
     private fun configureInitialViews(){
 
