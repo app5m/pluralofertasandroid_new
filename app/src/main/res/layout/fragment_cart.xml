@@ -1,372 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/corSolidaDaTelaHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
+    android:orientation="vertical"
+    tools:context="ui.fragment.home.cart.CartFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/guideline31"
+        android:id="@+id/cartCons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tituloCarrinhoFinalizarCompraTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
 
-            android:text="Carrinho"
-            android:textColor="@color/white"
+        <LinearLayout
+            android:id="@+id/linearLayout16"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline31">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                style="@style/corSolidaDaTelaHome"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cartRv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1" />
 
-                <Button
-                    android:id="@+id/btnPagarCarrinhoFinalizarCompraButton2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp"
-                    android:fontFamily="@font/uni_neue_bold"
-                    android:text="PAGAR R$ 00,00"
-                    android:textColor="#ffff"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/guideline60"
-                    app:layout_constraintStart_toStartOf="@+id/guideline42" />
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="46dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="#D9D9D9"
-                    app:layout_constraintBottom_toTopOf="@+id/btnPagarCarrinhoFinalizarCompraButton2"
-                    app:layout_constraintEnd_toStartOf="@id/guideline60"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout3">
-
-                    <TextView
-                        android:id="@+id/totalCarrinhoFinalizarCompraTextView"
-                        android:layout_width="38dp"
-                        android:layout_height="25dp"
-                        android:layout_marginEnd="24dp"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:text="Total:"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/rsTotal"
-
-
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/totalValorCarrinhoFinalizarCompraTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/uni_neue_bold"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/rsTotal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:fontFamily="@font/uni_neue_bold"
-                        android:text="R$"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/totalValorCarrinhoFinalizarCompraTextView"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="0dp"
+                    android:id="@+id/frete_ll"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#D9D9D9"
-
-                    app:layout_constraintEnd_toStartOf="@id/constraintLayout2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/constraintLayout2">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="46dp"
-                        android:fontFamily="@font/uni_neue_bold"
-                        android:text=" "
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="#D9D9D9"
-                    app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/constraintLayout2"
-                    app:layout_constraintTop_toTopOf="@id/constraintLayout2">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="46dp"
-                        android:fontFamily="@font/uni_neue_bold"
-                        android:text=" "
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline60"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.90" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline70"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.0" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline71"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.94" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/cartAdapterRv"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout9"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline42"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="41dp" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline60"
-                    app:layout_constraintStart_toStartOf="@+id/guideline42">
-
-                    <Spinner
-                        android:id="@+id/spinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        app:layout_constraintStart_toEndOf="@+id/textView10"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:text="via "
-                        android:textColor="@color/gray900"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline60"
-                    app:layout_constraintStart_toStartOf="@+id/guideline42">
-
-                    <TextView
-                        android:id="@+id/valueFreightTxt"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:text="--,--"
-                        android:textColor="@color/gray900"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textView15"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:text="Frete"
-                        android:textColor="@color/gray900"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout7"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout8"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline60"
-                    app:layout_constraintStart_toStartOf="@+id/guideline42">
-
-                    <TextView
-                        android:id="@+id/subtotalTxt"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:text="--,--"
-                        android:textColor="@color/gray900"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/subtotalCarrinhoFinalizarCompraTextView2"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/subtotalCarrinhoFinalizarCompraTextView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:text="Subtotal:"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout8"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline60"
-                    app:layout_constraintStart_toStartOf="@+id/guideline42">
-
-                    <TextView
-                        android:id="@+id/taxaOperacionalTxt2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:text="--,--"
-                        android:textColor="@color/gray900"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/taxaOperacionalCarrinhoFinalizarCompraTextView2"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/taxaOperacionalCarrinhoFinalizarCompraTextView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:text="Taxa Operacional:"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout9"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline60"
-                    app:layout_constraintStart_toStartOf="@+id/guideline42">
-
-                    <TextView
-                        android:id="@+id/addressTxt3"
+                        android:id="@+id/textView16"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
-                        android:text="Cristo Redentor, Porto Alegre - RS"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="Enviar para"
                         android:textColor="@color/gray900"
-                        android:textSize="@dimen/text_size5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:textSize="@dimen/text_size5" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/addressTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text=""
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size5" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="via "
+                            android:textColor="@color/gray900"
+                            android:textSize="@dimen/text_size5" />
+
+                        <Spinner
+                            android:id="@+id/freight_sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="Frete"
+                            android:textColor="@color/gray900"
+                            android:textSize="@dimen/text_size5" />
+
+                        <TextView
+                            android:id="@+id/valueFreightTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="--,--"
+                            android:textColor="@color/gray900"
+                            android:textSize="@dimen/text_size5" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Subtotal"
+                        android:textColor="@color/gray900"
+                        android:textSize="@dimen/text_size5" />
+
+                    <TextView
+                        android:id="@+id/subtotalTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="--,--"
+                        android:textColor="@color/gray900"
+                        android:textSize="@dimen/text_size5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Total"
+                        android:textColor="@color/gray900"
+                        android:textSize="@dimen/text_size5"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/totalTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="--,--"
+                        android:textColor="@color/gray900"
+                        android:textSize="@dimen/text_size5"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/paymentBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="Ir para o pagamento"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size6"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline23"
+                    app:layout_constraintStart_toStartOf="@+id/guideline22"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <include
+        layout="@layout/content_empty_list"
+        android:visibility="gone" />
+
+
+
+</LinearLayout>

@@ -22,6 +22,7 @@
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_coupons.xml" value="0.1" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_cupons.xml" value="0.22" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_highlights.xml" value="0.1796875" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_items_cart.xml" value="0.1" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_opened_mycupons.xml" value="0.1" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_payments.xml" value="0.14666666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/adapter_productsdemand.xml" value="0.1796875" />
@@ -38,7 +39,7 @@
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_gallery_camera.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_myadresses_home.xml" value="0.17916666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/dialog_register_address.xml" value="0.22" />
-        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_cart.xml" value="0.22" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_cart.xml" value="0.14666666666666667" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_cell_layout_regras_detalhes_do_produto.xml" value="0.1796875" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/fragment_form_of_payment_creditcard.xml" value="0.1" />

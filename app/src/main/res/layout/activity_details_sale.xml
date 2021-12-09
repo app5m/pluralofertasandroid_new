@@ -61,7 +61,7 @@
             android:layout_margin="16dp"
             android:layout_gravity="bottom"
             android:fontFamily="@font/uni_neue_bold"
-            android:text="Comrpar"
+            android:text="Comprar"
             android:textColor="#ffffff"
             android:textSize="14sp"/>
 
