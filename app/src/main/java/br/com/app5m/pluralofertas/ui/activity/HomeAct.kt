@@ -100,37 +100,40 @@ class HomeAct : AppCompatActivity() {
 
     private fun saveFcm() {
 
-        FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener { instanceIdResult: InstanceIdResult ->
+        if (preferences.getLogin()) {
+            FirebaseInstanceId.getInstance().instanceId.addOnSuccessListener { instanceIdResult: InstanceIdResult ->
 
-            if (instanceIdResult.token == "") {
+                if (instanceIdResult.token == "") {
 
-                Log.d("TAG", "token vazio")
-            }
+                    Log.d("TAG", "token vazio")
+                }
 
-            if (preferences.getInstanceTokenFcm() == instanceIdResult.token) {
+                if (preferences.getInstanceTokenFcm() == instanceIdResult.token) {
 
-                Log.d("TAG", "não salvou")
+                    Log.d("TAG", "não salvou")
 
-            } else {
+                } else {
 
-                val user = User()
+                    val user = User()
 
-                user.type = WSConstants.TYPE_FCM
-                user.registrationId = instanceIdResult.token
+                    user.type = WSConstants.TYPE_FCM
+                    user.registrationId = instanceIdResult.token
 
-                preferences.saveInstanceTokenFcm("token", instanceIdResult.token)
+                    preferences.saveInstanceTokenFcm("token", instanceIdResult.token)
 
-                val userControl = UserControl(this, object : WSResult {
-                    override fun uResponse(list: List<User>, type: String) {
-                        Log.d("TAG", "salve")
+                    val userControl = UserControl(this, object : WSResult {
+                        override fun uResponse(list: List<User>, type: String) {
+                            Log.d("TAG", "salve")
 
-                    }
-                }, useful)
+                        }
+                    }, useful)
 
-                userControl.saveFcm(user)
+                    userControl.saveFcm(user)
 
-            }
-        }
+                }
+            }        }
+
+
     }
 
 }

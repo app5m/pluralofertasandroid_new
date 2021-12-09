@@ -3,22 +3,26 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-            android:id="@+id/homeFragment"
-            android:title="Loja"
-            app:showAsAction="always"
+        android:id="@+id/homeFragment"
+        android:title="Loja"
+        android:icon="@drawable/ic_sale"
+        app:showAsAction="always"
     />
 
     <item
         android:id="@+id/cartFragment"
+        android:icon="@drawable/ic_cart"
         android:title="Favoritos"
         app:showAsAction="always" />
     <item
         android:id="@+id/myCouponsFragment"
+        android:icon="@drawable/ic_request"
         android:title="Cupom"
         app:showAsAction="always"
     />
     <item
         android:id="@+id/settings_visitante"
+        android:icon="@drawable/ic_settings"
         android:title="Configurações"
         app:showAsAction="always"
     />

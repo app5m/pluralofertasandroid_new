@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/gradient"
     tools:context=".ui.activity.IntroAct">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pagerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/bg_bottom_round"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
