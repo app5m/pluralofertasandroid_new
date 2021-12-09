@@ -34,7 +34,7 @@ class PaymentsAdapter(private val context: Context, private val listPayment: Lis
         holder.asOfTv.text = "A partir de "
         holder.productValueTv.text = "10,00 "*/
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerPayments(payment)}
+        holder.itemView.setOnClickListener { clickOnListener.onClickListenerPayment(payment)}
 
     }
 

@@ -14,6 +14,9 @@ class Sale: Serializable {
     @field:SerializedName("detalhes")
     var details: Details? = null
 
+    @field:SerializedName("derivados")
+    var derivativeList: List<Derivative>? = null
+
     @field:SerializedName("id")
     var id: String? = null
 

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/derivative_ll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_gray_button"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/maxQtd_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="0/0"
+            android:maxLines="1"
+            android:visibility="gone"
+            android:gravity="end"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size4"
+            android:layout_marginEnd="16dp"
+            />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/derivativeName_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome do derivado"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size5"
+            android:layout_marginEnd="16dp"
+            android:layout_toLeftOf="@id/addDerivative_ll"
+            />
+
+        <TextView
+            android:id="@+id/desc_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/derivativeName_tv"
+            android:text="Nome do derivado"
+            android:maxLines="1"
+            android:layout_marginEnd="16dp"
+            android:layout_toLeftOf="@id/addDerivative_ll"
+            />
+
+
+        <TextView
+            android:id="@+id/derivativeValue_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/desc_tv"
+            android:layout_marginTop="8dp"
+            android:text="R$ 0,00"
+            android:maxLines="1"
+            android:layout_marginEnd="16dp"
+            android:layout_toLeftOf="@id/addDerivative_ll"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"/>
+
+        <LinearLayout
+            android:id="@+id/addDerivative_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/addRem_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Adicionar"
+                android:layout_marginEnd="4dp"
+                android:gravity="end"
+                android:visibility="gone"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/derivative_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_weight="0" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View style="@style/Divider.Horizontal"/>
+</LinearLayout>

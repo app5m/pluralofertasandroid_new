@@ -9,9 +9,11 @@ interface RecyclerItemClickListener {
     fun onClickListenerSale(sale: Sale){
         //optional body
     }
+
     fun onClickListenerCoupon(coupon: Coupon){
         //optional body
     }
+
     fun onClickListenerCart(cart: Cart){
         //optional body
     }
@@ -27,7 +29,12 @@ interface RecyclerItemClickListener {
     fun onClickListenerRequest(request: Request){
         //optional body
     }
-    fun onClickListenerPayments(payment: Payment){
+
+    fun onClickListenerPayment(payment: Payment){
+        //optional body
+    }
+
+    fun onClickListenerDerivative(derivative: Derivative?){
         //optional body
     }
 }

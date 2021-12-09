@@ -11,9 +11,10 @@ PLURAL // ultimas coisas
 nos detalhes da oferta = lista derivados e escolhe 1
 no carrinho = lista itens v e lista cupons disponiveis pra oferta x e adiciona o cupom na oferta x
 
-- Pedido com pagamento via cartão de crédito/ boleto
+- Pedido com pagamento via cartão de crédito xv/ boleto x
 
 - Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
+
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 
 - Meus cupons aplicados (list all) xv
@@ -22,8 +23,6 @@ no carrinho = lista itens v e lista cupons disponiveis pra oferta x e adiciona o
 - Detalhes do meu Pedido (todas informações)
 
 - Filtro de OFERTAS
-
-
 
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)

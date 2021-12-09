@@ -1,22 +1,31 @@
 package br.com.app5m.pluralofertas.ui.activity
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.adapter.DerivativesAdapter
+import br.com.app5m.pluralofertas.adapter.UAddressAdapter
 import br.com.app5m.pluralofertas.controller.CartControl
 import br.com.app5m.pluralofertas.controller.SaleControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.Cart
+import br.com.app5m.pluralofertas.model.Derivative
 import br.com.app5m.pluralofertas.model.Sale
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.activity_details_sale.*
+import kotlinx.android.synthetic.main.content_empty_list.*
+import kotlinx.android.synthetic.main.content_sale_details.*
+import kotlinx.android.synthetic.main.fragment_cart.*
+import kotlinx.android.synthetic.main.fragment_myaddresses.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
@@ -27,6 +36,7 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
     private lateinit var cartControl: CartControl
 
     private lateinit var globalResponseSaleInfo: Sale
+    private lateinit var globalDerivative: Derivative
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,12 +47,13 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
         saleControl = SaleControl(this, this, useful)
         cartControl = CartControl(this, this, useful)
 
-        supportActionBar?.let { useful.setActionBar(this, it,"", 0) }
+        supportActionBar?.let { useful.setActionBar(this, it, "", 0) }
 
         if (intent.extras != null) {
             useful.openLoading()
             intent.getStringExtra("idSale")?.let { saleControl.listIdSales(it) }
         }
+
 
         back_ib.setOnClickListener {
             onBackPressed()
@@ -50,18 +61,18 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
         buyBt.setOnClickListener {
 
-            /*
-{
-    "token": "plural_ofertas@2021", v
-    "id_user": 4, v
+                        /*
+            {
+            "token": "plural_ofertas@2021", v
+            "id_user": 4, v
 
-    "id_oferta": 1,v
-    "valor_uni": "R$ 189,00", v
-    "taxa_servico": "R$ 5,00",v
-    "id_derivado": 3 x
+            "id_oferta": 1,v
+            "valor_uni": "R$ 189,00", v
+            "taxa_servico": "R$ 5,00",v
+            "id_derivado": 3 x
 
-}
-        */
+            }
+            */
             val newItem = Cart()
 
             newItem.idSale = globalResponseSaleInfo.details!!.id
@@ -75,12 +86,24 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun sResponse(list: List<Sale>, type: String) {
 
         useful.closeLoading()
 
         globalResponseSaleInfo = list[0]
 
+        val derivativesAdapter =
+            globalResponseSaleInfo.derivativeList?.let {
+                DerivativesAdapter(this,
+                    it, this)
+            }
+
+        derivativesRv.apply {
+            setHasFixedSize(false)
+            layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
+            adapter = derivativesAdapter
+        }
 //        [
 //            {
 //                "detalhes": {
@@ -147,6 +170,14 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
             SingleToast.INSTANCE.show(this, responseInfo.msg!!, Toast.LENGTH_LONG)
         }
 
+
+    }
+
+    override fun onClickListenerDerivative(derivative: Derivative?) {
+
+        if (derivative != null) {
+            globalDerivative = derivative
+        }
 
     }
 
