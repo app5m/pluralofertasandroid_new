@@ -10,5 +10,15 @@ class Coupon: Serializable {
     @field:SerializedName("token")
     var token: String? = null
 
+    @field:SerializedName("cod")
+    var cod: String? = null
 
+    @field:SerializedName("valor_desc")
+    var descValue: String? = null
+
+    @field:SerializedName("data_validade")
+    var validityDate: String? = null
+
+    @field:SerializedName("rows")
+    var rows: String? = null
 }

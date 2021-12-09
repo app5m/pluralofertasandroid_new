@@ -9,10 +9,10 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Coupon
 
-class UsedCuponsAdapter(private val context: Context, private val listUsedCoupon: List<Coupon>,
-                        private val clickOnListener: RecyclerItemClickListener
+class UsedCouponsAdapter(private val context: Context, private val listUsedCoupon: List<Coupon>,
+                         private val clickOnListener: RecyclerItemClickListener
 )
-    : RecyclerView.Adapter<UsedCuponsAdapter.UsedViewHolder>() {
+    : RecyclerView.Adapter<UsedCouponsAdapter.UsedViewHolder>() {
 
 
 

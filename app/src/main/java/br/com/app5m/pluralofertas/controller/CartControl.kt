@@ -56,13 +56,6 @@ class CartControl(private val context: Context, private val result: WSResult, pr
     fun addCoupon(cart: Cart){
 
         type = "addCoupon"
-/*
-    "token": "plural_ofertas@2021",
-    "cod": "swTWan3p",
-    "valor_desc": "R$ 25,00",
-    "id_item": 10
-
-        */
 
         cart.token = WSConstants.TOKEN
 

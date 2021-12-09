@@ -21,9 +21,7 @@ class HighlightsAdapter (val context: Context, private val highlightList: List<H
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val highlight = highlightList[position]
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerHighlight(highlight)}
 
     }
 

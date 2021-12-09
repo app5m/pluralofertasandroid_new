@@ -22,10 +22,6 @@ interface RecyclerItemClickListener {
         //optional body
     }
 
-    fun onClickListenerHighlight(highlight: Highlight){
-        //optional body
-    }
-
     fun onClickListenerRequest(request: Request){
         //optional body
     }

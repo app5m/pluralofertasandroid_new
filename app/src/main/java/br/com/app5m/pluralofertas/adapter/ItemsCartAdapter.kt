@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.CartControl
+import br.com.app5m.pluralofertas.controller.CouponControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
+import br.com.app5m.pluralofertas.model.Coupon
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_cart.*
 
@@ -43,13 +45,31 @@ class ItemsCartAdapter (private val context: Context, private val listCart: List
         holder.nameTv.text = cart.saleName
         holder.saleValueTv.text = cart.unityValue
 
-        val derivativesAdapter = cart.derivativeList?.let { DerivativesAdapter(context, it,null) }
+        CouponControl(context, object : WSResult {
+            override fun cpResponse(list: List<Coupon>, type: String) {
+                val couponAdapter = CouponAdapter(context, list, object : RecyclerItemClickListener{
+                    override fun onClickListenerCoupon(coupon: Coupon) {
 
-        holder.couponsRv.apply {
-            setHasFixedSize(false)
-            layoutManager = LinearLayoutManager(context)
-            adapter = derivativesAdapter
-        }
+                        val addCoupon = Cart()
+
+                        addCoupon.cod = coupon.cod
+                        addCoupon.idItem = cart.idItem
+                        addCoupon.descValue = coupon.descValue
+
+                        CartControl(context, wsResult, useful).addCoupon(addCoupon)
+
+                    }
+                } )
+
+                holder.couponsRv.apply {
+                    setHasFixedSize(false)
+                    layoutManager = LinearLayoutManager(context)
+                    adapter = couponAdapter
+                }
+            }
+         }, useful).listCoupons(cart.idSale!!)
+
+
 
 //            {
 //                "id_item": 10,

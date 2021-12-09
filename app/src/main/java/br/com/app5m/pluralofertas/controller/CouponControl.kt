@@ -41,7 +41,7 @@ class CouponControl(private val context: Context, private val result: WSResult, 
         Log.d("error", "onFailure: " + t.message)
     }
 
-    fun listCoupons(){
+    fun listCoupons(idSale: String){
 
         type = "listCoupons"
 
@@ -49,7 +49,7 @@ class CouponControl(private val context: Context, private val result: WSResult, 
 
         coupon.token = WSConstants.TOKEN
 
-        val param: Call<List<Coupon>> = service.listCoupons(preferences.getUserData()!!.id!!, coupon)
+        val param: Call<List<Coupon>> = service.listCoupons(idSale, coupon)
         param.enqueue(this)
     }
 

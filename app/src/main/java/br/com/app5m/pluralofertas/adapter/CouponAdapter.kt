@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
@@ -13,9 +15,17 @@ import br.com.app5m.pluralofertas.model.Coupon
 
 
 class CouponAdapter (private val context: Context, private val list: List<Coupon>,
-                     private val clickOnListener: RecyclerItemClickListener)
+                     private val recyclerItemClickListener: RecyclerItemClickListener)
     : RecyclerView.Adapter<CouponAdapter.ViewHolder>() {
 
+    private var selectedPosition = -1
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val couponLL: LinearLayout = itemView.findViewById(R.id.coupon_ll)
+        val validityTv: TextView = itemView.findViewById(R.id.validity_tv)
+        val descValueTv: TextView = itemView.findViewById(R.id.descValue_tv)
+        val couponCb: CheckBox = itemView.findViewById(R.id.coupon_cb)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
@@ -30,14 +40,33 @@ class CouponAdapter (private val context: Context, private val list: List<Coupon
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val cupon = list[position]
+        val coupon = list[position]
+
+        if (selectedPosition == position) {
+            recyclerItemClickListener.onClickListenerCoupon(coupon)
+
+            holder.couponCb.isChecked = true
+            holder.couponLL.background = context.resources.getDrawable(R.drawable.shape_gray_stroke_gray_button)
+
+        } else {
+            recyclerItemClickListener?.onClickListenerDerivative(null)
+
+            holder.couponCb.isChecked = false
+            holder.couponLL.background = context.resources.getDrawable(R.drawable.shape_gray_button)
+        }
+
+        holder.itemView.setOnClickListener {
+            if (selectedPosition >= 0)
+                notifyItemChanged(selectedPosition)
+
+            selectedPosition = holder.adapterPosition
+            notifyItemChanged(selectedPosition)
+        }
+
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    }
 }

@@ -88,11 +88,5 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
     }
 
-    override fun onClickListenerHighlight(highlight: Highlight) {
-//        val intent = Intent(activity, SaleDetailsActivity::class.java)
-//        intent.putExtra("highlight", highlight)
-//        startActivity(intent)
-
-    }
 }
 
