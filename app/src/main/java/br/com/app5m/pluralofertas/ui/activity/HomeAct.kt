@@ -16,6 +16,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import br.com.app5m.pluralofertas.util.CustomTitleFragment
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UserControl
+import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.ui.fragment.home.main.HomeFragmentOffer
@@ -34,7 +35,6 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
 
-    private var itemView: BottomNavigationItemView? = null
     private lateinit var preferences: Preferences
 
     private lateinit var useful: Useful
@@ -46,6 +46,8 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
 
         useful = Useful(this)
         preferences = Preferences(this)
+
+        saveFcm()
 
         LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver,
             IntentFilter("Notification")
@@ -141,12 +143,10 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
 
             } else {
 
-
                 val user = User()
 
-//                user.typeUser = "1"
-//                user.type = WSConstants.TYPE_FCM
-//                user.registrationId = instanceIdResult.token
+                user.type = WSConstants.TYPE_FCM
+                user.registrationId = instanceIdResult.token
 
                 preferences.saveInstanceTokenFcm("token", instanceIdResult.token)
 

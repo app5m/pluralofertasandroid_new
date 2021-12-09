@@ -59,7 +59,7 @@
                 android:textColor="@color/gray800"
                 android:textSize="@dimen/text_size5"
                 android:maxLines="1"
-                app:mask="#####-###" />
+                app:met_mask="#####-###" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

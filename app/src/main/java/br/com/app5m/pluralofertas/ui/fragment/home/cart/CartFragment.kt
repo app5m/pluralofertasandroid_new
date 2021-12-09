@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.ItemsCartAdapter
 import br.com.app5m.pluralofertas.controller.CartControl
@@ -68,9 +70,11 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         globalFreightResponseInfo = list[0]
 
-        valueFreightTv.text = ""
-        subtotalTv.text = ""
-        totalTv.text = ""
+        if (globalFreightResponseInfo.cService!!.status == "01") {
+
+            valueFreightTv.text = ""
+            subtotalTv.text = ""
+            totalTv.text = ""
 
 //
 //        "cServico": {
@@ -89,6 +93,10 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //            "status": "01",
 //            "msg": "Ok"
 //        }
+
+        } else {
+            SingleToast.INSTANCE.show(requireContext(), "", Toast.LENGTH_SHORT)
+        }
 
 
     }
@@ -156,6 +164,12 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
             setHasFixedSize(false)
             layoutManager = LinearLayoutManager(requireContext())
             adapter = cartItemsAdapter
+        }
+
+        paymentBtn.setOnClickListener {
+
+
+
         }
 
     }

@@ -1,22 +1,19 @@
 PLURAL // ultimas coisas
 
-nos detalhes da oferta = lista derivados e escolhe 1
-
-no carrinho = lista itens v e lista cupons disponiveis pra oferta x e adiciona o cupom na oferta x
-
-- fcm 2 v testar
-
 - Editar perfil v(falta documento, ver com diogo pq ta vindo null) e senha v
-- lista v, add, edit, excluir Meus Endereços (remover n tem)
+- lista v, add xv, edit xv, excluir Meus Endereços (remover n tem)
 
 - Lista de Ofertas na HOME sem cadastro v
 - Lista de Ofertas na HOME com cadastro baseado no endereço v
 
 - Detalhes da Oferta com dados completos e as opções para escolher os derivados
-- Aplicar CUPOM na oferta e dar o devido desconto
+
+nos detalhes da oferta = lista derivados e escolhe 1
+no carrinho = lista itens v e lista cupons disponiveis pra oferta x e adiciona o cupom na oferta x
+
 - Pedido com pagamento via cartão de crédito/ boleto
 
-- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX
+- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 
 - Meus cupons aplicados (list all) xv

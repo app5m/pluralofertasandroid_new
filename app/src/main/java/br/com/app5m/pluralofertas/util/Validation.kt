@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import android.util.Patterns
 import android.widget.EditText
+import br.com.app5m.pluralofertas.util.visual.Animation
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -160,7 +161,7 @@ class Validation (private val context: Context) {
             animation.shake(editText)
             return false
         }
-        if (editText.text.length < 14) {
+        if (editText.text.length < 11) {
             error(editText, "CPF deve ser preenchido de forma completa.")
             animation.shake(editText)
             return false
@@ -180,37 +181,40 @@ class Validation (private val context: Context) {
     fun cnpj(editText: EditText): Boolean {
         if (editText.text.toString().isEmpty()) {
             error(editText, "CNPJ deve ser preenchido.")
+            animation.shake(editText)
             return false
         }
-        if (editText.text.length < 18) {
+        if (editText.text.length < 14) {
             error(editText, "CNPJ deve ser preenchido de forma completa.")
+            animation.shake(editText)
             return false
         }
         if (!validatorCNPJ(editText.text.toString().replace(".", "")
-                        .replace("-", "").replace("/", ""))) {
+                .replace("-", "").replace("/", ""))) {
             error(editText, "Este CNPJ não é válido.")
+            animation.shake(editText)
             return false
         }
         return true
     }
 
-    fun data(editText: EditText): Boolean {
-        if (editText == null) {
-            return false
-        }
+    fun date(editText: EditText): Boolean {
 
         if (editText.text.toString().isEmpty()) {
             editText.error = "Data precisa ser preenchida"
+            animation.shake(editText)
             return false
         }
 
         if (editText.text.toString().length < 10) {
             editText.error = "Data inválida"
+            animation.shake(editText)
             return false
         }
 
         if (!checkDPP(editText.text.toString())) {
             editText.error = "Data inválida"
+            animation.shake(editText)
             return false
         }
 
@@ -218,16 +222,16 @@ class Validation (private val context: Context) {
     }
 
     private fun checkDPP(string: String): Boolean {
-        val formataData = SimpleDateFormat("dd/MM/yyyy")
-        val dataA = Date()
-        var dataB: Date? = null
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val dateA = Date()
+        var dateB: Date? = null
         try {
-            dataB = formataData.parse(string)
+            dateB = simpleDateFormat.parse(string)
             Log.d("data", "checkDPP: ")
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        return if (dataB == null) false else dataA.after(dataB)
+        return if (dateB == null) false else dateA.after(dateB)
     }
 
     /**
@@ -270,6 +274,7 @@ class Validation (private val context: Context) {
     fun coPassword(pass1: EditText, pass2: EditText): Boolean {
         if (pass1.text.toString() != pass2.text.toString()) {
             error(pass2, "Senhas não coincidem.")
+            animation.shake(pass2)
             return false
         }
         return true
@@ -286,6 +291,7 @@ class Validation (private val context: Context) {
     fun validateTextField(editText: EditText): Boolean {
         if (!isEmpty(editText) || editText.error != null) {
             animation.shake(editText)
+            error(editText, "Este campo deve ser preenchido!")
             return false
         }
         return true

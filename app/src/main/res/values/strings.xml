@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Plural Ofertas</string>
 
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+
+
     <string-array name="freight">
         <item>SEDEX</item>
         <item>PAC</item>

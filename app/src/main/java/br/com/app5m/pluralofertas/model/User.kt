@@ -4,11 +4,45 @@ import com.google.gson.annotations.SerializedName
 
 class User {
 
+
+    @field:SerializedName("nome_cartao")
+    var cardName: String? = null
+
+    @field:SerializedName("ano_validade")
+    var yearValidity: String? = null
+
+    @field:SerializedName("mes_validade")
+    var mouthValidity: String? = null
+
+    @field:SerializedName("numero_cartao")
+    var cardNumber: String? = null
+
+    @field:SerializedName("ultimos_digitos")
+    var lastDigitsCard: String? = null
+
+    @field:SerializedName("bandeira")
+    var flagCard: String? = null
+
+    @field:SerializedName("card_id")
+    var cardId: String? = null
+
+    @field:SerializedName("cvv")
+    var cvv: String? = null
+
+    @field:SerializedName("data_nascimento")
+    var birth: String? = null
+
     @field:SerializedName("id")
     var id: String? = null
 
     @field:SerializedName("id_user")
     var idUser: String? = null
+
+    @field:SerializedName("celular")
+    var cellphone: String? = null
+
+    @field:SerializedName("id_moip")
+    var moipId: String? = null
 
     @field:SerializedName("email")
     var email: String? = null
