@@ -46,7 +46,7 @@ class UsedCouponsFrag : Fragment(), RecyclerItemClickListener, WSResult {
         if (Preferences(requireContext()).getLogin()) {
 
             useful.openLoading()
-            couponControl.listCoupons()
+            couponControl.listUsedCoupons()
         }
 
         configInitialViews()

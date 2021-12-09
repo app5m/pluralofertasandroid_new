@@ -53,4 +53,17 @@ class CouponControl(private val context: Context, private val result: WSResult, 
         param.enqueue(this)
     }
 
+
+    fun listUsedCoupons(){
+
+        type = "listUsedCoupons"
+
+        coupon = Coupon()
+
+        coupon.token = WSConstants.TOKEN
+
+        val param: Call<List<Coupon>> = service.usedListCoupons(preferences.getUserData()!!.id!!, coupon)
+        param.enqueue(this)
+    }
+
 }

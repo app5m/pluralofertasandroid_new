@@ -4,6 +4,15 @@ import java.io.Serializable
 
 class Cart: Serializable {
 
+    @field:SerializedName("derivados")
+    var derivativeList: List<Derivative>? = null
+
+    @field:SerializedName("nome_oferta")
+    var saleName: String? = null
+
+    @field:SerializedName("id_item")
+    var idItem: String? = null
+
     @field:SerializedName("id")
     var id: String? = null
 

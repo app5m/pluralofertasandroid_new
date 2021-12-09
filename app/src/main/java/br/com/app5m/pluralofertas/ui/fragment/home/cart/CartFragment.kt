@@ -57,7 +57,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         if (Preferences(requireContext()).getLogin()) {
 
             useful.openLoading()
-            cartControl.listItems("6")
+            cartControl.listItems("8")
 
         } else {
             cartCons.visibility = View.GONE
@@ -126,7 +126,36 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
             cartRv.adapter!!.notifyDataSetChanged()
         }
-
+//
+//        [
+//            {
+//                "id_item": 10,
+//                "id_oferta": 3,
+//                "nome_oferta": "Testando",
+//                "valor_uni": " R$ 189,00",
+//                "qtd": 1,
+//                "valor_itens": " R$ 194,00",
+//                "valor_derivado": " R$ 30,00",
+//                "valor_desconto": " R$ 25,00",
+//                "valor_final": " R$ 199,00",
+//                "valor_descontado_float": 199,
+//                "id_derivado": 3,
+//                "nome_derivado": "Rota adicional",
+//                "peso": "1",
+//                "altura": 1,
+//                "largura": 1,
+//                "comprimento": 1,
+//                "derivados": [
+//                {
+//                    "rows": 0
+//                }
+//                ]
+//            },
+//            {
+//                "total_carrinho": " R$ 199,00"
+//            }
+//        ]
+//
         freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
@@ -167,7 +196,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private fun configureInitialViews(){
 
-        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList,this)
+        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList,this, useful, this)
 
         cartRv.apply {
             setHasFixedSize(false)

@@ -16,7 +16,7 @@ import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Derivative
 
 class DerivativesAdapter (private val context: Context, private val list: List<Derivative>,
-                          private val recyclerItemClickListener: RecyclerItemClickListener) : RecyclerView.Adapter<DerivativesAdapter.ViewHolder>() {
+                          private val recyclerItemClickListener: RecyclerItemClickListener?) : RecyclerView.Adapter<DerivativesAdapter.ViewHolder>() {
 
     private var selectedPosition = -1
 
@@ -42,13 +42,13 @@ class DerivativesAdapter (private val context: Context, private val list: List<D
         holder.descTv.text = derivative.desc
 
         if (selectedPosition == position) {
-            recyclerItemClickListener.onClickListenerDerivative(derivative)
+            recyclerItemClickListener?.onClickListenerDerivative(derivative)
 
             holder.derivativeCb.isChecked = true
             holder.derivativeLL.background = context.resources.getDrawable(R.drawable.shape_gray_stroke_gray_button)
 
         } else {
-            recyclerItemClickListener.onClickListenerDerivative(null)
+            recyclerItemClickListener?.onClickListenerDerivative(null)
 
             holder.derivativeCb.isChecked = false
             holder.derivativeLL.background = context.resources.getDrawable(R.drawable.shape_gray_button)

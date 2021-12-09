@@ -112,6 +112,11 @@ interface WebService {
         @Body cp: Coupon
     ): Call<List<Coupon>>
 
+    @POST("cupons/lista_usados/" + "{id}")
+    fun usedListCoupons(
+        @Path("id") id: String,
+        @Body cp: Coupon
+    ): Call<List<Coupon>>
 
     //request
 
