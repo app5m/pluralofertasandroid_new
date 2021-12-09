@@ -24,6 +24,7 @@ class CouponAdapter (private val context: Context, private val list: List<Coupon
         val couponLL: LinearLayout = itemView.findViewById(R.id.coupon_ll)
         val validityTv: TextView = itemView.findViewById(R.id.validity_tv)
         val descValueTv: TextView = itemView.findViewById(R.id.descValue_tv)
+        val couponPositionTv: TextView = itemView.findViewById(R.id.positionCouponTv)
         val couponCb: CheckBox = itemView.findViewById(R.id.coupon_cb)
     }
 
@@ -41,6 +42,8 @@ class CouponAdapter (private val context: Context, private val list: List<Coupon
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val coupon = list[position]
+
+        holder.couponPositionTv.text = "Cupom " + (position + 1)
 
         holder.validityTv.text = coupon.validityDate
         holder.descValueTv.text = coupon.descValue
