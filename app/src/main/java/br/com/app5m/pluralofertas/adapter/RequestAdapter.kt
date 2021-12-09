@@ -15,7 +15,7 @@ class RequestAdapter(private val context: Context, private val list: List<Reques
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoopingViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.adapter_requests, parent, false) // vai conectar com os ids abaixo
+            .inflate(R.layout.adapter_shoopings, parent, false) // vai conectar com os ids abaixo
         return ShoopingViewHolder(listItem)
 
 

@@ -16,7 +16,6 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.util.Useful
-import kotlinx.android.synthetic.main.content_empty_list.*
 import kotlinx.android.synthetic.main.fragment_cart.*
 import kotlinx.android.synthetic.main.fragment_myaddresses.*
 import java.util.ArrayList

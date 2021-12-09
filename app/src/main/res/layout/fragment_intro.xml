@@ -27,13 +27,12 @@
 
     <TextView
         android:id="@+id/onboardingTitle"
-        style="@style/InstrucaoTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/transparent_background"
         android:gravity="center"
         android:text="@string/TituloOnboarding"
         android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size6"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,14 +40,13 @@
 
     <TextView
         android:id="@+id/onboardingSubtitle"
-        style="@style/InstrucaoDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/transparent_background"
         android:gravity="center"
         android:text="@string/DescricaoOnboarding"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size6"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

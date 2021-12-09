@@ -27,7 +27,7 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
         val addresstv: TextView = v.findViewById(R.id.address_textView)
         val complementTv: TextView = v.findViewById(R.id.complement_textView)
         val addressRb: RadioButton = v.findViewById(R.id.address_radioButton)
-        val positionTv: TextView = v.findViewById(R.id.addressPos_tv)
+        val positionTv: TextView = v.findViewById(R.id.addressPos_textView)
         val numTv: TextView = v.findViewById(R.id.number_textView)
 
     }
