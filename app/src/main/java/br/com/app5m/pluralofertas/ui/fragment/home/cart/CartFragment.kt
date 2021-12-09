@@ -132,14 +132,20 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 freight.destinyCep = "94836000"
                 freight.cartId = "6"
 
-                if (position != 0) {
+                when (position) {
+                    1 -> {
 
-                    //pac ver codigo pac dps
-                    freight.cod = "40010"
+                        //pac ver codigo pac dps
+                        freight.cod = "40010"
 
-                } else {
-                    //sedex
-                    freight.cod = "40010"
+                    }
+                    2 -> {
+                        //sedex
+                        freight.cod = "40010"
+                    }
+                    else -> {
+                        return
+                    }
                 }
 
                 freightControl.estimateFreight(freight)

@@ -110,7 +110,7 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
             user.name = fullname_edittext.text.toString()
             user.email = email_edittext.text.toString()
             user.cpf = cpf_edittext.text.toString()
-            user.phone = phone_edittext.text.toString()
+            user.cellphone = phone_edittext.text.toString()
             user.password = login_password_edittext.text.toString()
 
             val dialog = RegisterAddressDialog()

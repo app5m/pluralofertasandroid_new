@@ -92,7 +92,4 @@ class User {
     @field:SerializedName("estado")
     var state: String? = null
 
-    @field:SerializedName("celular")
-    var phone: String? = null
-
 }
