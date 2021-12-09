@@ -75,7 +75,7 @@ class UpdatePasswordFragment : Fragment(), WSResult {
 
     private fun loadClicks() {
 
-        updatePass_bt.setOnClickListener {
+        update_bt.setOnClickListener {
 
             if (!validate()) return@setOnClickListener
 

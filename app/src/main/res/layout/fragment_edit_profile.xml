@@ -146,7 +146,7 @@
 
 
                 <Button
-                    android:id="@+id/updatePass_bt"
+                    android:id="@+id/update_bt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/uni_neue_bold"

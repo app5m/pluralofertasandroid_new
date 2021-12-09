@@ -62,14 +62,11 @@ class ProfileEditFragment: Fragment(), WSResult {
     private fun loadClicks() {
 
         btnAlterarSenhaMeuPerfilTextView.setOnClickListener {
-
+            useful.startFragmentOnBack(UpdatePasswordFragment(), requireActivity().supportFragmentManager)
         }
 
-        btnVoltarMeuPerfilTextView.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
 
-        btnEditarPerfil.setOnClickListener {
+        update_bt.setOnClickListener {
 
 
 /*        {

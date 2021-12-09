@@ -121,10 +121,6 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
 
     private fun loadClicks() {
 
-        backButton.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
-
         addAddressMainMenuFab.setOnClickListener {
             val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
