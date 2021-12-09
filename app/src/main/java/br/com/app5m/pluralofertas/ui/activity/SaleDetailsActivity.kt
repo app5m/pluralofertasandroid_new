@@ -61,24 +61,12 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
         buyBt.setOnClickListener {
 
-                        /*
-            {
-            "token": "plural_ofertas@2021", v
-            "id_user": 4, v
-
-            "id_oferta": 1,v
-            "valor_uni": "R$ 189,00", v
-            "taxa_servico": "R$ 5,00",v
-            "id_derivado": 3 x
-
-            }
-            */
             val newItem = Cart()
 
             newItem.idSale = globalResponseSaleInfo.details!!.id
             newItem.unityValue = globalResponseSaleInfo.details!!.value
             newItem.servicePrice = globalResponseSaleInfo.details!!.servicePrice
-            newItem.idDerivative = ""
+            newItem.idDerivative = globalDerivative.id
 
             useful.openLoading()
             cartControl.addItem(newItem)

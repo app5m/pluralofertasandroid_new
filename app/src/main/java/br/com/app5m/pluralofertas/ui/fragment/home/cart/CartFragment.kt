@@ -177,7 +177,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         paymentBtn.setOnClickListener {
 
-            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).putExtra("idCart", ""))
+            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).putExtra("idCart", "10"))
 
         }
 
