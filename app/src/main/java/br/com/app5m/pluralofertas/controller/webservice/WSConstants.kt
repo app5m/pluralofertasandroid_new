@@ -9,4 +9,6 @@ object WSConstants {
     const val AVATAR_USER_URL = "https://pluralofertas.com.br/apiv3/user/"
     const val TYPE_FCM = "1"
 
+    const val PUBLIC_KEY_TEST = "1"
+
 }

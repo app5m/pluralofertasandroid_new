@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas.ui.fragment.cards
+package br.com.app5m.pluralofertas.ui.fragment.payment_flow.cards
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -19,8 +19,10 @@ import kotlinx.android.synthetic.main.fragment_add_new_card.*
 import br.com.app5m.appshelterpassenger.util.visual.FlipPageViewTransformer
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
-import br.com.app5m.pluralofertas.controller.UserControl
+import br.com.app5m.pluralofertas.controller.RequestControl
+import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
+import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.util.Mask
 import br.com.app5m.pluralofertas.util.Useful
@@ -32,7 +34,6 @@ import br.com.moip.encryption.helper.MoipValidator
 import kotlinx.android.synthetic.main.fragment_add_new_card.birth_et
 import kotlinx.android.synthetic.main.fragment_add_new_card.cellphone_et
 import kotlinx.android.synthetic.main.fragment_add_new_card.document_et
-import kotlinx.android.synthetic.main.fragment_add_new_card.email_et
 import kotlinx.android.synthetic.main.fragment_add_new_card.name_et
 import org.spongycastle.jce.provider.BouncyCastleProvider
 import java.security.Security
@@ -44,7 +45,7 @@ import java.security.Security
 class AddNewCardFrag : Fragment(), WSResult {
 
     private lateinit var useful: Useful
-    private lateinit var userControl: UserControl
+    private lateinit var requestControl: RequestControl
     private lateinit var animation: Animation
     private lateinit var validation: Validation
 
@@ -70,7 +71,7 @@ class AddNewCardFrag : Fragment(), WSResult {
         animation = Animation(requireContext())
         validation = Validation(requireContext())
 
-        userControl = UserControl(requireContext(), this, useful)
+        requestControl = RequestControl(requireContext(), this, useful)
 
         configInitialViews()
         configTextWatchers()
@@ -82,7 +83,6 @@ class AddNewCardFrag : Fragment(), WSResult {
     override fun uResponse(list: List<User>, type: String) {
 
         val cardResponseInfo = list[0]
-
 
         if (cardResponseInfo.status == "01") {
             useful.closeLoading()
@@ -163,7 +163,7 @@ class AddNewCardFrag : Fragment(), WSResult {
 
     private fun loadClicks() {
 
-        add_bt.setOnClickListener {
+        finish_bt.setOnClickListener {
             if (!checkCard()) return@setOnClickListener
             if (!validate()) return@setOnClickListener
 
@@ -175,30 +175,85 @@ class AddNewCardFrag : Fragment(), WSResult {
             creditCard.number = cardNumber_et.text.toString()
             creditCard.expirationMonth = validity_et.text.toString().split("/").toTypedArray()[0]
             creditCard.expirationYear = validity_et.text.toString().split("/").toTypedArray()[1]
-//            creditCard.publicKey = WSConstants.PUBLIC_KEY_TEST
+            creditCard.publicKey = WSConstants.PUBLIC_KEY_TEST
 
             try {
 
-//                Mastercard	5555666677778884	06/2022	123
-//                Visa	4012001037141112	06/2022	123
-//
-//
-                val userCard = User()
-
-                userCard.cardNumber = creditCard.number
-                userCard.mouthValidity = creditCard.expirationMonth
-                userCard.yearValidity = creditCard.expirationYear
-                userCard.cvv = creditCard.cvc
-
-                userCard.cardName = name_et.text.toString()
-                userCard.email = email_et.text.toString()
-                userCard.birth = birth_et.text.toString()
-                userCard.cpf = document_et.text.toString()
-                userCard.cellphone = cellphone_et.text.toString()
-
                 useful.openLoading()
 
-//                userControl.addNewCard(userCard)
+                val newRequest = Request()
+
+                newRequest.idCart = "6"
+                newRequest.idAddress = "2"
+                newRequest.paymentForm = "2"
+
+                newRequest.idFreight = "1"
+                newRequest.freightValue = ""
+                newRequest.subTotalValue = ""
+                newRequest.descValueCoupon = ""
+                newRequest.idCoupon = ""
+
+                newRequest.obs = "nenhuma"
+
+                newRequest.cardName = name_et.text.toString()
+                newRequest.cardCellphone = cellphone_et.text.toString()
+                newRequest.cardCpf = document_et.text.toString()
+                newRequest.cpf = document_et.text.toString()
+                newRequest.cardBirth = birth_et.text.toString()
+
+
+                newRequest.cardNumber = creditCard.number
+//                newRequest.mouthValidity = creditCard.expirationMonth
+//                newRequest.yearValidity = creditCard.expirationYear
+//                newRequest.cvv = creditCard.cvc
+
+                newRequest.cardCep = ""
+                newRequest.cardState = ""
+                newRequest.cardCity = ""
+                newRequest.cardNeighborhood = ""
+                newRequest.cardAddress = ""
+                newRequest.cardComplement = ""
+
+                newRequest.hashCard = ""
+                newRequest.installments = "2"
+                newRequest.plataform = "1"
+
+//                {
+//                    "id_user":"4", v
+
+//                    "id_carrinho":6, v
+//                    "id_endereco":2, v
+//                    "forma_pagamento":2, v
+
+//                    "id_frete":1,v
+//                    "valor_frete": "R$ 20,00",v
+//                    "valor_subtotal": "R$ 55,00",v
+//                    "valor_desc_cupom": "R$ 5,00",v
+//                    "id_cupom": 6,v
+
+//                    "obs":"nenhuma",v
+
+//                    "card_name":"Android Developer",v
+//                    "card_celular":"(99) 99999-9999", v
+//                    "card_cpf":"29578963033", v
+//                    "cpf":"29578963033",v
+//                    "card_nascimento":"17/11/1996",v
+
+//                    "card_numero":"80",v
+
+//                    "card_cep":"91260-010",v
+//                    "card_estado":"RS",v
+//                    "card_cidade":"Porto Alegre",v
+//                    "card_bairro":"Morro Santana",v
+//                    "card_endereco":"Rua Amadeu F. de Oliveira Freitas",v
+//                    "card_complemento":"teste",v
+
+//                    "hash_card":"m95QM6Oh v
+//                    "parcelas":"2",
+//                    "plataforma": 1 v
+//                }
+
+                requestControl.newRequest(newRequest)
 
             } catch (mee: MoipEncryptionException) {
                 SingleToast.INSTANCE.show(requireContext(),
@@ -267,7 +322,7 @@ class AddNewCardFrag : Fragment(), WSResult {
     }
 
     private fun validate() : Boolean {
-        if (!validation.email(email_et)) return false
+//        if (!validation.email(email_et)) return false
         if (!validation.date(birth_et)) return false
 
         if (document_et.text.length > 13) {

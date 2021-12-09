@@ -1,6 +1,7 @@
 package br.com.app5m.pluralofertas.ui.fragment.home.cart
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,8 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Freight
+import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
+import br.com.app5m.pluralofertas.ui.fragment.home.main.MyAddressesFragment
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.content_empty_list.*
@@ -174,8 +177,12 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         paymentBtn.setOnClickListener {
 
+            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).putExtra("idCart", ""))
 
+        }
 
+        addressTv.setOnClickListener {
+            useful.startFragmentOnBack(MyAddressesFragment(), requireActivity().supportFragmentManager)
         }
 
     }

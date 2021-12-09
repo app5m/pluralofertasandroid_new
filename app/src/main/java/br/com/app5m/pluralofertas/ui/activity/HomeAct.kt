@@ -5,15 +5,11 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import br.com.app5m.pluralofertas.util.CustomTitleFragment
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSConstants
@@ -25,15 +21,13 @@ import br.com.app5m.pluralofertas.ui.fragment.home.main.MainMenuFragment
 import br.com.app5m.pluralofertas.ui.fragment.home.coupon.UsedCouponsFrag
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.InstanceIdResult
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity {
+class HomeAct : AppCompatActivity() {
 
     private lateinit var preferences: Preferences
 
@@ -63,30 +57,6 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
 
     }
 
-    private var toolbarTint: CustomTitleFragment.ToolbarTint = CustomTitleFragment.ToolbarTint.WHITE
-
-    override fun setToolbarTitle(title: String) {
-        toolbarTitle.text = title
-    }
-
-    override fun setToolbarTint(style: CustomTitleFragment.ToolbarTint) {
-
-        toolbarTint = style
-        toolbar.isVisible = style != CustomTitleFragment.ToolbarTint.NONE
-
-        val purple = ContextCompat.getColor(this, R.color.darkish_purple)
-
-        when (style) {
-            CustomTitleFragment.ToolbarTint.PURPLE -> {
-                toolbar.setBackgroundColor(purple)
-                toolbarTitle.setTextColor(Color.WHITE)
-            }
-            CustomTitleFragment.ToolbarTint.WHITE -> {
-                toolbar.setBackgroundColor(Color.WHITE)
-                toolbarTitle.setTextColor(purple)
-            }
-        }
-    }
 
     private fun configureInitialViews(){
         bottom_navigation.setOnNavigationItemSelectedListener { item ->

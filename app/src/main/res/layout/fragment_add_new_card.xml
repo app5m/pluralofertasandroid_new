@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ui.fragment.cards.AddNewCardFrag">
+    tools:context=".ui.fragment.payment_flow.cards.AddNewCardFrag">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -116,7 +116,8 @@
                     android:background="@drawable/shape_main_stroke_gray_et"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:visibility="gone" />
 
                 <com.santalu.maskedittext.MaskEditText
                     android:id="@+id/birth_et"
@@ -137,7 +138,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/shape_main_stroke_gray_et"
-                    android:hint="CPF/CNPJ"
+                    android:hint="CPF"
                     android:inputType="number"
                     android:maxLines="1" />
 
@@ -161,7 +162,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -185,13 +186,13 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/add_bt"
+                android:id="@+id/finish_bt"
                 style="@style/StyleButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/colorAccent"
-                android:text="Adicionar novo cartão" />
+                android:text="Finalizar" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

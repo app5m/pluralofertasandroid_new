@@ -44,36 +44,9 @@ class RequestControl(private val context: Context, private val result: WSResult,
 
     fun newRequest(request: Request){
 
-        type = "add"
-/*
-{
-   "id_user":"4",
-   "id_carrinho":6,
-   "id_endereco":2,
-   "forma_pagamento":2,
-   "id_frete":1,
-   "valor_frete": "R$ 20,00",
-   "valor_subtotal": "R$ 55,00",
-   "valor_desc_cupom": "R$ 5,00",
-   "id_cupom": 6,
-   "obs":"nenhuma",
-   "card_bairro":"Morro Santana",
-   "card_celular":"(99) 99999-9999",
-   "card_cep":"91260-010",
-   "card_cidade":"Porto Alegre",
-   "card_complemento":"teste",
-   "card_cpf":"29578963033",
-   "card_endereco":"Rua Amadeu F. de Oliveira Freitas",
-   "card_estado":"RS",
-   "card_name":"Android Developer",
-   "card_nascimento":"17/11/1996",
-   "card_numero":"80",
-   "cpf":"29578963033",
-   "hash_card":"m95QM6OhymZ/mgPpBkSfP3LlxvyX6ydZGjgGfOxynlSejxqx8/hvLmtvHaUJXQUM1qa+G18i+Ghxd9TyWFV5f9gmttb9Zp9rZTLUk3C81XsInyFjK+Wfeys+u6nKFT8fs9Rk8qF/        GDs74khcfstdcwFrEZvKIMne7AAP1sMnOgxT4puZflONpAwecrKI+9uwhIBPQC+eBj5yNg+l6Jz7m2+tj9GbMoMTecYERwL27XXCJIKE7ewfyv/gJLFOeBcJDLa7f8BOwfaJQJa/d6SokdVPy+1i25Y8m8+hI0St+ gG9RY4nD1NNHyoHz7b5JMRpHdb3/7GB1fUsWTT796gV9A\u003d\u003d",
-   "parcelas":"2",
-   "plataforma": 1
-}
-        */
+        type = "new"
+
+        request.idUser = preferences.getUserData()!!.id
 
         val param: Call<List<Request>> = service.newRequest(request)
         param.enqueue(this)

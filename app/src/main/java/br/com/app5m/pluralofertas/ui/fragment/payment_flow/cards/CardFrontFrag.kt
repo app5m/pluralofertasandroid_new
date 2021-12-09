@@ -1,4 +1,4 @@
-package br.com.app5m.pluralofertas.ui.fragment.cards
+package br.com.app5m.pluralofertas.ui.fragment.payment_flow.cards
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
