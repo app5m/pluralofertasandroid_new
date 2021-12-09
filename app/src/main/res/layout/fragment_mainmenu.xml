@@ -207,8 +207,6 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="4dp"
                         android:background="@color/white"
-                        android:drawableStart="@drawable/ic_credit_card"
-                        android:drawablePadding="5dp"
                         android:gravity="fill_vertical"
                         android:lineSpacingExtra="10dp"
                         android:padding="15dp"

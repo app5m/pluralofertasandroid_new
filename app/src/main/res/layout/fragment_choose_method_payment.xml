@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:text="Cartão de crédito"
+        android:drawableStart="@drawable/ic_credit_card"
+        android:drawablePadding="12dp"
         android:textSize="@dimen/text_size5"/>
 
     <View
@@ -25,6 +27,8 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:text="Boleto bancário"
+        android:drawableStart="@drawable/ic_ticket"
+        android:drawablePadding="12dp"
         android:textSize="@dimen/text_size5"/>
 
     <View
