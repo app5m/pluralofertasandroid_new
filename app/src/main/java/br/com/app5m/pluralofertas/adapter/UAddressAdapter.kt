@@ -13,7 +13,6 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.UAddress
-import br.com.app5m.pluralofertas.ui.dialog.RegisterAddressDialog
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 
@@ -28,7 +27,7 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
         val addresstv: TextView = v.findViewById(R.id.address_textView)
         val complementTv: TextView = v.findViewById(R.id.complement_textView)
         val addressRb: RadioButton = v.findViewById(R.id.address_radioButton)
-        val currentLocationTv: TextView = v.findViewById(R.id.currentLocation_textView)
+        val positionTv: TextView = v.findViewById(R.id.addressPos_tv)
         val numTv: TextView = v.findViewById(R.id.number_textView)
 
     }
@@ -49,6 +48,8 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val uaddress = listUAddress[position]
+
+        holder.positionTv.text = "Endereço " + (position + 1)
 
         UAddressControl(context, object: WSResult {
             override fun uAResponse(list: List<UAddress>, type: String) {

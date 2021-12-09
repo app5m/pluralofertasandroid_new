@@ -7,6 +7,7 @@ import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.controller.webservice.WebService
 import br.com.app5m.pluralofertas.config.RetrofitInitializer
+import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.util.Useful
@@ -44,17 +45,9 @@ class CartControl(private val context: Context, private val result: WSResult, pr
     fun addItem(cart: Cart){
 
         type = "add"
-/*
-{
-    "token": "plural_ofertas@2021",
-    "id_user": 4,
-    "id_oferta": 1,
-    "valor_uni": "R$ 189,00",
-    "taxa_servico": "R$ 5,00",
-    "id_derivado": 3
 
-}
-        */
+        cart.idUser = preferences.getUserData()!!.id
+        cart.token = WSConstants.TOKEN
 
         val param: Call<List<Cart>> = service.addItem(cart)
         param.enqueue(this)
@@ -75,16 +68,15 @@ class CartControl(private val context: Context, private val result: WSResult, pr
         param.enqueue(this)
     }
 
-    fun listItems(cart: Cart){
+    fun listItems(){
 
         type = "listItems"
-/*
-{
-    "token": "plural_ofertas@2021"
-}
-        */
 
-        val param: Call<List<Cart>> = service.listItems("", cart)
+        cart = Cart()
+
+        cart.token = WSConstants.TOKEN
+
+        val param: Call<List<Cart>> = service.listItems(preferences.getUserData()!!.id!!, cart)
         param.enqueue(this)
     }
 

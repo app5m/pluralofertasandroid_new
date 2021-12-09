@@ -13,7 +13,6 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
-import br.com.app5m.pluralofertas.model.Shopping
 import kotlinx.android.synthetic.main.fragment_requests.*
 import java.util.ArrayList
 

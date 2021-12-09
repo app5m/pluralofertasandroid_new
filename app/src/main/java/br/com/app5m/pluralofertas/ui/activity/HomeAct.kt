@@ -1,6 +1,10 @@
 package br.com.app5m.pluralofertas.ui.activity
 
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +12,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import br.com.app5m.pluralofertas.util.CustomTitleFragment
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UserControl
@@ -42,16 +47,14 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
         useful = Useful(this)
         preferences = Preferences(this)
 
+        LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver,
+            IntentFilter("Notification")
+        )
+
         useful.startFragment(HomeFragmentOffer(), this.supportFragmentManager)
         useful.setActionBar(this, supportActionBar!!, "", 0)
 
         toolbar.visibility = View.GONE
-
-
-        //Configura o nabBottom para receber o badge
-        val bottomNavigationMenuView = bottom_navigation.getChildAt(0) as BottomNavigationMenuView
-        val v = bottomNavigationMenuView.getChildAt(1)
-        itemView = v as BottomNavigationItemView
 
         configureInitialViews()
 
@@ -83,7 +86,7 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
         }
     }
 
-    fun configureInitialViews(){
+    private fun configureInitialViews(){
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeFragment -> useful.startFragment(
@@ -106,12 +109,21 @@ class HomeAct : AppCompatActivity(), CustomTitleFragment.ICustomToolbarActivity 
             }
             true
         }
-        val intent = intent
-        if (intent.hasExtra("CHANGE_NAV_CART")) {
-            bottom_navigation.setSelectedItemId(R.id.cartFragment)
+
+    }
+
+    private val myReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+
+            if (intent.extras != null) {
+
+                val order = intent.extras!!.getString("order")
+
+                if (order == "ADD_TO_CART") {
+                    bottom_navigation.selectedItemId = R.id.cartFragment
+                }
+            }
         }
-
-
     }
 
     private fun saveFcm() {

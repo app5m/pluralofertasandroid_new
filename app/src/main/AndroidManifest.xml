@@ -33,9 +33,6 @@
             android:name="br.com.app5m.pluralofertas.ui.activity.SaleDetailsActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="br.com.app5m.pluralofertas.ui.activity.CartCheckoutActivity"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name="br.com.app5m.pluralofertas.ui.activity.SigininContentActivity"
             android:screenOrientation="portrait"/>
 

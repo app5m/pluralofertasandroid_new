@@ -11,10 +11,10 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 
-class CartAdapter (private val context: Context, private val listCart: List<Cart>,
-                   private val clickOnListener: RecyclerItemClickListener
+class ItemsCartAdapter (private val context: Context, private val listCart: List<Cart>,
+                        private val clickOnListener: RecyclerItemClickListener
 )
-    : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+    : RecyclerView.Adapter<ItemsCartAdapter.CartViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {

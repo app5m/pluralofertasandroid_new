@@ -38,7 +38,7 @@ class Useful (private val context: Context) {
 
     fun startFragment(frag: Fragment, fragmentManager: FragmentManager) {
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(R.id.container, frag).commit()
+        transaction.replace(R.id.container, frag).commitAllowingStateLoss()
     }
 
     fun startFragmentOnBack(frag: Fragment, fragmentManager: FragmentManager) {
@@ -49,7 +49,7 @@ class Useful (private val context: Context) {
             R.anim.enter_from_left,
             R.anim.exit_to_right
         )
-        transaction.replace(R.id.container, frag).addToBackStack(null).commit()
+        transaction.replace(R.id.container, frag).addToBackStack(null).commitAllowingStateLoss()
     }
 
     fun openLoading() {

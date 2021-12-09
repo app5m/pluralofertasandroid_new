@@ -12,7 +12,7 @@ class Sale: Serializable {
     var value: String? = null
 
     @field:SerializedName("detalhes")
-    var datails: Details? = null
+    var details: Details? = null
 
     @field:SerializedName("id")
     var id: String? = null

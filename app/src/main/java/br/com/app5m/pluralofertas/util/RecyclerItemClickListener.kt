@@ -23,9 +23,7 @@ interface RecyclerItemClickListener {
     fun onClickListenerHighlight(highlight: Highlight){
         //optional body
     }
-    fun onClickListenerCategoriesSearch(category: Category){
-        //optional body
-    }
+
     fun onClickListenerRequest(request: Request){
         //optional body
     }

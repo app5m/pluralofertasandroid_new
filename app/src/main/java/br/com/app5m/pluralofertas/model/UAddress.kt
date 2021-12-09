@@ -5,7 +5,6 @@ import java.io.Serializable
 class UAddress: Serializable {
 
     var msg: String? = null
-    var rows: String? = null
     var uf: String? = null
     var logradouro: String? = null
 

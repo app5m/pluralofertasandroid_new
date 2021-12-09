@@ -68,6 +68,8 @@ class UAddressControl(private val context: Context, private val result: WSResult
 
         type = "listIdAddress"
 
+        uAddress = UAddress()
+
         uAddress.token = WSConstants.TOKEN
 
         val param: Call<List<UAddress>> = service.listIdAddress(id, uAddress)

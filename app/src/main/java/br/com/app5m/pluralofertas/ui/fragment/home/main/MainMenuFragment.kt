@@ -69,6 +69,9 @@ class MainMenuFragment : Fragment(), WSResult {
 
             preferences.clearUserData()
 
+            val intent = Intent(context, SigininContentActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
 
         btnEditProfile.setOnClickListener {

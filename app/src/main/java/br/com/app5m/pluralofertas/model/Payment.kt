@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 class Payment: Serializable {
-    constructor()
 
     @field:SerializedName("id")
     var id: String? = null
