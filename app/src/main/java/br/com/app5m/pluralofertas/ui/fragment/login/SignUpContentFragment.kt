@@ -28,9 +28,6 @@ class SignUpContentFragment : Fragment(), RecyclerItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         configInitialViews()
 
-        btnVoltarLoginButton.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
 
     }
     private fun configInitialViews(){

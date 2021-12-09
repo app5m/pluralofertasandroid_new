@@ -71,16 +71,6 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
     private fun configureInitialViews(){
 
-        val highlightsAdapter = HighlightsAdapter(requireContext(), highlightsList, this)
-
-        highlightsRv.apply {
-            setHasFixedSize(false)
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            adapter = highlightsAdapter
-        }
-
-        highlightsRv.addItemDecoration(CircleRecyclerViewDecoration())
-
         val salesAdapter = SalesAdapter(requireContext(), saleList,this)
 
         salesRv.apply {

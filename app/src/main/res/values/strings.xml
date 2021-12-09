@@ -3,6 +3,12 @@
 
     <string name="default_notification_channel_id">fcm_default_channel</string>
 
+    <string-array name="default_array">
+        <item>Selecione</item>
+        <item>Selecione</item>
+        <item>Selecione</item>
+    </string-array>
+
 
     <string-array name="freight">
         <item>Selecione</item>

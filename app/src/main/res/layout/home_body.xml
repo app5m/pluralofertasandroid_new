@@ -4,69 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
+   <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
 
-      <include
-          android:id="@+id/menuScrolling"
-          layout="@layout/menu_scrolling" />
-
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:id="@+id/viewPagerDestaques"
+      <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="0dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/menuScrolling">
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:orientation="horizontal">
 
-         <FrameLayout
-             android:id="@+id/framerLayHomeFragment"
+         <EditText
+             android:id="@+id/search_et"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             app:layout_constraintBottom_toBottomOf="parent"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="parent">
-
-            <me.relex.circleindicator.CircleIndicator3
-                android:id="@+id/circleIndicatorHomeFragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/highlightsRv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="visible">
-
-            </androidx.recyclerview.widget.RecyclerView>
-         </FrameLayout>
-
-         <androidx.constraintlayout.widget.Guideline
-             android:id="@+id/guideline19"
-             android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:orientation="horizontal"
-             app:layout_constraintGuide_percent="0.88" />
+             android:layout_marginEnd="12dp"
+             android:layout_weight="1"
+             android:background="@drawable/shape_main_stroke_gray_et"
+             android:ems="10"
+             android:hint="Pesquisar"
+             android:textSize="@dimen/text_size4"
+             android:textColor="@color/gray700"
+             android:textColorHint="@color/gray700" />
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+         <ImageButton
+             android:id="@+id/busca_btn"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:background="@drawable/rp_button"
+             android:padding="10dp"
+             android:scaleType="centerInside"
+             app:srcCompat="@drawable/ic_search"
+             app:tint="@color/white" />
+
+      </LinearLayout>
+
+        <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+           android:orientation="horizontal">
+
+           <Spinner
+               android:id="@+id/address_sp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:entries="@array/default_array"
+               android:layout_marginStart="8dp"
+               android:layout_weight="1" />
+
+           <ImageButton
+               android:id="@+id/filtrar_btn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="start"
+               android:padding="16dp"
+               android:layout_weight="0"
+               android:src="@drawable/ic_filter"
+               android:background="@android:color/transparent"
+               app:tint="@color/colorPrimary" />
+
+        </LinearLayout>
 
       <androidx.recyclerview.widget.RecyclerView
           android:id="@+id/salesRv"
           android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_marginStart="24dp"
-          android:layout_marginEnd="24dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintHorizontal_bias="0.0"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/viewPagerDestaques" />
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+   </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

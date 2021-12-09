@@ -12,6 +12,7 @@ import br.com.app5m.pluralofertas.adapter.CouponAdapter
 import br.com.app5m.pluralofertas.controller.CouponControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.Coupon
+import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.content_sale_details.*
@@ -41,8 +42,12 @@ class UsedCouponsFrag : Fragment(), RecyclerItemClickListener, WSResult {
         useful = Useful(requireContext())
         couponControl = CouponControl(requireContext(), this, useful)
 
-        useful.openLoading()
-        couponControl.listCoupons()
+
+        if (Preferences(requireContext()).getLogin()) {
+
+            useful.openLoading()
+            couponControl.listCoupons()
+        }
 
         configInitialViews()
 
