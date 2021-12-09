@@ -66,6 +66,17 @@
                         app:met_mask="###.###.###-##"/>
 
                     <com.santalu.maskedittext.MaskEditText
+                        android:id="@+id/birth_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/shape_main_gray_et"
+                        android:ems="10"
+                        android:hint="Data de nascimento"
+                        android:inputType="number"
+                        app:met_mask="##/##/####"/>
+
+                    <com.santalu.maskedittext.MaskEditText
                         android:id="@+id/phone_edittext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

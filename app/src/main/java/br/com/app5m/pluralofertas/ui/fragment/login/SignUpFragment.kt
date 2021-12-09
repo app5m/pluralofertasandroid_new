@@ -112,6 +112,7 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
             user.cpf = cpf_edittext.text.toString()
             user.cellphone = phone_edittext.text.toString()
             user.password = login_password_edittext.text.toString()
+            user.birth = birth_edittext.text.toString()
 
             val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
@@ -126,6 +127,7 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
         return if (!validation.name(fullname_edittext)) false
         else if (!validation.email(email_edittext)) false
         else if (!validation.cpf(cpf_edittext)) false
+        else if (!validation.date(birth_edittext)) false
         else if (!validation.cellphone(phone_edittext)) false
         else if (!validation.password(login_password_edittext, 0)) false
         else validation.coPassword(login_password_edittext, login_password2_edittext)

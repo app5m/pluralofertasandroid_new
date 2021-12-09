@@ -57,7 +57,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         if (Preferences(requireContext()).getLogin()) {
 
             useful.openLoading()
-            cartControl.listItems("8")
+            cartControl.listItems("12")
 
         } else {
             cartCons.visibility = View.GONE

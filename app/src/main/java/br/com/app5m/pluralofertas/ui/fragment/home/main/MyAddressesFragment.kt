@@ -86,14 +86,10 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
             if (requestCode == 1) {
                 preferences.getUAddressData()?.let { uAddressControl.saveAddress(it) }
             } else {
-
-//                uAddress.id
                 preferences.getUAddressData()?.let { uAddressControl.updateAddress(it) }
             }
 
         }
-
-
     }
 
     override fun onClickListenerUAddress(uaddress: UAddress) {

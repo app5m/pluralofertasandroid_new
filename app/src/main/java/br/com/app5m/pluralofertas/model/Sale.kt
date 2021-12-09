@@ -11,6 +11,9 @@ class Sale: Serializable {
     @field:SerializedName("valor")
     var value: String? = null
 
+    @field:SerializedName("capa")
+    var placeHolder: String? = null
+
     @field:SerializedName("detalhes")
     var details: Details? = null
 
