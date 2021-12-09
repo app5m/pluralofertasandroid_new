@@ -196,7 +196,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private fun configureInitialViews(){
 
-        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList,this, useful, this)
+        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList, useful, this)
 
         cartRv.apply {
             setHasFixedSize(false)

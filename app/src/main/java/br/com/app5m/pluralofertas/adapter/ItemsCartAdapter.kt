@@ -16,12 +16,9 @@ import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Coupon
 import br.com.app5m.pluralofertas.util.Useful
-import kotlinx.android.synthetic.main.fragment_cart.*
 
-class ItemsCartAdapter (private val context: Context, private val listCart: List<Cart>,
-                        private val clickOnListener: RecyclerItemClickListener, private val useful: Useful,
-                        private val wsResult: WSResult
-)
+class ItemsCartAdapter (private val context: Context, private val list: List<Cart>, private val useful: Useful,
+                        private val wsResult: WSResult)
     : RecyclerView.Adapter<ItemsCartAdapter.ViewHolder>() {
 
 
@@ -39,35 +36,41 @@ class ItemsCartAdapter (private val context: Context, private val listCart: List
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val cart = listCart[position]
-
+        val cart = list[position]
 
         holder.nameTv.text = cart.saleName
         holder.saleValueTv.text = cart.unityValue
 
-        CouponControl(context, object : WSResult {
-            override fun cpResponse(list: List<Coupon>, type: String) {
-                val couponAdapter = CouponAdapter(context, list, object : RecyclerItemClickListener{
-                    override fun onClickListenerCoupon(coupon: Coupon) {
+        "1".let {
+            CouponControl(context, object : WSResult {
+                override fun cpResponse(list: List<Coupon>, type: String) {
 
-                        val addCoupon = Cart()
+                    val responseInfo = list[0]
 
-                        addCoupon.cod = coupon.cod
-                        addCoupon.idItem = cart.idItem
-                        addCoupon.descValue = coupon.descValue
+                    if (responseInfo.status != "0") {
+                        val couponAdapter = CouponAdapter(context, list, object : RecyclerItemClickListener{
+                            override fun onClickListenerCoupon(coupon: Coupon) {
 
-                        CartControl(context, wsResult, useful).addCoupon(addCoupon)
+                                val addCoupon = Cart()
 
+                                addCoupon.cod = coupon.cod
+                                addCoupon.idItem = cart.idItem
+                                addCoupon.descValue = coupon.descValue
+
+                                CartControl(context, wsResult, useful).addCoupon(addCoupon)
+
+                            }
+                        } )
+
+                        holder.couponsRv.apply {
+                            setHasFixedSize(false)
+                            layoutManager = LinearLayoutManager(context)
+                            adapter = couponAdapter
+                        }
                     }
-                } )
-
-                holder.couponsRv.apply {
-                    setHasFixedSize(false)
-                    layoutManager = LinearLayoutManager(context)
-                    adapter = couponAdapter
                 }
-            }
-         }, useful).listCoupons(cart.idSale!!)
+            }, useful).listCoupons(it)
+        }
 
 
 
@@ -104,13 +107,10 @@ class ItemsCartAdapter (private val context: Context, private val listCart: List
 
         }
 
-
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerCart(cart) }
-
     }
 
     override fun getItemCount(): Int {
-        return listCart.size
+        return list.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

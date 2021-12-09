@@ -42,6 +42,9 @@ class CouponAdapter (private val context: Context, private val list: List<Coupon
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val coupon = list[position]
 
+        holder.validityTv.text = coupon.validityDate
+        holder.descValueTv.text = coupon.descValue
+
         if (selectedPosition == position) {
             recyclerItemClickListener.onClickListenerCoupon(coupon)
 

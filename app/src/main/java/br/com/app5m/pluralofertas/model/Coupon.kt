@@ -4,6 +4,9 @@ import java.io.Serializable
 
 class Coupon: Serializable {
 
+    @field:SerializedName("status")
+    var status: String? = null
+
     @field:SerializedName("id")
     var id: String? = null
 
