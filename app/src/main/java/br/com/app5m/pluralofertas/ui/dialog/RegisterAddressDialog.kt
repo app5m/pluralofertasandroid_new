@@ -102,7 +102,7 @@ class RegisterAddressDialog: DialogFragment() {
             dialog?.dismiss()
         }
 
-        btnBackLoginButton.setOnClickListener {
+        back_ib.setOnClickListener {
             dialog?.dismiss()
 
         }

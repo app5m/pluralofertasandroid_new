@@ -20,23 +20,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/btnBackLoginButton"
+        <ImageButton
+            android:id="@+id/back_ib"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_back_button_purple"
-            android:clickable="true"
-            android:gravity="center"
-            android:padding="6dp">
-
-            <ImageButton
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/backwardarrowbranca"
-                android:clickable="false" />
-
-        </LinearLayout>
+            android:layout_margin="12dp"
+            android:background="@drawable/rp_button"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
 
         <TextView
             android:id="@+id/title_txt"
@@ -51,11 +43,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-
             android:layout_marginBottom="8dp"
             android:layout_weight="1"
             app:hintTextColor="@color/colorAccent">
@@ -64,7 +54,6 @@
                 android:id="@+id/cep_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_cadastro_ll"
                 android:hint="CEP"
                 android:inputType="number"
                 android:textColor="@color/gray800"
@@ -95,7 +84,6 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/city"
                     android:textSize="@dimen/text_size5"
                     android:maxLines="1" />
@@ -113,7 +101,6 @@
                     android:id="@+id/uf_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_cadastro_ll"
                     android:hint="UF"
                     android:maxLines="1"
                     android:textSize="@dimen/text_size5" />
@@ -134,7 +121,6 @@
                 android:id="@+id/nbh_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_cadastro_ll"
                 android:hint="@string/neighborhood"
                 android:inputType="text"
                 android:maxLines="1"
@@ -160,7 +146,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="12dp"
-                    android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/address"
                     android:inputType="text"
                     android:maxLines="1"
@@ -179,7 +164,6 @@
                     android:id="@+id/num_edit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/background_cadastro_ll"
                     android:hint="@string/number"
                     android:maxLines="1"
                     android:inputType="number" />
@@ -201,7 +185,6 @@
                 android:id="@+id/comp_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_cadastro_ll"
                 android:hint="@string/complemento"
                 android:inputType="text"
                 android:maxLines="1"
@@ -214,7 +197,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/main_button_green"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:text="Salvar"

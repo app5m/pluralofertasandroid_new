@@ -14,26 +14,24 @@ import br.com.app5m.pluralofertas.model.Cart
 class ItemsCartAdapter (private val context: Context, private val listCart: List<Cart>,
                         private val clickOnListener: RecyclerItemClickListener
 )
-    : RecyclerView.Adapter<ItemsCartAdapter.CartViewHolder>() {
+    : RecyclerView.Adapter<ItemsCartAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(
-                R.layout.adapter_cart,
+                R.layout.adapter_items_cart,
                 parent,
                 false
             ) // vai conectar com os ids abaixo
-        return CartViewHolder(listItem)
+        return ViewHolder(listItem)
 
 
     }
 
-    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cart = listCart[position]
 
-        holder.productNameCartTv.text = "Nome do produto"
-        holder.valueProductTv.text = "100,00"
 
         holder.itemView.setOnClickListener { clickOnListener.onClickListenerCart(cart) }
 
@@ -43,17 +41,7 @@ class ItemsCartAdapter (private val context: Context, private val listCart: List
         return listCart.size
     }
 
-    class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val productNameCartTv: TextView
-        val valueProductTv: TextView
-        val productImageIv: ImageView
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        init {
-            productNameCartTv = itemView.findViewById(R.id.productNameCartTv)
-            valueProductTv = itemView.findViewById(R.id.valueProductTv)
-            productImageIv = itemView.findViewById(R.id.productImageIv)
-
-
-        }
     }
 }

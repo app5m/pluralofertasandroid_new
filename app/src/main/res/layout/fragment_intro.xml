@@ -18,7 +18,6 @@
         android:gravity="center"
         android:scaleX="0.7"
         android:scaleY="0.7"
-        android:src="@drawable/label"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

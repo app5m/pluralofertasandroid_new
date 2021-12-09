@@ -14,55 +14,30 @@ import br.com.app5m.pluralofertas.model.Coupon
 
 class CouponAdapter (private val context: Context, private val list: List<Coupon>,
                      private val clickOnListener: RecyclerItemClickListener)
-    : RecyclerView.Adapter<CouponAdapter.CuponsViewHolder>() {
+    : RecyclerView.Adapter<CouponAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CuponsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(
                 R.layout.adapter_coupons,
                 parent,
                 false
             ) // vai conectar com os ids abaixo
-        return CuponsViewHolder(listItem)
+        return ViewHolder(listItem)
 
 
     }
 
-    override fun onBindViewHolder(holder: CuponsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cupon = list[position]
-
-        holder.openCuponNameTv.text = "Nome do Cupom"
-        holder.descriptionOpenCuponTv.text = "Suspendisse sodales, metus sed aliquet ultricies, arcu diam cursus odio, auctor ultrices libero lacus nec eros. Donec laoreet at dui ut feugiat."
-        holder.priceOpenCuponTv.text = "100,00"
-        holder.cuponCodeValueTv.text = "TPR2FR"
-        holder.expirationDateCuponTv.text = "Válido até 31/03/2019."
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerCoupon(cupon) }
-        /*holder.itemView.setOnClickListener { clickOnListener.onClickListenerNews(cupon) }*/
-
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    class CuponsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val openCuponNameTv: TextView
-        val descriptionOpenCuponTv: TextView
-        val cuponCodeValueTv: TextView
-        val priceOpenCuponTv: TextView
-        val expirationDateCuponTv: TextView
-        val imageCupontIv: ImageView
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        init {
-            openCuponNameTv = itemView.findViewById(R.id.openCuponNameTv)
-            descriptionOpenCuponTv = itemView.findViewById(R.id.descriptionOpenCuponTv)
-            cuponCodeValueTv = itemView.findViewById(R.id.cuponCodeValueTv)
-            priceOpenCuponTv = itemView.findViewById(R.id.priceOpenCuponTv)
-            expirationDateCuponTv = itemView.findViewById(R.id.expirationDateCuponTv)
-            imageCupontIv = itemView.findViewById(R.id.imageHighLightsIv)
-
-
-        }
     }
 }

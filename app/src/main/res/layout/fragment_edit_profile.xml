@@ -31,7 +31,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:src="@drawable/btn_editar_perfil"
                     android:visibility="gone"
                     app:layout_constraintStart_toEndOf="@id/fotoPerfilMeuPerfilImageView"
                     app:layout_constraintTop_toTopOf="@id/fotoPerfilMeuPerfilImageView" />
@@ -68,7 +67,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
-                    android:background="@drawable/background_cadastro_ll"
                     android:fontFamily="@font/uni_neue_regular"
                     android:hint="nome completo"
                     android:imeOptions="actionNext"
@@ -86,7 +84,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
-                    android:background="@drawable/background_cadastro_ll"
                     android:fontFamily="@font/uni_neue_regular"
                     android:inputType="text"
                     android:paddingStart="20dp"
@@ -102,7 +99,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
-                    android:background="@drawable/background_cadastro_ll"
                     android:fontFamily="@font/uni_neue_regular"
                     android:text="alterar senha"
                     android:paddingStart="20dp"
@@ -119,7 +115,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
-                    android:background="@drawable/background_cadastro_ll"
                     android:fontFamily="@font/uni_neue_regular"
                     android:hint="CPF"
                     android:inputType="text"
@@ -140,7 +135,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
                     android:layout_marginBottom="32dp"
-                    android:background="@drawable/background_cadastro_ll"
                     android:fontFamily="@font/uni_neue_regular"
                     android:hint="00/00/0000"
                     android:imeOptions="actionDone"
@@ -203,7 +197,6 @@
             android:layout_marginEnd="37dp"
             android:clickable="true"
             android:gravity="center"
-            android:src="@drawable/btn_editar_perfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -211,8 +204,7 @@
                 android:id="@+id/editarPerfilMeuPerfilImageView"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:clickable="false"
-                android:src="@drawable/btn_editar_perfil" />
+                android:clickable="false" />
 
         </LinearLayout>
 
@@ -250,7 +242,6 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/backwardarrowbranca"
                 android:clickable="false"
 
                 />

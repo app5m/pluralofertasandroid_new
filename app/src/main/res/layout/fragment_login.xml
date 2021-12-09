@@ -25,7 +25,6 @@
                 android:layout_margin="12dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                android:background="@drawable/background_login_cadastro_ll"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -39,8 +38,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
-                        android:background="@drawable/rectangle_bg_et"
-                        android:drawableEnd="@drawable/ic_email_edittext"
                         android:fontFamily="@font/uni_neue_regular"
                         android:hint="email"
                         android:inputType="textEmailAddress"
@@ -54,8 +51,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
-                        android:background="@drawable/rectangle_bg_et"
-                        android:drawableEnd="@drawable/ic_password_edittext"
                         android:fontFamily="@font/uni_neue_regular"
                         android:inputType="textPassword"
                         android:paddingStart="16dp"
@@ -87,7 +82,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="25dp"
                             android:layout_marginBottom="4dp"
-                            android:background="@drawable/main_button_green"
                             android:fontFamily="@font/uni_neue_bold"
                             android:text="ENTRAR"
                             android:textColor="#ffffff"
@@ -128,7 +122,6 @@
                                 android:id="@+id/btnFacebookLogin"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/facebook_button"
                                 android:gravity="center"
                                 android:orientation="horizontal"
                                 android:padding="12dp">
@@ -136,7 +129,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:drawableStart="@drawable/ic_facebook_logo"
                                     android:drawablePadding="10dp"
                                     android:text="facebook"
                                     android:textColor="@android:color/white" />

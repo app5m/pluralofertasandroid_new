@@ -23,29 +23,25 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
 
-        container.adapter = mSectionsPagerAdapter
+        pagerView.adapter = mSectionsPagerAdapter
 
-        introIndicator.setViewPager(container)
+        introIndicator.setViewPager(pagerView)
 
-        container.addOnPageChangeListener(this)
+        pagerView.addOnPageChangeListener(this)
 
-        btnProximo.setOnClickListener {
+        next_intro_bt.setOnClickListener {
             nextButtonPressed()
         }
 
-        btnPular.setOnClickListener {
+        skip_intro_bt.setOnClickListener {
             finishIntro()
 
-        }
-
-        btnComecar.setOnClickListener {
-            finishIntro()
         }
 
     }
 
     private fun nextButtonPressed() {
-        container.setCurrentItem(min(container.currentItem +1, 4), true)
+        pagerView.setCurrentItem(min(pagerView.currentItem +1, 4), true)
     }
 
     private fun finishIntro() {
@@ -65,19 +61,11 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
     override fun onPageSelected(position: Int) {
         if (position == 2) {
-            btnProximo.visibility = View.GONE
-            btnPular.visibility = View.GONE
-            introIndicator.visibility = View.VISIBLE
-            btnComecar.setOnClickListener { finishIntro() }
-            btnComecar.visibility = View.VISIBLE
+            next_intro_bt.setOnClickListener { finishIntro() }
 
         } else {
-            btnComecar.visibility = View.GONE
-            btnProximo.visibility = View.VISIBLE
-            btnPular.visibility = View.VISIBLE
-            introIndicator.visibility = View.VISIBLE
-            btnProximo.setOnClickListener { nextButtonPressed() }
 
+            next_intro_bt.setOnClickListener { nextButtonPressed() }
         }
     }
 
@@ -102,20 +90,20 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
             when (arguments?.getInt(ARG_SECTION_NUMBER)) {
                 0 -> {
-                    rootView.onboardingImg.setImageResource(R.drawable.label)
+//                    rootView.onboardingImg.setImageResource(R.drawable.label)
                     rootView.onboardingTitle.setText("Aproveite as vantagens:")
                     rootView.onboardingSubtitle.setText("Veja as promoções de sua cidade e aproveite os descontos")
                 }
 
                 1 -> {
-                    rootView.onboardingImg.setImageResource(R.drawable.shopping_cart)
+//                    rootView.onboardingImg.setImageResource(R.drawable.shopping_cart)
                     rootView.onboardingTitle.setText("Compre com Facilidade:")
                     rootView.onboardingSubtitle.setText("Com o plural é tudo muito fácil e seguro, com poucos cliques você compra um cupom")
 
                 }
 
                 2 -> {
-                    rootView.onboardingImg.setImageResource(R.drawable.mobile)
+//                    rootView.onboardingImg.setImageResource(R.drawable.mobile)
                     rootView.onboardingTitle.setText("Na palma da sua mão:")
                     rootView.onboardingSubtitle.setText("Seu cupom com você, aonde você estiver, aproveite!")
                 }

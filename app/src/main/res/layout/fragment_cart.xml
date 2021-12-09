@@ -64,7 +64,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
-                    android:background="@drawable/btn_verde"
                     android:fontFamily="@font/uni_neue_bold"
                     android:text="PAGAR R$ 00,00"
                     android:textColor="#ffff"
