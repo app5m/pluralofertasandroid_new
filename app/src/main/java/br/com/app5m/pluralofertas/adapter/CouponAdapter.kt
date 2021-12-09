@@ -20,7 +20,7 @@ class CouponAdapter (private val context: Context, private val list: List<Coupon
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CuponsViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(
-                R.layout.adapter_cupons,
+                R.layout.adapter_coupons,
                 parent,
                 false
             ) // vai conectar com os ids abaixo

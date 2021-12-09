@@ -42,46 +42,46 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         useful.openLoading()
         cartControl.listItems()
-
-        configureInitialViews()
-
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    override fun cResponse(list: List<Cart>, type: String) {
-
-        useful.closeLoading()
-
-        val responseInfo = list[0]
-
-        if (type == "listItems") {
-
-            cartList.clear()
-
-            if (responseInfo.rows != "0") {
-                cartList.addAll(list)
-                cartCons.visibility = View.VISIBLE
-                emptyContent.visibility = View.GONE
-            } else {
-                emptyContent.visibility = View.VISIBLE
-                cartCons.visibility = View.GONE
-            }
-
-            cartRv.adapter!!.notifyDataSetChanged()
-        }
-
+//
+//        configureInitialViews()
 
     }
 
-    private fun configureInitialViews(){
-
-        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList,this)
-
-        cartRv.apply {
-            setHasFixedSize(false)
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = cartItemsAdapter
-        }
-
-    }
+//    @SuppressLint("NotifyDataSetChanged")
+//    override fun cResponse(list: List<Cart>, type: String) {
+//
+//        useful.closeLoading()
+//
+//        val responseInfo = list[0]
+//
+//        if (type == "listItems") {
+//
+//            cartList.clear()
+//
+//            if (responseInfo.rows != "0") {
+//                cartList.addAll(list)
+//                cartCons.visibility = View.VISIBLE
+//                emptyContent.visibility = View.GONE
+//            } else {
+//                emptyContent.visibility = View.VISIBLE
+//                cartCons.visibility = View.GONE
+//            }
+//
+//            cartRv.adapter!!.notifyDataSetChanged()
+//        }
+//
+//
+//    }
+//
+//    private fun configureInitialViews(){
+//
+//        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList,this)
+//
+//        cartRv.apply {
+//            setHasFixedSize(false)
+//            layoutManager = LinearLayoutManager(requireContext())
+//            adapter = cartItemsAdapter
+//        }
+//
+//    }
 }

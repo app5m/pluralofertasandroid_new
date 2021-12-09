@@ -11,7 +11,7 @@
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_cartcheckout.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_details_product.xml" value="0.22" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_details_sale.xml" value="0.1796875" />
-        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_home.xml" value="0.13333333333333333" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_intro.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/activity_permission_localization.xml" value="0.1527777777777778" />
@@ -53,6 +53,7 @@
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/loading.xml" value="0.1527777777777778" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/menu_scrolling.xml" value="0.1" />
         <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/layout/tool_bar.xml" value="0.1796875" />
+        <entry key="..\:/Arquivos/Android/AndroidStudioProjects/pluralofertasandroid_new/app/src/main/res/menu/menu.xml" value="0.1796875" />
       </map>
     </option>
   </component>

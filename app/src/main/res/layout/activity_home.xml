@@ -28,7 +28,6 @@
             android:paddingBottom="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="#660066"
-            app:itemIconTint="@color/buttom_navigation_cores"
             android:textDirection="locale"
             android:layout_gravity="bottom"
             app:menu="@menu/menu"
