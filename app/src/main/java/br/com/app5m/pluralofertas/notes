@@ -1,17 +1,13 @@
 PLURAL // ultimas coisas
 
-- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
-
 - Pedido com pagamento via cartão de crédito xv/ boleto x
 
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 
-- Meus Pedidos (lista all com informações) xv
-- Detalhes do meu Pedido (todas informações)
+- Meus Pedidos (lista all com informações) v
+- Detalhes do meu Pedido (todas informações) v
 
-
-- Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
-
+- tela sucesso
 
 
 bugs:
@@ -24,5 +20,7 @@ depois:
 categoria = id
 valor_de=1&valor_ate=1
 
+- Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
 
+- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
 

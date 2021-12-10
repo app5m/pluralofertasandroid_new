@@ -64,9 +64,9 @@ class UsedCouponsFrag : Fragment(), RecyclerItemClickListener, WSResult {
         useful.closeLoading()
 
         couponList.clear()
+        couponList.addAll(list)
 
         if (couponList[0].rows != "0") {
-            couponList.addAll(list)
             usedCouponsRv.visibility = View.VISIBLE
             content_empty_list.visibility = View.GONE
 

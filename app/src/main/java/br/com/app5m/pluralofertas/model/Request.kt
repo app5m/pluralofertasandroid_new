@@ -16,6 +16,9 @@ class Request: Serializable {
     @field:SerializedName("id_cupom")
     var idCoupon: String? = null
 
+    @field:SerializedName("status_pagamento")
+    var statusPayment: String? = null
+
     @field:SerializedName("valor_desc_cupom")
     var descValueCoupon: String? = null
 

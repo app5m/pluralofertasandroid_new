@@ -17,39 +17,19 @@ import kotlinx.android.synthetic.main.fragment_mypayments.*
 import java.util.ArrayList
 
 class MyPaymentsFragment: Fragment(), RecyclerItemClickListener {
-    private var paymentsList  = ArrayList<Payment>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
-        val viewFragment = inflater.inflate(R.layout.fragment_mypayments, container, false)
+        return inflater.inflate(R.layout.fragment_mypayments, container, false)
 
-        return viewFragment
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        backPaymentBnt.setOnClickListener{
-            requireActivity().onBackPressed()
-        }
-        configureInitialViews()
-        paymentsList.add(Payment())
-        paymentsList.add(Payment())
-        paymentsList.add(Payment())
-        paymentsList.add(Payment())
-        paymentsList.add(Payment())
-        paymentsList.add(Payment())
 
-    }
-    private fun configureInitialViews(){
-
-        val usedCuponAdapter = PaymentsAdapter(requireContext(),paymentsList,this)
-
-        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(context, 1)
-        ceditCardPaymentsRv.layoutManager = layoutManager
-        ceditCardPaymentsRv.adapter = usedCuponAdapter
     }
 
 

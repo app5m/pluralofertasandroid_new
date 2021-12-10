@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.activity.SucessAct"
+            android:exported="true" />
+        <activity
             android:name=".ui.activity.PaymentFlowContainerAct"
             android:exported="true" />
         <activity

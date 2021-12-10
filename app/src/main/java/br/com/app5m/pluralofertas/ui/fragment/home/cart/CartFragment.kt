@@ -170,9 +170,9 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //
 
             cartList.clear()
+            cartList.addAll(list)
 
             if (responseInfo.rows != "0") {
-                cartList.addAll(list)
                 cartCons.visibility = View.VISIBLE
                 content_empty_list.visibility = View.GONE
 

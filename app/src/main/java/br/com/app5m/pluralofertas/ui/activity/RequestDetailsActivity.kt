@@ -52,13 +52,45 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
         useful = Useful(this)
         requestControl = RequestControl(this, this, useful)
 
-        supportActionBar?.let { useful.setActionBar(this, it, "", 0) }
+        supportActionBar?.let { useful.setActionBar(this, it, "Detalhes do pedido", 0) }
 
         if (intent.extras != null) {
             useful.openLoading()
             intent.getStringExtra("idRequest")?.let { requestControl.findId(it) }
         }
+//
+//        [
+//            {
+//                "id": 14,
+//                "tipo_pagamento": "Boleto",
+//                "tipo_entrega": "Retirada",
+//                "valor_total": " R$ 194,00",
+//                "data": "10/11/2021 - 21:24:11",
+//                "status_pedido": "Em separação",
+//                "oferta": "Testando",
+//                "status_pagamento": "AUTORIZADO",
 
+
+//                "frete": "PAC",
+//                "cep": " 94818-47",
+//                "cidade": "Alvorada",
+//                "endereco": "R. Martinho Lutero",
+//                "numero": "",
+//                "bairro": " Formoza",
+//                "complemento": "",
+//                "valor_frete": " R$ 20,00",
+
+//                "valor_desc": " R$ 25,00",
+//                "valor_subtotal": " R$ 209,00",
+//                "voucher": "y1N37uU1",
+//                "cupom": "swTWan3p",
+//                "url": "4878-f34502796d66877a6962afa6e5daa1d2.jpg",
+
+//                "id_derivado": 3,
+//                "nome_derivado": "Rota adicional",
+//                "descricao_derivado": "extensão do passeio",
+//                "valor_derivado": " R$ 30,00",
+//            }
 
 
     }

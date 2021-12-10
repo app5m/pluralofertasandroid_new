@@ -34,24 +34,13 @@ class RequestAdapter(private val context: Context, private val list: List<Reques
         val request = list[position]
 
         holder.requestInfoTv.text = request.sale +
-                "\n\n" + "Tipo:" + request.typeDelivery +
-                "\n" + "Método de pagamento:" + request.typePayment +
-                "\n" + "Método de pagamento:" + request.date
+                "\n\n" + "Tipo: " + request.typeDelivery +
+                "\n" + "Método de pagamento: " + request.typePayment +
+                "\n" + "Data: " + request.date +
+                "\n\n" + "Status do pagamento: " + request.statusPayment
 
-        holder.valueTv.text = request.totalValue
+                holder.valueTv.text = request.totalValue
 
-//                "oferta": "Testando",
-//                "data": "09/12/2021 - 10:03:31",
-//                "valor_total": " R$ 70,00",
-//                "tipo_entrega": "Retirada",
-//                "tipo_pagamento": "Boleto",
-//        [
-//            {
-//                "id": 15,
-//                "status_pedido": "Recebido",
-//                "status_pagamento": "AGUARDANDO",
-//                "rows": 9
-//            },
 
         holder.itemView.setOnClickListener { recyclerItemClickListener.onClickListenerRequest(request)}
 

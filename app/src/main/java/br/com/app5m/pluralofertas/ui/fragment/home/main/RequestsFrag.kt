@@ -54,9 +54,9 @@ class RequestsFrag: Fragment(), RecyclerItemClickListener, WSResult {
         useful.closeLoading()
 
         requestList.clear()
+        requestList.addAll(list)
 
         if (requestList[0].rows != "0") {
-            requestList.addAll(list)
             requestsRv.visibility = View.VISIBLE
             content_empty_list.visibility = View.GONE
 
