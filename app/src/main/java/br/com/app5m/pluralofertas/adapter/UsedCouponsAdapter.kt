@@ -4,60 +4,49 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Coupon
 
-class UsedCouponsAdapter(private val context: Context, private val listUsedCoupon: List<Coupon>,
+class UsedCouponsAdapter(private val context: Context, private val list: List<Coupon>,
                          private val clickOnListener: RecyclerItemClickListener
 )
-    : RecyclerView.Adapter<UsedCouponsAdapter.UsedViewHolder>() {
+    : RecyclerView.Adapter<UsedCouponsAdapter.ViewHolder>() {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val validityTv: TextView = itemView.findViewById(R.id.validity_tv)
+        val descValueTv: TextView = itemView.findViewById(R.id.descValue_tv)
+        val couponPositionTv: TextView = itemView.findViewById(R.id.positionCouponTv)
+    }
 
 
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.adapter_used_mycupons, parent, false) // vai conectar com os ids abaixo
-        return UsedViewHolder(listItem)
+        return ViewHolder(listItem)
 
 
     }
 
-    override fun onBindViewHolder(holder: UsedViewHolder, position: Int) {
-        val cupon = listUsedCoupon[position]
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-      /*  holder.productNameTv.text = "Mega Burguer"
-        holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
-        holder.asOfTv.text = "A partir de "
-        holder.productValueTv.text = "10,00 "*/
+        val coupon = list[position]
 
-/*
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerNews(cupon)}
-*/
+        holder.couponPositionTv.text = "Código do cupom: " + coupon.cod
+
+        holder.validityTv.text = "Validade: " + coupon.validityDate
+        holder.descValueTv.text = "Desconto: " + coupon.descValue
+
 
     }
 
     override fun getItemCount(): Int {
-        return listUsedCoupon.size
+        return list.size
     }
 
-    class UsedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        /*val productNameTv: TextView
-        val productDescriptionTv: TextView
-        val asOfTv: TextView
-        val productValueTv: TextView
-        val productImageIv: ImageView
-
-        init {
-            productNameTv = itemView.findViewById(R.id.productNameTv)
-            productDescriptionTv = itemView.findViewById(R.id.productDescriptionTv)
-            asOfTv = itemView.findViewById(R.id.asOfTv)
-            productValueTv = itemView.findViewById(R.id.productValueTv)
-            productImageIv = itemView.findViewById(R.id.imageProductsIv)
-
-        }*/
-    }
 
 }
