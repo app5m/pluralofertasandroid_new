@@ -39,7 +39,7 @@ class RequestAdapter(private val context: Context, private val list: List<Reques
                 "\n" + "Data: " + request.date +
                 "\n\n" + "Status do pagamento: " + request.statusPayment
 
-                holder.valueTv.text = request.totalValue
+        holder.valueTv.text = request.totalValue
 
 
         holder.itemView.setOnClickListener { recyclerItemClickListener.onClickListenerRequest(request)}

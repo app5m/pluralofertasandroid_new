@@ -10,6 +10,9 @@ class Request: Serializable {
     @field:SerializedName("parcelas")
     var installments: String? = null
 
+    @field:SerializedName("status_pedido")
+    var statusRequest: String? = null
+
     @field:SerializedName("obs")
     var obs: String? = null
 
@@ -22,6 +25,15 @@ class Request: Serializable {
     @field:SerializedName("valor_desc_cupom")
     var descValueCoupon: String? = null
 
+    @field:SerializedName("cupom")
+    var coupon: String? = null
+
+    @field:SerializedName("descricao_derivado")
+    var derivativeDesc: String? = null
+
+    @field:SerializedName("valor_desc")
+    var descValue: String? = null
+
     @field:SerializedName("valor_subtotal")
     var subTotalValue: String? = null
 
@@ -33,6 +45,9 @@ class Request: Serializable {
 
     @field:SerializedName("valor_frete")
     var freightValue: String? = null
+
+    @field:SerializedName("frete")
+    var freight: String? = null
 
     @field:SerializedName("id_frete")
     var idFreight: String? = null
@@ -66,6 +81,9 @@ class Request: Serializable {
 
     @field:SerializedName("card_numero")
     var cardNumber: String? = null
+
+    @field:SerializedName("numero")
+    var number: String? = null
 
     @field:SerializedName("ultimos_digitos")
     var lastDigitsCard: String? = null
@@ -145,11 +163,20 @@ class Request: Serializable {
     @field:SerializedName("nome")
     var name: String? = null
 
+    @field:SerializedName("nome_derivado")
+    var derivativeName: String? = null
+
+    @field:SerializedName("valor_derivado")
+    var derivativeValue: String? = null
+
     @field:SerializedName("documento")
     var document: String? = null
 
     @field:SerializedName("card_complemento")
     var cardComplement: String? = null
+
+    @field:SerializedName("complemento")
+    var complement: String? = null
 
     @field:SerializedName("card_endereco")
     var cardAddress: String? = null
@@ -157,11 +184,17 @@ class Request: Serializable {
     @field:SerializedName("cep")
     var cep: String? = null
 
+    @field:SerializedName("voucher")
+    var voucher: String? = null
+
     @field:SerializedName("card_cep")
     var cardCep: String? = null
 
     @field:SerializedName("card_cidade")
     var cardCity: String? = null
+
+    @field:SerializedName("cidade")
+    var city: String? = null
 
     @field:SerializedName("card_estado")
     var cardState: String? = null

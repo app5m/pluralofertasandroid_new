@@ -24,14 +24,6 @@
             android:orientation="vertical" >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/uni_neue_regular"
-                android:text="Detalhes do pedido:"
-                android:textStyle="bold"
-                android:textSize="@dimen/text_size5"/>
-
-            <TextView
                 android:id="@+id/requestInfoTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,6 +45,17 @@
                 android:text=""
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_size5" />
+
+
+            <Button
+                style="@style/StyleButton4"
+                android:id="@+id/seeTicketBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/uni_neue_bold"
+                android:text="Visualizar boleto"
+                android:textSize="@dimen/text_size3"/>
 
             <View style="@style/Divider.Horizontal"/>
 
@@ -105,6 +108,18 @@
                 android:fontFamily="@font/uni_neue_regular"
                 android:text=""
                 android:textSize="14sp"/>
+
+
+            <Button
+                style="@style/StyleButton4"
+                android:id="@+id/seeVoucherBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/uni_neue_bold"
+                android:text="Visualizar voucher"
+                android:textSize="@dimen/text_size3"
+                android:backgroundTint="@color/colorAccent"/>
 
             <View style="@style/Divider.Horizontal"/>
 

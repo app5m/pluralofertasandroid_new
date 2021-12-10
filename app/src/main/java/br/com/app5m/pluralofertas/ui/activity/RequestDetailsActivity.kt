@@ -27,6 +27,7 @@ import br.com.app5m.pluralofertas.ui.fragment.PhotoContainerFrag
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
+import kotlinx.android.synthetic.main.activity_details_request.*
 import kotlinx.android.synthetic.main.activity_details_sale.*
 import kotlinx.android.synthetic.main.content_empty_list.*
 import kotlinx.android.synthetic.main.content_sale_details.*
@@ -58,10 +59,30 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
             useful.openLoading()
             intent.getStringExtra("idRequest")?.let { requestControl.findId(it) }
         }
-//
+
+
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun rResponse(list: List<Request>, type: String) {
+
+        useful.closeLoading()
+
+        val requestResponseInfo = list[0]
+
+        //
 //        [
 //            {
-//                "id": 14,
 //                "tipo_pagamento": "Boleto",
 //                "tipo_entrega": "Retirada",
 //                "valor_total": " R$ 194,00",
@@ -69,6 +90,16 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //                "status_pedido": "Em separação",
 //                "oferta": "Testando",
 //                "status_pagamento": "AUTORIZADO",
+
+
+        requestInfoTv.text = requestResponseInfo.sale +
+                "\n\n" + "Tipo: " + requestResponseInfo.typeDelivery +
+                "\n" + "Método de pagamento: " + requestResponseInfo.typePayment +
+                "\n" + "Status do pedido: " + requestResponseInfo.statusRequest +
+                "\n" + "Data: " + requestResponseInfo.date +
+                "\n\n" + "Status do pagamento: " + requestResponseInfo.statusPayment
+
+        value_tv.text = requestResponseInfo.totalValue
 
 
 //                "frete": "PAC",
@@ -80,11 +111,24 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //                "complemento": "",
 //                "valor_frete": " R$ 20,00",
 
+        freightInfoTv.text = "Frete: " + requestResponseInfo.freight +
+                "\n\n" + "CEP: " + requestResponseInfo.cep +
+                "\n" + "Cidade: " + requestResponseInfo.city +
+                "\n" + "Bairro: " + requestResponseInfo.neighborhood +
+                "\n" + "Número: " + requestResponseInfo.number +
+                "\n" + "Complemento: " + requestResponseInfo.cardComplement +
+                "\n\n" + "Valor do frete: " + requestResponseInfo.freightValue
+
 //                "valor_desc": " R$ 25,00",
 //                "valor_subtotal": " R$ 209,00",
 //                "voucher": "y1N37uU1",
 //                "cupom": "swTWan3p",
 //                "url": "4878-f34502796d66877a6962afa6e5daa1d2.jpg",
+
+        voucherInfoTv.text = "Voucher: " + requestResponseInfo.voucher +
+                "\n\n" + "Valor do desconto: " + requestResponseInfo.descValue +
+                "\n" + "Código do cupom: " + requestResponseInfo.coupon
+
 
 //                "id_derivado": 3,
 //                "nome_derivado": "Rota adicional",
@@ -92,13 +136,11 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //                "valor_derivado": " R$ 30,00",
 //            }
 
+        derivativeInfoTv.text = "Nome do derivado: " + requestResponseInfo.derivativeName+
+                "\n\n" + "Valor do derivado: " + requestResponseInfo.derivativeValue+
+                "\n" + "Descrição: " + requestResponseInfo.derivativeDesc
 
-    }
 
-
-    override fun rResponse(list: List<Request>, type: String) {
-
-        useful.closeLoading()
     }
 
 
