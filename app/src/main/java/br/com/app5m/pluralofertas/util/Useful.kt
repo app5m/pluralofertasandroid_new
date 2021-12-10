@@ -23,6 +23,8 @@ import androidx.fragment.app.FragmentManager
 import br.com.app5m.pluralofertas.R
 import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import java.text.NumberFormat
+import java.util.*
 
 
 class Useful (private val context: Context) {
@@ -110,6 +112,19 @@ class Useful (private val context: Context) {
         vectorDrawable.draw(canvas)
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
+
+    fun moneyToDouble(valor: String): Double {
+        return valor.replace(" ", "")
+            .replace("R$", "")
+            .replace(",", ".").toDouble()
+    }
+
+    fun parseMoney(valor: Double): String {
+        val COUNTRY = "BR"
+        val LANGUAGE = "pt"
+        return NumberFormat.getCurrencyInstance(Locale(LANGUAGE, COUNTRY)).format(valor)
+    }
+
 
     @SuppressLint("QueryPermissionsNeeded")
     fun openWebPage(url: String?) {

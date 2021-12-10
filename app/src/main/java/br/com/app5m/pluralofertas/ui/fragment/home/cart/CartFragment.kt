@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +41,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private lateinit var globalFreightResponseInfo : Freight
     private lateinit var globalIdCart : String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,16 +56,6 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         cartControl = CartControl(requireContext(), this, useful)
         freightControl = FreightControl(requireContext(), this, useful)
 
-        if (Preferences(requireContext()).getLogin()) {
-
-            useful.openLoading()
-            cartControl.loadCart()
-
-        } else {
-            cartCons.visibility = View.GONE
-            content_empty_list.visibility = View.VISIBLE
-        }
-
         configureInitialViews()
 
     }
@@ -75,7 +67,42 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         if (globalFreightResponseInfo.cService!!.status == "01") {
 
-            valueFreightTv.text = globalFreightResponseInfo.cService!!.value
+            valueFreightTv.text = "R$ " + globalFreightResponseInfo.cService!!.value
+
+            freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
+                    val freight = Freight()
+
+                    freight.destinyCep = "94836000"
+                    freight.cartId = globalIdCart
+
+                    when (position) {
+                        0 -> {
+
+                            //pac ver codigo pac dps
+                            freight.cod = "40010"
+
+                        }
+                        1 -> {
+                            //sedex
+                            freight.cod = "40010"
+                        }
+                        else -> {
+                            return
+                        }
+                    }
+
+                    freightControl.estimateFreight(freight)
+
+
+                }
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+            }
+
+            cartControl.listItems(globalIdCart)
 
 //
 //        "cServico": {
@@ -102,14 +129,14 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     override fun cResponse(list: List<Cart>, type: String) {
-
-        useful.closeLoading()
 
         val responseInfo = list[0]
 
         if (type == "listItems") {
+
+            useful.closeLoading()
 
             //
 //        [
@@ -142,67 +169,55 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //        ]
 //
 
-            subtotalTv.text = responseInfo.finalValue
-            totalTv.text = ""
-
             cartList.clear()
 
             if (responseInfo.rows != "0") {
                 cartList.addAll(list)
                 cartCons.visibility = View.VISIBLE
                 content_empty_list.visibility = View.GONE
+
+                cartRv.adapter!!.notifyDataSetChanged()
             } else {
                 content_empty_list.visibility = View.VISIBLE
                 cartCons.visibility = View.GONE
+
+                return
             }
 
-            cartRv.adapter!!.notifyDataSetChanged()
+            subtotalTv.text = responseInfo.finalValue
+
+            val total = useful.moneyToDouble(globalFreightResponseInfo.cService!!.value!!.replace(".", "")) +
+                    useful.moneyToDouble(responseInfo.finalValue!!.replace(".", ""))
+
+            totalTv.text = "R$ " + total.toString().replace(".", ",")
+
 
             //loadcart
-        } else {
-            if (responseInfo.cartOpen == null ) {
+        } else if (type == "loadCart") {
+            if (responseInfo.cartOpen == null) {
+
+                useful.closeLoading()
 
                 content_empty_list.visibility = View.VISIBLE
                 cartCons.visibility = View.GONE
             } else {
+
                 globalIdCart = responseInfo.cartOpen!!
-
-                cartControl.listItems(globalIdCart)
-            }
-
-        }
-
-        freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
                 val freight = Freight()
 
                 freight.destinyCep = "94836000"
-                freight.cartId = "6"
-
-                when (position) {
-                    1 -> {
-
-                        //pac ver codigo pac dps
-                        freight.cod = "40010"
-
-                    }
-                    2 -> {
-                        //sedex
-                        freight.cod = "40010"
-                    }
-                    else -> {
-                        return
-                    }
-                }
+                freight.cartId = globalIdCart
+                freight.cod = "40010"
 
                 freightControl.estimateFreight(freight)
 
-
             }
-            override fun onNothingSelected(parent: AdapterView<*>?) {
 
-            }
+        } else {
+
+            cartControl.listItems(globalIdCart)
+
         }
 
 
@@ -229,6 +244,19 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         addressTv.setOnClickListener {
             useful.startFragmentOnBack(MyAddressesFragment(), requireActivity().supportFragmentManager)
         }
+
+
+
+        if (Preferences(requireContext()).getLogin()) {
+
+            useful.openLoading()
+            cartControl.loadCart()
+
+        } else {
+            cartCons.visibility = View.GONE
+            content_empty_list.visibility = View.VISIBLE
+        }
+
 
     }
 }
