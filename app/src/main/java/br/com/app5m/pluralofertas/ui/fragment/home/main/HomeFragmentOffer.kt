@@ -6,25 +6,21 @@ import android.os.Bundle
 import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.ui.activity.SaleDetailsActivity
-import br.com.app5m.pluralofertas.adapter.HighlightsAdapter
 import br.com.app5m.pluralofertas.adapter.SalesAdapter
 import br.com.app5m.pluralofertas.controller.SaleControl
 import br.com.app5m.pluralofertas.controller.UAddressControl
-import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
-import br.com.app5m.pluralofertas.util.CircleRecyclerViewDecoration
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
-import br.com.app5m.pluralofertas.model.Highlight
 import br.com.app5m.pluralofertas.model.Sale
 import br.com.app5m.pluralofertas.model.UAddress
-import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
 
@@ -65,6 +61,15 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
         configureInitialViews()
 
     }
+
+    override fun onClickListenerSale(sale: Sale) {
+
+        val intent = Intent(activity, SaleDetailsActivity::class.java)
+        intent.putExtra("idSale", sale.id)
+        startActivity(intent)
+
+    }
+
 
     override fun uAResponse(list: List<UAddress>, type: String) {
 
@@ -137,15 +142,44 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = salesAdapter
         }
+
+
+        filtrar_btn.setOnClickListener {
+
+            openFilterDialog()
+
+        }
+
+        search_btn.setOnClickListener {
+
+
+            saleControl.findSaleByName(search_et.text.toString())
+        }
     }
 
-    override fun onClickListenerSale(sale: Sale) {
+    private fun openFilterDialog() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.AppTheme_SheetDialog)
+        val bottomSheetView: View = LayoutInflater.from(context).inflate(
+            R.layout.bottom_dialog_filter,
+            requireActivity().findViewById(R.id.sheet_container)
+        )
+        bottomSheetDialog.setContentView(bottomSheetView)
+        bottomSheetDialog.show()
 
-        val intent = Intent(activity, SaleDetailsActivity::class.java)
-        intent.putExtra("idSale", sale.id)
-        startActivity(intent)
+        val categoryBtn = bottomSheetView.findViewById<Button>(R.id.category_btn)
+        val valueBtn = bottomSheetView.findViewById<Button>(R.id.value_btn)
 
+        categoryBtn.setOnClickListener {
+
+            bottomSheetDialog.dismiss()
+        }
+
+        valueBtn .setOnClickListener {
+
+            bottomSheetDialog.dismiss()
+        }
     }
+
 
 }
 

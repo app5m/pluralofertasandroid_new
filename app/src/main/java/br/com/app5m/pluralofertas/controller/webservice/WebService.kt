@@ -67,6 +67,11 @@ interface WebService {
     @POST("ofertas/find")
     fun findSale(@Body s: Sale): Call<List<Sale>>
 
+    @POST("ofertas/find")
+    fun findSaleByName(
+        @Query("nome") name: String,
+        @Body s: Sale): Call<List<Sale>>
+
     @POST("ofertas/listid/" + "{id}")
     fun listIdSale(
         @Path("id") id: String,

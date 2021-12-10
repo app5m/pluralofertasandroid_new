@@ -1,15 +1,5 @@
 PLURAL // ultimas coisas
 
-
-- Filtro de OFERTAS
-nome = string
-categoria = id
-
-
-valor_de=1&valor_ate=1 4:15
-
-
-
 - Pedido com pagamento via cartão de crédito xv/ boleto x
 
 - Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
@@ -25,5 +15,15 @@ valor_de=1&valor_ate=1 4:15
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
 
-endereco update trocando numero por bairro, estrou madnando certo 3:30
+bugs:
+
+-endereco update trocando numero por bairro, estrou madnando certo 3:30
+
+depois:
+
+-filter
+categoria = id
+valor_de=1&valor_ate=1
+
+
 
