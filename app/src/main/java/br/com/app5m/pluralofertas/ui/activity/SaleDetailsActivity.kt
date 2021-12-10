@@ -26,6 +26,7 @@ import br.com.app5m.pluralofertas.model.Derivative
 import br.com.app5m.pluralofertas.model.Photo
 import br.com.app5m.pluralofertas.model.Sale
 import br.com.app5m.pluralofertas.ui.fragment.PhotoContainerFrag
+import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.activity_details_sale.*
@@ -43,7 +44,7 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
     private lateinit var cartControl: CartControl
 
     private lateinit var globalResponseSaleInfo: Sale
-    private lateinit var globalDerivative: Derivative
+    private var globalDerivative = Derivative()
 
     private var fragmentList = ArrayList<Fragment>()
 
@@ -87,6 +88,11 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
         buyBt.setOnClickListener {
 
+            if (!Preferences(this).getLogin()) {
+                SingleToast.INSTANCE.show(this, "É necessário efetuar seu login para poder realizar compras!", Toast.LENGTH_LONG)
+                return@setOnClickListener
+            }
+
             val newItem = Cart()
 
             newItem.idSale = globalResponseSaleInfo.details!!.id
@@ -100,6 +106,11 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(imageRunnable)
+    }
+
     @SuppressLint("NotifyDataSetChanged")
     override fun sResponse(list: List<Sale>, type: String) {
 
@@ -110,6 +121,18 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
         saleNameTv.text = globalResponseSaleInfo.details!!.name
         typeTv.text = globalResponseSaleInfo.details!!.type
         saleValueTv.text = globalResponseSaleInfo.details!!.value
+
+        val derivativesAdapter =
+            globalResponseSaleInfo.derivativeList?.let {
+                DerivativesAdapter(this,
+                    it, this)
+            }
+
+        derivativesRv.apply {
+            setHasFixedSize(false)
+            layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
+            adapter = derivativesAdapter
+        }
 
         if (globalResponseSaleInfo.photoList?.get(0)!!.rows.equals("0")) return
 
@@ -167,17 +190,6 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 //            }
 //        ]
 
-        val derivativesAdapter =
-            globalResponseSaleInfo.derivativeList?.let {
-                DerivativesAdapter(this,
-                    it, this)
-            }
-
-        derivativesRv.apply {
-            setHasFixedSize(false)
-            layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
-            adapter = derivativesAdapter
-        }
 
     }
 

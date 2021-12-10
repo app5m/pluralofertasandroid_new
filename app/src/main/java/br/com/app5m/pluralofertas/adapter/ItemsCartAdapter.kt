@@ -1,6 +1,7 @@
 package br.com.app5m.pluralofertas.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,8 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Coupon
+import br.com.app5m.pluralofertas.ui.activity.SigininContentActivity
+import br.com.app5m.pluralofertas.util.DialogMessages
 import br.com.app5m.pluralofertas.util.Useful
 
 class ItemsCartAdapter (private val context: Context, private val list: List<Cart>, private val useful: Useful,
@@ -41,35 +44,37 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
         holder.nameTv.text = cart.saleName
         holder.saleValueTv.text = cart.unityValue
 
-        "1".let {
-            CouponControl(context, object : WSResult {
-                override fun cpResponse(list: List<Coupon>, type: String) {
+        cart.idSale.let {
+            if (it != null) {
+                CouponControl(context, object : WSResult {
+                    override fun cpResponse(list: List<Coupon>, type: String) {
 
-                    val responseInfo = list[0]
+                        val responseInfo = list[0]
 
-                    if (responseInfo.status != "0") {
-                        val couponAdapter = CouponAdapter(context, list, object : RecyclerItemClickListener{
-                            override fun onClickListenerCoupon(coupon: Coupon) {
+                        if (responseInfo.status != "0") {
+                            val couponAdapter = CouponAdapter(context, list, object : RecyclerItemClickListener{
+                                override fun onClickListenerCoupon(coupon: Coupon) {
 
-                                val addCoupon = Cart()
+                                    val addCoupon = Cart()
 
-                                addCoupon.cod = coupon.cod
-                                addCoupon.idItem = cart.idItem
-                                addCoupon.descValue = coupon.descValue
+                                    addCoupon.cod = coupon.cod
+                                    addCoupon.idItem = cart.idItem
+                                    addCoupon.descValue = coupon.descValue
 
-                                CartControl(context, wsResult, useful).addCoupon(addCoupon)
+                                    CartControl(context, wsResult, useful).addCoupon(addCoupon)
 
+                                }
+                            } )
+
+                            holder.couponsRv.apply {
+                                setHasFixedSize(false)
+                                layoutManager = LinearLayoutManager(context)
+                                adapter = couponAdapter
                             }
-                        } )
-
-                        holder.couponsRv.apply {
-                            setHasFixedSize(false)
-                            layoutManager = LinearLayoutManager(context)
-                            adapter = couponAdapter
                         }
                     }
-                }
-            }, useful).listCoupons(it)
+                }, useful).listCoupons(it)
+            }
         }
 
 
@@ -103,7 +108,14 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
 
         holder.removeIb.setOnClickListener {
 
-            CartControl(context, wsResult, useful).removeItem(cart.idItem!!)
+            DialogMessages(context).click("Atenção",
+                "Você tem certeza que deseja retirar este item do seu carrinho?",
+                object : DialogMessages.Answer {
+                    override fun setOnClickListener() {
+
+                        CartControl(context, wsResult, useful).removeItem(cart.idItem!!)
+                    }
+                })
 
         }
 

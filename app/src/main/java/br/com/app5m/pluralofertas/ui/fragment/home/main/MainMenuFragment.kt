@@ -12,6 +12,7 @@ import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.ui.activity.SigininContentActivity
+import br.com.app5m.pluralofertas.util.DialogMessages
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import com.bumptech.glide.Glide
@@ -66,12 +67,18 @@ class MainMenuFragment : Fragment(), WSResult {
         }
 
         btnLogout.setOnClickListener {
+            DialogMessages(requireContext()).click("Atenção",
+                "Se você deslogar, precisará realizar o login novamente mais tarde. Deseja continuar?",
+                object : DialogMessages.Answer {
+                    override fun setOnClickListener() {
+                        preferences.clearUserData()
 
-            preferences.clearUserData()
+                        val intent = Intent(context, SigininContentActivity::class.java)
+                        startActivity(intent)
+                        requireActivity().finish()
+                    }
+                })
 
-            val intent = Intent(context, SigininContentActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
         }
 
         btnEditProfile.setOnClickListener {
