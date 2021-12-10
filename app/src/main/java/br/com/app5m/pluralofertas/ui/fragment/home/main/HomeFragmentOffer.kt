@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,11 +14,16 @@ import br.com.app5m.pluralofertas.ui.activity.SaleDetailsActivity
 import br.com.app5m.pluralofertas.adapter.HighlightsAdapter
 import br.com.app5m.pluralofertas.adapter.SalesAdapter
 import br.com.app5m.pluralofertas.controller.SaleControl
+import br.com.app5m.pluralofertas.controller.UAddressControl
+import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.CircleRecyclerViewDecoration
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Highlight
 import br.com.app5m.pluralofertas.model.Sale
+import br.com.app5m.pluralofertas.model.UAddress
+import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
@@ -24,36 +31,88 @@ import java.util.*
 class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
     private var saleList = ArrayList<Sale>()
-    private val highlightsList = ArrayList<Highlight>()
 
     private lateinit var useful: Useful
     private lateinit var saleControl: SaleControl
+    private lateinit var uAddressControl: UAddressControl
+
+    private lateinit var preferences: Preferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { //start view
         return inflater.inflate(R.layout.fragment_home, container, false)
-
-//            val dialog = FilterDialog()
-//            dialog.setTargetFragment(this, 1)
-//            fragmentManager?.let { it1 -> dialog.show(it1,"FilterDialog") }
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        preferences = Preferences(requireContext())
         useful = Useful(requireContext())
         saleControl = SaleControl(requireContext(), this, useful)
+        uAddressControl = UAddressControl(requireContext(), this, useful)
 
         useful.openLoading()
-        saleControl.findSale("2")
 
-        highlightsList.add(Highlight())
-        highlightsList.add(Highlight())
+        if (preferences.getLogin()) {
+            uAddressControl.findAddress()
+        } else {
+            saleControl.findSale(null)
+        }
+
 
         configureInitialViews()
+
+    }
+
+    override fun uAResponse(list: List<UAddress>, type: String) {
+
+        val responseInfo = list
+
+        address_sp.visibility = View.VISIBLE
+
+        val spinnerArrayGroup: MutableList<String?> = ArrayList()
+
+        if (preferences.getUserLocation() != null) {
+            if (preferences.getUserLocation()!!.latitude != null
+                && preferences.getUserLocation()!!.longitude != null
+            ) {
+                spinnerArrayGroup.add("Localização atual")
+            }
+        }
+
+        if (!responseInfo[0].rows.equals("0")) {
+            for (i in responseInfo.indices) {
+                spinnerArrayGroup.add(
+                    responseInfo[i].city.toString() + ", " + responseInfo[i].neighborhood
+                )
+            }
+        }
+
+        val adapter: ArrayAdapter<*> = ArrayAdapter<String?>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, spinnerArrayGroup)
+
+        address_sp.adapter = adapter
+
+        address_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
+
+                useful.openLoading()
+
+                    when (position) {
+                        0 -> {
+                            saleControl.findSale(null)
+                        }
+                        else -> {
+
+                            saleControl.findSale(responseInfo[position].id)
+                        }
+                    }
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
 
     }
 

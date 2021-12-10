@@ -1,13 +1,12 @@
 PLURAL // ultimas coisas
 
-endereco update trocando numero por bairro, estrou madnando certo 3:30
 
 - Filtro de OFERTAS
 nome = string
 categoria = id
-valor_de=1&valor_ate=1 4:15
 
--fazer ofertas com lat long quando n ta logado e fazer com enderefco quando estiver logado ou  lat long igual izyway 5:00
+
+valor_de=1&valor_ate=1 4:15
 
 
 
@@ -26,4 +25,5 @@ valor_de=1&valor_ate=1 4:15
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
 
+endereco update trocando numero por bairro, estrou madnando certo 3:30
 

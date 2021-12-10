@@ -11,6 +11,9 @@ class UAddress: Serializable {
     @field:SerializedName("id")
     var id: String? = null
 
+    @field:SerializedName("rows")
+    var rows: String? = null
+
     @field:SerializedName("id_user")
     var idUser: String? = null
 
