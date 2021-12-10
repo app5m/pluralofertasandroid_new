@@ -18,11 +18,12 @@ import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Coupon
 import br.com.app5m.pluralofertas.ui.activity.SigininContentActivity
+import br.com.app5m.pluralofertas.ui.fragment.home.cart.CartFragment
 import br.com.app5m.pluralofertas.util.DialogMessages
 import br.com.app5m.pluralofertas.util.Useful
 
 class ItemsCartAdapter (private val context: Context, private val list: List<Cart>, private val useful: Useful,
-                        private val wsResult: WSResult)
+                        private val wsResult: WSResult, private val cartFragment: CartFragment)
     : RecyclerView.Adapter<ItemsCartAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -70,6 +71,10 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                                     addCoupon.descValue = coupon.descValue
 
                                     CartControl(context, wsResult, useful).addCoupon(addCoupon)
+
+                                    //por enquanto deixa aqui
+                                    cartFragment.startedFullDataPurchase.descValueCoupon = coupon.descValue
+                                    cartFragment.startedFullDataPurchase.idCoupon = coupon.id
 
                                 }
                             } )

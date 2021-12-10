@@ -24,6 +24,7 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Freight
+import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
 import br.com.app5m.pluralofertas.ui.fragment.home.main.MyAddressesFragment
@@ -49,7 +50,8 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private var globalIdCart : String? = null
     private var globalDestinyCep : String? = null
     private var globalCodFreight : String? = null
-    private var globalAddressId : String? = null
+
+    var startedFullDataPurchase = Request()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -101,11 +103,12 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
                 if (position == 0) {
                     globalDestinyCep = null
-                    globalAddressId = null
+                    globalCodFreight = null
+                    startedFullDataPurchase.idAddress = null
 
                 } else {
                     globalDestinyCep = responseInfo[position - 1].cep!!
-                    globalAddressId = responseInfo[position - 1].id!!
+                    startedFullDataPurchase.idAddress = responseInfo[position - 1].id!!
                 }
 
 
@@ -218,6 +221,8 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
             subtotalTv.text = responseInfo.finalValue
 
+            startedFullDataPurchase.subTotalValue = responseInfo.finalValue
+
             if (globalFreightResponseInfo != null){
                 val total = useful.moneyToDouble(globalFreightResponseInfo!!.cService!!.value!!.replace(".", "")) +
                         useful.moneyToDouble(responseInfo.finalValue!!.replace(".", ""))
@@ -245,6 +250,12 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         } else {
 
+
+            if (responseInfo.status != "01") {
+                startedFullDataPurchase.descValueCoupon = null
+                startedFullDataPurchase.idCoupon = null
+            }
+
             globalIdCart?.let { cartControl.listItems(it) }
 
         }
@@ -256,7 +267,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private fun configureInitialViews(){
 
-        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList, useful, this)
+        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList, useful, this, this)
 
         cartRv.apply {
             setHasFixedSize(false)
@@ -266,9 +277,18 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         paymentBtn.setOnClickListener {
 
+            if (globalDestinyCep == null || globalCodFreight == null) {
+
+                SingleToast.INSTANCE.show(requireContext(),
+                    "É necessário escolher seu método de entrega antes de prosseguir com o pagamento", Toast.LENGTH_LONG)
+                return@setOnClickListener
+            }
+
+            startedFullDataPurchase.idCart = globalIdCart
+            startedFullDataPurchase.freightValue = globalFreightResponseInfo!!.cService!!.value
+
             startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).
-                putExtra("idCart", globalIdCart).
-                putExtra("idAddress", globalAddressId))
+                putExtra("full", startedFullDataPurchase))
 
         }
 
@@ -283,23 +303,25 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
                 val freight = Freight()
 
-                globalCodFreight = when (position) {
+                when (position) {
                     0 -> {
 
                         //sedex
-                        "40010"
+                        globalCodFreight = "40010"
 
+                        startedFullDataPurchase.idFreight = "1"
                     }
                     1 -> {
                         //pac ver codigo pac dps
-                        "41106"
+                        globalCodFreight = "41106"
+
+                        startedFullDataPurchase.idFreight = "2"
                     }
                     else -> {
                         return
                     }
                 }
 
-//pegar cep de vdd dps
                 freight.destinyCep = globalDestinyCep
                 freight.cartId = globalIdCart
                 freight.cod = globalCodFreight

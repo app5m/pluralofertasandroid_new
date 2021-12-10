@@ -192,24 +192,14 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.idAddress = paymentFlowContainerAct.fullDataPurchase.idAddress
                 newRequest.paymentForm = paymentFlowContainerAct.fullDataPurchase.paymentForm
 
-                newRequest.idFreight = "1"
-                newRequest.freightValue = "R$ 25,00"
-                newRequest.subTotalValue = "R$ 25,00"
-                newRequest.descValueCoupon = "R$ 25,00"
-                newRequest.idCoupon = "4"
+                newRequest.idFreight = paymentFlowContainerAct.fullDataPurchase.idFreight
+                newRequest.freightValue = paymentFlowContainerAct.fullDataPurchase.freightValue
+                newRequest.subTotalValue = paymentFlowContainerAct.fullDataPurchase.subTotalValue
+
+                newRequest.descValueCoupon = paymentFlowContainerAct.fullDataPurchase.descValueCoupon
+                newRequest.idCoupon = paymentFlowContainerAct.fullDataPurchase.idCoupon
 
                 newRequest.obs = "nenhuma"
-
-                newRequest.cardName = name_et.text.toString()
-                newRequest.cardCellphone = cellphone_et.text.toString()
-                newRequest.cardCpf = document_et.text.toString()
-                newRequest.cpf = document_et.text.toString()
-                newRequest.cardBirth = birth_et.text.toString()
-
-
-//                newRequest.mouthValidity = creditCard.expirationMonth
-//                newRequest.yearValidity = creditCard.expirationYear
-//                newRequest.cvv = creditCard.cvc
 
                 newRequest.cardNumber = "80"
                 newRequest.cardCep = "91250310"
@@ -217,10 +207,16 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.cardCity = "Porto Alegre"
                 newRequest.cardNeighborhood = "Rubem Berta"
                 newRequest.cardAddress = "Avenida adelino"
-                newRequest.cardComplement = ""
+                newRequest.cardComplement = "complemento"
+
+                newRequest.cardName = name_et.text.toString()
+                newRequest.cardCellphone = cellphone_et.text.toString()
+                newRequest.cardCpf = document_et.text.toString()
+                newRequest.cpf = document_et.text.toString()
+                newRequest.cardBirth = birth_et.text.toString()
 
                 newRequest.hashCard = creditCard.encrypt().replace("\n", "")
-                newRequest.installments = "2"
+                newRequest.installments = "1"
                 newRequest.plataform = "1"
 
 //                {
