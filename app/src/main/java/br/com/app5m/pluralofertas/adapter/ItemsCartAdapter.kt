@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,7 +30,7 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
         val saleValueTv: TextView = itemView.findViewById(R.id.value_tv)
         val removeIb: ImageButton = itemView.findViewById(R.id.remove_ib)
         val couponsRv: RecyclerView = itemView.findViewById(R.id.couponsRv)
-        val couponsLL: RecyclerView = itemView.findViewById(R.id.couponsLl)
+        val couponsLL: LinearLayout = itemView.findViewById(R.id.couponsLl)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -78,6 +79,8 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                                 layoutManager = LinearLayoutManager(context)
                                 adapter = couponAdapter
                             }
+
+                            holder.couponsLL.visibility = View.VISIBLE
                         } else {
                             holder.couponsLL.visibility = View.GONE
                         }
