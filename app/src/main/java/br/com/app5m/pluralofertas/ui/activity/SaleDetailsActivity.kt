@@ -122,17 +122,23 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
         typeTv.text = globalResponseSaleInfo.details!!.type
         saleValueTv.text = globalResponseSaleInfo.details!!.value
 
-        val derivativesAdapter =
-            globalResponseSaleInfo.derivativeList?.let {
-                DerivativesAdapter(this,
-                    it, this)
+        if (globalResponseSaleInfo.derivativeList!![0].rows != "0") {
+            val derivativesAdapter =
+                globalResponseSaleInfo.derivativeList?.let {
+                    DerivativesAdapter(this,
+                        it, this)
+                }
+
+            derivativesRv.apply {
+                setHasFixedSize(false)
+                layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
+                adapter = derivativesAdapter
             }
 
-        derivativesRv.apply {
-            setHasFixedSize(false)
-            layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
-            adapter = derivativesAdapter
+        }else {
+            derivativesLL.visibility = View.GONE
         }
+
 
         if (globalResponseSaleInfo.photoList?.get(0)!!.rows.equals("0")) return
 
@@ -144,51 +150,7 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
         }
 
         loadContainerPhotos()
-//        [
-//            {
-//                "detalhes": {
-//                "id": 1,
-//                "nome": "PASSAPORTE Dreamland",
-//                "tipo": "Entrega",
-//                "valor": " R$ 189,00",
-//                "taxa_servico": " R$ 25,00",
-//                "capa": "empty.png"
-//            },
-//                "categorias": [
-//                {
-//                    "id": 1,
-//                    "nome": "Passeio + Hospedagem",
-//                    "rows": 1
-//                }
-//                ],
-//                "fotos": [
-//                {
-//                    "id": 2,
-//                    "url": "7302-6c4039ccf3ad486471ec6676fd9ea250.png",
-//                    "rows": 3
-//                },
-//                {
-//                    "id": 3,
-//                    "url": "1669-93bdd44d384d8715e20554952b49ab07.png",
-//                    "rows": 3
-//                },
-//                {
-//                    "id": 5,
-//                    "url": "5657-b9dead9bfc52b393e42d9832f0f2a7f7.jpeg",
-//                    "rows": 3
-//                }
-//                ],
-//                "derivados": [
-//                {
-//                    "id": 3,
-//                    "nome": "Rota adicional",
-//                    "descricao": "extensão do passeio",
-//                    "valor": " R$ 30,00",
-//                    "rows": 1
-//                }
-//                ]
-//            }
-//        ]
+
 
 
     }

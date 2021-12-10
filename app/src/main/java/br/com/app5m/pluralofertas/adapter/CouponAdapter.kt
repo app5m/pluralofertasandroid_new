@@ -48,6 +48,8 @@ class CouponAdapter (private val context: Context, private val list: List<Coupon
         holder.validityTv.text = "Validade: " + coupon.validityDate
         holder.descValueTv.text = "Desconto: " + coupon.descValue
 
+        holder.couponCb.visibility = View.GONE
+
         if (selectedPosition == position) {
             recyclerItemClickListener.onClickListenerCoupon(coupon)
 

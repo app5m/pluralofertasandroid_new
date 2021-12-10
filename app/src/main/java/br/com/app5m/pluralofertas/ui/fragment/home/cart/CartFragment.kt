@@ -197,7 +197,12 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //
 
             cartList.clear()
-            cartList.addAll(list)
+
+            for (item in list) {
+                if (item.idItem != null) {
+                    cartList.add(item)
+                }
+            }
 
             if (responseInfo.rows != "0") {
                 cartCons.visibility = View.VISIBLE

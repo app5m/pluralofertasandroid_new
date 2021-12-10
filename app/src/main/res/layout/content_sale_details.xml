@@ -67,23 +67,33 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_size6"/>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/derivativesLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/uni_neue_regular"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:paddingTop="5dp"
-            android:text="Escolha 1 derivado para esta oferta (opcional)"
-            android:textSize="14sp"/>
+            android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/derivativesRv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never"
-            android:layout_marginTop="12dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/uni_neue_regular"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="5dp"
+                android:text="Escolha 1 derivado para esta oferta (opcional)"
+                android:textSize="14sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/derivativesRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:layout_marginTop="12dp"/>
+
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

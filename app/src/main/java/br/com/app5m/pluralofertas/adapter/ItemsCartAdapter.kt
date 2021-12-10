@@ -29,6 +29,7 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
         val saleValueTv: TextView = itemView.findViewById(R.id.value_tv)
         val removeIb: ImageButton = itemView.findViewById(R.id.remove_ib)
         val couponsRv: RecyclerView = itemView.findViewById(R.id.couponsRv)
+        val couponsLL: RecyclerView = itemView.findViewById(R.id.couponsLl)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -57,7 +58,7 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
 
                         val responseInfo = list[0]
 
-                        if (responseInfo.status != "0") {
+                        if (responseInfo.rows != "0") {
                             val couponAdapter = CouponAdapter(context, list, object : RecyclerItemClickListener{
                                 override fun onClickListenerCoupon(coupon: Coupon) {
 
@@ -77,6 +78,8 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                                 layoutManager = LinearLayoutManager(context)
                                 adapter = couponAdapter
                             }
+                        } else {
+                            holder.couponsLL.visibility = View.GONE
                         }
                     }
                 }, useful).listCoupons(it)

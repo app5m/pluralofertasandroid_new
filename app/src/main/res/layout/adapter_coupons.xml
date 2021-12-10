@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:layout_toLeftOf="@id/addDerivative_ll"
+                android:layout_toLeftOf="@id/couponLl"
                 android:maxLines="1"
                 android:text="coupon"
                 android:textSize="@dimen/text_size5" />
@@ -54,11 +54,12 @@
                 android:text="R$ 0,00"
                 android:maxLines="1"
                 android:layout_marginEnd="16dp"
-                android:layout_toLeftOf="@id/addDerivative_ll"
+                android:layout_toLeftOf="@id/couponLl"
                 android:textStyle="bold"
                 android:textColor="@color/colorAccent"/>
 
             <LinearLayout
+                android:id="@+id/couponLl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
