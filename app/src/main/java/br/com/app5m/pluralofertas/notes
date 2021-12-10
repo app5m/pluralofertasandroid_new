@@ -6,8 +6,6 @@ PLURAL // ultimas coisas
 - Lista de Ofertas na HOME sem cadastro v
 - Lista de Ofertas na HOME com cadastro baseado no endereço v
 
-- Detalhes da Oferta com dados completos e as opções para escolher os derivados v
-
 - Pedido com pagamento via cartão de crédito xv/ boleto x
 
 - Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
@@ -20,13 +18,21 @@ PLURAL // ultimas coisas
 
 
 
+
 - Meus Pedidos (lista all com informações) xv
 - Detalhes do meu Pedido (todas informações)
 
 - Filtro de OFERTAS
+as que n tiver imagem deixar com imagem padrao
 
+bloquear email pra fazer edicao,
+add celular, cpf, data nascimento, nome,
+
+filtro
+nome = string
+categoria = id
+valor_de=1&valor_ate=1
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
-- Recuperar Senha (não possui request)
 
 

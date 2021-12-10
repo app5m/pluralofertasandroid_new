@@ -34,4 +34,7 @@ class Sale: Serializable {
 
     @field:SerializedName("longitude")
     var longitude: String? = null
+
+    @field:SerializedName("fotos")
+    var photoList: List<Photo>? = null
 }

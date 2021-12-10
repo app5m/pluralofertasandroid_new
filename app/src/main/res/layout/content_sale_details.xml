@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         android:orientation="vertical">
 
         <TextView
@@ -23,73 +24,66 @@
             android:textColor="#000000"
             android:textSize="14sp"
             android:ellipsize="end"
+            android:visibility="gone"
             android:maxLines="1"/>
 
         <TextView
             android:id="@+id/saleNameTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
             android:ellipsize="end"
             android:fontFamily="@font/uni_neue_heavy"
             android:maxLines="3"
-            android:text="Mega Burger"
+            android:text=""
             android:textColor="#000000"
             android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/namePlaceTv"
+            android:id="@+id/typeTv"
             android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginStart="24dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
             android:fontFamily="@font/uni_neue_regular"
             android:ellipsize="end"
             android:maxLines="1"
             android:paddingTop="5dp"
-            android:text="Plural Ofertas"
+            android:text=""
             android:textAlignment="textStart"
             android:textColor="#660066"
             android:textSize="14sp"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/saleValueTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/uni_neue_regular"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="5dp"
+            android:text=""
+            android:gravity="end"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size6"/>
 
-            <TextView
-                android:id="@+id/numAvaiableCouponsTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:fontFamily="@font/uni_neue_bold"
-                android:text="6 Disponivies"
-                android:textAllCaps="true"
-                android:textColor="#009933"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/numUnAvaiableCouponsTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:fontFamily="@font/uni_neue_bold"
-                android:text="5 Vendidos"
-                android:textAllCaps="true"
-                android:textColor="#ff5b5c"
-                android:textSize="14sp" />
-
-
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/uni_neue_regular"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="5dp"
+            android:text="Cupons para esta oferta:"
+            android:textAlignment="textStart"
+            android:textSize="14sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/derivativesRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:overScrollMode="never"
             android:layout_marginTop="12dp"/>
 
 

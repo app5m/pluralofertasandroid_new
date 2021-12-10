@@ -4,11 +4,16 @@ package br.com.app5m.pluralofertas.ui.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager.widget.ViewPager
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.DerivativesAdapter
@@ -18,7 +23,9 @@ import br.com.app5m.pluralofertas.controller.SaleControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Derivative
+import br.com.app5m.pluralofertas.model.Photo
 import br.com.app5m.pluralofertas.model.Sale
+import br.com.app5m.pluralofertas.ui.fragment.PhotoContainerFrag
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.activity_details_sale.*
@@ -37,6 +44,25 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
     private lateinit var globalResponseSaleInfo: Sale
     private lateinit var globalDerivative: Derivative
+
+    private var fragmentList = ArrayList<Fragment>()
+
+    private val handler = Handler()
+    private var imageRunnable = Runnable { showAnimate() }
+
+    private inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(
+        fm,
+        BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+    ) {
+        override fun getItem(position: Int): Fragment {
+            return fragmentList[position]
+        }
+
+        override fun getCount(): Int {
+            // Show dynamic total pages.
+            return fragmentList.size
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,17 +107,20 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
         globalResponseSaleInfo = list[0]
 
-        val derivativesAdapter =
-            globalResponseSaleInfo.derivativeList?.let {
-                DerivativesAdapter(this,
-                    it, this)
-            }
+        saleNameTv.text = globalResponseSaleInfo.details!!.name
+        typeTv.text = globalResponseSaleInfo.details!!.type
+        saleValueTv.text = globalResponseSaleInfo.details!!.value
 
-        derivativesRv.apply {
-            setHasFixedSize(false)
-            layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
-            adapter = derivativesAdapter
+        if (globalResponseSaleInfo.photoList?.get(0)!!.rows.equals("0")) return
+
+        //forzinho padrao pra ver quantos rows tem no vagaubudo
+        for (item: Photo in globalResponseSaleInfo.photoList!!) {
+
+            fragmentList.add(PhotoContainerFrag(item.url!!))
+
         }
+
+        loadContainerPhotos()
 //        [
 //            {
 //                "detalhes": {
@@ -138,6 +167,18 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 //            }
 //        ]
 
+        val derivativesAdapter =
+            globalResponseSaleInfo.derivativeList?.let {
+                DerivativesAdapter(this,
+                    it, this)
+            }
+
+        derivativesRv.apply {
+            setHasFixedSize(false)
+            layoutManager = LinearLayoutManager(this@SaleDetailsActivity)
+            adapter = derivativesAdapter
+        }
+
     }
 
     override fun cResponse(list: List<Cart>, type: String) {
@@ -168,5 +209,48 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
         }
 
     }
+
+    private fun showAnimate() {
+
+        if (containerPhotosPager.currentItem == fragmentList.size - 1) {
+
+            containerPhotosPager.currentItem = 0
+        } else {
+
+            containerPhotosPager.currentItem++
+        }
+
+        handler.postDelayed(imageRunnable, (7 * 1000).toLong())
+
+    }
+
+
+    private fun loadContainerPhotos() {
+
+        val adapter = SectionsPagerAdapter(supportFragmentManager)
+
+        containerPhotosPager.adapter = adapter
+
+        indicator.setViewPager(containerPhotosPager)
+
+        containerPhotosPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+
+        handler.postDelayed(imageRunnable, (7 * 1000).toLong())
+
+    }
+
 
 }
