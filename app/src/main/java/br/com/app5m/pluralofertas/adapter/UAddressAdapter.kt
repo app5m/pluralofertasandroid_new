@@ -62,14 +62,14 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
                 holder.numTv.text = responseInfo.number
                 holder.complementTv.text = responseInfo.complement
 
+                holder.itemView.setOnClickListener {
+
+                    recyclerItemClickListener.onClickListenerUAddress(responseInfo)
+                }
+
             }
 
         }, useful).listIdAddress(uaddress.id!!)
-
-        holder.itemView.setOnClickListener {
-
-            recyclerItemClickListener.onClickListenerUAddress(uaddress)
-        }
 
     }
 

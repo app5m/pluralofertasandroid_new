@@ -1,6 +1,6 @@
 PLURAL // ultimas coisas
 
-- lista v, add xv, edit xv, excluir Meus Endereços (remover n tem) 3:30
+endereco update trocando numero por bairro, estrou madnando certo 3:30
 
 - Filtro de OFERTAS
 nome = string
@@ -22,8 +22,6 @@ valor_de=1&valor_ate=1 4:15
 
 - Meus Pedidos (lista all com informações) xv
 - Detalhes do meu Pedido (todas informações)
-
-
 
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)

@@ -55,6 +55,7 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
         validation = Validation(requireContext())
         uAddressControl = UAddressControl(requireContext(), this, useful)
 
+        useful.openLoading()
         uAddressControl.findAddress()
 
         configureInitialViews()
@@ -68,10 +69,19 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
 
         useful.closeLoading()
 
-        uaddressList.clear()
-        uaddressList.addAll(list)
+        if (type == "findAddress") {
 
-        myAdressesRv.adapter!!.notifyDataSetChanged()
+            uaddressList.clear()
+            uaddressList.addAll(list)
+
+            myAdressesRv.adapter!!.notifyDataSetChanged()
+
+        } else {
+
+            useful.openLoading()
+            uAddressControl.findAddress()
+        }
+
 
     }
 
@@ -93,6 +103,8 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
     }
 
     override fun onClickListenerUAddress(uaddress: UAddress) {
+
+        preferences.setUAddressData(uaddress)
 
         val dialog = RegisterAddressDialog()
         dialog.setTargetFragment(this, 0)
@@ -118,6 +130,9 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
     private fun loadClicks() {
 
         addAddressMainMenuFab.setOnClickListener {
+
+            preferences.clearUAddressData()
+
             val dialog = RegisterAddressDialog()
             dialog.setTargetFragment(this, 1)
             dialog.show(parentFragmentManager,"DialogRegisterAddress")

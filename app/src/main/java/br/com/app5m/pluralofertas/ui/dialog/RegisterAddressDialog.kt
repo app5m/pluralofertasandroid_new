@@ -45,6 +45,16 @@ class RegisterAddressDialog: DialogFragment() {
         preferences = Preferences(requireContext())
         validation = Validation(requireContext())
 
+        if (preferences.getUAddressData() != null) {
+            cep_edit.setText(preferences.getUAddressData()!!.cep)
+            city_edit.setText(preferences.getUAddressData()!!.city)
+            uf_edit.setText(preferences.getUAddressData()!!.state)
+            nbh_edit.setText(preferences.getUAddressData()!!.neighborhood)
+            address_edit.setText(preferences.getUAddressData()!!.address)
+            num_edit.setText(preferences.getUAddressData()!!.number)
+        }
+
+
         cep_edit.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
@@ -86,15 +96,15 @@ class RegisterAddressDialog: DialogFragment() {
             if (!validation.validateTextField(address_edit)) return@setOnClickListener
             if (!validation.validateTextField(num_edit)) return@setOnClickListener
 
+            uAddress.id = preferences.getUAddressData()?.id
             uAddress.cep = cep_edit.text.toString()
             uAddress.city = city_edit.text.toString()
             uAddress.state = uf_edit.text.toString()
             uAddress.neighborhood = nbh_edit.text.toString()
             uAddress.address = address_edit.text.toString()
             uAddress.number = num_edit.text.toString()
-            uAddress.complement = comp_edit.text.toString()
+//            uAddress.complement = comp_edit.text.toString()
 
-            preferences.clearUserData()
             preferences.setUAddressData(uAddress)
 
             onExit(true)

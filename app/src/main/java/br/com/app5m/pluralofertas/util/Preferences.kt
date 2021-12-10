@@ -56,9 +56,16 @@ class Preferences(context: Context?) {
     }
 
     fun clearUserData(){
+        editor?.remove("getUAddressData")
         editor?.remove("getData")
         editor?.remove("login")
         editor?.remove("token")
+        editor?.remove("location")
+        editor!!.commit()
+    }
+
+    fun clearUAddressData(){
+        editor?.remove("getUAddressData")
         editor!!.commit()
     }
 
