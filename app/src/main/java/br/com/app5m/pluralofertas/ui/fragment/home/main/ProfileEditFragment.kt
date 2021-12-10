@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.UserControl
@@ -53,6 +55,7 @@ class ProfileEditFragment: Fragment(), WSResult {
         val user = list[0]
 
         if (user.status == "01") {
+            SingleToast.INSTANCE.show(requireContext(), user.msg!!, Toast.LENGTH_LONG)
 
             userControl.listId()
         } else {
@@ -62,7 +65,6 @@ class ProfileEditFragment: Fragment(), WSResult {
             emailMeuPerfilEditText.setText(user.email)
             birth_edittext.setText(user.birth)
         }
-
 
 
     }

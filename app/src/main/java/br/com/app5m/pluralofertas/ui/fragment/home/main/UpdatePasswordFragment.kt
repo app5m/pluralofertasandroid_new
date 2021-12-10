@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
@@ -56,16 +57,13 @@ class UpdatePasswordFragment : Fragment(), WSResult {
         val user = list[0]
 
         if (user.status.equals("01")) {
-
-            Toast.makeText(requireContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG)
-                .show()
+            SingleToast.INSTANCE.show(requireContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG)
 
             newPassword_et.setText("")
             coPassword_et.setText("")
 
         } else {
-
-            Toast.makeText(requireContext(), user.msg, Toast.LENGTH_SHORT).show()
+            SingleToast.INSTANCE.show(requireContext(), user.msg!!, Toast.LENGTH_LONG)
 
         }
 
