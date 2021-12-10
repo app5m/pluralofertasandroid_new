@@ -20,6 +20,7 @@ import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Validation
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.ui.activity.DocumentPdfWebViewAct
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_signup.*
 
@@ -121,6 +122,11 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
 
         }
+
+        terms_tv.setOnClickListener {
+            startActivity(Intent(requireContext(), DocumentPdfWebViewAct::class.java ))
+        }
+
 
     }
 

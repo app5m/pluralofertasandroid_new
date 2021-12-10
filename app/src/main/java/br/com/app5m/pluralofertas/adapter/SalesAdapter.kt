@@ -40,8 +40,9 @@ class SalesAdapter(private val context: Context, private val list: List<Sale>,
         holder.saleNameTv.text = sale.name
         holder.saleValueTv.text = sale.value
 
-
-        Glide.with(context).load(WSConstants.AVATAR_USER_URL + sale.placeHolder).into(holder.saleIv)
+        if (sale.placeHolder != null) {
+            Glide.with(context).load(WSConstants.AVATAR_USER_URL + sale.placeHolder).into(holder.saleIv)
+        }
 
         holder.itemView.setOnClickListener { clickOnListener.onClickListenerSale(sale)}
 

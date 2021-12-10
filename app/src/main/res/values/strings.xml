@@ -23,7 +23,8 @@
     <string name="termos_de_uso"><u><b>Termos de Uso</b></u></string>
     <string name="politica_de_privacidade"><u><b>Política de Privacidade</b></u></string>
     <string name="cpf">CPF</string>
-    <string name="cnpj">CNPJ</string>
+    <string name="cnpj">CNPJ</string> <string name="terms_conditions">Clicando em "AVANÇAR" você concorda com nossos <b><u>Termos de uso</u></b> e <b><u>Políticas de privacidade.</u></b></string>
+
 
     <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 

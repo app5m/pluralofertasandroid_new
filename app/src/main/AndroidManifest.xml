@@ -17,6 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".ui.activity.DocumentPdfWebViewAct" />
         <activity
             android:name=".ui.activity.SucessAct"
             android:exported="true" />

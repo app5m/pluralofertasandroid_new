@@ -21,6 +21,7 @@ import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.home_body.*
 import java.util.*
 
@@ -57,6 +58,13 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
             saleControl.findSale(null)
         }
 
+        swipeRefresh.setOnRefreshListener {
+            if (preferences.getLogin()) {
+                uAddressControl.findAddress()
+            } else {
+                saleControl.findSale(null)
+            }
+        }
 
         configureInitialViews()
 
@@ -123,6 +131,9 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
     @SuppressLint("NotifyDataSetChanged")
     override fun sResponse(list: List<Sale>, type: String) {
+
+
+        if (swipeRefresh.isRefreshing) swipeRefresh.isRefreshing = false
 
         useful.closeLoading()
 

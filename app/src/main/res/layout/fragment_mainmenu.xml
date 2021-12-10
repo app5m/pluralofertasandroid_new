@@ -129,7 +129,8 @@
                             android:id="@+id/userAvatar_iv"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:scaleType="centerCrop" />
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/ic_launcher"/>
 
                     </androidx.cardview.widget.CardView>
 
