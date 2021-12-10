@@ -4,54 +4,61 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 
 class RequestAdapter(private val context: Context, private val list: List<Request>,
-                     private val clickOnListener: RecyclerItemClickListener
-) : RecyclerView.Adapter<RequestAdapter.ShoopingViewHolder>() {
+                     private val recyclerItemClickListener: RecyclerItemClickListener
+) : RecyclerView.Adapter<RequestAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoopingViewHolder {
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val requestInfoTv: TextView = itemView.findViewById(R.id.requestInfoTv)
+        val valueTv: TextView = itemView.findViewById(R.id.value_tv)
+    }
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.adapter_requests, parent, false) // vai conectar com os ids abaixo
-        return ShoopingViewHolder(listItem)
+        return ViewHolder(listItem)
 
 
     }
 
-    override fun onBindViewHolder(holder: ShoopingViewHolder, position: Int) {
-        val shooping = list[position]
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val request = list[position]
 
-      /*  holder.productNameTv.text = "Mega Burguer"
-        holder.productDescriptionTv.text = "O Mega Burguer vem com 2 carnes e muita salada, o resto é tempeiro. "
-        holder.asOfTv.text = "A partir de "
-        holder.productValueTv.text = "10,00 "*/
+        holder.requestInfoTv.text = request.sale +
+                "\n\n" + "Tipo:" + request.typeDelivery +
+                "\n" + "Método de pagamento:" + request.typePayment +
+                "\n" + "Método de pagamento:" + request.date
 
-        holder.itemView.setOnClickListener { clickOnListener.onClickListenerRequest(shooping)}
+        holder.valueTv.text = request.totalValue
+
+//                "oferta": "Testando",
+//                "data": "09/12/2021 - 10:03:31",
+//                "valor_total": " R$ 70,00",
+//                "tipo_entrega": "Retirada",
+//                "tipo_pagamento": "Boleto",
+//        [
+//            {
+//                "id": 15,
+//                "status_pedido": "Recebido",
+//                "status_pagamento": "AGUARDANDO",
+//                "rows": 9
+//            },
+
+        holder.itemView.setOnClickListener { recyclerItemClickListener.onClickListenerRequest(request)}
 
     }
 
     override fun getItemCount(): Int {
         return list.size
-    }
-
-    class ShoopingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        /*val productNameTv: TextView
-        val productDescriptionTv: TextView
-        val asOfTv: TextView
-        val productValueTv: TextView
-        val productImageIv: ImageView
-
-        init {
-            productNameTv = itemView.findViewById(R.id.productNameTv)
-            productDescriptionTv = itemView.findViewById(R.id.productDescriptionTv)
-            asOfTv = itemView.findViewById(R.id.asOfTv)
-            productValueTv = itemView.findViewById(R.id.productValueTv)
-            productImageIv = itemView.findViewById(R.id.imageProductsIv)
-
-        }*/
     }
 
 }

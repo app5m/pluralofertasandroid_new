@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="24dp"
-    android:paddingTop="23dp"
-    android:paddingEnd="35dp">
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:orientation="vertical">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/requestInfoTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/uni_neue_regular"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Cupons para esta oferta:"
+                android:textAlignment="textStart"
+                android:textSize="14sp"/>
+
+
+            <TextView
+                android:id="@+id/value_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="0"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="2"
+                android:text="R$ 10,0"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size5" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

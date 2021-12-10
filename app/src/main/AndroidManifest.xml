@@ -33,6 +33,9 @@
             android:name=".ui.activity.SaleDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.activity.RequestDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.activity.SigininContentActivity"
             android:screenOrientation="portrait" />
         <activity

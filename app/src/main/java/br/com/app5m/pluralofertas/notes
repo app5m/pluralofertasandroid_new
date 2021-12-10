@@ -6,14 +6,13 @@ PLURAL // ultimas coisas
 
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
 
-- Meus cupons aplicados (list all) xv
-
-
 - Meus Pedidos (lista all com informações) xv
 - Detalhes do meu Pedido (todas informações)
 
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
+
+
 
 bugs:
 

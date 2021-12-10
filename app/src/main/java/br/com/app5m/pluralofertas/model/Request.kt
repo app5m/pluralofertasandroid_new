@@ -4,6 +4,9 @@ import java.io.Serializable
 
 class Request: Serializable {
 
+    @field:SerializedName("oferta")
+    var sale: String? = null
+
     @field:SerializedName("parcelas")
     var installments: String? = null
 
@@ -18,6 +21,12 @@ class Request: Serializable {
 
     @field:SerializedName("valor_subtotal")
     var subTotalValue: String? = null
+
+    @field:SerializedName("valor_total")
+    var totalValue: String? = null
+
+    @field:SerializedName("tipo_entrega")
+    var typeDelivery: String? = null
 
     @field:SerializedName("valor_frete")
     var freightValue: String? = null
@@ -103,6 +112,9 @@ class Request: Serializable {
     @field:SerializedName("tipo_pessoa")
     var typePerson: String? = null
 
+    @field:SerializedName("tipo_pagamento")
+    var typePayment: String? = null
+
     @field:SerializedName("card_cpf")
     var cardCpf: String? = null
 
@@ -111,6 +123,9 @@ class Request: Serializable {
 
     @field:SerializedName("data_nascimento")
     var birth: String? = null
+
+    @field:SerializedName("data")
+    var date: String? = null
 
     @field:SerializedName("card_nascimento")
     var cardBirth: String? = null

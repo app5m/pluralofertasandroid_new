@@ -24,6 +24,12 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                         private val wsResult: WSResult)
     : RecyclerView.Adapter<ItemsCartAdapter.ViewHolder>() {
 
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val nameTv: TextView = itemView.findViewById(R.id.name_tv)
+        val saleValueTv: TextView = itemView.findViewById(R.id.value_tv)
+        val removeIb: ImageButton = itemView.findViewById(R.id.remove_ib)
+        val couponsRv: RecyclerView = itemView.findViewById(R.id.couponsRv)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
@@ -123,12 +129,5 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
 
     override fun getItemCount(): Int {
         return list.size
-    }
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTv: TextView = itemView.findViewById(R.id.name_tv)
-        val saleValueTv: TextView = itemView.findViewById(R.id.value_tv)
-        val removeIb: ImageButton = itemView.findViewById(R.id.remove_ib)
-        val couponsRv: RecyclerView = itemView.findViewById(R.id.couponsRv)
     }
 }

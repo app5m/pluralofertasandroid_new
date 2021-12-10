@@ -60,20 +60,19 @@ class RequestControl(private val context: Context, private val result: WSResult,
 
         request.token = WSConstants.TOKEN
 
-        val param: Call<List<Request>> = service.find(preferences.getUserData()!!.id!!, request)
+        val param: Call<List<Request>> = service.find("4", request)
         param.enqueue(this)
     }
 
-    fun findId(request: Request){
+    fun findId(idRequest: String){
 
         type = "findId"
-/*
-{
-    "token": "plural_ofertas@2021"
-}
-        */
 
-        val param: Call<List<Request>> = service.findId("", request)
+        request = Request()
+
+        request.token = WSConstants.TOKEN
+
+        val param: Call<List<Request>> = service.findId(idRequest, request)
         param.enqueue(this)
     }
 
