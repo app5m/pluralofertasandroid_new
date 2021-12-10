@@ -39,7 +39,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private var cartList  = ArrayList<Cart>()
 
     private lateinit var globalFreightResponseInfo : Freight
-
+    private lateinit var globalIdCart : String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -75,9 +75,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         if (globalFreightResponseInfo.cService!!.status == "01") {
 
-            valueFreightTv.text = ""
-            subtotalTv.text = ""
-            totalTv.text = ""
+            valueFreightTv.text = globalFreightResponseInfo.cService!!.value
 
 //
 //        "cServico": {
@@ -113,30 +111,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         if (type == "listItems") {
 
-            cartList.clear()
-
-            if (responseInfo.rows != "0") {
-                cartList.addAll(list)
-                cartCons.visibility = View.VISIBLE
-                content_empty_list.visibility = View.GONE
-            } else {
-                content_empty_list.visibility = View.VISIBLE
-                cartCons.visibility = View.GONE
-            }
-
-            cartRv.adapter!!.notifyDataSetChanged()
-        } else {
-            if (responseInfo.cartOpen == null ) {
-
-                content_empty_list.visibility = View.VISIBLE
-                cartCons.visibility = View.GONE
-            } else {
-
-                cartControl.listItems(responseInfo.cartOpen!!)
-            }
-
-        }
-//
+            //
 //        [
 //            {
 //                "id_item": 10,
@@ -166,6 +141,37 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //            }
 //        ]
 //
+
+            subtotalTv.text = responseInfo.finalValue
+            totalTv.text = ""
+
+            cartList.clear()
+
+            if (responseInfo.rows != "0") {
+                cartList.addAll(list)
+                cartCons.visibility = View.VISIBLE
+                content_empty_list.visibility = View.GONE
+            } else {
+                content_empty_list.visibility = View.VISIBLE
+                cartCons.visibility = View.GONE
+            }
+
+            cartRv.adapter!!.notifyDataSetChanged()
+
+            //loadcart
+        } else {
+            if (responseInfo.cartOpen == null ) {
+
+                content_empty_list.visibility = View.VISIBLE
+                cartCons.visibility = View.GONE
+            } else {
+                globalIdCart = responseInfo.cartOpen!!
+
+                cartControl.listItems(globalIdCart)
+            }
+
+        }
+
         freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
@@ -216,7 +222,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         paymentBtn.setOnClickListener {
 
-            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).putExtra("idCart", "10"))
+            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).putExtra("idCart", globalIdCart))
 
         }
 

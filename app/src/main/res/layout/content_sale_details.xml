@@ -75,8 +75,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:paddingTop="5dp"
-            android:text="Cupons para esta oferta:"
-            android:textAlignment="textStart"
+            android:text="Escolha 1 derivado para esta oferta (opcional)"
             android:textSize="14sp"/>
 
         <androidx.recyclerview.widget.RecyclerView

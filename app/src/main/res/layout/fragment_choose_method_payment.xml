@@ -28,7 +28,7 @@
         android:padding="16dp"
         android:text="Boleto bancário"
         android:drawableStart="@drawable/ic_ticket"
-        android:drawablePadding="12dp"
+        android:drawablePadding="16dp"
         android:textSize="@dimen/text_size5"/>
 
     <View
