@@ -110,7 +110,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
                         }
                         else -> {
 
-                            saleControl.findSale(responseInfo[position].id)
+                            saleControl.findSale(responseInfo[position - 1].id)
                         }
                     }
 

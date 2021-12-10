@@ -1,5 +1,33 @@
 PLURAL // ultimas coisas
 
+diminuir um pouco tamanho splash
+trocar msg sign seja bem-vindo
+colocar termos de uso
+
+pegar list categorias de ofertas
+
+colocar refresh home
+
+colcoar icone plural no avatar main menu
+
+ver item que pode ou nao ter cupom
+
+tratar quando vir rows 0
+
+colcoar endereco dinamico pagamento
+
+jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
+ estamos analisando sua oferta botao meus pedidos
+
+
+colocar ultimos dados dinamicos no pagamento com cartao
+
+opcao por boleto, tela de confirmacao, se sim gera o boleto e mostra pro usuario o link
+
+detalhe pedido, quando for cartao n aparece botao
+
+se n tem voucher n aparece tbm
+
 - Pedido com pagamento via cartão de crédito xv/ boleto x
 
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
@@ -19,5 +47,5 @@ valor_de=1&valor_ate=1
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
 
-- Compra de PRODUTO entrega com cálculo de FRETE PAC/SEDEX xv (pegar cod pac)
+https://pluralofertas.com.br/termos_plural.pdf
 

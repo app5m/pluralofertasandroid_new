@@ -99,8 +99,15 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         address_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
 
-                    globalDestinyCep = responseInfo[0].cep!!
-                    globalAddressId = responseInfo[0].id!!
+                if (position == 0) {
+                    globalDestinyCep = null
+                    globalAddressId = null
+
+                } else {
+                    globalDestinyCep = responseInfo[position - 1].cep!!
+                    globalAddressId = responseInfo[position - 1].id!!
+                }
+
 
 
             }
@@ -288,7 +295,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 }
 
 //pegar cep de vdd dps
-                freight.destinyCep = "94836000"
+                freight.destinyCep = globalDestinyCep
                 freight.cartId = globalIdCart
                 freight.cod = globalCodFreight
 
