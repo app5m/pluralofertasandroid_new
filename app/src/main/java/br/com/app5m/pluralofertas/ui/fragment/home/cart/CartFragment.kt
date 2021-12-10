@@ -123,7 +123,8 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //        }
 
         } else {
-            SingleToast.INSTANCE.show(requireContext(), "", Toast.LENGTH_SHORT)
+            cartControl.listItems(globalIdCart)
+            SingleToast.INSTANCE.show(requireContext(), globalFreightResponseInfo.cService!!.msg!!, Toast.LENGTH_SHORT)
         }
 
 

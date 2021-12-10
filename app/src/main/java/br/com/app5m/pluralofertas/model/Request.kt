@@ -10,6 +10,9 @@ class Request: Serializable {
     @field:SerializedName("parcelas")
     var installments: String? = null
 
+    @field:SerializedName("link_boleto")
+    var ticketLink: String? = null
+
     @field:SerializedName("status_pedido")
     var statusRequest: String? = null
 

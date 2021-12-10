@@ -60,7 +60,7 @@ class RequestControl(private val context: Context, private val result: WSResult,
 
         request.token = WSConstants.TOKEN
 
-        val param: Call<List<Request>> = service.find("4", request)
+        val param: Call<List<Request>> = service.find(preferences.getUserData()!!.id!!, request)
         param.enqueue(this)
     }
 

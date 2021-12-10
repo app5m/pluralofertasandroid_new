@@ -126,8 +126,8 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //                "url": "4878-f34502796d66877a6962afa6e5daa1d2.jpg",
 
         voucherInfoTv.text = "Voucher: " + requestResponseInfo.voucher +
-                "\n\n" + "Valor do desconto: " + requestResponseInfo.descValue +
-                "\n" + "Código do cupom: " + requestResponseInfo.coupon
+                "\n\n" + "Código do cupom: " + requestResponseInfo.coupon +
+                "\n" + "Valor do desconto: " + requestResponseInfo.descValue
 
 
 //                "id_derivado": 3,
@@ -137,8 +137,8 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //            }
 
         derivativeInfoTv.text = "Nome do derivado: " + requestResponseInfo.derivativeName+
-                "\n\n" + "Valor do derivado: " + requestResponseInfo.derivativeValue+
-                "\n" + "Descrição: " + requestResponseInfo.derivativeDesc
+                "\n" + "Valor do derivado: " + requestResponseInfo.derivativeValue+
+                "\n\n" + "Descrição: " + requestResponseInfo.derivativeDesc
 
 
     }

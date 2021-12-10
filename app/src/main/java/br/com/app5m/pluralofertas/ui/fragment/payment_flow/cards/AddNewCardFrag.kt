@@ -262,16 +262,12 @@ class AddNewCardFrag : Fragment(), WSResult {
                 mee.printStackTrace()
             }
 
-
-
-
         }
 
     }
 
     private fun checkCard(): Boolean {
 
-        // testar depois de vdd
         if (TextUtils.isEmpty(cardNumber_et.text)
             || !CardUtils.isValid(cardNumber_et.text.toString().replace(" ", ""))
             || !MoipValidator.isValidCreditCard(cardNumber_et.text.toString().replace(" ", ""))) {

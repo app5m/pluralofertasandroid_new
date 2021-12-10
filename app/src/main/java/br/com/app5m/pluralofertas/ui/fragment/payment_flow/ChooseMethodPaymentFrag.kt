@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
 import br.com.app5m.pluralofertas.ui.fragment.payment_flow.cards.AddNewCardFrag
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_choose_method_payment.*
@@ -30,16 +31,20 @@ class ChooseMethodPaymentFrag : Fragment() {
 
         useful = Useful(requireContext())
 
-        ticketTv.setOnClickListener {
-
-            useful.startFragmentOnBack(TicketMethodFrag(), requireActivity().supportFragmentManager)
-        }
+        val flowActivity = requireActivity() as PaymentFlowContainerAct
 
         cardTv.setOnClickListener {
 
-
+            flowActivity.fullDataPurchase.paymentForm = "1"
             useful.startFragmentOnBack(AddNewCardFrag(), requireActivity().supportFragmentManager)
         }
+
+
+        ticketTv.setOnClickListener {
+            flowActivity.fullDataPurchase.paymentForm = "2"
+            useful.startFragmentOnBack(TicketMethodFrag(), requireActivity().supportFragmentManager)
+        }
+
 
     }
 

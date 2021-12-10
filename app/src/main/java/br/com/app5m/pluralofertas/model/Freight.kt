@@ -11,6 +11,9 @@ class Freight: Serializable {
     @field:SerializedName("cod")
     var cod: String? = null
 
+    @field:SerializedName("msg")
+    var msg: String? = null
+
     @field:SerializedName("id_carrinho")
     var cartId: String? = null
 
