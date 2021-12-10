@@ -14,17 +14,17 @@ import br.com.app5m.pluralofertas.util.Validation
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.fragment_edit_profile.*
+import kotlinx.android.synthetic.main.fragment_edit_profile.birth_edittext
+import kotlinx.android.synthetic.main.fragment_edit_profile.phone_edittext
+import kotlinx.android.synthetic.main.fragment_signup.*
 
 class ProfileEditFragment: Fragment(), WSResult {
 
 
     private lateinit var useful: Useful
     private lateinit var userControl: UserControl
-    private lateinit var uAddressControl: UAddressControl
     private lateinit var preferences: Preferences
     private lateinit var validation: Validation
-
-    private val user = User()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,9 +52,18 @@ class ProfileEditFragment: Fragment(), WSResult {
 
         val user = list[0]
 
-        nomeCompletoMeuPerfilEditText.setText(user.name)
-        emailMeuPerfilEditText.setText(user.email)
-        cpfMeuPerfilEditText3.setText(user.cpf)
+        if (user.status == "01") {
+
+            userControl.listId()
+        } else {
+            nomeCompletoMeuPerfilEditText.setText(user.name)
+            phone_edittext.setText(user.cellphone)
+            cpfMeuPerfilEditText3.setText(user.cpf)
+            emailMeuPerfilEditText.setText(user.email)
+            birth_edittext.setText(user.birth)
+        }
+
+
 
     }
 
@@ -67,19 +76,15 @@ class ProfileEditFragment: Fragment(), WSResult {
 
 
         update_bt.setOnClickListener {
-
-
-/*        {
-            "id": 3,
-            "nome": "Cadastro teste",
-            "email": "cadastro@cadastro.com",
-            "cpf": "02737594006",
-            "celular":"(51)9888888",
-            "data_nascimento": "12/08/1991",
-            "token": "plural_ofertas@2021"
-        }*/
+            if (!validate()) return@setOnClickListener
 
             val updateUser = User()
+
+            updateUser.name = nomeCompletoMeuPerfilEditText.text.toString()
+            updateUser.cellphone = phone_edittext.text.toString()
+            updateUser.cpf = cpfMeuPerfilEditText3.text.toString()
+            updateUser.birth = birth_edittext.text.toString()
+
 
             userControl.updateUserData(updateUser)
 
@@ -90,15 +95,13 @@ class ProfileEditFragment: Fragment(), WSResult {
         }
 
     }
-/*
+
     private fun validate(): Boolean {
-        return if (!validation.name(fullname_edittext)) false
-        else if (!validation.email(email_edittext)) false
-        else if (!validation.cpf(cpf_edittext)) false
+        return if (!validation.name(nomeCompletoMeuPerfilEditText)) false
         else if (!validation.cellphone(phone_edittext)) false
-        else if (!validation.password(login_password_edittext, 0)) false
-        else validation.coPassword(login_password_edittext, login_password2_edittext)
-    }*/
+        else if (!validation.cpf(cpfMeuPerfilEditText3)) false
+        else (validation.date(birth_edittext))
+    }
 
 
 }

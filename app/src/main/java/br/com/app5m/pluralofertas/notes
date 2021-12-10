@@ -1,10 +1,15 @@
 PLURAL // ultimas coisas
 
-- Editar perfil v(falta documento, ver com diogo pq ta vindo null) e senha v
-- lista v, add xv, edit xv, excluir Meus Endereços (remover n tem)
+- lista v, add xv, edit xv, excluir Meus Endereços (remover n tem) 3:30
 
-- Lista de Ofertas na HOME sem cadastro v
-- Lista de Ofertas na HOME com cadastro baseado no endereço v
+- Filtro de OFERTAS
+nome = string
+categoria = id
+valor_de=1&valor_ate=1 4:15
+
+-fazer ofertas com lat long quando n ta logado e fazer com enderefco quando estiver logado ou  lat long igual izyway 5:00
+
+
 
 - Pedido com pagamento via cartão de crédito xv/ boleto x
 
@@ -15,23 +20,11 @@ PLURAL // ultimas coisas
 - Meus cupons aplicados (list all) xv
 
 
-
-
-
-
 - Meus Pedidos (lista all com informações) xv
 - Detalhes do meu Pedido (todas informações)
 
-- Filtro de OFERTAS
-as que n tiver imagem deixar com imagem padrao
 
-bloquear email pra fazer edicao,
-add celular, cpf, data nascimento, nome,
 
-filtro
-nome = string
-categoria = id
-valor_de=1&valor_ate=1
 
 - Meus Pagamentos (lista de todos pagamentos… quando boleto.. deve ter o link do boleto) (não possui request)
 
