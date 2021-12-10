@@ -59,8 +59,6 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
             useful.openLoading()
             intent.getStringExtra("idRequest")?.let { requestControl.findId(it) }
         }
-
-
     }
 
 
@@ -92,7 +90,7 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //                "status_pagamento": "AUTORIZADO",
 
 
-        requestInfoTv.text = requestResponseInfo.sale +
+        requestInfoTv.text = "Nome da oferta: " + requestResponseInfo.sale +
                 "\n\n" + "Tipo: " + requestResponseInfo.typeDelivery +
                 "\n" + "Método de pagamento: " + requestResponseInfo.typePayment +
                 "\n" + "Status do pedido: " + requestResponseInfo.statusRequest +
@@ -136,9 +134,36 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 //                "valor_derivado": " R$ 30,00",
 //            }
 
-        derivativeInfoTv.text = "Nome do derivado: " + requestResponseInfo.derivativeName+
-                "\n" + "Valor do derivado: " + requestResponseInfo.derivativeValue+
+        derivativeInfoTv.text = "Nome do derivado: " + requestResponseInfo.derivativeName +
+                "\n" + "Valor do derivado: " + requestResponseInfo.derivativeValue +
                 "\n\n" + "Descrição: " + requestResponseInfo.derivativeDesc
+
+        if (requestResponseInfo.ticketLink != null) {
+
+            seeTicketBtn.visibility = View.VISIBLE
+
+            seeTicketBtn.setOnClickListener {
+
+                useful.openWebPage(requestResponseInfo.ticketLink)
+            }
+
+        }
+
+        if (requestResponseInfo.freightValue != null) {
+            freightLl.visibility = View.VISIBLE
+        }
+
+        if (requestResponseInfo.voucher != null) {
+            voucherLl.visibility = View.VISIBLE
+
+            seeVoucherBtn.setOnClickListener {
+
+            }
+        }
+
+        if (requestResponseInfo.derivativeName != null) {
+            derivativeLl.visibility = View.VISIBLE
+        }
 
 
     }

@@ -13,6 +13,9 @@ class Request: Serializable {
     @field:SerializedName("link_boleto")
     var ticketLink: String? = null
 
+    @field:SerializedName("url")
+    var url: String? = null
+
     @field:SerializedName("status_pedido")
     var statusRequest: String? = null
 

@@ -1,18 +1,8 @@
 PLURAL // ultimas coisas
 
-
-colocar ultimos dados dinamicos no pagamento com cartao
-
 opcao por boleto, tela de confirmacao, se sim gera o boleto e mostra pro usuario o link
 
-- Pedido com pagamento via cartão de crédito xv/ boleto x
-
-- detalhe pedido, quando for cartao n aparece botao
-- se n tem voucher n aparece tbm
 - Compra de PRODUTO retirada no local com geração de VOUCHER após pagamento OK
-
-jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
- estamos analisando sua oferta botao meus pedidos
 
 
 bugs:
@@ -29,4 +19,8 @@ pegar list categorias de ofertas
 
 colocar refresh demais telas
 
+colocar ultimos dados dinamicos no pagamento com cartao
 
+
+jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
+ estamos analisando sua oferta botao meus pedidos

@@ -1,6 +1,7 @@
 package br.com.app5m.pluralofertas.ui.fragment.payment_flow.cards
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -25,6 +26,7 @@ import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
+import br.com.app5m.pluralofertas.ui.activity.SucessAct
 import br.com.app5m.pluralofertas.util.Mask
 import br.com.app5m.pluralofertas.util.Useful
 import br.com.app5m.pluralofertas.util.Validation
@@ -85,16 +87,20 @@ class AddNewCardFrag : Fragment(), WSResult {
 
     }
 
-    override fun uResponse(list: List<User>, type: String) {
+    override fun rResponse(list: List<Request>, type: String) {
 
-        val cardResponseInfo = list[0]
+        useful.closeLoading()
 
-        if (cardResponseInfo.status == "01") {
-            useful.closeLoading()
-            requireActivity().onBackPressed()
+        val responseInfo = list[0]
+
+        if (responseInfo.status == "01") {
+
+            startActivity(Intent(requireContext(), SucessAct::class.java))
+            requireActivity().finishAffinity()
+
         }
 
-        SingleToast.INSTANCE.show(requireActivity(), cardResponseInfo.msg!!, Toast.LENGTH_SHORT)
+        SingleToast.INSTANCE.show(requireActivity(), responseInfo.msg!!, Toast.LENGTH_SHORT)
 
     }
 
@@ -219,40 +225,6 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.installments = "1"
                 newRequest.plataform = "1"
 
-//                {
-//                    "id_user":"4", v
-
-//                    "id_carrinho":6, v
-//                    "id_endereco":2, v
-//                    "forma_pagamento":2, v
-
-//                    "id_frete":1,v
-//                    "valor_frete": "R$ 20,00",v
-//                    "valor_subtotal": "R$ 55,00",v
-//                    "valor_desc_cupom": "R$ 5,00",v
-//                    "id_cupom": 6,v
-
-//                    "obs":"nenhuma",v
-
-//                    "card_name":"Android Developer",v
-//                    "card_celular":"(99) 99999-9999", v
-//                    "card_cpf":"29578963033", v
-//                    "cpf":"29578963033",v
-//                    "card_nascimento":"17/11/1996",v
-
-//                    "card_numero":"80",v
-
-//                    "card_cep":"91260-010",v
-//                    "card_estado":"RS",v
-//                    "card_cidade":"Porto Alegre",v
-//                    "card_bairro":"Morro Santana",v
-//                    "card_endereco":"Rua Amadeu F. de Oliveira Freitas",v
-//                    "card_complemento":"teste",v
-
-//                    "hash_card":"m95QM6Oh v
-//                    "parcelas":"2",
-//                    "plataforma": 1 v
-//                }
 
                 requestControl.newRequest(newRequest)
 
