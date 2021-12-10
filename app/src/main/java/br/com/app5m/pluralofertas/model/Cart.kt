@@ -4,6 +4,8 @@ import java.io.Serializable
 
 class Cart: Serializable {
 
+    @field:SerializedName("carrinho_aberto")
+    var cartOpen: String? = null
 
     @field:SerializedName("cod")
     var cod: String? = null

@@ -131,7 +131,8 @@ class HomeAct : AppCompatActivity() {
                     userControl.saveFcm(user)
 
                 }
-            }        }
+            }
+        }
 
 
     }

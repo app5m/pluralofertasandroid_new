@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.util.Preferences
 import kotlinx.android.synthetic.main.activity_intro.*
 import kotlinx.android.synthetic.main.fragment_intro.view.*
 import kotlin.math.min
@@ -22,6 +23,8 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
         setContentView(R.layout.activity_intro)
 
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+
+        Preferences(this).storeInt(Preferences.ENTERING_FIRST_TIME, 0)
 
         pagerView.adapter = mSectionsPagerAdapter
 
@@ -90,20 +93,20 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
             when (arguments?.getInt(ARG_SECTION_NUMBER)) {
                 0 -> {
-//                    rootView.onboardingImg.setImageResource(R.drawable.label)
-                    rootView.onboardingTitle.setText("Aproveite as vantagens:")
+                    rootView.onboardingImg.setImageResource(R.drawable.growth)
+                    rootView.onboardingTitle.setText("Aproveite as vantagens")
                     rootView.onboardingSubtitle.setText("Veja as promoções de sua cidade e aproveite os descontos")
                 }
 
                 1 -> {
-//                    rootView.onboardingImg.setImageResource(R.drawable.shopping_cart)
-                    rootView.onboardingTitle.setText("Compre com Facilidade:")
+                    rootView.onboardingImg.setImageResource(R.drawable.cart)
+                    rootView.onboardingTitle.setText("Compre com Facilidade")
                     rootView.onboardingSubtitle.setText("Com o plural é tudo muito fácil e seguro, com poucos cliques você compra um cupom")
 
                 }
 
                 2 -> {
-//                    rootView.onboardingImg.setImageResource(R.drawable.mobile)
+                    rootView.onboardingImg.setImageResource(R.drawable.smartphone)
                     rootView.onboardingTitle.setText("Na palma da sua mão:")
                     rootView.onboardingSubtitle.setText("Seu cupom com você, aonde você estiver, aproveite!")
                 }

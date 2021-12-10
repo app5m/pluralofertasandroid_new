@@ -98,7 +98,17 @@ class MainAct : AppCompatActivity() {
 
             startActivity(Intent(this, HomeAct::class.java))
         } else {
-            startActivity(Intent(this, IntroAct::class.java))
+
+            if (preferences.getInt(
+                    Preferences.ENTERING_FIRST_TIME, 1) == 1) {
+
+                startActivity(Intent(this, IntroAct::class.java))
+
+            } else {
+
+                startActivity(Intent(this, HomeAct::class.java))
+            }
+
 
         }
 

@@ -57,7 +57,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         if (Preferences(requireContext()).getLogin()) {
 
             useful.openLoading()
-            cartControl.listItems("12")
+            cartControl.loadCart()
 
         } else {
             cartCons.visibility = View.GONE
@@ -125,6 +125,16 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
             }
 
             cartRv.adapter!!.notifyDataSetChanged()
+        } else {
+            if (responseInfo.cartOpen == null ) {
+
+                content_empty_list.visibility = View.VISIBLE
+                cartCons.visibility = View.GONE
+            } else {
+
+                cartControl.listItems(responseInfo.cartOpen!!)
+            }
+
         }
 //
 //        [

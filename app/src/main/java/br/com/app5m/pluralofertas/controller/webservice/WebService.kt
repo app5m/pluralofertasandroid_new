@@ -99,6 +99,9 @@ interface WebService {
     @POST("carrinho/addcupom")
     fun addCoupon(@Body c: Cart): Call<List<Cart>>
 
+    @POST("carrinho/carrinhoaberto")
+    fun loadCart(@Body c: Cart): Call<List<Cart>>
+
     //freights
 
     @POST("frete/fretecorreios")

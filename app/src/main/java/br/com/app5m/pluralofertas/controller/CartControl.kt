@@ -87,4 +87,17 @@ class CartControl(private val context: Context, private val result: WSResult, pr
         param.enqueue(this)
     }
 
+    fun loadCart(){
+
+        type = "loadCart"
+
+        cart = Cart()
+
+        cart.idUser = preferences.getUserData()!!.id
+        cart.token = WSConstants.TOKEN
+
+        val param: Call<List<Cart>> = service.loadCart(cart)
+        param.enqueue(this)
+    }
+
 }
