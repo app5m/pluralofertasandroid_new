@@ -28,6 +28,7 @@ class PaymentFlowContainerAct : AppCompatActivity() {
         if (intent.extras != null) {
 
             fullDataPurchase.idCart = intent.extras!!.getString("idCart")
+            fullDataPurchase.idAddress = intent.extras!!.getString("idAddress")
 
         }
 

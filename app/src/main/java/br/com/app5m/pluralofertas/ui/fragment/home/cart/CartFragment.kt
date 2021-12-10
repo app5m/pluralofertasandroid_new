@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
@@ -18,10 +19,12 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.ItemsCartAdapter
 import br.com.app5m.pluralofertas.controller.CartControl
 import br.com.app5m.pluralofertas.controller.FreightControl
+import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Cart
 import br.com.app5m.pluralofertas.model.Freight
+import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
 import br.com.app5m.pluralofertas.ui.fragment.home.main.MyAddressesFragment
 import br.com.app5m.pluralofertas.util.Preferences
@@ -36,11 +39,17 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private lateinit var useful: Useful
     private lateinit var cartControl: CartControl
     private lateinit var freightControl: FreightControl
+    private lateinit var uAddressControl: UAddressControl
+
+    private lateinit var preferences: Preferences
 
     private var cartList  = ArrayList<Cart>()
 
-    private lateinit var globalFreightResponseInfo : Freight
-    private lateinit var globalIdCart : String
+    private var globalFreightResponseInfo : Freight? = null
+    private var globalIdCart : String? = null
+    private var globalDestinyCep : String? = null
+    private var globalCodFreight : String? = null
+    private var globalAddressId : String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,11 +61,56 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        preferences = Preferences(requireContext())
         useful = Useful(requireContext())
         cartControl = CartControl(requireContext(), this, useful)
         freightControl = FreightControl(requireContext(), this, useful)
+        uAddressControl = UAddressControl(requireContext(), this, useful)
 
         configureInitialViews()
+
+    }
+
+
+    override fun uAResponse(list: List<UAddress>, type: String) {
+
+        useful.closeLoading()
+
+        val responseInfo = list
+
+        address_sp.visibility = View.VISIBLE
+
+        val spinnerArrayGroup: MutableList<String?> = ArrayList()
+
+        spinnerArrayGroup.add("Selecione o endereço")
+
+        if (!responseInfo[0].rows.equals("0")) {
+            for (i in responseInfo.indices) {
+                spinnerArrayGroup.add(
+                    responseInfo[i].city.toString() + ", " + responseInfo[i].neighborhood
+                )
+            }
+        }
+
+        val adapter: ArrayAdapter<*> = ArrayAdapter<String?>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, spinnerArrayGroup)
+
+        address_sp.adapter = adapter
+
+        address_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
+
+                if (position != 0) {
+                    globalDestinyCep = responseInfo[position].cep!!
+                    globalAddressId = responseInfo[position].id!!
+                }
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
+        globalIdCart?.let { cartControl.listItems(it) }
+
 
     }
 
@@ -65,44 +119,9 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         globalFreightResponseInfo = list[0]
 
-        if (globalFreightResponseInfo.cService!!.status == "01") {
+        if (globalFreightResponseInfo!!.cService!!.status == "01") {
 
-            valueFreightTv.text = "R$ " + globalFreightResponseInfo.cService!!.value
-
-            freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
-                    val freight = Freight()
-
-                    freight.destinyCep = "94836000"
-                    freight.cartId = globalIdCart
-
-                    when (position) {
-                        0 -> {
-
-                            //pac ver codigo pac dps
-                            freight.cod = "40010"
-
-                        }
-                        1 -> {
-                            //sedex
-                            freight.cod = "40010"
-                        }
-                        else -> {
-                            return
-                        }
-                    }
-
-                    freightControl.estimateFreight(freight)
-
-
-                }
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                }
-            }
-
-            cartControl.listItems(globalIdCart)
+            valueFreightTv.text = "R$ " + globalFreightResponseInfo!!.cService!!.value
 
 //
 //        "cServico": {
@@ -123,8 +142,8 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 //        }
 
         } else {
-            cartControl.listItems(globalIdCart)
-            SingleToast.INSTANCE.show(requireContext(), globalFreightResponseInfo.cService!!.msg!!, Toast.LENGTH_SHORT)
+            globalIdCart?.let { cartControl.listItems(it) }
+            SingleToast.INSTANCE.show(requireContext(), globalFreightResponseInfo!!.cService!!.msg!!, Toast.LENGTH_SHORT)
         }
 
 
@@ -187,11 +206,13 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
             subtotalTv.text = responseInfo.finalValue
 
-            val total = useful.moneyToDouble(globalFreightResponseInfo.cService!!.value!!.replace(".", "")) +
-                    useful.moneyToDouble(responseInfo.finalValue!!.replace(".", ""))
+            if (globalFreightResponseInfo != null){
+                val total = useful.moneyToDouble(globalFreightResponseInfo!!.cService!!.value!!.replace(".", "")) +
+                        useful.moneyToDouble(responseInfo.finalValue!!.replace(".", ""))
 
-            totalTv.text = "R$ " + total.toString().replace(".", ",")
+                totalTv.text = "R$ " + total.toString().replace(".", ",")
 
+            }
 
             //loadcart
         } else if (type == "loadCart") {
@@ -205,19 +226,14 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
                 globalIdCart = responseInfo.cartOpen!!
 
-                val freight = Freight()
+                uAddressControl.findAddress()
 
-                freight.destinyCep = "94836000"
-                freight.cartId = globalIdCart
-                freight.cod = "40010"
-
-                freightControl.estimateFreight(freight)
 
             }
 
         } else {
 
-            cartControl.listItems(globalIdCart)
+            globalIdCart?.let { cartControl.listItems(it) }
 
         }
 
@@ -238,14 +254,52 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         paymentBtn.setOnClickListener {
 
-            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).putExtra("idCart", globalIdCart))
+            startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).
+                putExtra("idCart", globalIdCart).
+                putExtra("idAddress", globalAddressId))
 
         }
 
-        addressTv.setOnClickListener {
-            useful.startFragmentOnBack(MyAddressesFragment(), requireActivity().supportFragmentManager)
-        }
+        freight_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
+                if (globalDestinyCep == null) {
+
+                    SingleToast.INSTANCE.show(requireContext(), "É necessário escolher seu endereço antes", Toast.LENGTH_SHORT)
+                    return
+                }
+
+                val freight = Freight()
+
+                globalCodFreight = when (position) {
+                    0 -> {
+
+                        //sedex
+                        "40010"
+
+                    }
+                    1 -> {
+                        //pac ver codigo pac dps
+                        "40010"
+                    }
+                    else -> {
+                        return
+                    }
+                }
+
+//pegar cep de vdd dps
+                freight.destinyCep = "94836000"
+                freight.cartId = globalIdCart
+                freight.cod = globalCodFreight
+
+                freightControl.estimateFreight(freight)
+
+
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
 
 
         if (Preferences(requireContext()).getLogin()) {

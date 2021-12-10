@@ -24,6 +24,7 @@ import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
 import br.com.app5m.pluralofertas.util.Mask
 import br.com.app5m.pluralofertas.util.Useful
 import br.com.app5m.pluralofertas.util.Validation
@@ -56,6 +57,8 @@ class AddNewCardFrag : Fragment(), WSResult {
     private lateinit var cpfMask: TextWatcher
     private lateinit var cnpjMask: TextWatcher
 
+    private lateinit var paymentFlowContainerAct: PaymentFlowContainerAct
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -72,6 +75,8 @@ class AddNewCardFrag : Fragment(), WSResult {
         validation = Validation(requireContext())
 
         requestControl = RequestControl(requireContext(), this, useful)
+
+        paymentFlowContainerAct = requireActivity() as PaymentFlowContainerAct
 
         configInitialViews()
         configTextWatchers()
@@ -183,15 +188,15 @@ class AddNewCardFrag : Fragment(), WSResult {
 
                 val newRequest = Request()
 
-                newRequest.idCart = "6"
-                newRequest.idAddress = "2"
-                newRequest.paymentForm = "2"
+                newRequest.idCart = paymentFlowContainerAct.fullDataPurchase.idCart
+                newRequest.idAddress = paymentFlowContainerAct.fullDataPurchase.idAddress
+                newRequest.paymentForm = paymentFlowContainerAct.fullDataPurchase.paymentForm
 
                 newRequest.idFreight = "1"
-                newRequest.freightValue = ""
-                newRequest.subTotalValue = ""
-                newRequest.descValueCoupon = ""
-                newRequest.idCoupon = ""
+                newRequest.freightValue = "R$25,00"
+                newRequest.subTotalValue = "R25,00"
+                newRequest.descValueCoupon = "R25,00"
+                newRequest.idCoupon = "4"
 
                 newRequest.obs = "nenhuma"
 
@@ -207,14 +212,14 @@ class AddNewCardFrag : Fragment(), WSResult {
 //                newRequest.yearValidity = creditCard.expirationYear
 //                newRequest.cvv = creditCard.cvc
 
-                newRequest.cardCep = ""
-                newRequest.cardState = ""
-                newRequest.cardCity = ""
-                newRequest.cardNeighborhood = ""
-                newRequest.cardAddress = ""
+                newRequest.cardCep = "91250310"
+                newRequest.cardState = "RS"
+                newRequest.cardCity = "Porto Alegre"
+                newRequest.cardNeighborhood = "Rubem Berta"
+                newRequest.cardAddress = "Avenida adelino"
                 newRequest.cardComplement = ""
 
-                newRequest.hashCard = ""
+                newRequest.hashCard = WSConstants.PUBLIC_KEY_TEST
                 newRequest.installments = "2"
                 newRequest.plataform = "1"
 
