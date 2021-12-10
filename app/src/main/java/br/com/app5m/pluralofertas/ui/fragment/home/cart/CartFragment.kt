@@ -99,10 +99,9 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         address_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
 
-                if (position != 0) {
-                    globalDestinyCep = responseInfo[position].cep!!
-                    globalAddressId = responseInfo[position].id!!
-                }
+                    globalDestinyCep = responseInfo[0].cep!!
+                    globalAddressId = responseInfo[0].id!!
+
 
             }
 
@@ -123,6 +122,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
             valueFreightTv.text = "R$ " + globalFreightResponseInfo!!.cService!!.value
 
+            cartControl.listItems(globalIdCart!!)
 //
 //        "cServico": {
 //            "Codigo": "40010",
@@ -280,7 +280,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                     }
                     1 -> {
                         //pac ver codigo pac dps
-                        "40010"
+                        "41106"
                     }
                     else -> {
                         return

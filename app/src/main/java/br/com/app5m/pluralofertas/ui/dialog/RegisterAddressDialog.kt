@@ -103,7 +103,7 @@ class RegisterAddressDialog: DialogFragment() {
             uAddress.neighborhood = nbh_edit.text.toString()
             uAddress.address = address_edit.text.toString()
             uAddress.number = num_edit.text.toString()
-//            uAddress.complement = comp_edit.text.toString()
+            uAddress.complement = comp_edit.text.toString()
 
             preferences.setUAddressData(uAddress)
 

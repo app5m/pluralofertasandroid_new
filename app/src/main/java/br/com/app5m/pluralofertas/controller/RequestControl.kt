@@ -47,6 +47,7 @@ class RequestControl(private val context: Context, private val result: WSResult,
         type = "new"
 
         request.idUser = preferences.getUserData()!!.id
+        request.token = WSConstants.TOKEN
 
         val param: Call<List<Request>> = service.newRequest(request)
         param.enqueue(this)

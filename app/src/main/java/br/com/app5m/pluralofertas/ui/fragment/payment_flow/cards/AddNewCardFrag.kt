@@ -193,9 +193,9 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.paymentForm = paymentFlowContainerAct.fullDataPurchase.paymentForm
 
                 newRequest.idFreight = "1"
-                newRequest.freightValue = "R$25,00"
-                newRequest.subTotalValue = "R25,00"
-                newRequest.descValueCoupon = "R25,00"
+                newRequest.freightValue = "R$ 25,00"
+                newRequest.subTotalValue = "R$ 25,00"
+                newRequest.descValueCoupon = "R$ 25,00"
                 newRequest.idCoupon = "4"
 
                 newRequest.obs = "nenhuma"
@@ -207,11 +207,11 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.cardBirth = birth_et.text.toString()
 
 
-                newRequest.cardNumber = creditCard.number
 //                newRequest.mouthValidity = creditCard.expirationMonth
 //                newRequest.yearValidity = creditCard.expirationYear
 //                newRequest.cvv = creditCard.cvc
 
+                newRequest.cardNumber = "80"
                 newRequest.cardCep = "91250310"
                 newRequest.cardState = "RS"
                 newRequest.cardCity = "Porto Alegre"
@@ -219,7 +219,7 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.cardAddress = "Avenida adelino"
                 newRequest.cardComplement = ""
 
-                newRequest.hashCard = WSConstants.PUBLIC_KEY_TEST
+                newRequest.hashCard = creditCard.encrypt().replace("\n", "")
                 newRequest.installments = "2"
                 newRequest.plataform = "1"
 
