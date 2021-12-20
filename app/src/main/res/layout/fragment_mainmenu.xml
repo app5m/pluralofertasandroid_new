@@ -213,6 +213,7 @@
                         android:padding="15dp"
                         android:text="Meus pagamentos"
                         android:textAllCaps="true"
+                        android:visibility="gone"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
@@ -293,6 +294,7 @@
                 android:padding="15dp"
                 android:text="Versão 0"
                 android:textAllCaps="true"
+                android:visibility="gone"
                 android:textColor="@color/black" />
 
         </LinearLayout>

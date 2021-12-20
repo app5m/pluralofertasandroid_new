@@ -94,7 +94,7 @@ class LoginFragment: Fragment(), RecyclerItemClickListener, WSResult {
     }
 
     private fun validate(): Boolean {
-        return if (!validation.name(email_et)) false
+        return if (!validation.email(email_et)) false
         else (validation.password(password_et, 1))
     }
 

@@ -1,45 +1,47 @@
 PLURAL // ultimas coisas
 
-PLURAL OFERTAS - TESTES 15/12
+- LOGIN quando deixa em branco email, mensagem esta dizendo para colocar “nome” invés de “email” (app) v
+- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (api) (estou enviando normal) v
 
-- LOGIN quando deixa em branco email, mensagem esta dizendo para colocar “nome” invés de “email” (app)
-- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (api)
+
+- Ofertas sem imagem, colocar o ícone padrão da plural ofertas (app) (estou colocando) v
+- Quando entra na oferta, imagem não esta aparecendo (app) (pq n tem fotos) v
+
+- Retirar versão do MENU (app) v
+- Deixar somente termos de uso no CADASTRO (app) v
+
+
+- Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app)
+
 - Filtro categoria e valor precisa fazer (app)
-- Ofertas sem imagem, colocar o ícone padrão da plural ofertas (app)
-- Quando cadastra os CUPONS e coloca quantidade 1… esta adicionando 2 (admin)
-- Quando entra na oferta, imagem não esta aparecendo (app)
+filter
+categoria = id
+valor_de=1&valor_ate=1
+pegar list categorias de ofertas
+
+
 - Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
-- O valor que esta indo para o MOIP, nao esta SOMANDO o valor do derivado e não esta descontando o campo DESCONTO da oferta (api)
-- Efetuei uma compra utilizando CUPOM, após cair como autorizado, o CUPOM não esta passando para UTILIZADO. (api)
 - Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app)
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api)
-- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app)
-- Habilitar excluir endereço (app)
-- Meus Pagamentos, não esta funcionando (app)
-- Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app)
-- Retirar versão do MENU (app)
-- Deixar somente termos de uso no CADASTRO (app)
-- LISTA DE PEDIDOS, não esta somando certo o VALOR TOTAL conforme o MOIP e deve inserir na lista o tipo de pagamento(boleto/cartao) (admin)
-- Testar notificação, não funcionou no meu aparelho (app)
-- Quando atualizar o STATUS de uma oferta (pendente, em separação, etc)… deve enviar notificação para o app (admin e api)
+colocar ultimos dados dinamicos no pagamento com cartao
 
+-jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
+ estamos analisando sua oferta botao meus pedidos
+
+- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app)
+
+- Testar notificação, não funcionou no meu aparelho (app)
+
+
+
+
+- Habilitar excluir endereço (app) (não tem request)
 
 bugs:
 
--endereco update trocando numero por bairro, estrou madnando certo 3:30
+-endereco update trocando numero por bairro, estrou madnando certo
 
 depois:
 
--filter
-categoria = id
-valor_de=1&valor_ate=1
-
-pegar list categorias de ofertas
-
 colocar refresh demais telas
 
-colocar ultimos dados dinamicos no pagamento com cartao
-
-
-jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
- estamos analisando sua oferta botao meus pedidos
