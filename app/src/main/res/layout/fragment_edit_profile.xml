@@ -20,161 +20,131 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                style="@style/FundoCorPadraoRoxo"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/fotoPerfilMeuPerfilImageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerCrop" />
 
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline57"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.10" />
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/uni_neue_bold"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Alterar foto de perfil"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline58"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/nomeCompletoMeuPerfilEditText"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.90" />
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_main_gray_et"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:hint="nome completo"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:textSize="16sp" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/phone_edittext"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toTopOf="@+id/update_bt"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_main_gray_et"
+                    android:ems="10"
+                    android:hint="celular com DDD"
+                    android:inputType="phone"
+                    app:met_mask="(##) #####-####" />
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/fotoPerfilMeuPerfilImageView"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:scaleType="centerCrop" />
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/cpfMeuPerfilEditText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_main_gray_et"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:hint="CPF"
+                    android:inputType="text"
+                    android:textSize="16sp"
+                    app:met_mask="###.###.###-##" />
 
+                <EditText
+                    android:id="@+id/emailMeuPerfilEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_main_gray_et"
+                    android:enabled="false"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:hint="email"
+                    android:inputType="text"
+                    android:textSize="16sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/uni_neue_bold"
-                        android:lineSpacingExtra="4dp"
-                        android:text="Alterar foto de perfil"
-                        android:textAlignment="center"
-                        android:textColor="#ffffff"
-                        android:textSize="20sp" />
-
-                    <EditText
-                        android:id="@+id/nomeCompletoMeuPerfilEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_main_gray_et"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:hint="nome completo"
-                        android:imeOptions="actionNext"
-                        android:inputType="textPersonName"
-                        android:textSize="16sp" />
-
-                    <com.santalu.maskedittext.MaskEditText
-                        android:id="@+id/phone_edittext"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_main_gray_et"
-                        android:ems="10"
-                        android:hint="celular com DDD"
-                        android:inputType="phone"
-                        app:met_mask="(##) #####-####" />
-
-                    <com.santalu.maskedittext.MaskEditText
-                        android:id="@+id/cpfMeuPerfilEditText3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_main_gray_et"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:hint="CPF"
-                        android:inputType="text"
-                        android:textSize="16sp"
-                        app:met_mask="###.###.###-##" />
-
-                    <EditText
-                        android:id="@+id/emailMeuPerfilEditText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_main_gray_et"
-                        android:enabled="false"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:hint="email"
-                        android:inputType="text"
-                        android:textSize="16sp" />
-
-                    <com.santalu.maskedittext.MaskEditText
-                        android:id="@+id/birth_edittext"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_main_gray_et"
-                        android:ems="10"
-                        android:hint="data de nascimento"
-                        android:inputType="number"
-                        app:met_mask="##/##/####"/>
+                <com.santalu.maskedittext.MaskEditText
+                    android:id="@+id/birth_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/shape_main_gray_et"
+                    android:ems="10"
+                    android:hint="data de nascimento"
+                    android:inputType="number"
+                    app:met_mask="##/##/####" />
 
 
-                    <EditText
-                        android:id="@+id/emailMeuPerfilEditText4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="34dp"
-                        android:layout_marginBottom="32dp"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:hint="00/00/0000"
-                        android:imeOptions="actionDone"
-                        android:inputType="date"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="20dp"
-                        android:paddingBottom="16dp"
-                        android:textSize="16dp"
-                        android:visibility="gone" />
+                <EditText
+                    android:id="@+id/emailMeuPerfilEditText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginBottom="32dp"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:hint="00/00/0000"
+                    android:imeOptions="actionDone"
+                    android:inputType="date"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="16dp"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
 
-                    <TextView
-                        android:id="@+id/btnAlterarSenhaMeuPerfilTextView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/shape_main_gray_et"
-                        android:fontFamily="@font/uni_neue_regular"
-                        android:text="alterar senha"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
+                <TextView
+                    android:id="@+id/btnAlterarSenhaMeuPerfilTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/shape_main_gray_et"
+                    android:fontFamily="@font/uni_neue_regular"
+                    android:text="alterar senha"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/update_bt"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:fontFamily="@font/uni_neue_bold"
                     android:text="Alterar"
                     android:textColor="#ffffff"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57" />
+                    android:textSize="14sp" />
 
+            </LinearLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

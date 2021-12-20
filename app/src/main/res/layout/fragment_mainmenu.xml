@@ -94,7 +94,7 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/layoutLogged"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/gray100"
         android:visibility="visible">
@@ -130,7 +130,7 @@
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:scaleType="centerCrop"
-                            android:src="@mipmap/ic_launcher"/>
+                            android:src="@mipmap/ic_launcher" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -197,12 +197,12 @@
                         android:gravity="fill_vertical"
                         android:lineSpacingExtra="10dp"
                         android:padding="15dp"
-                        android:text="Minhas compras"
+                        android:text="Meus pedidos"
                         android:textAllCaps="true"
                         android:textColor="@color/black" />
 
                     <TextView
-                        android:id="@+id/myPeyments"
+                        android:id="@+id/myPayments"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -213,8 +213,8 @@
                         android:padding="15dp"
                         android:text="Meus pagamentos"
                         android:textAllCaps="true"
-                        android:visibility="gone"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:visibility="gone" />
 
                 </LinearLayout>
 
@@ -243,6 +243,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginTop="4dp"
                         android:background="@color/white"
                         android:drawablePadding="5dp"
                         android:gravity="fill_vertical"
@@ -294,8 +295,8 @@
                 android:padding="15dp"
                 android:text="Versão 0"
                 android:textAllCaps="true"
-                android:visibility="gone"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:visibility="gone" />
 
         </LinearLayout>
 

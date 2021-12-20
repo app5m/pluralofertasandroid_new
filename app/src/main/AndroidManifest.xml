@@ -17,35 +17,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ui.activity.DocumentPdfWebViewAct" />
+        <activity
+            android:name=".ui.activity.MainMenuContainerAct"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.activity.DocumentPdfWebViewAct"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name=".ui.activity.SucessAct"
-            android:exported="true" />
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name=".ui.activity.PaymentFlowContainerAct"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".ui.activity.PermissionLocalizationAct"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name=".ui.activity.IntroAct"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:exported="true" />
         <activity
             android:name=".ui.activity.HomeAct"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:exported="true" />
         <activity
             android:name=".ui.activity.SaleDetailsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:exported="true" />
         <activity
             android:name=".ui.activity.RequestDetailsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name=".ui.activity.SigininContentActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:exported="true"/>
         <activity
             android:name=".MainAct"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

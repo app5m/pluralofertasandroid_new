@@ -11,6 +11,7 @@ import br.com.app5m.pluralofertas.controller.UserControl
 import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.User
+import br.com.app5m.pluralofertas.ui.activity.MainMenuContainerAct
 import br.com.app5m.pluralofertas.ui.activity.SigininContentActivity
 import br.com.app5m.pluralofertas.util.DialogMessages
 import br.com.app5m.pluralofertas.util.Preferences
@@ -82,19 +83,15 @@ class MainMenuFragment : Fragment(), WSResult {
         }
 
         btnEditProfile.setOnClickListener {
-            useful.startFragmentOnBack(ProfileEditFragment(), requireActivity().supportFragmentManager)
+            startActivity(Intent(requireContext(), MainMenuContainerAct::class.java).putExtra("screenKey", "profile"))
 
         }
         myAddresses.setOnClickListener {
-            useful.startFragmentOnBack(MyAddressesFragment(), requireActivity().supportFragmentManager)
-
-        }
-        myPeyments.setOnClickListener {
-            useful.startFragmentOnBack(MyPaymentsFragment(), requireActivity().supportFragmentManager)
+            startActivity(Intent(requireContext(), MainMenuContainerAct::class.java).putExtra("screenKey", "addresses"))
 
         }
         myshoopings.setOnClickListener {
-            useful.startFragmentOnBack(RequestsFrag(), requireActivity().supportFragmentManager)
+            startActivity(Intent(requireContext(), MainMenuContainerAct::class.java).putExtra("screenKey", "requests"))
 
         }
     }
