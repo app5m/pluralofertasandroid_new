@@ -13,6 +13,9 @@ class Cart: Serializable {
     @field:SerializedName("valor_desc")
     var descValue: String? = null
 
+    @field:SerializedName("tipo")
+    var type: String? = null
+
     @field:SerializedName("data_validade")
     var validityDate: String? = null
 

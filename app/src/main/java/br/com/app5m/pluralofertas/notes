@@ -10,25 +10,25 @@ PLURAL // ultimas coisas
 - Retirar versão do MENU (app) v
 - Deixar somente termos de uso no CADASTRO (app) v
 
+- Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app) v
 
-- Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app)
-
-- Filtro categoria e valor precisa fazer (app)
-filter
-categoria = id
-valor_de=1&valor_ate=1
-pegar list categorias de ofertas
+- Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) retornar tipo no list carrinho xv
 
 
 - Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
-- Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app)
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api)
 colocar ultimos dados dinamicos no pagamento com cartao
 
 -jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
  estamos analisando sua oferta botao meus pedidos
 
-- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app)
+- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (testar pra ver se ta vindo link boleto)
+
+- Filtro categoria e valor precisa fazer (app)
+filter
+categoria = id
+valor_de=1&valor_ate=1
+pegar list categorias de ofertas
 
 - Testar notificação, não funcionou no meu aparelho (app)
 

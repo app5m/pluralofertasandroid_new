@@ -219,6 +219,11 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 return
             }
 
+            //pedir pro diogo
+            if (responseInfo.type == "Entrega") {
+                freight_ll.visibility = View.VISIBLE
+            }
+
             subtotalTv.text = responseInfo.finalValue
 
             startedFullDataPurchase.subTotalValue = responseInfo.finalValue
