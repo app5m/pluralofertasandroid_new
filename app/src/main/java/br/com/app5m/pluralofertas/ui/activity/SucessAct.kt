@@ -16,6 +16,7 @@ class SucessAct : AppCompatActivity() {
         if(intent.extras != null) {
 
             val ticket = intent.extras!!.getString("ticket")
+            val voucher = intent.extras!!.getString("voucher")
 
             ticket_bt.visibility = View.VISIBLE
 
