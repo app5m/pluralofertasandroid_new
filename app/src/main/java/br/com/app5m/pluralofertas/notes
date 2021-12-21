@@ -24,12 +24,25 @@ PLURAL // ultimas coisas
 
 colocar validation boleto
 
-categoria = id
-pegar list categorias de ofertas
 testar filter valor de valor ate
 
+pagamento com cartao e boleto com cupom e derivado tipo entrega 1 ,bombando
 
+pagamento com cartao e boleto com cupom sem derivado tipo entrega 1 , testar
 
+pagamento com cartao e boleto sem cupom com derivado tipo entrega 1 , testar
+
+pagamento com cartao e boleto sem cupom sem derivado tipo entrega 1 , testar
+
+============
+
+pagamento com cartao e boleto com cupom e derivado tipo entrega 2 ,testar
+
+pagamento com cartao e boleto com cupom sem derivado tipo entrega 2 , testar
+
+pagamento com cartao e boleto sem cupom com derivado tipo entrega 2 , testar
+
+pagamento com cartao e boleto sem cupom sem derivado tipo entrega 2 , testar
 
 bugs:
 

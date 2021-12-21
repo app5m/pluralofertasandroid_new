@@ -74,6 +74,19 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
         param.enqueue(this)
     }
 
+    fun findSaleByCategoryId(idCategory: String){
+
+        type = "findSaleByCategory"
+
+        sale = Sale()
+
+
+        sale.token = WSConstants.TOKEN
+
+        val param: Call<List<Sale>> = service.findSaleByCategoryId(idCategory, sale)
+        param.enqueue(this)
+    }
+
     fun findSaleByValue(valueFrom: String, valueTo: String){
 
         type = "findSale"
@@ -99,17 +112,15 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
     }
 
 
-    fun listCoupons(sale: Sale){
+    fun listCategories(){
 
-        type = "listCoupons"
-/*
-        {
-            "token": "plural_ofertas@2021",
-        }
-        */
+        type = "listCategories"
+
+        sale = Sale()
+
         sale.token = WSConstants.TOKEN
 
-        val param: Call<List<Sale>> = service.listCoupons("",sale)
+        val param: Call<List<Sale>> = service.saleCategories(sale)
         param.enqueue(this)
     }
 

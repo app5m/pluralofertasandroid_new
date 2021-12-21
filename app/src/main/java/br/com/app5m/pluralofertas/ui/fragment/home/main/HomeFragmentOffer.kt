@@ -4,10 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
@@ -236,6 +233,49 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
         bottomSheetDialog.setContentView(bottomSheetView)
         bottomSheetDialog.show()
 
+
+        val categorySp: Spinner = bottomSheetView.findViewById(R.id.category_sp)
+        val filterByValueBtn: Button = bottomSheetView.findViewById(R.id.filter_bt)
+
+        SaleControl(requireContext(), object : WSResult {
+            override fun sResponse(list: List<Sale>, type: String) {
+
+                val responseInfo = list
+
+                val spinnerArrayGroup: MutableList<String?> = ArrayList()
+
+
+                spinnerArrayGroup.add("Selecione")
+
+                if (!responseInfo[0].rows.equals("0")) {
+                    for (i in responseInfo.indices) {
+                        spinnerArrayGroup.add(
+                            responseInfo[i].name
+                        )
+                    }
+                }
+
+                val adapter: ArrayAdapter<*> = ArrayAdapter<String?>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, spinnerArrayGroup)
+
+                categorySp.adapter = adapter
+
+                categorySp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
+
+
+                        if (position == 0) return
+
+                        useful.openLoading()
+                        saleControl.findSaleByCategoryId(responseInfo[position - 1].id!!)
+
+                        bottomSheetDialog.dismiss()
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {}
+                }
+
+            }
+        }, useful).listCategories()
 
     }
 

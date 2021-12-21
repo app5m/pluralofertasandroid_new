@@ -78,6 +78,11 @@ interface WebService {
         @Body s: Sale): Call<List<Sale>>
 
     @POST("ofertas/find")
+    fun findSaleByCategoryId(
+        @Query("categoria") category: String,
+        @Body s: Sale): Call<List<Sale>>
+
+    @POST("ofertas/find")
     fun findSaleByValue(
         @Query("valor_de") valueFrom: String,
         @Query("valor_ate") valueTo: String,
@@ -94,6 +99,9 @@ interface WebService {
         @Path("id") id: String,
         @Body s: Sale
     ): Call<List<Sale>>
+
+    @POST("ofertas/categorias")
+    fun saleCategories(@Body s: Sale): Call<List<Sale>>
 
     //cart
 
