@@ -17,18 +17,17 @@ PLURAL // ultimas coisas
 
 - Habilitar excluir endereço (app) v
 
+- Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
+- colocar ultimos dados dinamicos no pagamento com cartao
+
+- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api) xv
+
+- Testar notificação, não funcionou no meu aparelho (app)
 
 categoria = id
 pegar list categorias de ofertas
 testar filter valor de vcalo ate
 
-- Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
-- colocar ultimos dados dinamicos no pagamento com cartao
-
-- Testar notificação, não funcionou no meu aparelho (app)
-
-
-- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api) xv
 
 
 

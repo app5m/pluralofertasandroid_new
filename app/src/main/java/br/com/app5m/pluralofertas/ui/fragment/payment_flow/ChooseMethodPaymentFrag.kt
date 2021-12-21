@@ -95,8 +95,8 @@ class ChooseMethodPaymentFrag : Fragment(), WSResult{
                         newRequest.cardName = "jubirildo"
                         newRequest.cardCellphone = "54354364564"
                         newRequest.cardCpf = "54356554332"
-                        newRequest.cpf = "54356554332"
                         newRequest.cardBirth = "10/10/2000"
+                        newRequest.cpf = "54356554332"
 
                         newRequest.installments = "1"
                         newRequest.plataform = "1"

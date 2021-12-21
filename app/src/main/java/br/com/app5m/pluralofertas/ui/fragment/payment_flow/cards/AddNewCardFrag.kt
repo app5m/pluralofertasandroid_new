@@ -220,8 +220,8 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.cardName = name_et.text.toString()
                 newRequest.cardCellphone = cellphone_et.text.toString()
                 newRequest.cardCpf = document_et.text.toString()
-                newRequest.cpf = document_et.text.toString()
                 newRequest.cardBirth = birth_et.text.toString()
+                newRequest.cpf = document_et.text.toString()
 
                 newRequest.hashCard = creditCard.encrypt().replace("\n", "")
                 newRequest.installments = "1"

@@ -215,14 +215,15 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
         rangeSlider.setLabelFormatter { value: Float ->
             val format = NumberFormat.getCurrencyInstance()
-            format.maximumFractionDigits = 2
+            format.maximumFractionDigits = 0
             format.currency = Currency.getInstance("BRL")
             format.format(value.toDouble())
         }
 
         filterByValueBtn.setOnClickListener {
 
-            saleControl.findSaleByValue(rangeSlider.values[0].toString(), rangeSlider.values[1].toString())
+            saleControl.findSaleByValue(rangeSlider.values[0].toString(),
+                rangeSlider.values[1].toString())
         }
 
     }
