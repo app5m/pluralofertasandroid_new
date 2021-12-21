@@ -51,6 +51,11 @@ interface WebService {
     @POST("usuarios/updateendereco")
     fun updateAddressData(@Body a: UAddress): Call<List<UAddress>>
 
+    @POST("usuarios/deleteendereco/" + "{id}")
+    fun deleteAddress(
+        @Path("id") idUser: String,
+        @Body a: UAddress
+    ): Call<List<UAddress>>
 
     //sales
 

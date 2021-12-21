@@ -15,6 +15,8 @@ PLURAL // ultimas coisas
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) v
 - Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) v
 
+- Habilitar excluir endereço (app) v
+
 
 categoria = id
 pegar list categorias de ofertas
@@ -26,11 +28,8 @@ testar filter valor de vcalo ate
 - Testar notificação, não funcionou no meu aparelho (app)
 
 
-
-
 - Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api) xv
 
-- Habilitar excluir endereço (app) (não tem request) x
 
 
 bugs:

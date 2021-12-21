@@ -10,14 +10,17 @@ import android.widget.RadioButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.pluralofertas.R
+import br.com.app5m.pluralofertas.controller.CartControl
 import br.com.app5m.pluralofertas.controller.UAddressControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
 import br.com.app5m.pluralofertas.model.UAddress
+import br.com.app5m.pluralofertas.util.DialogMessages
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.util.Useful
 
 class UAddressAdapter (private val context: Context, private val listUAddress: List<UAddress>,
-                       private val useful: Useful, private val recyclerItemClickListener: RecyclerItemClickListener)
+                       private val useful: Useful, private val recyclerItemClickListener: RecyclerItemClickListener,
+                       private val wsResult: WSResult)
     : RecyclerView.Adapter<UAddressAdapter.ViewHolder>() {
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -70,6 +73,17 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
             }
 
         }, useful).listIdAddress(uaddress.id!!)
+
+        holder.removeIb.setOnClickListener {
+            DialogMessages(context).click("Atenção",
+                "Você tem certeza que deseja deletar este endereço?",
+                object : DialogMessages.Answer {
+                    override fun setOnClickListener() {
+                        UAddressControl(context, wsResult, useful).deleteAddress(uaddress.id!!)
+                    }
+                })
+
+        }
 
     }
 

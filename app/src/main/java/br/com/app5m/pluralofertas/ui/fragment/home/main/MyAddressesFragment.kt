@@ -115,7 +115,7 @@ class MyAddressesFragment : Fragment(), WSResult, RecyclerItemClickListener {
 
     private fun configureInitialViews(){
 
-        val uAddressAdapter = UAddressAdapter(requireContext(), uaddressList, useful, this)
+        val uAddressAdapter = UAddressAdapter(requireContext(), uaddressList, useful, this, this)
 
         myAdressesRv.apply {
             setHasFixedSize(false)

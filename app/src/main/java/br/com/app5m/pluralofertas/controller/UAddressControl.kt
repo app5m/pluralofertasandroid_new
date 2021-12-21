@@ -88,4 +88,16 @@ class UAddressControl(private val context: Context, private val result: WSResult
         param.enqueue(this)
     }
 
+    fun deleteAddress(id: String){
+
+        type = "delete"
+
+        uAddress = UAddress()
+
+        uAddress.token = WSConstants.TOKEN
+
+        val param: Call<List<UAddress>> = service.deleteAddress(id, uAddress)
+        param.enqueue(this)
+    }
+
 }
