@@ -295,10 +295,10 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 }
 
                 startedFullDataPurchase.freightValue = globalFreightResponseInfo!!.cService!!.value
-
             }
 
             startedFullDataPurchase.idCart = globalIdCart
+            startedFullDataPurchase.typeDelivery = globalCartResponseInfo!!.typeDelivery
 
             startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).
             putExtra("full", startedFullDataPurchase))

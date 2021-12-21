@@ -202,6 +202,8 @@ class AddNewCardFrag : Fragment(), WSResult {
                 newRequest.freightValue = paymentFlowContainerAct.fullDataPurchase.freightValue
                 newRequest.subTotalValue = paymentFlowContainerAct.fullDataPurchase.subTotalValue
 
+                newRequest.typeDelivery = paymentFlowContainerAct.fullDataPurchase.typeDelivery
+
                 newRequest.descValueCoupon = paymentFlowContainerAct.fullDataPurchase.descValueCoupon
                 newRequest.idCoupon = paymentFlowContainerAct.fullDataPurchase.idCoupon
 

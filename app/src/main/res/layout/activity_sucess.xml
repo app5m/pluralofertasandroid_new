@@ -51,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Obrigado por comprar na plural ofertas, estamos analisando sua compra. Fique a vontade para ver o processo do seu pedido na aba Minhas Compras."
+            android:text="Obrigado por comprar na plural ofertas, estamos analisando sua compra. Fique à vontade para ver o processo do seu pedido na aba Meus pedidos no menu principal."
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size5"

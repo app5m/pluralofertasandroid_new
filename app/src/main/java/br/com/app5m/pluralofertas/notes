@@ -12,22 +12,15 @@ PLURAL // ultimas coisas
 
 - Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app) v
 
-- Habilitar excluir endereço (app) (não tem request) x
-
-
-
-
+- Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) v
 - Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) v
-- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (testar pra ver se ta vindo link boleto) xv
 
-- Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) (nao esta vindo no retorno) xv
+
+
 
 
 - Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
 - colocar ultimos dados dinamicos no pagamento com cartao
-
--jogar pra tela de sucesso, obrigado por comprar na plural ofertas,
- estamos analisando sua oferta botao meus pedidos
 
 
 - Filtro categoria e valor precisa fazer (app)
@@ -37,6 +30,10 @@ valor_de=1&valor_ate=1
 pegar list categorias de ofertas
 
 - Testar notificação, não funcionou no meu aparelho (app)
+
+- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api)
+
+- Habilitar excluir endereço (app) (não tem request) x
 
 
 bugs:

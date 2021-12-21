@@ -149,7 +149,7 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
 
         }
 
-        if (requestResponseInfo.freightValue != null) {
+        if (requestResponseInfo.typeDelivery != "Retirada") {
             freightLl.visibility = View.VISIBLE
         }
 
