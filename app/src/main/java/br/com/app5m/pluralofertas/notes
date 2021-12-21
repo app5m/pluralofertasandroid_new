@@ -16,18 +16,13 @@ PLURAL // ultimas coisas
 - Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) v
 
 
-
+categoria = id
+pegar list categorias de ofertas
 
 
 - Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
 - colocar ultimos dados dinamicos no pagamento com cartao
 
-
-- Filtro categoria e valor precisa fazer (app)
-filter
-categoria = id
-valor_de=1&valor_ate=1
-pegar list categorias de ofertas
 
 - Testar notificação, não funcionou no meu aparelho (app)
 

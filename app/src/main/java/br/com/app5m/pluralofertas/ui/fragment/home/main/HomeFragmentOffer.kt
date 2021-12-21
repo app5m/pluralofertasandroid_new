@@ -7,8 +7,10 @@ import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.ui.activity.SaleDetailsActivity
 import br.com.app5m.pluralofertas.adapter.SalesAdapter
@@ -21,8 +23,10 @@ import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.slider.RangeSlider
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.home_body.*
+import java.text.NumberFormat
 import java.util.*
 
 class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
@@ -132,15 +136,23 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
     @SuppressLint("NotifyDataSetChanged")
     override fun sResponse(list: List<Sale>, type: String) {
 
+        val responseInfo = list[0]
 
         if (swipeRefresh.isRefreshing) swipeRefresh.isRefreshing = false
 
         useful.closeLoading()
 
-        saleList.clear()
-        saleList.addAll(list)
+        if (responseInfo.rows != "0") {
+            salesRv.visibility = View.VISIBLE
 
-        salesRv.adapter!!.notifyDataSetChanged()
+            saleList.clear()
+            saleList.addAll(list)
+
+            salesRv.adapter!!.notifyDataSetChanged()
+        } else {
+            salesRv.visibility = View.GONE
+        }
+
 
     }
 
@@ -172,8 +184,7 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
         val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.AppTheme_SheetDialog)
         val bottomSheetView: View = LayoutInflater.from(context).inflate(
             R.layout.bottom_dialog_filter,
-            requireActivity().findViewById(R.id.sheet_container)
-        )
+            requireActivity().findViewById(R.id.sheet_container))
         bottomSheetDialog.setContentView(bottomSheetView)
         bottomSheetDialog.show()
 
@@ -181,16 +192,51 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
         val valueBtn = bottomSheetView.findViewById<Button>(R.id.value_btn)
 
         categoryBtn.setOnClickListener {
-
+            openFilterDialogCategory()
             bottomSheetDialog.dismiss()
         }
 
         valueBtn .setOnClickListener {
-
+            openFilterDialogValue()
             bottomSheetDialog.dismiss()
         }
     }
 
+    private fun openFilterDialogValue() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.AppTheme_SheetDialog)
+        val bottomSheetView: View = LayoutInflater.from(context).inflate(
+            R.layout.bottom_dialog_filter_value,
+            requireActivity().findViewById(R.id.sheet_container))
+        bottomSheetDialog.setContentView(bottomSheetView)
+        bottomSheetDialog.show()
+
+        val rangeSlider: RangeSlider = bottomSheetView.findViewById(R.id.rangeSlider)
+        val filterByValueBtn: Button = bottomSheetView.findViewById(R.id.filter_bt)
+
+        rangeSlider.setLabelFormatter { value: Float ->
+            val format = NumberFormat.getCurrencyInstance()
+            format.maximumFractionDigits = 2
+            format.currency = Currency.getInstance("BRL")
+            format.format(value.toDouble())
+        }
+
+        filterByValueBtn.setOnClickListener {
+
+            saleControl.findSaleByValue(rangeSlider.values[0].toString(), rangeSlider.values[1].toString())
+        }
+
+    }
+
+    private fun openFilterDialogCategory() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.AppTheme_SheetDialog)
+        val bottomSheetView: View = LayoutInflater.from(context).inflate(
+            R.layout.bottom_dialog_filter_category,
+            requireActivity().findViewById(R.id.sheet_container))
+        bottomSheetDialog.setContentView(bottomSheetView)
+        bottomSheetDialog.show()
+
+
+    }
 
 }
 

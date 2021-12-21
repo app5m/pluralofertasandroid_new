@@ -74,6 +74,18 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
         param.enqueue(this)
     }
 
+    fun findSaleByValue(valueFrom: String, valueTo: String){
+
+        type = "findSale"
+
+        sale = Sale()
+
+        sale.token = WSConstants.TOKEN
+
+        val param: Call<List<Sale>> = service.findSaleByValue(valueFrom, valueTo, sale)
+        param.enqueue(this)
+    }
+
     fun listIdSales(idSale: String){
 
         type = "listIdSale"
