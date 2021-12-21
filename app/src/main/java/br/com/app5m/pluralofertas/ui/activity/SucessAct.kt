@@ -26,8 +26,9 @@ class SucessAct : AppCompatActivity() {
                 }
             } else {
 
+//                startActivity(Intent(this, VoucherAct::class.java).putExtra("voucherCode", requestResponseInfo.voucher))
             }
-            
+
         }
 
         ok_bt.setOnClickListener {

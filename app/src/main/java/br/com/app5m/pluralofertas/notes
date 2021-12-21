@@ -1,28 +1,27 @@
 PLURAL // ultimas coisas
 
-- LOGIN quando deixa em branco email, mensagem esta dizendo para colocar “nome” invés de “email” (app) v
-- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (api) (estou enviando normal) v
+- LOGIN quando deixa em branco email, mensagem esta dizendo para colocar “nome” invés de “email” (app) OK
+- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (api) (estou enviando normal) OK
 
-- Ofertas sem imagem, colocar o ícone padrão da plural ofertas (app) (estou colocando) v
-- Quando entra na oferta, imagem não esta aparecendo (app) (pq n tem fotos) v
+- Ofertas sem imagem, colocar o ícone padrão da plural ofertas (app) (estou colocando, porem algumas imagens do banco estao empty.png por isso fica em branco) OK
+- Quando entra na oferta, imagem não esta aparecendo (app) (pq n tem fotos na oferta) OK
 
-- Retirar versão do MENU (app) v
-- Deixar somente termos de uso no CADASTRO (app) v
+- Retirar versão do MENU (app) OK
+- Deixar somente termos de uso no CADASTRO (app) OK
 
-- Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app) v
+- Meu Perfil, quando clica em alterar senha, não tem seta de voltar (app) OK
 
-- Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) v
-- Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) v
+- Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) OK
+- Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) OK
 
-- Habilitar excluir endereço (app) v
+- Habilitar excluir endereço (app) OK
 
-- Testar notificação, não funcionou no meu aparelho (app) v
+- Testar notificação, não funcionou no meu aparelho (app) OK
+- Detalhes da compra, colocar ver voucher OK
+- Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app) OK
 
-- Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app)
 - colocar ultimos dados dinamicos no pagamento com cartao
-
 - Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api) xv
-- Detalhes da compra, colocar ver voucher
 
 
 categoria = id

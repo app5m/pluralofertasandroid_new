@@ -157,7 +157,7 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
             voucherLl.visibility = View.VISIBLE
 
             seeVoucherBtn.setOnClickListener {
-
+                startActivity(Intent(this, VoucherAct::class.java).putExtra("voucherCode", requestResponseInfo.voucher))
             }
         }
 
