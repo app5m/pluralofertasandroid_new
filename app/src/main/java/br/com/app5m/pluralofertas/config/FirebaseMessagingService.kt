@@ -10,6 +10,7 @@ import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import br.com.app5m.pluralofertas.MainAct
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.ui.activity.HomeAct
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -46,46 +47,10 @@ class FirebaseMessagingService: FirebaseMessagingService() {
 
         val channel = getString(R.string.default_notification_channel_id)
         val uriSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-//
-//        var notifyScreenValue: HomeAct.MainScreenStage? = null
-//
-//        intent = Intent(this, HomeAct::class.java)
-//
-//        val broadcastManager = LocalBroadcastManager.getInstance(this)
-//        val intentBroadcast = Intent("Notification")
-//
-//        when (type) {
-//            "1" -> {
-//                //SOLICITADA
-//
-//                notifyScreenValue = HomeAct.MainScreenStage.DRIVER_SEARCH
-//
-//            }
-//            "2", //ACEITA
-//            "3", //EM ANDAMENTO
-//            "4", //FINALZIADA
-//            "5", // CANCELADA PELO MOTORA
-//            "6" -> {
-//                //CANCELADA_PASSAGEIRO
-//                // envia algum dado chave para colocar a tela em overview e mostrar mensagem q cancelou
-//                notifyScreenValue = HomeAct.MainScreenStage.RELOAD_OVERVIEW_STATEMENT
-//            }
-//            //DEFAULT NOTIFICATIONS
-//            else -> {
-//
-//            }
-//        }
-//
-//        if (notifyScreenValue != null) {
-//
-//            intent!!.putExtra("notifyScreen", notifyScreenValue)
-//            intentBroadcast.putExtra("notifyScreen", notifyScreenValue)
-//        }
-//
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(
-            this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
-//
-//        broadcastManager.sendBroadcast(intentBroadcast)
+
+        val intent = Intent(this, MainAct::class.java)
+
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
 
         val notification = NotificationCompat.Builder(this, channel)

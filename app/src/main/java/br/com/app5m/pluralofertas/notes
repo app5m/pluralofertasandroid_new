@@ -22,11 +22,11 @@ PLURAL // ultimas coisas
 
 - Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api) xv
 
-- Testar notificação, não funcionou no meu aparelho (app)
+- Testar notificação, não funcionou no meu aparelho (app) v
 
 categoria = id
 pegar list categorias de ofertas
-testar filter valor de vcalo ate
+testar filter valor de valor ate
 
 
 

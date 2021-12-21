@@ -27,7 +27,9 @@ import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.model.User
 import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
 import br.com.app5m.pluralofertas.ui.activity.SucessAct
+import br.com.app5m.pluralofertas.ui.dialog.RegisterAddressDialog
 import br.com.app5m.pluralofertas.util.Mask
+import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import br.com.app5m.pluralofertas.util.Validation
 import br.com.app5m.pluralofertas.util.visual.Animation
@@ -51,6 +53,7 @@ class AddNewCardFrag : Fragment(), WSResult {
     private lateinit var requestControl: RequestControl
     private lateinit var animation: Animation
     private lateinit var validation: Validation
+    private lateinit var preferences: Preferences
 
     private val cardFrontFrag = CardFrontFrag()
     private val cardBackFrag = CardBackFrag()
@@ -75,6 +78,7 @@ class AddNewCardFrag : Fragment(), WSResult {
         useful = Useful(requireContext())
         animation = Animation(requireContext())
         validation = Validation(requireContext())
+        preferences = Preferences(requireContext())
 
         requestControl = RequestControl(requireContext(), this, useful)
 
@@ -174,6 +178,12 @@ class AddNewCardFrag : Fragment(), WSResult {
 
     private fun loadClicks() {
 
+        address_tv.setOnClickListener {
+            val dialog = RegisterAddressDialog()
+            dialog.show(parentFragmentManager,"DialogRegisterAddress")
+        }
+
+
         finish_bt.setOnClickListener {
             if (!checkCard()) return@setOnClickListener
             if (!validate()) return@setOnClickListener
@@ -209,13 +219,15 @@ class AddNewCardFrag : Fragment(), WSResult {
 
                 newRequest.obs = "nenhuma"
 
-                newRequest.cardNumber = "80"
-                newRequest.cardCep = "91250310"
-                newRequest.cardState = "RS"
-                newRequest.cardCity = "Porto Alegre"
-                newRequest.cardNeighborhood = "Rubem Berta"
-                newRequest.cardAddress = "Avenida adelino"
-                newRequest.cardComplement = "complemento"
+                if(preferences.getUAddressData() != null) {
+                    newRequest.cardCep = preferences.getUAddressData()!!.cep
+                    newRequest.cardState = preferences.getUAddressData()!!.state
+                    newRequest.cardCity = preferences.getUAddressData()!!.city
+                    newRequest.cardNeighborhood = preferences.getUAddressData()!!.neighborhood
+                    newRequest.cardAddress = preferences.getUAddressData()!!.address
+                    newRequest.cardNumber = preferences.getUAddressData()!!.number
+                    newRequest.cardComplement = preferences.getUAddressData()!!.complement
+                }
 
                 newRequest.cardName = name_et.text.toString()
                 newRequest.cardCellphone = cellphone_et.text.toString()

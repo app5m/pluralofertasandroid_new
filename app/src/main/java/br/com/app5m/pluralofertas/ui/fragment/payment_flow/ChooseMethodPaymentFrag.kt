@@ -84,12 +84,12 @@ class ChooseMethodPaymentFrag : Fragment(), WSResult{
 
                         newRequest.obs = "nenhuma"
 
-                        newRequest.cardNumber = "80"
                         newRequest.cardCep = "91250310"
                         newRequest.cardState = "RS"
                         newRequest.cardCity = "Porto Alegre"
                         newRequest.cardNeighborhood = "Rubem Berta"
                         newRequest.cardAddress = "Avenida adelino"
+                        newRequest.cardNumber = "80"
                         newRequest.cardComplement = "complemento"
 
                         newRequest.cardName = "jubirildo"
