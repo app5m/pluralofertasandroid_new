@@ -138,7 +138,7 @@ class RequestDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, W
                 "\n" + "Valor do derivado: " + requestResponseInfo.derivativeValue +
                 "\n\n" + "Descrição: " + requestResponseInfo.derivativeDesc
 
-        if (requestResponseInfo.ticketLink != null) {
+        if (requestResponseInfo.ticketLink != null && requestResponseInfo.ticketLink != "") {
 
             seeTicketBtn.visibility = View.VISIBLE
 

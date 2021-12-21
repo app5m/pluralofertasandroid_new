@@ -22,6 +22,7 @@ PLURAL // ultimas coisas
 
 - Detalhes da compra, não esta aparecendo o “VER BOLETO” (app)  OK
 
+colocar validation boleto
 
 categoria = id
 pegar list categorias de ofertas

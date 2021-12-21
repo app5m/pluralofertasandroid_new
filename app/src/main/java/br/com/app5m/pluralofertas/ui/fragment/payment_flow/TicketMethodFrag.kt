@@ -102,6 +102,7 @@ class TicketMethodFrag : Fragment(), WSResult {
                         newRequest.cardBirth = birth_et.text.toString()
                         newRequest.cpf = document_et.text.toString()
 
+//                          hash
 //                        newRequest.installments = "1"
                         newRequest.plataform = "1"
 
