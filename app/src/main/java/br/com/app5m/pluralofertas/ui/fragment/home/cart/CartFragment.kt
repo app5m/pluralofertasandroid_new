@@ -46,6 +46,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private var cartList  = ArrayList<Cart>()
 
+    private var globalCartResponseInfo : Cart? = null
     private var globalFreightResponseInfo : Freight? = null
     private var globalIdCart : String? = null
     private var globalDestinyCep : String? = null
@@ -162,7 +163,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
     @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     override fun cResponse(list: List<Cart>, type: String) {
 
-        val responseInfo = list[0]
+        globalCartResponseInfo = list[0]
 
         if (type == "listItems") {
 
@@ -207,7 +208,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 }
             }
 
-            if (responseInfo.rows != "0") {
+            if (globalCartResponseInfo!!.rows != "0") {
                 cartCons.visibility = View.VISIBLE
                 content_empty_list.visibility = View.GONE
 
@@ -220,25 +221,28 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
             }
 
             //pedir pro diogo
-            if (responseInfo.type == "Entrega") {
+            if (globalCartResponseInfo!!.typeDelivery == "1") {
                 freight_ll.visibility = View.VISIBLE
             }
 
-            subtotalTv.text = responseInfo.finalValue
-
-            startedFullDataPurchase.subTotalValue = responseInfo.finalValue
-
             if (globalFreightResponseInfo != null){
-                val total = useful.moneyToDouble(globalFreightResponseInfo!!.cService!!.value!!.replace(".", "")) +
-                        useful.moneyToDouble(responseInfo.finalValue!!.replace(".", ""))
 
+                val total = useful.moneyToDouble(globalFreightResponseInfo!!.cService!!.value!!.replace(".", "")) +
+                        useful.moneyToDouble(globalCartResponseInfo!!.finalValue!!.replace(".", ""))
+
+                subtotalTv.text = globalCartResponseInfo!!.finalValue
                 totalTv.text = "R$ " + total.toString().replace(".", ",")
 
+            } else {
+
+                totalTv.text = globalCartResponseInfo!!.finalValue
             }
+
+            startedFullDataPurchase.subTotalValue = globalCartResponseInfo!!.finalValue
 
             //loadcart
         } else if (type == "loadCart") {
-            if (responseInfo.cartOpen == null) {
+            if (globalCartResponseInfo!!.cartOpen == null) {
 
                 useful.closeLoading()
 
@@ -246,7 +250,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 cartCons.visibility = View.GONE
             } else {
 
-                globalIdCart = responseInfo.cartOpen!!
+                globalIdCart = globalCartResponseInfo!!.cartOpen!!
 
                 uAddressControl.findAddress()
 
@@ -256,7 +260,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         } else {
 
 
-            if (responseInfo.status != "01") {
+            if (globalCartResponseInfo!!.status != "01") {
                 startedFullDataPurchase.descValueCoupon = null
                 startedFullDataPurchase.idCoupon = null
             }
@@ -282,18 +286,22 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         paymentBtn.setOnClickListener {
 
-            if (globalDestinyCep == null || globalCodFreight == null) {
+            if (globalCartResponseInfo!!.typeDelivery == "1") {
+                if (globalDestinyCep == null || globalCodFreight == null) {
 
-                SingleToast.INSTANCE.show(requireContext(),
-                    "É necessário escolher seu método de entrega antes de prosseguir com o pagamento", Toast.LENGTH_LONG)
-                return@setOnClickListener
+                    SingleToast.INSTANCE.show(requireContext(),
+                        "É necessário escolher seu método de entrega antes de prosseguir com o pagamento", Toast.LENGTH_LONG)
+                    return@setOnClickListener
+                }
+
+                startedFullDataPurchase.freightValue = globalFreightResponseInfo!!.cService!!.value
+
             }
 
             startedFullDataPurchase.idCart = globalIdCart
-            startedFullDataPurchase.freightValue = globalFreightResponseInfo!!.cService!!.value
 
             startActivity(Intent(requireContext(), PaymentFlowContainerAct::class.java).
-                putExtra("full", startedFullDataPurchase))
+            putExtra("full", startedFullDataPurchase))
 
         }
 

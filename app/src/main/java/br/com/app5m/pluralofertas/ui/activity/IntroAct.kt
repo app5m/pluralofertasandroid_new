@@ -107,7 +107,7 @@ class IntroAct : AppCompatActivity(), ViewPager.OnPageChangeListener{
 
                 2 -> {
                     rootView.onboardingImg.setImageResource(R.drawable.smartphone)
-                    rootView.onboardingTitle.setText("Na palma da sua mão:")
+                    rootView.onboardingTitle.setText("Na palma da sua mão")
                     rootView.onboardingSubtitle.setText("Seu cupom com você, aonde você estiver, aproveite!")
                 }
             }

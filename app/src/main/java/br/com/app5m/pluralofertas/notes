@@ -17,7 +17,7 @@ PLURAL // ultimas coisas
 
 
 
-- Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) retornar tipo no list carrinho xv
+- Coloquei uma oferta RETIRADA no carrinho e esta mostrando ENDEREÇO e FRETE (app) v
 - Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (testar pra ver se ta vindo link boleto) xv
 
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) (nao esta vindo no retorno) xv
