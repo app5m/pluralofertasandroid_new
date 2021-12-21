@@ -1,14 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     tools:context=".ui.fragment.payment_flow.TicketMethodFrag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/userData_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dados do usuário"
+                android:textAllCaps="true"
+                android:textColor="@color/gray400" />
+
+            <EditText
+                android:id="@+id/name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_main_stroke_gray_et"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_main_stroke_gray_et"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:visibility="gone" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/birth_et"
+                app:met_mask="##/##/####"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0"
+                android:background="@drawable/shape_main_stroke_gray_et"
+                android:hint="Data de nascimento"
+                android:inputType="number"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/document_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0"
+                android:background="@drawable/shape_main_stroke_gray_et"
+                android:hint="CPF"
+                android:inputType="number"
+                android:maxLines="1" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/cellphone_et"
+                app:met_mask="(##) #####-####"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0"
+                android:background="@drawable/shape_main_stroke_gray_et"
+                android:hint="Celular"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/addressData_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Endereço de cobrança"
+                android:textAllCaps="true"
+                android:textColor="@color/gray400" />
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_main_stroke_gray_et"
+                android:maxLines="1"
+                android:text="Adicionar endereço"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/finish_bt"
+            style="@style/StyleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Finalizar" />
+    </LinearLayout>
+</ScrollView>

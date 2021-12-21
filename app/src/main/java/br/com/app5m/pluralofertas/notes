@@ -20,8 +20,7 @@ PLURAL // ultimas coisas
 - Detalhes da compra, colocar ver voucher OK
 - Na hora de fazer pagamento via cartão de crédito, não achei para colocar o endereço (app) OK
 
-- colocar ultimos dados dinamicos no pagamento com cartao
-- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app) (precisa vir link boleto api) xv
+- Detalhes da compra, não esta aparecendo o “VER BOLETO” (app)  OK
 
 
 categoria = id

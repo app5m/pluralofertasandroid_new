@@ -59,73 +59,12 @@ class ChooseMethodPaymentFrag : Fragment(), WSResult{
 
         ticketTv.setOnClickListener {
             paymentFlowContainerAct.fullDataPurchase.paymentForm = "2"
+            useful.startFragmentOnBack(TicketMethodFrag(), requireActivity().supportFragmentManager)
 
-            DialogMessages(requireContext()).click("Gerar boleto",
-                "Clique em confirmar para finalizar sua compra via boleto bancário!",
-                object : DialogMessages.Answer {
-                    override fun setOnClickListener() {
-
-                        useful.openLoading()
-
-                        val newRequest = Request()
-
-                        newRequest.idCart = paymentFlowContainerAct.fullDataPurchase.idCart
-                        newRequest.idAddress = paymentFlowContainerAct.fullDataPurchase.idAddress
-                        newRequest.paymentForm = paymentFlowContainerAct.fullDataPurchase.paymentForm
-
-                        newRequest.idFreight = paymentFlowContainerAct.fullDataPurchase.idFreight
-                        newRequest.freightValue = paymentFlowContainerAct.fullDataPurchase.freightValue
-                        newRequest.subTotalValue = paymentFlowContainerAct.fullDataPurchase.subTotalValue
-
-                        newRequest.typeDelivery = paymentFlowContainerAct.fullDataPurchase.typeDelivery
-
-                        newRequest.descValueCoupon = paymentFlowContainerAct.fullDataPurchase.descValueCoupon
-                        newRequest.idCoupon = paymentFlowContainerAct.fullDataPurchase.idCoupon
-
-                        newRequest.obs = "nenhuma"
-
-                        newRequest.cardCep = "91250310"
-                        newRequest.cardState = "RS"
-                        newRequest.cardCity = "Porto Alegre"
-                        newRequest.cardNeighborhood = "Rubem Berta"
-                        newRequest.cardAddress = "Avenida adelino"
-                        newRequest.cardNumber = "80"
-                        newRequest.cardComplement = "complemento"
-
-                        newRequest.cardName = "jubirildo"
-                        newRequest.cardCellphone = "54354364564"
-                        newRequest.cardCpf = "54356554332"
-                        newRequest.cardBirth = "10/10/2000"
-                        newRequest.cpf = "54356554332"
-
-                        newRequest.installments = "1"
-                        newRequest.plataform = "1"
-
-
-                        requestControl.newRequest(newRequest)
-
-                    }
-                })
         }
 
 
     }
 
-    override fun rResponse(list: List<Request>, type: String) {
-
-        useful.closeLoading()
-
-        val responseInfo = list[0]
-
-        if (responseInfo.status == "01") {
-
-            startActivity(Intent(requireContext(), SucessAct::class.java).putExtra("ticket", responseInfo.ticketLink))
-            requireActivity().finishAffinity()
-
-        }
-
-        SingleToast.INSTANCE.show(requireActivity(), responseInfo.msg!!, Toast.LENGTH_LONG)
-
-    }
 
 }
