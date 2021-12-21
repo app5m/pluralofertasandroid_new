@@ -15,16 +15,19 @@ class SucessAct : AppCompatActivity() {
 
         if(intent.extras != null) {
 
-            val ticket = intent.extras!!.getString("ticket")
-            val voucher = intent.extras!!.getString("voucher")
+            val ticket = intent.extras?.getString("ticket")
+            val voucher = intent.extras?.getString("voucher")
 
-            ticket_bt.visibility = View.VISIBLE
+            if (ticket != null) {
+                ticket_bt.visibility = View.VISIBLE
 
-            ticket_bt.setOnClickListener {
-                Useful(this).openWebPage(ticket)
+                ticket_bt.setOnClickListener {
+                    Useful(this).openWebPage(ticket)
+                }
+            } else {
+
             }
-
-
+            
         }
 
         ok_bt.setOnClickListener {

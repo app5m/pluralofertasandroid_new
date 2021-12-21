@@ -52,6 +52,7 @@ class RegisterAddressDialog: DialogFragment() {
             nbh_edit.setText(preferences.getUAddressData()!!.neighborhood)
             address_edit.setText(preferences.getUAddressData()!!.address)
             num_edit.setText(preferences.getUAddressData()!!.number)
+            comp_edit.setText(preferences.getUAddressData()!!.complement)
         }
 
 

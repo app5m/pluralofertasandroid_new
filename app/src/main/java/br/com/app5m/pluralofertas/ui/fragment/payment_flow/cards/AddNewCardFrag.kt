@@ -91,6 +91,15 @@ class AddNewCardFrag : Fragment(), WSResult {
 
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode2: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode2, data)
+
+        if (data!!.extras!!.getBoolean("msg")) {
+            address_tv.text = preferences.getUAddressData()!!.address + " - " + preferences.getUAddressData()!!.number
+
+        }
+    }
+
     override fun rResponse(list: List<Request>, type: String) {
 
         useful.closeLoading()
@@ -180,6 +189,7 @@ class AddNewCardFrag : Fragment(), WSResult {
 
         address_tv.setOnClickListener {
             val dialog = RegisterAddressDialog()
+            dialog.setTargetFragment(this, 0)
             dialog.show(parentFragmentManager,"DialogRegisterAddress")
         }
 
@@ -227,6 +237,11 @@ class AddNewCardFrag : Fragment(), WSResult {
                     newRequest.cardAddress = preferences.getUAddressData()!!.address
                     newRequest.cardNumber = preferences.getUAddressData()!!.number
                     newRequest.cardComplement = preferences.getUAddressData()!!.complement
+                } else {
+                    SingleToast.INSTANCE.show(requireContext(),
+                        "Por favor, insira o endereço da cobrança.",
+                        Toast.LENGTH_LONG)
+                    return@setOnClickListener
                 }
 
                 newRequest.cardName = name_et.text.toString()
@@ -245,7 +260,7 @@ class AddNewCardFrag : Fragment(), WSResult {
             } catch (mee: MoipEncryptionException) {
                 SingleToast.INSTANCE.show(requireContext(),
                     "Erro inesperado ao adicionar cartão, tente novamente mais tarde!.",
-                    Toast.LENGTH_SHORT)
+                    Toast.LENGTH_LONG)
                 mee.printStackTrace()
             }
 
@@ -329,6 +344,13 @@ class AddNewCardFrag : Fragment(), WSResult {
     }
 
     private fun configInitialViews(){
+
+
+        if(preferences.getUAddressData() != null) {
+
+            address_tv.text = preferences.getUAddressData()!!.address + " - " + preferences.getUAddressData()!!.number
+
+        }
 
         val adapter = SectionsPagerAdapter(childFragmentManager)
         cardPager.adapter = adapter
