@@ -23,6 +23,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.slider.RangeSlider
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.home_body.*
+import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 
@@ -219,8 +220,11 @@ class HomeFragmentOffer : Fragment(), RecyclerItemClickListener, WSResult {
 
         filterByValueBtn.setOnClickListener {
 
-            saleControl.findSaleByValue(rangeSlider.values[0].toString(),
-                rangeSlider.values[1].toString())
+            saleControl.findSaleByValue(
+                DecimalFormat("#").format(rangeSlider.values[0]),
+                DecimalFormat("#").format(rangeSlider.values[1]))
+
+            bottomSheetDialog.dismiss()
         }
 
     }
