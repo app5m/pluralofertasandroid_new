@@ -11,6 +11,9 @@ class Details: Serializable {
     @field:SerializedName("nome")
     var name: String? = null
 
+    @field:SerializedName("capa")
+    var placeHolder: String? = null
+
     @field:SerializedName("tipo")
     var type: String? = null
 
@@ -20,7 +23,5 @@ class Details: Serializable {
     @field:SerializedName("taxa_servico")
     var servicePrice: String? = null
 
-    @field:SerializedName("capa")
-    var imageHolder: String? = null
 
 }

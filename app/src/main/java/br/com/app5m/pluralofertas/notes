@@ -2,12 +2,11 @@ PLURAL // ultimas coisas
 
 - Incluir o ID do pedido na lista de pedidos #71, #72 V
 - incluir STATUS do pedido na lista de pedidos… abaixo de status de pagamento V
+- Quando entra na oferta, imagem não esta aparecendo (app) colocar capa no primeiro frag V
 - Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (app e api) testar com diogo pq top enviando tudo certo XV
 
 
 - nao consegui efetuar pagamento para oferta PIZZA (retirada) com cartao de credito… para filtro funciona
-
-- Quando entra na oferta, imagem não esta aparecendo (app) colocar capa no primeiro frag 1
 
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api)
 

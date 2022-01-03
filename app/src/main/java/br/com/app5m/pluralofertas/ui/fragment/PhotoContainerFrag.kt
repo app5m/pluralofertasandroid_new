@@ -24,6 +24,11 @@ class PhotoContainerFrag(private val url: String) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Glide.with(this).load(WSConstants.AVATAR_USER_URL + url).into(fragment_image)
+
+        if (url != "") {
+            Glide.with(this).load(WSConstants.SALE_URL + url).into(fragment_image)
+        } else {
+            fragment_image.setImageResource(R.drawable.logo_plural)
+        }
     }
 }

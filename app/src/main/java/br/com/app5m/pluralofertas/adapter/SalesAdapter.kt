@@ -12,7 +12,6 @@ import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Sale
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.fragment_mainmenu.*
 
 class SalesAdapter(private val context: Context, private val list: List<Sale>,
                    private val clickOnListener: RecyclerItemClickListener
@@ -41,7 +40,7 @@ class SalesAdapter(private val context: Context, private val list: List<Sale>,
         holder.saleValueTv.text = sale.value
 
         if (sale.placeHolder != null) {
-            Glide.with(context).load(WSConstants.AVATAR_USER_URL + sale.placeHolder).into(holder.saleIv)
+            Glide.with(context).load(WSConstants.SALE_URL + sale.placeHolder).into(holder.saleIv)
         }
 
         holder.itemView.setOnClickListener { clickOnListener.onClickListenerSale(sale)}

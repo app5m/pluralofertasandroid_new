@@ -34,14 +34,14 @@ class RequestAdapter(private val context: Context, private val list: List<Reques
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val request = list[position]
 
-        holder.idRequestTv.text = request.id
+        holder.idRequestTv.text = "#" + request.id
 
         holder.requestInfoTv.text = request.sale +
                 "\n\n" + "Tipo: " + request.typeDelivery +
                 "\n" + "Método de pagamento: " + request.typePayment +
                 "\n" + "Data: " + request.date +
-                "\n\n" + "Status do pagamento: " + request.statusPayment
-                "\n\n\n" + "Status do pedido: #" + request.statusRequest
+                "\n" + "Status do pagamento: " + request.statusPayment +
+                "\n\n" + "Status do pedido: " + request.statusRequest
 
         holder.valueTv.text = request.totalValue
 

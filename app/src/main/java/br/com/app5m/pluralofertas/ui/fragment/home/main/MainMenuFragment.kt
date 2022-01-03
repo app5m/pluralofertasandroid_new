@@ -102,7 +102,7 @@ class MainMenuFragment : Fragment(), WSResult {
 
         val responseInfo = list[0]
 
-        Glide.with(requireContext()).load(WSConstants.AVATAR_USER_URL + responseInfo.avatar).into(userAvatar_iv)
+        Glide.with(requireContext()).load(WSConstants.SALE_URL + responseInfo.avatar).into(userAvatar_iv)
 
         userNameTv.text = responseInfo.name
     }

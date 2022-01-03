@@ -139,14 +139,22 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
             derivativesLL.visibility = View.GONE
         }
 
+        var placeHolderUrl = ""
+        //capa
+        if (globalResponseSaleInfo.details!!.placeHolder != null) {
 
-        if (globalResponseSaleInfo.photoList?.get(0)!!.rows.equals("0")) return
+            placeHolderUrl = globalResponseSaleInfo.details!!.placeHolder!!
+        }
 
-        //forzinho padrao pra ver quantos rows tem no vagaubudo
-        for (item: Photo in globalResponseSaleInfo.photoList!!) {
+        fragmentList.add(PhotoContainerFrag(placeHolderUrl))
 
-            fragmentList.add(PhotoContainerFrag(item.url!!))
+        if (globalResponseSaleInfo.photoList?.get(0)!!.rows != "0") {
+            //forzinho padrao pra ver quantos rows tem no vagabundo
+            for (item: Photo in globalResponseSaleInfo.photoList!!) {
 
+                fragmentList.add(PhotoContainerFrag(item.url!!))
+
+            }
         }
 
         loadContainerPhotos()
