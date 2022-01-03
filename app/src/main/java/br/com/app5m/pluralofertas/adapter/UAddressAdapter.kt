@@ -69,6 +69,10 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
 
         }, useful).listIdAddress(uaddress.id!!)
 
+        if (uaddress.rows == "1") {
+            holder.removeIb.visibility = View.GONE
+        }
+
         holder.removeIb.setOnClickListener {
             DialogMessages(context).click("Atenção",
                 "Você tem certeza que deseja deletar este endereço?",

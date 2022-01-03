@@ -51,8 +51,8 @@ class SaleControl(private val context: Context, private val result: WSResult, pr
 
             sale.addressIdUser = addressIdUser
         } else {
-            sale.latitude = preferences.getUserLocation()!!.latitude
-            sale.longitude = preferences.getUserLocation()!!.longitude
+            sale.latitude = preferences.getUserLocation()?.latitude
+            sale.longitude = preferences.getUserLocation()?.longitude
         }
 
         sale.token = WSConstants.TOKEN

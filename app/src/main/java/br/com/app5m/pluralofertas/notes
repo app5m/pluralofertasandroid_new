@@ -10,8 +10,6 @@ PLURAL // ultimas coisas
 
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api)
 
-colocar validation boleto  2
-
 
 pagamento com cartao e boleto com cupom e derivado tipo entrega 1 ,bombando
 
@@ -37,5 +35,6 @@ bugs:
 
 depois:
 
+multiple clicks
 colocar refresh demais telas
 

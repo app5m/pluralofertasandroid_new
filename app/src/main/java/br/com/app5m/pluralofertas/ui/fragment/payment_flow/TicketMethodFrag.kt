@@ -2,6 +2,7 @@ package br.com.app5m.pluralofertas.ui.fragment.payment_flow
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,12 +16,15 @@ import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
 import br.com.app5m.pluralofertas.ui.activity.SucessAct
 import br.com.app5m.pluralofertas.ui.dialog.RegisterAddressDialog
-import br.com.app5m.pluralofertas.util.DialogMessages
-import br.com.app5m.pluralofertas.util.Preferences
-import br.com.app5m.pluralofertas.util.Useful
+import br.com.app5m.pluralofertas.util.*
+import kotlinx.android.synthetic.main.fragment_add_new_card.*
 import kotlinx.android.synthetic.main.fragment_ticket_method.*
 import kotlinx.android.synthetic.main.fragment_ticket_method.address_tv
+import kotlinx.android.synthetic.main.fragment_ticket_method.birth_et
+import kotlinx.android.synthetic.main.fragment_ticket_method.cellphone_et
+import kotlinx.android.synthetic.main.fragment_ticket_method.document_et
 import kotlinx.android.synthetic.main.fragment_ticket_method.finish_bt
+import kotlinx.android.synthetic.main.fragment_ticket_method.name_et
 
 /**
  * A simple [Fragment] subclass.
@@ -30,6 +34,10 @@ class TicketMethodFrag : Fragment(), WSResult {
     private lateinit var useful: Useful
     private lateinit var requestControl: RequestControl
     private lateinit var preferences: Preferences
+    private lateinit var validation: Validation
+
+    private lateinit var cpfMask: TextWatcher
+    private lateinit var cnpjMask: TextWatcher
 
     private lateinit var paymentFlowContainerAct: PaymentFlowContainerAct
 
@@ -46,6 +54,7 @@ class TicketMethodFrag : Fragment(), WSResult {
 
         useful = Useful(requireContext())
         preferences = Preferences(requireContext())
+        validation = Validation(requireContext())
         requestControl = RequestControl(requireContext(), this, useful)
 
         if(preferences.getUAddressData() != null) {
@@ -57,6 +66,9 @@ class TicketMethodFrag : Fragment(), WSResult {
         paymentFlowContainerAct = requireActivity() as PaymentFlowContainerAct
 
         finish_bt.setOnClickListener {
+
+            if (!validate()) return@setOnClickListener
+
             DialogMessages(requireContext()).click("Gerar boleto",
                 "Clique em confirmar para finalizar sua compra via boleto bancário!",
                 object : DialogMessages.Answer {
@@ -119,6 +131,8 @@ class TicketMethodFrag : Fragment(), WSResult {
             dialog.show(parentFragmentManager,"DialogRegisterAddress")
         }
 
+        loadMasks()
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode2: Int, data: Intent?) {
@@ -148,4 +162,27 @@ class TicketMethodFrag : Fragment(), WSResult {
 
     }
 
+    private fun loadMasks() {
+        cpfMask = Mask.insert("###.###.###-##", document_et)
+        cnpjMask = Mask.insert("##.###.###/####-##", document_et)
+
+        document_et.addTextChangedListener(cpfMask)
+    }
+
+    private fun validate() : Boolean {
+        if (!validation.email(name_et)) return false
+        if (!validation.date(birth_et)) return false
+
+        if (document_et.text.length > 13) {
+
+            if (!validation.cpf(document_et)) return false
+
+        } else if (document_et.text.length < 14) {
+            if (!validation.cnpj(document_et)) return false
+        }
+
+        if (!validation.cellphone(cellphone_et)) return false
+
+        return true
+    }
 }
