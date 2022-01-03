@@ -44,7 +44,7 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
     private lateinit var cartControl: CartControl
 
     private lateinit var globalResponseSaleInfo: Sale
-    private var globalDerivative = Derivative()
+    private var globalDerivative: Derivative? = null
 
     private var fragmentList = ArrayList<Fragment>()
 
@@ -98,7 +98,7 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
             newItem.idSale = globalResponseSaleInfo.details!!.id
             newItem.unityValue = globalResponseSaleInfo.details!!.value
             newItem.servicePrice = globalResponseSaleInfo.details!!.servicePrice
-            newItem.idDerivative = globalDerivative.id
+            newItem.idDerivative = globalDerivative?.id
 
             useful.openLoading()
             cartControl.addItem(newItem)
@@ -186,9 +186,8 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
     override fun onClickListenerDerivative(derivative: Derivative?) {
 
-        if (derivative != null) {
-            globalDerivative = derivative
-        }
+        globalDerivative = derivative
+
 
     }
 

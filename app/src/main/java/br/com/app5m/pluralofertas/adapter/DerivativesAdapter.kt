@@ -19,6 +19,7 @@ class DerivativesAdapter (private val context: Context, private val list: List<D
                           private val recyclerItemClickListener: RecyclerItemClickListener?) : RecyclerView.Adapter<DerivativesAdapter.ViewHolder>() {
 
     private var selectedPosition = -1
+    private var isChecked = false
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val derivativeLL: LinearLayout = itemView.findViewById(R.id.derivative_ll)
@@ -41,7 +42,40 @@ class DerivativesAdapter (private val context: Context, private val list: List<D
         holder.valueTv.text = derivative.value
         holder.descTv.text = derivative.desc
 
+        holder.itemView.setOnClickListener {
+
+            //notifica valor antigo
+            if (selectedPosition >= 0) {
+
+                if (selectedPosition == position) {
+                    isChecked = true
+                    notifyItemChanged(selectedPosition)
+
+                    selectedPosition = -1
+                    return@setOnClickListener
+                }
+
+                notifyItemChanged(selectedPosition)
+            }
+
+            isChecked = false
+            //notifica valor novo
+            selectedPosition = holder.adapterPosition
+            notifyItemChanged(selectedPosition)
+        }
+
         if (selectedPosition == position) {
+
+            if (isChecked) {
+
+                recyclerItemClickListener?.onClickListenerDerivative(null)
+
+                holder.derivativeCb.isChecked = false
+                holder.derivativeLL.background = context.resources.getDrawable(R.drawable.shape_gray_button)
+
+                return
+            }
+
             recyclerItemClickListener?.onClickListenerDerivative(derivative)
 
             holder.derivativeCb.isChecked = true
@@ -53,15 +87,6 @@ class DerivativesAdapter (private val context: Context, private val list: List<D
             holder.derivativeCb.isChecked = false
             holder.derivativeLL.background = context.resources.getDrawable(R.drawable.shape_gray_button)
         }
-
-        holder.itemView.setOnClickListener {
-            if (selectedPosition >= 0)
-                notifyItemChanged(selectedPosition)
-
-            selectedPosition = holder.adapterPosition
-            notifyItemChanged(selectedPosition)
-        }
-
 
     }
 
