@@ -26,7 +26,7 @@ class UsedCouponsAdapter(private val context: Context, private val list: List<Co
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.adapter_used_mycupons, parent, false) // vai conectar com os ids abaixo
+            .inflate(R.layout.adapter_used_mycupons, parent, false)
         return ViewHolder(listItem)
 
 

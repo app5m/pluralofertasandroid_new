@@ -40,7 +40,7 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                 R.layout.adapter_items_cart,
                 parent,
                 false
-            ) // vai conectar com os ids abaixo
+            )
         return ViewHolder(listItem)
 
 

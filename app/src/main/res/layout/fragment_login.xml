@@ -42,8 +42,7 @@
                         android:fontFamily="@font/uni_neue_regular"
                         android:hint="email"
                         android:inputType="textEmailAddress"
-                        android:textColor="#000000"
-                        android:textSize="16sp"/>
+                        android:textColor="#000000"/>
 
                     <EditText
                         android:id="@+id/password_et"
@@ -54,7 +53,6 @@
                         android:inputType="textPassword"
                         android:background="@drawable/shape_main_gray_et"
                         android:textColor="#000000"
-                        android:textSize="16sp"
                         android:hint="senha" />
 
                     <TextView
@@ -63,7 +61,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="right"
-                        android:lineSpacingExtra="3sp"
                         android:text="esqueceu a senha?"
                         android:textColor="@color/white" />
 
@@ -83,7 +80,7 @@
                             android:fontFamily="@font/uni_neue_bold"
                             android:text="ENTRAR"
                             android:textColor="#ffffff"
-                            android:textSize="14sp"/>
+                            android:textSize="@dimen/text_size4"/>
                     </LinearLayout>
 
                 </LinearLayout>

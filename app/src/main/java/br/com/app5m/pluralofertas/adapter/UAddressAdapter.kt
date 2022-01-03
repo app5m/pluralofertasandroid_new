@@ -36,12 +36,7 @@ class UAddressAdapter (private val context: Context, private val listUAddress: L
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val listItem: View = LayoutInflater.from(parent.context)
-            .inflate(
-                R.layout.adapter_uaddress,
-                parent,
-                false
-            ) // vai conectar com os ids abaixo
+        val listItem: View = LayoutInflater.from(parent.context).inflate(R.layout.adapter_uaddress, parent, false)
         return ViewHolder(listItem)
 
 

@@ -135,7 +135,7 @@
                             android:fontFamily="@font/uni_neue_bold"
                             android:text="criar conta"
                             android:textColor="#ffffff"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/text_size4"
                             app:layout_constraintEnd_toStartOf="@+id/guideline24"
                             app:layout_constraintHorizontal_bias="0.492"
                             app:layout_constraintStart_toStartOf="@+id/guideline25"

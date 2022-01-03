@@ -1,17 +1,17 @@
 PLURAL // ultimas coisas
 
+- Incluir o ID do pedido na lista de pedidos #71, #72 V
+- incluir STATUS do pedido na lista de pedidos… abaixo de status de pagamento V
+- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (app e api) testar com diogo pq top enviando tudo certo XV
+
+
 - nao consegui efetuar pagamento para oferta PIZZA (retirada) com cartao de credito… para filtro funciona
-- Incluir o ID do pedido na lista de pedidos #71, #72
-- incluir STATUS do pedido na lista de pedidos… abaixo de status de pagamento
-- meu perfil (retirar foto de perfil) v
 
-- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (app e api)
-
-- Quando entra na oferta, imagem não esta aparecendo (app) colocar capa no primeiro frag
+- Quando entra na oferta, imagem não esta aparecendo (app) colocar capa no primeiro frag 1
 
 - Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api)
 
-colocar validation boleto
+colocar validation boleto  2
 
 
 pagamento com cartao e boleto com cupom e derivado tipo entrega 1 ,bombando
@@ -34,7 +34,7 @@ pagamento com cartao e boleto sem cupom sem derivado tipo entrega 2 , testar
 
 bugs:
 
--endereco update trocando numero por bairro, estrou madnando certo
+-endereco update trocando numero por bairro, estrou mandando certo
 
 depois:
 

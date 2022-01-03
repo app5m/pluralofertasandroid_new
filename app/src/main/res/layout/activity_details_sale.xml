@@ -82,7 +82,7 @@
             android:fontFamily="@font/uni_neue_bold"
             android:text="Comprar"
             android:textColor="#ffffff"
-            android:textSize="14sp"/>
+            android:textSize="@dimen/text_size4"/>
 
     </FrameLayout>
 

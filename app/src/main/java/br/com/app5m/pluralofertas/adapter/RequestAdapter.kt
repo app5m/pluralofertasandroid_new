@@ -18,13 +18,14 @@ class RequestAdapter(private val context: Context, private val list: List<Reques
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val requestInfoTv: TextView = itemView.findViewById(R.id.requestInfoTv)
+        val idRequestTv: TextView = itemView.findViewById(R.id.idRequest_tv)
         val valueTv: TextView = itemView.findViewById(R.id.value_tv)
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.adapter_requests, parent, false) // vai conectar com os ids abaixo
+            .inflate(R.layout.adapter_requests, parent, false)
         return ViewHolder(listItem)
 
 
@@ -33,11 +34,14 @@ class RequestAdapter(private val context: Context, private val list: List<Reques
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val request = list[position]
 
+        holder.idRequestTv.text = request.id
+
         holder.requestInfoTv.text = request.sale +
                 "\n\n" + "Tipo: " + request.typeDelivery +
                 "\n" + "Método de pagamento: " + request.typePayment +
                 "\n" + "Data: " + request.date +
                 "\n\n" + "Status do pagamento: " + request.statusPayment
+                "\n\n\n" + "Status do pedido: #" + request.statusRequest
 
         holder.valueTv.text = request.totalValue
 
