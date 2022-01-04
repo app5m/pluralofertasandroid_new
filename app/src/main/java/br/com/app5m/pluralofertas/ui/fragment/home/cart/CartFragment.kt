@@ -52,6 +52,8 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private var globalDestinyCep : String? = null
     private var globalCodFreight : String? = null
 
+    private lateinit var cartItemsAdapter: ItemsCartAdapter
+
     var startedFullDataPurchase = Request()
 
     override fun onCreateView(
@@ -164,6 +166,10 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 cartCons.visibility = View.VISIBLE
                 content_empty_list.visibility = View.GONE
 
+                if (globalCartResponseInfo!!.descValue != "R$ 0,00") {
+                    cartItemsAdapter.isAdded = true
+                }
+
                 cartRv.adapter!!.notifyDataSetChanged()
             } else {
                 content_empty_list.visibility = View.VISIBLE
@@ -172,7 +178,6 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 return
             }
 
-            //pedir pro diogo
             if (globalCartResponseInfo!!.typeDelivery == "1") {
                 freight_ll.visibility = View.VISIBLE
             }
@@ -228,7 +233,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private fun configureInitialViews(){
 
-        val cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList, useful, this, this)
+        cartItemsAdapter = ItemsCartAdapter(requireContext(), cartList, useful, this, this)
 
         cartRv.apply {
             setHasFixedSize(false)

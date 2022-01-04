@@ -26,12 +26,15 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                         private val wsResult: WSResult, private val cartFragment: CartFragment)
     : RecyclerView.Adapter<ItemsCartAdapter.ViewHolder>() {
 
+    var isAdded = false
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTv: TextView = itemView.findViewById(R.id.name_tv)
         val saleValueTv: TextView = itemView.findViewById(R.id.value_tv)
         val removeIb: ImageButton = itemView.findViewById(R.id.remove_ib)
         val couponsRv: RecyclerView = itemView.findViewById(R.id.couponsRv)
         val couponsLL: LinearLayout = itemView.findViewById(R.id.couponsLl)
+        val subTitleCouponTv: TextView = itemView.findViewById(R.id.subTitleCoupon_tv)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -85,7 +88,18 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                                 adapter = couponAdapter
                             }
 
-                            holder.couponsLL.visibility = View.VISIBLE
+                            if (isAdded) {
+                                holder.couponsRv.visibility = View.GONE
+
+                                holder.subTitleCouponTv.text = "Um cupom de desconto foi adicionado para esta oferta."
+
+                            } else {
+
+                                holder.couponsRv.visibility = View.VISIBLE
+
+                                holder.subTitleCouponTv.text = "Cupons para esta oferta:"
+
+                            }
                         } else {
                             holder.couponsLL.visibility = View.GONE
                         }
@@ -93,35 +107,6 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                 }, useful).listCoupons(it)
             }
         }
-
-
-
-//            {
-//                "id_item": 10,
-//                "id_oferta": 3,
-//                "nome_oferta": "Testando",
-//                "valor_uni": " R$ 189,00",
-//                "qtd": 1,
-//                "valor_itens": " R$ 194,00",
-//                "valor_derivado": " R$ 30,00",
-//                "valor_desconto": " R$ 25,00",
-//                "valor_final": " R$ 199,00",
-//                "valor_descontado_float": 199,
-//                "id_derivado": 3,
-//                "nome_derivado": "Rota adicional",
-//                "peso": "1",
-//                "altura": 1,
-//                "largura": 1,
-//                "comprimento": 1,
-//                "derivados": [
-//                {
-//                    "rows": 0
-//                }
-//                ]
-//            },
-//            {
-//                "total_carrinho": " R$ 199,00"
-//            }
 
         holder.removeIb.setOnClickListener {
 
@@ -135,6 +120,8 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                 })
 
         }
+
+        //COLOCAR MSG QUE CUPOM JA FOI ADD E ESCONDER LL
 
     }
 
