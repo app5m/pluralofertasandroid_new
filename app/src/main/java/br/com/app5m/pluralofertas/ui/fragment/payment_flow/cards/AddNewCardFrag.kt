@@ -108,7 +108,7 @@ class AddNewCardFrag : Fragment(), WSResult {
 
         if (responseInfo.status == "01") {
 
-            startActivity(Intent(requireContext(), SucessAct::class.java).putExtra("ticket", responseInfo.ticketLink))
+            startActivity(Intent(requireContext(), SucessAct::class.java)/*.putExtra("voucher", responseInfo.voucher)*/)
             requireActivity().finishAffinity()
 
         }
