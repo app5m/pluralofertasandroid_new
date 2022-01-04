@@ -134,23 +134,6 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
             valueFreightTv.text = "R$ " + globalFreightResponseInfo!!.cService!!.value
 
             cartControl.listItems(globalIdCart!!)
-//
-//        "cServico": {
-//            "Codigo": "40010",
-//            "Valor": "33,58",
-//            "PrazoEntrega": "1",
-//            "ValorSemAdicionais": "22,50",
-//            "ValorMaoPropria": "7,50",
-//            "ValorAvisoRecebimento": "0,00",
-//            "ValorValorDeclarado": "3,58",
-//            "EntregaDomiciliar": "S",
-//            "EntregaSabado": "N",
-//            "obsFim": {},
-//            "Erro": "0",
-//            "MsgErro": {},
-//            "status": "01",
-//            "msg": "Ok"
-//        }
 
         } else {
             globalIdCart?.let { cartControl.listItems(it) }
@@ -168,37 +151,6 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         if (type == "listItems") {
 
             useful.closeLoading()
-
-            //
-//        [
-//            {
-//                "id_item": 10,
-//                "id_oferta": 3,
-//                "nome_oferta": "Testando",
-//                "valor_uni": " R$ 189,00",
-//                "qtd": 1,
-//                "valor_itens": " R$ 194,00",
-//                "valor_derivado": " R$ 30,00",
-//                "valor_desconto": " R$ 25,00",
-//                "valor_final": " R$ 199,00",
-//                "valor_descontado_float": 199,
-//                "id_derivado": 3,
-//                "nome_derivado": "Rota adicional",
-//                "peso": "1",
-//                "altura": 1,
-//                "largura": 1,
-//                "comprimento": 1,
-//                "derivados": [
-//                {
-//                    "rows": 0
-//                }
-//                ]
-//            },
-//            {
-//                "total_carrinho": " R$ 199,00"
-//            }
-//        ]
-//
 
             cartList.clear()
 
@@ -314,26 +266,27 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                     return
                 }
 
-                val freight = Freight()
-
                 when (position) {
-                    0 -> {
+                    1 -> {
 
                         //sedex
                         globalCodFreight = "40010"
 
                         startedFullDataPurchase.idFreight = "1"
                     }
-                    1 -> {
+                    2 -> {
                         //pac ver codigo pac dps
                         globalCodFreight = "41106"
 
                         startedFullDataPurchase.idFreight = "2"
                     }
                     else -> {
+                        globalCodFreight = null
                         return
                     }
                 }
+
+                val freight = Freight()
 
                 freight.destinyCep = globalDestinyCep
                 freight.cartId = globalIdCart

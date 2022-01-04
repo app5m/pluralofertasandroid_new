@@ -11,6 +11,7 @@
 
 
     <string-array name="freight">
+        <item>Selecione</item>
         <item>SEDEX</item>
         <item>PAC</item>
     </string-array>
