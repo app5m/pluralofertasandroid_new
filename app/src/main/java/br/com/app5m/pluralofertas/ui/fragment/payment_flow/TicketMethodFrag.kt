@@ -170,16 +170,20 @@ class TicketMethodFrag : Fragment(), WSResult {
     }
 
     private fun validate() : Boolean {
-        if (!validation.email(name_et)) return false
+        if (!validation.name(name_et)) return false
         if (!validation.date(birth_et)) return false
+/*
 
         if (document_et.text.length > 13) {
+*/
 
             if (!validation.cpf(document_et)) return false
+/*
 
         } else if (document_et.text.length < 14) {
             if (!validation.cnpj(document_et)) return false
         }
+*/
 
         if (!validation.cellphone(cellphone_et)) return false
 

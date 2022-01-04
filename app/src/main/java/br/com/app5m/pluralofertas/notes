@@ -3,7 +3,8 @@ PLURAL // ultimas coisas
 - Incluir o ID do pedido na lista de pedidos #71, #72 V
 - incluir STATUS do pedido na lista de pedidos… abaixo de status de pagamento V
 - Quando entra na oferta, imagem não esta aparecendo (app) colocar capa no primeiro frag V
-- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco. (app e api) testar com diogo pq top enviando tudo certo XV
+- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco.
+ (app e api) testar com diogo pq to enviando tudo certo XV
 
 
 - nao consegui efetuar pagamento para oferta PIZZA (retirada) com cartao de credito… para filtro funciona
@@ -13,11 +14,11 @@ PLURAL // ultimas coisas
 
 pagamento com cartao e boleto com cupom e derivado tipo entrega 1 ,bombando
 
-pagamento com cartao e boleto com cupom sem derivado tipo entrega 1 , testar
+pagamento com cartao e boleto com cupom sem derivado tipo entrega 1 , bombando
 
-pagamento com cartao e boleto sem cupom com derivado tipo entrega 1 , testar
+pagamento com cartao e boleto sem cupom com derivado tipo entrega 1 , bombando
 
-pagamento com cartao e boleto sem cupom sem derivado tipo entrega 1 , testar
+pagamento com cartao e boleto sem cupom sem derivado tipo entrega 1 , bombando
 
 ============
 
@@ -25,9 +26,9 @@ pagamento com cartao e boleto com cupom e derivado tipo entrega 2 ,testar
 
 pagamento com cartao e boleto com cupom sem derivado tipo entrega 2 , testar
 
-pagamento com cartao e boleto sem cupom com derivado tipo entrega 2 , testar
+pagamento com cartao e boleto V sem cupom com derivado tipo entrega 2 , testar
 
-pagamento com cartao e boleto sem cupom sem derivado tipo entrega 2 , testar
+pagamento com cartao e boleto V sem cupom sem derivado tipo entrega 2 , testar
 
 bugs:
 

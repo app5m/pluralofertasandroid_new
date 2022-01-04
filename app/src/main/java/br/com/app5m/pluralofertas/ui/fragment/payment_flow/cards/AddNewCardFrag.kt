@@ -323,13 +323,15 @@ class AddNewCardFrag : Fragment(), WSResult {
 //        if (!validation.email(email_et)) return false
         if (!validation.date(birth_et)) return false
 
+/*
         if (document_et.text.length > 13) {
+*/
 
             if (!validation.cpf(document_et)) return false
-
+/*
         } else if (document_et.text.length < 14) {
             if (!validation.cnpj(document_et)) return false
-        }
+        }*/
 
         if (!validation.cellphone(cellphone_et)) return false
 
