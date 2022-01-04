@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/uni_neue_regular"
-                    android:text="Voucher:"
+                    android:text="Detalhes do Voucher:"
                     android:textSize="@dimen/text_size5"
                     android:textStyle="bold" />
 
