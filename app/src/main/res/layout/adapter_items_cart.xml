@@ -97,12 +97,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/uni_neue_regular"
-                android:ellipsize="end"
-                android:maxLines="1"
                 android:paddingTop="5dp"
-                android:text="Cupons para esta oferta:"
-                android:textAlignment="textStart"
-                android:textSize="14sp"/>
+                android:text="Cupons para esta oferta:"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/couponsRv"

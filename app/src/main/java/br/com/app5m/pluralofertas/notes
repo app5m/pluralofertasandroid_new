@@ -1,35 +1,8 @@
 PLURAL
 
-- Incluir o ID do pedido na lista de pedidos #71, #72 OK
-- incluir STATUS do pedido na lista de pedidos… abaixo de status de pagamento OK
-- Quando entra na oferta, imagem não esta aparecendo (app) colocar capa no primeiro frag OK
-- nao consegui efetuar pagamento para oferta PIZZA (retirada) com cartao de credito… para filtro funciona OK
-- Efetuei pedido de uma oferta RETIRADA  e não gerou o VOUCHER (app e api) OK
-
-- Quando efetua um cadastro, está entrando duas vezes o endereço na tabela, porem um registro fica em branco.
- (app e api) testar com diogo pq to enviando tudo certo XV
+colocar valor desconto oferta e carrinho
 
 
-
-
-
-pagamento com cartao e boleto com cupom e derivado tipo entrega 1 ,bombando
-
-pagamento com cartao e boleto com cupom sem derivado tipo entrega 1 , bombando
-
-pagamento com cartao e boleto sem cupom com derivado tipo entrega 1 , bombando
-
-pagamento com cartao e boleto sem cupom sem derivado tipo entrega 1 , bombando
-
-============
-
-pagamento com cartao e boleto com cupom e derivado tipo entrega 2 , provavelmente bombando
-
-pagamento com cartao e boleto com cupom sem derivado tipo entrega 2 , provavelmente bombando
-
-pagamento com cartao e boleto sem cupom com derivado tipo entrega 2 , bombando
-
-pagamento com cartao e boleto sem cupom sem derivado tipo entrega 2 , bombando
 
 bugs:
 

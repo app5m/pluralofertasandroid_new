@@ -34,9 +34,6 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
     private lateinit var preferences: Preferences
     private lateinit var validation: Validation
 
-    private lateinit var builder: AlertDialog.Builder
-    private lateinit var alertDialog: AlertDialog
-
     private val user = User()
 
     override fun onCreateView(
@@ -64,29 +61,17 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         val user = list[0]
 
+        useful.closeLoading()
+
         if (user.status.equals("01")) {
             preferences.setUserData(user)
 
-            preferences.getUAddressData()?.let { uAddressControl.saveAddress(it) }
-
-        } else {
-
-            useful.closeLoading()
-            Toast.makeText(requireContext(), user.msg, Toast.LENGTH_SHORT).show()
-
-        }
-
-
-    }
-
-    override fun uAResponse(list: List<UAddress>, type: String) {
-
-        useful.closeLoading()
-
-        if (list[0].status.equals("01")) {
-
             SingleToast.INSTANCE.show(requireContext(), "Cadastro efetuado com sucesso!", Toast.LENGTH_LONG)
             registerCheck()
+        } else {
+
+            Toast.makeText(requireContext(), user.msg, Toast.LENGTH_SHORT).show()
+
         }
 
 
@@ -97,6 +82,16 @@ class SignUpFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
         if (data!!.extras!!.getBoolean("msg")) {
             useful.openLoading()
+
+
+            user.cep = preferences.getUAddressData()!!.cep
+            user.city = preferences.getUAddressData()!!.city
+            user.state = preferences.getUAddressData()!!.state
+            user.neighborhood = preferences.getUAddressData()!!.neighborhood
+            user.address = preferences.getUAddressData()!!.address
+            user.number = preferences.getUAddressData()!!.number
+            user.complement = preferences.getUAddressData()!!.complement
+
             userControl.register(user)
         }
 

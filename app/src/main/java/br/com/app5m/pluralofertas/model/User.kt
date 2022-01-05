@@ -80,16 +80,26 @@ class User {
     @field:SerializedName("nome")
     var name: String? = null
 
-    @field:SerializedName("endereco")
-    var address: String? = null
-
     @field:SerializedName("cep")
     var cep: String? = null
+
+    @field:SerializedName("estado")
+    var state: String? = null
 
     @field:SerializedName("cidade")
     var city: String? = null
 
-    @field:SerializedName("estado")
-    var state: String? = null
+    @field:SerializedName("bairro")
+    var neighborhood: String? = null
+
+    @field:SerializedName("numero")
+    var number: String? = null
+
+    @field:SerializedName("complemento")
+    var complement: String? = null
+
+    @field:SerializedName("endereco")
+    var address: String? = null
+
 
 }

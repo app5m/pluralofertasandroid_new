@@ -163,21 +163,21 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 }
             }
 
-            if (globalCartResponseInfo!!.rows != "0") {
-                cartCons.visibility = View.VISIBLE
-                content_empty_list.visibility = View.GONE
+            if (globalCartResponseInfo?.rows == "0") {
+                content_empty_list.visibility = View.VISIBLE
+                cartCons.visibility = View.GONE
+            } else {
 
-                if (globalCartResponseInfo!!.descValue != "R$ 0,00") {
+                if (globalCartResponseInfo!!.descountValue != " R$ 0,00") {
                     cartItemsAdapter.isAdded = true
                 }
 
                 cartRv.adapter!!.notifyDataSetChanged()
-            } else {
-                content_empty_list.visibility = View.VISIBLE
-                cartCons.visibility = View.GONE
 
-                return
+                content_empty_list.visibility = View.GONE
+                cartCons.visibility = View.VISIBLE
             }
+
 
             if (globalCartResponseInfo!!.typeDelivery == "1") {
                 freight_ll.visibility = View.VISIBLE

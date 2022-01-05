@@ -10,6 +10,9 @@ class Cart: Serializable {
     @field:SerializedName("cod")
     var cod: String? = null
 
+    @field:SerializedName("valor_desconto")
+    var descountValue: String? = null
+
     @field:SerializedName("valor_desc")
     var descValue: String? = null
 

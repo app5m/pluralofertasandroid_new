@@ -39,11 +39,7 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val listItem: View = LayoutInflater.from(parent.context)
-            .inflate(
-                R.layout.adapter_items_cart,
-                parent,
-                false
-            )
+            .inflate(R.layout.adapter_items_cart, parent, false)
         return ViewHolder(listItem)
 
 
@@ -87,6 +83,8 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
                                 layoutManager = LinearLayoutManager(context)
                                 adapter = couponAdapter
                             }
+
+                            holder.couponsLL.visibility = View.VISIBLE
 
                             if (isAdded) {
                                 holder.couponsRv.visibility = View.GONE
