@@ -50,7 +50,7 @@ class ItemsCartAdapter (private val context: Context, private val list: List<Car
         val cart = list[position]
 
         holder.nameTv.text = cart.saleName
-        holder.saleValueTv.text = cart.unityValue
+        holder.saleValueTv.text = cart.finalValue
 
         cart.idSale.let {
             if (it != null) {

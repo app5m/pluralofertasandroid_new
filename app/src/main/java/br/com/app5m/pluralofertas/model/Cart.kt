@@ -49,6 +49,9 @@ class Cart: Serializable {
     @field:SerializedName("valor_final")
     var finalValue: String? = null
 
+    @field:SerializedName("desconto_oferta")
+    var saleDescount: String? = null
+
     @field:SerializedName("valor_uni")
     var unityValue: String? = null
 

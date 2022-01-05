@@ -9,11 +9,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.ItemsCartAdapter
@@ -27,7 +24,6 @@ import br.com.app5m.pluralofertas.model.Freight
 import br.com.app5m.pluralofertas.model.Request
 import br.com.app5m.pluralofertas.model.UAddress
 import br.com.app5m.pluralofertas.ui.activity.PaymentFlowContainerAct
-import br.com.app5m.pluralofertas.ui.fragment.home.main.MyAddressesFragment
 import br.com.app5m.pluralofertas.util.Preferences
 import br.com.app5m.pluralofertas.util.Useful
 import kotlinx.android.synthetic.main.content_empty_list.*
@@ -185,6 +181,8 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
                 //address padrao
                 startedFullDataPurchase.idAddress = globalUAddressResponseInfo!!.id!!
             }
+
+            discountSaleTv.text = globalCartResponseInfo!!.saleDescount
 
             if (globalFreightResponseInfo != null){
 

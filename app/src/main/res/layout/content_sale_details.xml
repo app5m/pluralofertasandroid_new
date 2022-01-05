@@ -54,18 +54,26 @@
             android:textSize="@dimen/text_size4"/>
 
         <TextView
+            android:id="@+id/discountAndServiceTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/uni_neue_regular"
+            android:paddingTop="5dp"
+            android:text=""
+            android:textSize="@dimen/text_size4"/>
+
+
+        <TextView
             android:id="@+id/saleValueTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/uni_neue_regular"
-            android:ellipsize="end"
-            android:maxLines="1"
             android:paddingTop="5dp"
             android:text=""
-            android:gravity="end"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_size6"/>
+            android:textSize="@dimen/text_size5"/>
 
         <LinearLayout
             android:id="@+id/derivativesLL"

@@ -11,7 +11,9 @@ import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.controller.webservice.WSConstants
 import br.com.app5m.pluralofertas.util.RecyclerItemClickListener
 import br.com.app5m.pluralofertas.model.Sale
+import br.com.app5m.pluralofertas.util.Useful
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.content_sale_details.*
 
 class SalesAdapter(private val context: Context, private val list: List<Sale>,
                    private val clickOnListener: RecyclerItemClickListener
@@ -37,7 +39,11 @@ class SalesAdapter(private val context: Context, private val list: List<Sale>,
         val sale = list[position]
 
         holder.saleNameTv.text = sale.name
-        holder.saleValueTv.text = sale.value
+
+        val total = Useful(context).moneyToDouble(sale.valueFinalDiscount!!.replace(".", "")) +
+                Useful(context).moneyToDouble(sale.servicePrice!!.replace(".", ""))
+
+        holder.saleValueTv.text = "R$ " + total.toString().replace(".", ",")
 
         if (sale.placeHolder != null) {
             Glide.with(context).load(WSConstants.SALE_URL + sale.placeHolder).into(holder.saleIv)

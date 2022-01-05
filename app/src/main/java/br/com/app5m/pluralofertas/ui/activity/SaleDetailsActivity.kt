@@ -17,7 +17,6 @@ import androidx.viewpager.widget.ViewPager
 import br.com.app5m.appshelterpassenger.util.visual.SingleToast
 import br.com.app5m.pluralofertas.R
 import br.com.app5m.pluralofertas.adapter.DerivativesAdapter
-import br.com.app5m.pluralofertas.adapter.UAddressAdapter
 import br.com.app5m.pluralofertas.controller.CartControl
 import br.com.app5m.pluralofertas.controller.SaleControl
 import br.com.app5m.pluralofertas.controller.webservice.WSResult
@@ -120,7 +119,15 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
 
         saleNameTv.text = globalResponseSaleInfo.details!!.name
         typeTv.text = globalResponseSaleInfo.details!!.type
-        saleValueTv.text = globalResponseSaleInfo.details!!.value
+        discountAndServiceTv.text = "Taxa de serviço: " + globalResponseSaleInfo.details!!.servicePrice +
+                     "\nDesconto da oferta: " + globalResponseSaleInfo.details!!.discount +
+                     "\nValor da oferta sem desconto: " + globalResponseSaleInfo.details!!.value
+
+
+        val total = useful.moneyToDouble(globalResponseSaleInfo.details!!.valueFinalDiscount!!.replace(".", "")) +
+                useful.moneyToDouble(globalResponseSaleInfo.details!!.servicePrice!!.replace(".", ""))
+
+        saleValueTv.text = "Valor final da oferta: R$ " + total.toString().replace(".", ",")
 
         if (globalResponseSaleInfo.derivativeList!![0].rows != "0") {
             val derivativesAdapter =

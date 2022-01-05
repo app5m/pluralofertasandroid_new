@@ -20,8 +20,13 @@ class Details: Serializable {
     @field:SerializedName("valor")
     var value: String? = null
 
+    @field:SerializedName("valor_final_desconto")
+    var valueFinalDiscount: String? = null
+
     @field:SerializedName("taxa_servico")
     var servicePrice: String? = null
 
+    @field:SerializedName("desconto")
+    var discount: String? = null
 
 }
