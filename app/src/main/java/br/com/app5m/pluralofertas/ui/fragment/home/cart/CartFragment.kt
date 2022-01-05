@@ -46,6 +46,7 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
     private var cartList  = ArrayList<Cart>()
 
+    private var globalUAddressResponseInfo : UAddress? = null
     private var globalCartResponseInfo : Cart? = null
     private var globalFreightResponseInfo : Freight? = null
     private var globalIdCart : String? = null
@@ -82,54 +83,44 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
         useful.closeLoading()
 
         val responseInfo = list
+        globalUAddressResponseInfo = list[0]
 
-        if (globalCartResponseInfo!!.typeDelivery == "1") {
+        val spinnerArrayGroup: MutableList<String?> = ArrayList()
 
-            address_sp.visibility = View.VISIBLE
+        spinnerArrayGroup.add("Selecione o endereço")
 
-            val spinnerArrayGroup: MutableList<String?> = ArrayList()
-
-            spinnerArrayGroup.add("Selecione o endereço")
-
-            if (!responseInfo[0].rows.equals("0")) {
-                for (i in responseInfo.indices) {
-                    spinnerArrayGroup.add(
-                        responseInfo[i].city.toString() + ", " + responseInfo[i].neighborhood
-                    )
-                }
+        if (!responseInfo[0].rows.equals("0")) {
+            for (i in responseInfo.indices) {
+                spinnerArrayGroup.add(
+                    responseInfo[i].city.toString() + ", " + responseInfo[i].neighborhood
+                )
             }
-
-            val adapter: ArrayAdapter<*> = ArrayAdapter<String?>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, spinnerArrayGroup)
-
-            address_sp.adapter = adapter
-
-            address_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
-
-                    if (position == 0) {
-                        globalDestinyCep = null
-                        globalCodFreight = null
-                        startedFullDataPurchase.idAddress = null
-
-                    } else {
-                        globalDestinyCep = responseInfo[position - 1].cep!!
-                        startedFullDataPurchase.idAddress = responseInfo[position - 1].id!!
-                    }
-
-
-
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {}
-            }
-
-
-        }else {
-
-            //address padrao
-            startedFullDataPurchase.idAddress = responseInfo[0].id!!
-
         }
+
+        val adapter: ArrayAdapter<*> = ArrayAdapter<String?>(requireActivity(), android.R.layout.simple_spinner_dropdown_item, spinnerArrayGroup)
+
+        address_sp.adapter = adapter
+
+        address_sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View, position: Int, id: Long) {
+
+                if (position == 0) {
+                    globalDestinyCep = null
+                    globalCodFreight = null
+                    startedFullDataPurchase.idAddress = null
+
+                } else {
+                    globalDestinyCep = responseInfo[position - 1].cep!!
+                    startedFullDataPurchase.idAddress = responseInfo[position - 1].id!!
+                }
+
+
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
 
         globalIdCart?.let { cartControl.listItems(it) }
 
@@ -190,6 +181,9 @@ class CartFragment : Fragment(), RecyclerItemClickListener, WSResult {
 
             if (globalCartResponseInfo!!.typeDelivery == "1") {
                 freight_ll.visibility = View.VISIBLE
+            } else {
+                //address padrao
+                startedFullDataPurchase.idAddress = globalUAddressResponseInfo!!.id!!
             }
 
             if (globalFreightResponseInfo != null){
