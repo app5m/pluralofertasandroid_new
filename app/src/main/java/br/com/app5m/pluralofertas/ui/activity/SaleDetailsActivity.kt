@@ -124,10 +124,10 @@ class SaleDetailsActivity : AppCompatActivity(), RecyclerItemClickListener, WSRe
                      "\nValor da oferta sem desconto: " + globalResponseSaleInfo.details!!.value
 
 
-        val total = useful.moneyToDouble(globalResponseSaleInfo.details!!.valueFinalDiscount!!.replace(".", "")) +
-                useful.moneyToDouble(globalResponseSaleInfo.details!!.servicePrice!!.replace(".", ""))
+//        val total = useful.moneyToDouble(globalResponseSaleInfo.details!!.valueFinalDiscount!!.replace(".", "")) +
+//                useful.moneyToDouble(globalResponseSaleInfo.details!!.servicePrice!!.replace(".", ""))
 
-        saleValueTv.text = "Valor final da oferta: R$ " + total.toString().replace(".", ",")
+        saleValueTv.text = "Valor final da oferta:" + globalResponseSaleInfo.details!!.valueFinalPriceDiscount
 
         if (globalResponseSaleInfo.derivativeList!![0].rows != "0") {
             val derivativesAdapter =
