@@ -40,10 +40,12 @@ class SalesAdapter(private val context: Context, private val list: List<Sale>,
 
         holder.saleNameTv.text = sale.name
 
-        val total = Useful(context).moneyToDouble(sale.valueFinalDiscount!!.replace(".", "")) +
-                Useful(context).moneyToDouble(sale.servicePrice!!.replace(".", ""))
+//        val total = Useful(context).moneyToDouble(sale.valueFinalDiscount!!.replace(".", "")) +
+//                Useful(context).moneyToDouble(sale.servicePrice!!.replace(".", ""))
+//
+//        holder.saleValueTv.text = "R$ " + total.toString().replace(".", ",")
 
-        holder.saleValueTv.text = "R$ " + total.toString().replace(".", ",")
+        holder.saleValueTv.text = sale.valueFinalPriceDiscount
 
         if (sale.placeHolder != null) {
             Glide.with(context).load(WSConstants.SALE_URL + sale.placeHolder).into(holder.saleIv)

@@ -49,4 +49,8 @@ class Sale: Serializable {
 
     @field:SerializedName("desconto")
     var discount: String? = null
+
+    @field:SerializedName("valor_final_taxa_desconto")
+    var valueFinalPriceDiscount: String? = null
+
 }
